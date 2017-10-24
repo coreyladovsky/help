@@ -8,11 +8,21 @@ export const receiveCurrentUser = (currentUser) =>({
   currentUser
 });
 
-export const
+export const receiveErrors = (errors) => ({
+  type: RECEIVE_ERRORS,
+  errors
+});
 
-export const login = (user) => (dispatch) => {
-  return SessionApiUtil.login(user).then(
-     (u) => dispatch(receiveCurrentUser(u)));
-};
+export const login = (user) => (dispatch) => (
+  SessionApiUtil.login(user).then((usr) => dispatch(receiveCurrentUser(usr)),
+ errors => dispatch(receiveErrors(errors)))
+);
 
-export const
+export const logout = () => (dispatch) => (
+  SessionApiUtil.logout().then(user => dispatch(receiveCurrentUser(null)))
+);
+
+export const signup = (user) => (dispatch) => (
+  SessionApiUtil.signup(user).then(usr => dispatch(receiveCurrentUser(usr)),
+  errors => dispatch(receiveErrors(errors)))
+);
