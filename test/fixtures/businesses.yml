@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  address: MyString
+  phone_number: MyString
+  profile_pic: MyString
+  cuisine: MyString
+  website: MyString
+  mon_start_time: 1
+  mon_end_time: 1
+  tue_start_time: 1
+  tue_end_time: 1
+  wed_start_time: 1
+  wed_end_time: 1
+  thur_start_time: 1
+  thur_end_time: 1
+  fri_start_time: 1
+  fri_end_time: 1
+  sat_start_time: 1
+  sat_end_time: 1
+  sun_start_time: 1
+  sun_end_time: 1
+
+two:
+  name: MyString
+  address: MyString
+  phone_number: MyString
+  profile_pic: MyString
+  cuisine: MyString
+  website: MyString
+  mon_start_time: 1
+  mon_end_time: 1
+  tue_start_time: 1
+  tue_end_time: 1
+  wed_start_time: 1
+  wed_end_time: 1
+  thur_start_time: 1
+  thur_end_time: 1
+  fri_start_time: 1
+  fri_end_time: 1
+  sat_start_time: 1
+  sat_end_time: 1
+  sun_start_time: 1
+  sun_end_time: 1

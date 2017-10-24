@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  business_id: 1
+  rating: 1
+  price_range: 1
+  body: MyText
+  deliver: false
+  noise_level: 1
+
+two:
+  user_id: 1
+  business_id: 1
+  rating: 1
+  price_range: 1
+  body: MyText
+  deliver: false
+  noise_level: 1
