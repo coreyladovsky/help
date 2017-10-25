@@ -33,6 +33,7 @@ class Landing extends React.Component {
 
     return (
       <div>
+        <Link to={"/review"}>Write a Review</Link>
         "This Is Helps landing page. Take a search and see if you can't find somewhere good to eat!"
         {this.logButton()}
       </div>

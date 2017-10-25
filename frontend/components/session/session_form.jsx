@@ -27,6 +27,7 @@ class SessionForm extends React.Component {
     this.yearChange = this.yearChange.bind(this);
     this.zipCodeChange = this.zipCodeChange.bind(this);
     this.guestLogIn = this.guestLogIn.bind(this);
+    this.littleMessage = this.littleMessage.bind(this);
   }
 
   componentWillReceiveProps() {
@@ -170,6 +171,25 @@ class SessionForm extends React.Component {
     this.props.login({email: "Guest", password: "password"});
   }
 
+  littleMessage() {
+    if(this.props.formType === '/login') {
+      return (
+        <ul className="little-message">
+          <li>
+            <h3> New to Help? </h3>
+          </li>
+          <li>
+            <Link to={'/signup'}>Sign Up</Link>
+          </li>
+        </ul>
+      );
+    } else{
+      return(
+        <p className="little-message">Connect with great local restaurants</p>
+      );
+    }
+  }
+
 
 
   render(){
@@ -180,13 +200,26 @@ class SessionForm extends React.Component {
 
     return(
     <div>
-      <header>
-        {this.props.formType === '/login' ? "Log In to Help" : "Sign Up for Help"}
+      <header className="top-red-bar-with-star">
+        <div className="help-div">
+
+          <Link to={'/help'} className="help">
+
+            help
+
+        </Link>
+      </div>
 
         <ul>
           {errs}
         </ul>
       </header>
+      <section>
+        <h2 className="login-signup-string">
+          {this.props.formType === '/login' ? "Log In to Help" : "Sign Up for Help"}
+
+        </h2>
+        {this.littleMessage()}
 
       <form onSubmit={this.handleSubmit}>
         <ul>
@@ -212,6 +245,7 @@ class SessionForm extends React.Component {
       </form>
         <button onClick={this.guestLogIn}>Guest Log In</button>
         <Link to={this.props.formType === '/login' ? '/signup' : '/login'}>{this.props.formType === '/login' ? "Sign Up" : "Log In"}</Link>
+      </section>
     </div>
   );
   }
