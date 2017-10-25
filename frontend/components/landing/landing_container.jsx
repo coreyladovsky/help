@@ -4,8 +4,9 @@ import { logout } from '../../actions/session_actions';
 import Landing from './landing';
 
 const mapStateToProps = (state, ownProps) => {
+
   return {
-    currentUser: state.session.email
+    currentUser: state.session.currentUser
   };
 };
 

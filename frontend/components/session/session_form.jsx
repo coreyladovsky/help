@@ -29,7 +29,7 @@ class SessionForm extends React.Component {
   }
 
   componentWillReceiveProps() {
-  
+
   }
 
   handleSubmit(event) {
@@ -169,7 +169,7 @@ class SessionForm extends React.Component {
 
   render(){
     const errs = this.props.errors.map((err) => {
-      return <li>err</li>;
+      return <li>{err}</li>;
     });
 
 

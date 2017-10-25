@@ -11,6 +11,7 @@ const mapStateToProps = (state, ownProps) => {
   } else {
     formType = '/signup';
   }
+
   return {
     loggedIn: Boolean(state.session.email),
     errors: state.errors.session,

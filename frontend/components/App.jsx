@@ -2,7 +2,7 @@ import React from 'react';
 import LandingContainer from './landing/landing_container';
 import SessionFormContainer from './session/session_form_container';
 import { Route, Switch } from 'react-router-dom';
-
+import {AuthRoute} from '../util/route_util';
 
 const App = () => (
   <div>
@@ -10,9 +10,9 @@ const App = () => (
       <h1>Help!</h1>
     </header>
     <Switch>
-    <Route path="/signup" component={SessionFormContainer} />
-    <Route path="/login" component={SessionFormContainer}/>
-
+      <AuthRoute path="/signup" component={SessionFormContainer} />
+      <AuthRoute path="/login" component={SessionFormContainer}/>
+      <Route path="/help" component={LandingContainer} />
     </Switch>
   </div>
 );
