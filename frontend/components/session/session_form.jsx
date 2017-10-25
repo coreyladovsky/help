@@ -26,6 +26,7 @@ class SessionForm extends React.Component {
     this.dayChange = this.dayChange.bind(this);
     this.yearChange = this.yearChange.bind(this);
     this.zipCodeChange = this.zipCodeChange.bind(this);
+    this.guestLogIn = this.guestLogIn.bind(this);
   }
 
   componentWillReceiveProps() {
@@ -165,6 +166,10 @@ class SessionForm extends React.Component {
     );
   }
 
+  guestLogIn() {
+    this.props.login({email: "Guest", password: "password"});
+  }
+
 
 
   render(){
@@ -205,6 +210,7 @@ class SessionForm extends React.Component {
         <button className={"submitButton"}>{this.props.formType === '/login' ? "Log In" : "Sign Up"}</button>
 
       </form>
+        <button onClick={this.guestLogIn}>Guest Log In</button>
         <Link to={this.props.formType === '/login' ? '/signup' : '/login'}>{this.props.formType === '/login' ? "Sign Up" : "Log In"}</Link>
     </div>
   );

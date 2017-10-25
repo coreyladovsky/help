@@ -13,7 +13,19 @@ class Landing extends React.Component {
     if(this.props.currentUser){
       return <button onClick={this.props.logout}>Log out</button>;
     } else {
-      return <Link to={"/login"}>Log In</Link>;
+      return (
+        <div>
+          <ul className="log-links">
+            <li>
+            <Link to={"/login"}>Log In</Link>
+            </li>
+            <li>
+              <Link to={"/signup"}>Sign Up</Link>
+            </li>
+
+          </ul>
+        </div>
+        );
     }
   }
 

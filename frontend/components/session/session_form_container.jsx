@@ -22,11 +22,13 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   if(ownProps.location.pathname === '/login') {
     return {
-      processForm: (user) => dispatch(login(user))
+      processForm: (user) => dispatch(login(user)),
+      login: (user) => dispatch(login(user))
     };
   } else {
     return {
-      processForm: (user) => dispatch(signup(user))
+      processForm: (user) => dispatch(signup(user)),
+      login: (user) => dispatch(login(user))
     };
   }
 };
