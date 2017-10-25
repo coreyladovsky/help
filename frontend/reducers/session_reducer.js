@@ -1,5 +1,5 @@
-import { RECEIVE_CURRENT_USER, RECEIVE_ERRORS } from '../actions/session_actions';
 import merge from 'lodash/merge';
+import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 
 const SessionReducer = (oldState = {currentUser: null}, action) => {
   Object.freeze(oldState);
@@ -11,4 +11,4 @@ const SessionReducer = (oldState = {currentUser: null}, action) => {
   }
 };
 
-export default SessionReducer; 
+export default SessionReducer;
