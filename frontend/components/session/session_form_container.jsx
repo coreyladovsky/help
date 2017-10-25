@@ -1,14 +1,15 @@
 import { connect } from 'react-redux';
-import { logoin, signup } from '../../actions/session_actions';
-import SessionForm from './session_form_container';
+import { login, signup } from '../../actions/session_actions';
+import SessionForm from './session_form';
+import { withRouter } from 'react-router';
 
 
 const mapStateToProps = (state, ownProps) => {
   let formType;
   if(ownProps.location.pathname === '/login') {
-    formType = 'login';
+    formType = '/login';
   } else {
-    formType = 'signup';
+    formType = '/signup';
   }
   return {
     loggedIn: Boolean(state.session.email),
@@ -18,18 +19,18 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  let action;
-if(ownProps.location.pathname === '/login') {
-  action = 'login';
-} else {
-  action = 'signup';
-}
-return{
-  processForm: (user) => dispatch(action(user))
-  };
+  if(ownProps.location.pathname === '/login') {
+    return {
+      processForm: (user) => dispatch(login(user))
+    };
+  } else {
+    return {
+      processForm: (user) => dispatch(signup(user))
+    };
+  }
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(SessionForm);
+)(SessionForm));

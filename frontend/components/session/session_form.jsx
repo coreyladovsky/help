@@ -11,7 +11,9 @@ class SessionForm extends React.Component {
       passwordValue: "",
       firstNameValue: "",
       lastNameValue: "",
-      birthdayValue: "",
+      monthValue: "",
+      dayValue: "",
+      yearValue: "",
       zipCodeValue: ""
     };
 
@@ -20,8 +22,14 @@ class SessionForm extends React.Component {
     this.emailChange = this.emailChange.bind(this);
     this.firstNameChange = this.firstNameChange.bind(this);
     this.lastNameChange = this.lastNameChange.bind(this);
-    this.birthdayChange = this.birthdayChange.bind(this);
+    this.monthChange = this.monthChange.bind(this);
+    this.dayChange = this.dayChange.bind(this);
+    this.yearChange = this.yearChange.bind(this);
     this.zipCodeChange = this.zipCodeChange.bind(this);
+  }
+
+  componentWillReceiveProps() {
+  
   }
 
   handleSubmit(event) {
@@ -34,7 +42,7 @@ class SessionForm extends React.Component {
         password: this.state.passwordValue,
         first_name: this.state.firstNameValue,
         last_name: this.state.lastNameValue,
-        birthday: this.state.birthdayValue,
+        birthday: `${this.state.yearValue}-${this.state.monthValue}-${this.state.dayValue}`,
         zip_code: this.state.zipCodeValue
       });
     }
@@ -45,7 +53,7 @@ class SessionForm extends React.Component {
   }
 
   passwordChange(event) {
-    this.setState({password: event.target.value});
+    this.setState({passwordValue: event.target.value});
   }
 
   firstNameChange(event) {
@@ -56,8 +64,16 @@ class SessionForm extends React.Component {
     this.setState({lastNameValue: event.target.value});
   }
 
-  birthdayChange(event) {
-    this.setState({birthdayValue: event.target.value});
+  monthChange(event) {
+    this.setState({monthValue: event.target.value});
+  }
+
+  dayChange(event) {
+    this.setState({dayValue: event.target.value});
+  }
+
+  yearChange(event) {
+    this.setState({yearValue: event.target.value});
   }
 
   zipCodeChange(event) {
@@ -91,19 +107,18 @@ class SessionForm extends React.Component {
   dropDownYear() {
     let year = new Date().getFullYear();
     let years = [];
-    while(years > 1900) {
-      years.push(year);
-      year-- ;
+    for(let i = year; i > 1900; i--){
+      years.push(i);
     }
-    years.map( (yr) => {
-      return <option>{yr}</option>;
+    return years.map((yr, idx) => {
+      return <option key={idx}>{yr}</option>;
     });
   }
 
   dropDownMonth() {
     let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    months.map(month => {
-      return <option>{month}</option>;
+    return months.map((month, idx) => {
+      return <option key={idx}>{month}</option>;
     });
   }
 
@@ -112,8 +127,8 @@ class SessionForm extends React.Component {
     for(let i = 1; i < 32; i++){
       days.push(i);
     }
-    days.map(day => {
-      return <option>{day}</option>;
+    return days.map((day, idx) => {
+      return <option key={idx}>{day}</option>;
     });
   }
 
@@ -121,27 +136,28 @@ class SessionForm extends React.Component {
     return (
       <div>
         <ul className="birthday-text">
-          <li className='birthday'>"Birthday"</li>
-          <li className='optional'>"Optional"</li>
+          <li className='birthday'>Birthday</li>
+          <li className='optional'>Optional</li>
         </ul>
 
           <ul>
             <li>
-              <select className="MonthDrop">
-                <option default selected>"Month"</option>
-                {this.dropDownMonth}
+              <select className="MonthDrop" onChange={this.monthChange}>
+                <option defaultValue>Month</option>
+                {this.dropDownMonth()}
+
               </select>
             </li>
             <li>
-              <select className="DayDrop">
-                <option default selected>"Day"</option>
-                {this.dropDownDay}
+              <select className="DayDrop" onChange={this.dayChange}>
+                <option defaultValue>Day</option>
+                {this.dropDownDay()}
               </select>
             </li>
           <li>
-            <select className="YearDrop">
-              <option default selected> Year</option>
-              {this.dropDownYear}
+            <select className="YearDrop" onChange={this.yearChange}>
+              <option defaultValue> Year</option>
+              {this.dropDownYear()}
             </select>
           </li>
           </ul>
@@ -156,10 +172,11 @@ class SessionForm extends React.Component {
       return <li>err</li>;
     });
 
+
     return(
     <div>
       <header>
-        {this.props.formType === '/login' ? "Log In" : "Sign Up"}
+        {this.props.formType === '/login' ? "Log In to Help" : "Sign Up for Help"}
 
         <ul>
           {errs}
@@ -169,18 +186,18 @@ class SessionForm extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <ul>
           <li>
-            {this.props.formType === "signup" ? this.nameInputs : ""}
+            {this.props.formType === "/signup" ? this.nameInputs() : ""}
           </li>
           <li>
-            <input type="text" onChage={this.emailChange} value={this.state.emailValue}
+            <input type="text" onChange={this.emailChange} value={this.state.emailValue}
               placeholder="Email"/>
           </li>
           <li>
-            <input type="password" onChange={this.passwordChange} value={this.state.password}
+            <input type="password" onChange={this.passwordChange} value={this.state.passwordValue}
               placeholder="Password"/>
           </li>
-          {this.props.formType === "signup" ? this.zipCodeInput : ""}
-          {this.props.formType === "signup" ? this.allDropDowns : ""}
+          {this.props.formType === "/signup" ? this.zipCodeInput() : ""}
+          {this.props.formType === "/signup" ? this.allDropDowns() : ""}
         </ul>
 
 
@@ -193,3 +210,5 @@ class SessionForm extends React.Component {
   );
   }
 }
+
+export default SessionForm;
