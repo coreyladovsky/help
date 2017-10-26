@@ -86,11 +86,11 @@ class SessionForm extends React.Component {
     return (
         <ul className="name-inputs">
           <li>
-            <input type="text" placeholder="First Name" value={this.state.firstNameValue}
+            <input type="text" className="first-name" placeholder="First Name" value={this.state.firstNameValue}
             onChange={this.firstNameChange}/>
           </li>
           <li>
-            <input type="text" placeholder="Last Name" value={this.state.lastNameValue}
+            <input type="text" className="last-name" placeholder="Last Name" value={this.state.lastNameValue}
             onChange={this.lastNameChange}/>
           </li>
         </ul>
@@ -100,7 +100,7 @@ class SessionForm extends React.Component {
   zipCodeInput() {
     return (
       <li>
-        <input type="text" placeholder="Zip Code" value={this.state.zipCodeValue}
+        <input type="text" className="zip-code" placeholder="Zip Code" value={this.state.zipCodeValue}
         onChange={this.zipCodeChange}/>
       </li>
     );
@@ -142,22 +142,22 @@ class SessionForm extends React.Component {
           <li className='optional'>Optional</li>
         </ul>
 
-          <ul>
+          <ul className="drop">
             <li>
-              <select className="MonthDrop" onChange={this.monthChange}>
+              <select className="MonthDrop all-drop" onChange={this.monthChange}>
                 <option defaultValue>Month</option>
                 {this.dropDownMonth()}
 
               </select>
             </li>
             <li>
-              <select className="DayDrop" onChange={this.dayChange}>
+              <select className="DayDrop all-drop" onChange={this.dayChange}>
                 <option defaultValue>Day</option>
                 {this.dropDownDay()}
               </select>
             </li>
           <li>
-            <select className="YearDrop" onChange={this.yearChange}>
+            <select className="YearDrop all-drop" onChange={this.yearChange}>
               <option defaultValue> Year</option>
               {this.dropDownYear()}
             </select>
@@ -221,17 +221,17 @@ class SessionForm extends React.Component {
         </h2>
         {this.littleMessage()}
 
-      <form onSubmit={this.handleSubmit}>
-        <ul>
+      <form onSubmit={this.handleSubmit} className="auth-form">
+        <ul className="auth-list">
           <li>
             {this.props.formType === "/signup" ? this.nameInputs() : ""}
           </li>
           <li>
-            <input type="text" onChange={this.emailChange} value={this.state.emailValue}
+            <input type="text" className="email" onChange={this.emailChange} value={this.state.emailValue}
               placeholder="Email"/>
           </li>
           <li>
-            <input type="password" onChange={this.passwordChange} value={this.state.passwordValue}
+            <input type="password" className="password" onChange={this.passwordChange} value={this.state.passwordValue}
               placeholder="Password"/>
           </li>
           {this.props.formType === "/signup" ? this.zipCodeInput() : ""}
@@ -240,7 +240,7 @@ class SessionForm extends React.Component {
 
 
 
-        <button className={"submitButton"}>{this.props.formType === '/login' ? "Log In" : "Sign Up"}</button>
+        <button className="submit-button">{this.props.formType === '/login' ? "Log In" : "Sign Up"}</button>
 
       </form>
         <button onClick={this.guestLogIn}>Guest Log In</button>

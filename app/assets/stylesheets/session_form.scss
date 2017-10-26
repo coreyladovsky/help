@@ -30,30 +30,106 @@
   font-size: 22px;
   font-weight: bold;
   font-family: sans-serif;
-  margin-left: 18%;
+  margin-left: 200px;
   margin-top: 50px;
 }
 
 .little-message {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: bold;
   font-family: sans-serif;
   margin-top: 7px;
-  margin-left: 15%;
+  margin-left: 135px;
+}
+
+.auth-form {
+  border: 1px solid black;
+  width: 350px;
+  margin-top: 50px;
+  margin-left: 110px;
+}
+
+.auth-list input {
+  border: 1px solid gray;
+  height: 30px;
+  font-family: sans-serif;
+  border-radius: 4px;
+  padding-left: 5px;
+  color: #999;
+  font-size: 14px;
+
+
+}
+
+.auth-list li {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.name-inputs {
+  display: flex;
+  justify-content: space-between;
+}
+.first-name {
+  width: 165px;
+}
+
+.last-name {
+  width: 165px;
+}
+
+.email {
+  width: 345px;
+
+}
+
+.password {
+  width: 345px;
+  margin-top: 7px; 
+
+}
+
+.zip-code {
+  width: 345px;
+  margin-top: 15px;
 }
 
 
+.all-drop {
+  background-color: white;
+  height: 30px;
+  width: 110px;
+}
 
+.drop {
+  display:flex;
+  justify-content: space-between;
 
+}
 
+.birthday-text {
+  display: flex;
+  border:0px;
+}
 
+.birthday {
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 14px;
+  border:0px;
+}
 
+.optional {
+  color: #999;
+  font-size: 12px;
+  font-family: sans-serif;
+  margin-left: 8px;
+  margin-top: 5px;
+}
 
+.submit-button {
 
-
-
-
-
+}
 
 
 
