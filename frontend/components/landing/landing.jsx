@@ -11,7 +11,7 @@ class Landing extends React.Component {
   logButton() {
 
     if(this.props.currentUser){
-      return <button onClick={this.props.logout}>Log out</button>;
+      return <button className="logout-landing" onClick={this.props.logout}>Log out</button>;
     } else {
       return (
         <div >
@@ -48,6 +48,7 @@ class Landing extends React.Component {
           <div className="help-div-landing">
             <Link to={'/'} className="help-landing">help</Link>
           </div>
+
         </body>
         <footer>
           <Link className="git-link" to={"https://github.com/coreyladovsky"}>Corey Ladovsky</Link>
