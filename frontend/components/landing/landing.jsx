@@ -44,7 +44,14 @@ class Landing extends React.Component {
             </li>
           </ul>
         </header>
-
+        <body className="landing-body">
+          <div className="help-div-landing">
+            <Link to={'/'} className="help-landing">help</Link>
+          </div>
+        </body>
+        <footer>
+          <Link className="git-link" to={"https://github.com/coreyladovsky"}>Corey Ladovsky</Link>
+        </footer>
 
       </div>
     );

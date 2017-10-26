@@ -21,16 +21,16 @@
 
 .log-links {
   display: flex;
-  margin-right: 290px;
+  margin-right: 230px;
 }
 
 .review-link {
   position: absolute;
   margin-left: 225px;
-  padding-left: 7px;
-  padding-right: 7px;
-  padding-bottom: 7px;
-  padding-top: 7px;
+  padding-left: 9px;
+  padding-right: 9px;
+  padding-bottom: 9px;
+  padding-top: 9px;
 }
 
 .review-link:hover {
@@ -39,10 +39,10 @@
 
 .log-in-landing {
 
-    padding-left: 7px;
-    padding-right: 7px;
-    padding-bottom: 7px;
-    padding-top: 7px;
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-bottom: 9px;
+    padding-top: 9px;
 }
 
 .log-in-landing:hover {
@@ -52,11 +52,44 @@
 
 .sign-up-landing {
   border: 2px solid white;
-  padding-left: 7px;
-  padding-right: 7px;
-  padding-bottom: 7px;
-  padding-top: 7px;
+  padding-left: 23px;
+  padding-right: 23px;
+  padding-bottom: 9px;
+  padding-top: 9px;
+  margin-left: 20px;
+  border-radius: 4px;
 }
+
+.sign-up-landing:hover {
+  background: white;
+  color: rgba(0, 0, 0, 1);
+}
+
+
+.help-landing {
+  display: inline-block;
+  align: center;
+  font-family: sans-serif;
+  font-size: 50px;
+  font-weight: 600;
+  color: black;
+  text-shadow: -4px -4px 0 white, 4px -4px 0 white,
+  -4px 4px 0 white, 4px 4px 0 white;
+  margin-left: 48%;
+  margin-top: 15px;
+}
+
+.landing-body {
+  align-content: center;
+  margin-top: 10%;
+
+}
+
+
+
+
+
+
 
 
 
