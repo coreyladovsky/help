@@ -193,11 +193,11 @@ class SessionForm extends React.Component {
   littleMessage() {
     if(this.props.formType === '/login') {
       return (
-        <ul className="little-message">
-          <li>
-            <h3> New to Help? </h3>
+        <ul className="login-message">
+          <li className="new-to-help">
+          New to Help?
           </li>
-          <li>
+          <li className="sign-up-link">
             <Link to={'/signup'}>Sign Up</Link>
           </li>
         </ul>
@@ -281,6 +281,9 @@ class SessionForm extends React.Component {
           {errs}
         </ul>
         </section>
+        <footer>
+          <Link className="git-link" to={"https://github.com/coreyladovsky"}>Corey Ladovsky</Link>
+        </footer>
     </div>
   );
   }

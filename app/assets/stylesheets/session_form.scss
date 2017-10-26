@@ -42,6 +42,31 @@
   margin-left: 135px;
 }
 
+.login-message {
+  display: flex;
+}
+
+.new-to-help {
+  font-size: 15px;
+  font-weight: bold;
+  font-family: sans-serif;
+  margin-top: 7px;
+  margin-left: 210px;
+}
+
+.sign-up-link {
+  font-size: 15px;
+  margin-left: 10px;
+  margin-top: 8px;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: #0066CC;
+}
+
+.sign-up-link:hover {
+  text-decoration: underline;
+}
+
 .auth-form {
   // border: 1px solid black;
   width: 350px;
@@ -58,7 +83,11 @@
   color: #999;
   font-size: 14px;
 
+}
 
+input:focus {
+  color: black;
+  border: 1px solid #0066CC
 }
 
 .auth-list li {
@@ -99,9 +128,10 @@
   background-color: white;
   height: 30px;
   width: 110px;
-  color: #999;
+  color: black;
   font-size: 14px;
 }
+
 
 .drop {
   display:flex;
@@ -201,8 +231,28 @@
   text-decoration-color: red;
 }
 
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+  background-color: #F5F5F5;
+  border-top: 1px solid lightgray;
+}
 
+.git-link {
+  position: absolute;
+  color: blue;
+  font-size: 12px;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 25px;
+  margin-right: 20px;
+}
 
+.git-link:hover {
+  text-decoration: underline;
+}
 
 
 
