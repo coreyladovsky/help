@@ -243,7 +243,7 @@ class SessionForm extends React.Component {
     <div>
       <header className="top-red-bar-with-star">
         <div className="help-div">
-          <Link to={'/help'} className="help">help</Link>
+          <Link to={'/'} className="help">help</Link>
         </div>
 
       </header>
