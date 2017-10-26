@@ -7,10 +7,10 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      emailValue: "",
       passwordValue: "",
       firstNameValue: "",
       lastNameValue: "",
+      emailValue: "",
       monthValue: "",
       dayValue: "",
       yearValue: "",
@@ -28,6 +28,7 @@ class SessionForm extends React.Component {
     this.zipCodeChange = this.zipCodeChange.bind(this);
     this.guestLogIn = this.guestLogIn.bind(this);
     this.littleMessage = this.littleMessage.bind(this);
+    this.closing = this.closing.bind(this);
   }
 
   componentWillReceiveProps() {
@@ -190,6 +191,11 @@ class SessionForm extends React.Component {
     }
   }
 
+  closing() {
+    <Link to={this.props.formType === '/login' ? '/signup' : '/login'}>{this.props.formType === '/login' ? "Sign Up" : "Log In"}</Link>
+
+  }
+
 
 
   render(){
@@ -202,23 +208,18 @@ class SessionForm extends React.Component {
     <div>
       <header className="top-red-bar-with-star">
         <div className="help-div">
-
-          <Link to={'/help'} className="help">
-
-            help
-
-        </Link>
-      </div>
-
+          <Link to={'/help'} className="help">help</Link>
+        </div>
         <ul>
           {errs}
         </ul>
       </header>
+
       <section>
         <h2 className="login-signup-string">
           {this.props.formType === '/login' ? "Log In to Help" : "Sign Up for Help"}
-
         </h2>
+
         {this.littleMessage()}
 
       <form onSubmit={this.handleSubmit} className="auth-form">
@@ -238,14 +239,11 @@ class SessionForm extends React.Component {
           {this.props.formType === "/signup" ? this.allDropDowns() : ""}
         </ul>
 
-
-
         <button className="submit-button">{this.props.formType === '/login' ? "Log In" : "Sign Up"}</button>
 
       </form>
-        <button onClick={this.guestLogIn}>Guest Log In</button>
-        <Link to={this.props.formType === '/login' ? '/signup' : '/login'}>{this.props.formType === '/login' ? "Sign Up" : "Log In"}</Link>
-      </section>
+        <button className="guest-log-in" onClick={this.guestLogIn}>Guest Log In</button>
+        </section>
     </div>
   );
   }

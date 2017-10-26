@@ -43,7 +43,7 @@
 }
 
 .auth-form {
-  border: 1px solid black;
+  // border: 1px solid black;
   width: 350px;
   margin-top: 50px;
   margin-left: 110px;
@@ -85,7 +85,7 @@
 
 .password {
   width: 345px;
-  margin-top: 7px; 
+  margin-top: 7px;
 
 }
 
@@ -99,6 +99,8 @@
   background-color: white;
   height: 30px;
   width: 110px;
+  color: #999;
+  font-size: 14px;
 }
 
 .drop {
@@ -128,12 +130,36 @@
 }
 
 .submit-button {
-
+  width: 350px;
+  background-color: #d32323;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  height: 35px;
+  border-radius: 4px;
+  font-family: sans-serif;
+  font-size: 14px;
+  margin-top: 5px;
 }
 
+.submit-button:hover {
+  background-color: red;
+  border: 1px #8d0005
+}
 
-
-
+.guest-log-in {
+  width: 200px;
+  background-color: #d32323;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  height: 35px;
+  border-radius: 4px;
+  font-family: sans-serif;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-left: 185px;
+}
 
 
 
