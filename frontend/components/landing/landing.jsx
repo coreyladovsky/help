@@ -53,12 +53,12 @@ class Landing extends React.Component {
             </li>
           </ul>
         </header>
-        <body className="landing-body">
+        <section className="landing-body">
           <div className="help-div-landing">
             <Link to={'/'} className="help-landing">help</Link>
           </div>
 
-        </body>
+        </section>
         <footer>
         <a className="git-link" href="https://github.com/coreyladovsky">Corey Ladovsky</a>
         </footer>
