@@ -29,10 +29,28 @@ class SessionForm extends React.Component {
     this.guestLogIn = this.guestLogIn.bind(this);
     this.littleMessage = this.littleMessage.bind(this);
     this.closing = this.closing.bind(this);
+    this.clearState = this.clearState.bind(this);
   }
 
-  componentWillReceiveProps() {
+  clearState() {
+    this.setState({
+      passwordValue: "",
+      firstNameValue: "",
+      lastNameValue: "",
+      emailValue: "",
+      monthValue: "",
+      dayValue: "",
+      yearValue: "",
+      zipCodeValue: ""
+    });
 
+  }
+
+  componentWillReceiveProps(nextprops) {
+    if(this.props.formType !== nextprops.formType){
+      this.props.clearErrors();
+      this.clearState();
+    }
   }
 
   handleSubmit(event) {
@@ -192,15 +210,32 @@ class SessionForm extends React.Component {
   }
 
   closing() {
-    <Link to={this.props.formType === '/login' ? '/signup' : '/login'}>{this.props.formType === '/login' ? "Sign Up" : "Log In"}</Link>
+    if(this.props.formType === '/signup') {
+      return(
+        <ul className="closing">
+          <li className="closer">Already on Help?</li>
+          <li className="log-link"><Link to={'/login'}>Log In</Link></li>
+        </ul>
+      );
+    } else {
+      return(
+
+      <ul className="closing">
+        <li className="closer">New to Help?</li>
+        <li className="log-link"><Link to={'/signup'}>Sign Up</Link></li>
+
+      </ul>
+    );
+    }
+
 
   }
 
 
 
   render(){
-    const errs = this.props.errors.map((err) => {
-      return <li>{err}</li>;
+    const errs = this.props.errors.map((err, idx) => {
+      return <li key={idx} className="session-error">{err}</li>;
     });
 
 
@@ -210,9 +245,7 @@ class SessionForm extends React.Component {
         <div className="help-div">
           <Link to={'/help'} className="help">help</Link>
         </div>
-        <ul>
-          {errs}
-        </ul>
+
       </header>
 
       <section>
@@ -243,6 +276,10 @@ class SessionForm extends React.Component {
 
       </form>
         <button className="guest-log-in" onClick={this.guestLogIn}>Guest Log In</button>
+        {this.closing()}
+        <ul className="session-errors">
+          {errs}
+        </ul>
         </section>
     </div>
   );

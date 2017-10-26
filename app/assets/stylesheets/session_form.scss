@@ -143,7 +143,7 @@
 }
 
 .submit-button:hover {
-  background-color: red;
+  background-color: #E80000   ;
   border: 1px #8d0005
 }
 
@@ -153,7 +153,7 @@
   text-align: center;
   color: white;
   font-weight: bold;
-  height: 35px;
+  height: 30px;
   border-radius: 4px;
   font-family: sans-serif;
   font-size: 14px;
@@ -161,10 +161,45 @@
   margin-left: 185px;
 }
 
+.guest-log-in:hover {
+  background-color: #E80000   ;
+  border: 1px #8d0005
+}
 
+.closing {
+  display: flex;
+  margin-left: 250px;
+  margin-top: 10px;
+}
 
+.closer {
+  color: #999;
+  font-size: 12px;
+  font-family: sans-serif;
+}
 
+.log-link {
+  color: #003399;
+  font-size: 12px;
+  font-family: sans-serif;
+  margin-left: 5px;
+}
+.log-link:hover {
+  text-decoration: underline;
+}
 
+.session-errors {
+  display: flex;
+}
+.session-error {
+  margin-top: 15px;
+  margin-left: 15px;
+  color: red;
+  font-size: 12px;
+  font-family: sans-serif;
+  text-decoration: underline;
+  text-decoration-color: red;
+}
 
 
 
