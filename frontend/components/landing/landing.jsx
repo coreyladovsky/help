@@ -8,6 +8,12 @@ class Landing extends React.Component {
     this.logButton = this.logButton.bind(this);
   }
 
+  componentWillReceiveProps(nextprops) {
+    if(this.props.formType !== nextprops.formType){
+      this.setState();
+    }
+  }
+
   logButton() {
 
     if(this.props.currentUser){
@@ -31,9 +37,12 @@ class Landing extends React.Component {
   }
 
   render() {
-
+    const classes = ["landing-background1", "landing-background1", "landing-background3", "landing-background4",
+  "landing-background5", "landing-background6", "landing-background7", "landing-background8", "landing-background9"];
+     let picClass = classes[Math.floor(Math.random() * classes.length)];
+     let final = "landing-background " + picClass;
     return (
-      <div className="landing-background">
+      <main className={final}>
         <header className="landing-header">
           <ul className="landing-header-ul">
             <li>
@@ -54,7 +63,7 @@ class Landing extends React.Component {
           <Link className="git-link" to={"https://github.com/coreyladovsky"}>Corey Ladovsky</Link>
         </footer>
 
-      </div>
+      </main>
     );
   }
 
