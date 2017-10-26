@@ -60,7 +60,7 @@ class Landing extends React.Component {
 
         </body>
         <footer>
-          <Link className="git-link" to={"https://github.com/coreyladovsky"}>Corey Ladovsky</Link>
+        <a className="git-link" href="https://github.com/coreyladovsky">Corey Ladovsky</a>
         </footer>
 
       </main>
