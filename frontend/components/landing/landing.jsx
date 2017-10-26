@@ -14,16 +14,17 @@ class Landing extends React.Component {
       return <button onClick={this.props.logout}>Log out</button>;
     } else {
       return (
-        <div>
-          <ul className="log-links">
-            <li>
-            <Link to={"/login"}>Log In</Link>
-            </li>
-            <li>
-              <Link to={"/signup"}>Sign Up</Link>
-            </li>
+        <div >
 
-          </ul>
+            <ul className="log-links">
+              <li>
+              <Link to={"/login"} className="log-in-landing">Log In</Link>
+              </li>
+              <li>
+                <Link to={"/signup"} className="sign-up-landing">Sign Up</Link>
+              </li>
+            </ul>
+
         </div>
         );
     }
@@ -32,10 +33,19 @@ class Landing extends React.Component {
   render() {
 
     return (
-      <div>
-        <Link to={"/review"}>Write a Review</Link>
-        "This Is Helps landing page. Take a search and see if you can't find somewhere good to eat!"
-        {this.logButton()}
+      <div className="landing-background">
+        <header className="landing-header">
+          <ul className="landing-header-ul">
+            <li>
+              <Link to={"/review"} className="review-link">Write a Review</Link>
+            </li>
+            <li>
+                {this.logButton()}
+            </li>
+          </ul>
+        </header>
+
+
       </div>
     );
   }

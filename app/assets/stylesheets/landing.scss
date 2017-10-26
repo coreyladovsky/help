@@ -1,0 +1,77 @@
+
+.landing-background {
+  background-image: image_url("arek-adeoye-221899.jpg");
+  background-size:cover;
+  position: fixed;
+  min-height: 100%;
+  min-width: 100%;
+
+}
+
+.landing-header-ul {
+  display: flex;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  justify-content: space-between;
+  margin-top: 38px;
+}
+
+
+.log-links {
+  display: flex;
+  margin-right: 290px;
+}
+
+.review-link {
+  position: absolute;
+  margin-left: 225px;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-bottom: 7px;
+  padding-top: 7px;
+}
+
+.review-link:hover {
+  border-bottom: 2px solid white;
+}
+
+.log-in-landing {
+
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-bottom: 7px;
+    padding-top: 7px;
+}
+
+.log-in-landing:hover {
+  border-bottom: 2px solid white;
+
+}
+
+.sign-up-landing {
+  border: 2px solid white;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-bottom: 7px;
+  padding-top: 7px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
