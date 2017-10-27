@@ -1,5 +1,6 @@
 import React from 'react';
 import BusinessIndexItem from './business_index_item';
+import NavBar from '../NavBar';
 
 class BusinessIndex extends React.Component {
 
@@ -9,13 +10,13 @@ class BusinessIndex extends React.Component {
 
 
   render() {
-    const businesses = this.props.businesses.map(business => {
-      return <BusinessIndexItem key={business.id} business={business} />;
+    const businesses = this.props.business.map((business, idx) => {
+      return <BusinessIndexItem key={business.id} idx={idx} business={business} />;
     });
 
     return(
       <div>
-        <NavBar /> 
+        <NavBar />
           <ul>
             {businesses}
           </ul>

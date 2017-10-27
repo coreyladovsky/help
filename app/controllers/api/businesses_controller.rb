@@ -1,4 +1,4 @@
-class BusinessesController < ApplicationController
+class Api::BusinessesController < ApplicationController
   def index
     @businesses = Business.all
   end
@@ -34,7 +34,7 @@ class BusinessesController < ApplicationController
       render "api/business/index"
     else
       render json: @post.errors.full_messages, status: 422
-    end 
+    end
   end
 
   private
