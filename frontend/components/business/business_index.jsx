@@ -16,7 +16,7 @@ class BusinessIndex extends React.Component {
 
     return(
       <div>
-        <NavBar currentUser={this.props.currentUser}/>
+        <NavBar currentUser={this.props.currentUser} logout={this.props.logout}/>
           <ul>
             {businesses}
           </ul>

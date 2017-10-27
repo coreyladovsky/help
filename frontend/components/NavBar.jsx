@@ -9,6 +9,7 @@ class NavBar extends React.Component {
     this.findChange = this.findChange.bind(this);
     this.nearChange = this.nearChange.bind(this);
     this.logButton = this.logButton.bind(this);
+    this.loginLink = this.loginLink.bind(this);
   }
 
   handleSubmit(event) {
@@ -24,10 +25,18 @@ class NavBar extends React.Component {
   }
 
   logButton() {
-    if(this.state.currentUser){
-      return <button className="nav-sign-up" onClick={this.props.logout}>Log out</button>;
+    if(this.props.currentUser){
+      return <button className="nav-log-out" onClick={this.props.logout}>Log out</button>;
     } else {
       return <Link to={"/signup"} className="nav-sign-up">Sign Up</Link>;
+    }
+  }
+
+  loginLink() {
+    if(this.props.currentUser) {
+      return <Link className="home-nav" to={"/" }>Home</Link>;
+    }else {
+      return <Link className="home-nav" to={"/login"}>Log In</Link>;
     }
   }
 
@@ -56,7 +65,8 @@ class NavBar extends React.Component {
                   <input  className="near-input-nav" onChange={this.nearChange} value={this.state.nearValue} text="type" placeholder="Current Location" />
                 </li>
                 <li>
-                  <button className="mag" onClick={this.handleSubmit}><div ><img className ="mag-but"src={window.mag}/></div></button>
+                  <button className="mag" onClick={this.handleSubmit}><i className="icon fa fa-search" ></i></button>
+
                 </li>
             </ul>
             </form>
@@ -73,8 +83,8 @@ class NavBar extends React.Component {
               <li className="review-nav">
                 <Link to={'/reviews'}>Write a Review</Link>
               </li>
-              <li className="log-in-nav">
-                <Link to={"/login"}>Log In</Link>
+              <li className="review-nav">
+                {this.loginLink()}
               </li>
 
             </ul>
