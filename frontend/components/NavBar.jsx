@@ -8,6 +8,7 @@ class NavBar extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.findChange = this.findChange.bind(this);
     this.nearChange = this.nearChange.bind(this);
+    this.logButton = this.logButton.bind(this);
   }
 
   handleSubmit(event) {
@@ -20,6 +21,14 @@ class NavBar extends React.Component {
 
   nearChange(event) {
     this.setState({nearValue: event.target.value});
+  }
+
+  logButton() {
+    if(this.state.currentUser){
+      return <button className="nav-sign-up" onClick={this.props.logout}>Log out</button>;
+    } else {
+      return <Link to={"/signup"} className="nav-sign-up">Sign Up</Link>;
+    }
   }
 
   render() {
@@ -47,12 +56,12 @@ class NavBar extends React.Component {
                   <input  className="near-input-nav" onChange={this.nearChange} value={this.state.nearValue} text="type" placeholder="Current Location" />
                 </li>
                 <li>
-                  <button className="mag" onClick={this.handleSubmit}>Mag</button>
+                  <button className="mag" onClick={this.handleSubmit}><div ><img className ="mag-but"src={window.mag}/></div></button>
                 </li>
             </ul>
             </form>
             <li className="nav-sign-up-li">
-              <Link to={"/signup"} className="nav-sign-up">Sign Up</Link>
+              {this.logButton()}
             </li>
         </ul>
       </header>
