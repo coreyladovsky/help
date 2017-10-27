@@ -145,7 +145,7 @@
 .landing-form-ul {
   display: flex;
   height: 45px;
-  border: solid 1px yellow;
+  // border: solid 1px yellow;
   width: 960px;
 }
 
@@ -159,7 +159,7 @@
   background-color: white;
   padding-top: 12px;
   border-radius: 4px 0px 0px 4px;
-  height: 34px;
+  height: 33px;
   color: #666666;
   font-size: 18px;
   padding-left: 10px;
@@ -188,16 +188,18 @@
 
 .near-input-land{
   background-color: white;
-  height: 45px;
-  padding-left: 7px;
+  height: 43px;
+  padding-left: 9px;
   width: 420px;
+  padding-top: 2px;
 
 }
 .find-input-land{
   background-color: white;
-  height: 45px;
-  padding-left: 7px;
+  height: 30px;
+  padding-left: 10px;
   width: 420px;
+  padding-top: 15px;
 
 }
 
