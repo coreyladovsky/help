@@ -28,32 +28,44 @@ class NavBar extends React.Component {
         <header className="red-nav-bar">
         <ul className="top-nav-search">
           <li>
-              <div className="help-div help-nav-div">
-                <Link to={'/'} className="help">help</Link>
+              <div className="help-nav-div">
+                <Link to={'/'} className="help-nav">help</Link>
               </div>
           </li>
-          <form>
+          <form >
+            <ul className="search-form-nav">
 
-          <li className="find-text-nav">
-            Find
-          </li>
-          <li className="find-input-field">
-            <input onChange={this.findChange} value={this.state.findValue} text="type" placeholder="Restaurnts"/>
-          </li>
-          <li className="find-text-nav near-text-nav"> Near</li>
-          <li>
-            <input onChange={this.nearChange} value={this.state.nearValue} text="type" placeholder="Current Location" />
-          </li>
-          <li>
-            <button onClick={this.handleSubmit}>Mag</button>
-          </li>
+                <li className="find-text-nav">
+                  Find
+                </li>
+                <li className="find-input-field">
+                  <input className="nav-input-find" onChange={this.findChange} value={this.state.findValue} text="type" placeholder="Restaurnts"/>
+                </li>
+              <li className="seperator"><div className="seperator-div"></div></li>
+                <li className="near-text-nav"> Near</li>
+                <li>
+                  <input  className="near-input-nav" onChange={this.nearChange} value={this.state.nearValue} text="type" placeholder="Current Location" />
+                </li>
+                <li>
+                  <button className="mag" onClick={this.handleSubmit}>Mag</button>
+                </li>
+            </ul>
             </form>
             <li>
-              <Link to={"/signup"}>Sign Up</Link>
+              <Link to={"/signup"} className="nav-sign-up">Sign Up</Link>
             </li>
         </ul>
+      </header>
+        <ul className="thin-red-nav-bar">
+          <li>
+            <Link to={'/reviews'}>Write a Review</Link>
+          </li>
+          <li>
+            <Link to={"/login"}>Log In</Link>
+          </li>
 
-        </header>
+        </ul>
+
       </div>
 
     );
