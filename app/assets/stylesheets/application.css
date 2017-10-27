@@ -13,6 +13,6 @@
  *
  *= require_tree .
  *= require_self
+ *= main
+ *= require font-awesome
  */
-@import "font-awesome-sprockets";
-@import "font-awesome";
