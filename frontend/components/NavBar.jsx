@@ -24,7 +24,7 @@ class NavBar extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="container">
         <header className="red-nav-bar">
         <ul className="top-nav-search">
           <li>
@@ -51,20 +51,26 @@ class NavBar extends React.Component {
                 </li>
             </ul>
             </form>
-            <li>
+            <li className="nav-sign-up-li">
               <Link to={"/signup"} className="nav-sign-up">Sign Up</Link>
             </li>
         </ul>
       </header>
-        <ul className="thin-red-nav-bar">
-          <li>
-            <Link to={'/reviews'}>Write a Review</Link>
-          </li>
-          <li>
-            <Link to={"/login"}>Log In</Link>
-          </li>
+          <div className="long-bar">
 
-        </ul>
+            <div className="dark-nav-thin">
+
+            <ul className="thin-red-nav-bar">
+              <li className="review-nav">
+                <Link to={'/reviews'}>Write a Review</Link>
+              </li>
+              <li className="log-in-nav">
+                <Link to={"/login"}>Log In</Link>
+              </li>
+
+            </ul>
+          </div>
+        </div>
 
       </div>
 
