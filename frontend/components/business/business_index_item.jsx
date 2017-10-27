@@ -20,6 +20,7 @@ class BusinessIndexItem extends React.Component {
         <li>{this.props.business.address}</li>
         <li>{this.props.business.phone_number}</li>
     </ul>
+    {this.props.business.cuisine}
     </div>
   );
   }
