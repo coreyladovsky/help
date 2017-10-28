@@ -14,6 +14,7 @@ module Help
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
     config.paperclip_defaults = {
       :storage => :s3,
       :s3_credentials => {
@@ -24,4 +25,4 @@ module Help
       }
     }
   end
-end
+end 
