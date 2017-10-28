@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
 import BusinessIndex from './business_index';
 import { fetchBusinesses } from '../../actions/business_actions';
-import { logout } from '../../actions/session_actions';
+import { logout, clearPage, nextPage } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
     business: Object.values(state.business),
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    intendedPage: state.intendedPage
   });
 };
 
@@ -14,7 +15,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
   return ({
     fetchBusinesses: () => dispatch(fetchBusinesses()),
-    logout: ()=> dispatch(logout())
+    logout: ()=> dispatch(logout()),
+    clearPage: () => dispatch(clearPage()),
+    nextPage: (page) => dispatch(nextPage(page))
 
   });
 };

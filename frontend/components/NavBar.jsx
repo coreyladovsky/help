@@ -8,8 +8,12 @@ class NavBar extends React.Component {
 
     this.logButton = this.logButton.bind(this);
     this.loginLink = this.loginLink.bind(this);
+    this.clickHandler = this.clickHandler.bind(this);
   }
 
+  clickHandler(event) {
+    this.props.nextPage("/reviews");
+  }
 
 
   logButton() {
@@ -50,7 +54,7 @@ class NavBar extends React.Component {
 
             <ul className="thin-red-nav-bar">
               <li className="review-nav">
-                <Link to={'/reviews'}>Write a Review</Link>
+                <Link to={'/reviews'} onClick={this.clickHandler}>Write a Review</Link>
               </li>
               <li className="review-nav">
                 {this.loginLink()}

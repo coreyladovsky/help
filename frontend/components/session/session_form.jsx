@@ -69,6 +69,8 @@ class SessionForm extends React.Component {
     }
   }
 
+
+
   emailChange(event){
     this.setState({emailValue: event.target.value});
   }
@@ -186,6 +188,13 @@ class SessionForm extends React.Component {
     );
   }
 
+  // componentWillUnmount() {
+  //   if(this.props.intendedPage) {
+  //     this.props.history.push(this.props.intendedPage);
+  //     this.props.clearPage();
+  //   }
+  // }
+
   guestLogIn() {
     this.props.login({email: "Guest", password: "password"});
   }
@@ -237,7 +246,6 @@ class SessionForm extends React.Component {
     const errs = this.props.errors.map((err, idx) => {
       return <li key={idx} className="session-error">{err}</li>;
     });
-    debugger
 
     return(
     <div>

@@ -7,11 +7,19 @@ class Landing extends React.Component {
   constructor(props){
     super(props);
     this.logButton = this.logButton.bind(this);
+    this.clickHandler = this.clickHandler.bind(this);
   }
 
   componentWillReceiveProps(nextprops) {
     if(this.props.formType !== nextprops.formType){
       this.setState();
+    }
+  }
+
+  componentDidMount() {
+    if(this.props.intendedPage) {
+      this.props.history.push(this.props.intendedPage);
+      this.props.clearPage();
     }
   }
 
@@ -38,6 +46,10 @@ class Landing extends React.Component {
     }
   }
 
+  clickHandler(event) {
+    this.props.nextPage("/reviews");
+  }
+
   render() {
     const classes = ["landing-background1", "landing-background1", "landing-background3", "landing-background4",
   "landing-background5", "landing-background6", "landing-background7", "landing-background8", "landing-background9"];
@@ -48,7 +60,7 @@ class Landing extends React.Component {
         <header className="landing-header">
           <ul className="landing-header-ul">
             <li>
-              <Link to={"/reviews"} className="review-link">Write a Review</Link>
+              <Link to={"/reviews"} className="review-link" onClick={this.clickHandler}>Write a Review</Link>
             </li>
             <li>
                 {this.logButton()}
