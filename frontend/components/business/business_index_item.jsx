@@ -9,7 +9,7 @@ class BusinessIndexItem extends React.Component {
     <div>
       <ul>
         <li>
-          <Link to={ `/businesses/${this.props.business.id}`}><img src={window.default} /></Link>
+          <Link to={ `/businesses/${this.props.business.id}`}><img className="business-photo" src={this.props.business.image} /></Link>
         </li>
         <li>
           {this.props.idx + 1}
