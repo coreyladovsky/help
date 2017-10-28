@@ -48,7 +48,7 @@ class Landing extends React.Component {
         <header className="landing-header">
           <ul className="landing-header-ul">
             <li>
-              <Link to={"/review"} className="review-link">Write a Review</Link>
+              <Link to={"/reviews"} className="review-link">Write a Review</Link>
             </li>
             <li>
                 {this.logButton()}
