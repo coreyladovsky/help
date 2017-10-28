@@ -98,6 +98,123 @@ Business.create(name: "Rock", address: "1046 Flatbush Ave
 Brooklyn, NY 11226", phone_number: "(347) 350-6152", cuisine: "Fast Food",
 image: File.open("app/assets/images/business_images/fastfood.jpg"))
 
+Business.create(name: "Hershonies", address: "461 W 23rd St
+New York, NY 10011", phone_number: "(212) 414-4104", cuisine: "French",
+image: File.open("app/assets/images/business_images/french.jpg"))
+
+Business.create(name: "Pretty Near Perfect", address: "403 W 43rd St
+New York, NY 10036", phone_number: "(212) 602-1910", cuisine: "French",
+image: File.open("app/assets/images/business_images/french2.jpg"))
+
+Business.create(name: "Hop Stork", address: "461 W 23rd St
+New York, NY 10011", phone_number: "(212) 510-8550", cuisine: "French",
+image: File.open("app/assets/images/business_images/french4.jpg"))
+
+Business.create(name: "Market Cafe", address: "139 Chrystie St
+New York, NY 10002", phone_number: "(212) 925-8815", cuisine: "French",
+image: File.open("app/assets/images/business_images/french5.jpg"))
+
+Business.create(name: "Tomatos", address: "647 9th Ave
+New York, NY 10036", phone_number: "(212) 245-8880", cuisine: "French",
+image: File.open("app/assets/images/business_images/french6.jpg"))
+
+Business.create(name: "Teaster Hempernistal", address: "47 W 8th St
+New York, NY 10011", phone_number: "(347) 475-1513", cuisine: "Italian",
+image: File.open("app/assets/images/business_images/italian.jpg"))
+
+Business.create(name: "Bigdalia Amore Mia", address: "75 9th Ave
+New York, NY 10011", phone_number: "(212) 989-6699", cuisine: "Italian",
+image: File.open("app/assets/images/business_images/italian2.jpg"))
+
+Business.create(name: "Panales", address: "1411 2nd Ave
+New York, NY 10021", phone_number: "(212) 256-1188", cuisine: "Italian",
+image: File.open("app/assets/images/business_images/italian3.jpg"))
+
+Business.create(name: "Arigato", address: "68 Clinton St
+New York, NY 10002", phone_number: "(347) 704-2398", cuisine: "Japanese",
+image: File.open("app/assets/images/business_images/japanese1.jpg"))
+
+Business.create(name: "Samuri Moma", address: "307 W 47th St
+New York, NY 10036", phone_number: "(646) 918-6923", cuisine: "Japanese",
+image: File.open("app/assets/images/business_images/japanese3.jpg"))
+
+Business.create(name: "Desde", address: "34-20 Broadway
+Astoria, NY 11106", phone_number: "(917) 745-0407", cuisine: "Pizza",
+image: File.open("app/assets/images/business_images/pizza.jpg"))
+
+Business.create(name: "Buzz", address: "956 2nd Ave
+New York, NY 10022", phone_number: "(212) 644-2700", cuisine: "Pizza",
+image: File.open("app/assets/images/business_images/pizza2.jpg"))
+
+Business.create(name: "Love Of Pizza", address: "415 Tompkins Ave
+Brooklyn, NY 11216", phone_number: "(718) 483-9111", cuisine: "Pizza",
+image: File.open("app/assets/images/business_images/pizza4.jpg"))
+
+Business.create(name: "Sharkteeth", address: "55 Water St
+Brooklyn, NY 11201", phone_number: "(718) 650-3900", cuisine: "Seafood",
+image: File.open("app/assets/images/business_images/seafood.jpg"))
+
+Business.create(name: "Carolina", address: "155 5th Ave
+Brooklyn, NY 11217", phone_number: "(760) 231-6025", cuisine: "Steakhouse",
+image: File.open("app/assets/images/business_images/steakhouse.jpg"))
+
+Business.create(name: "Ed's", address: "110 Waverly Pl
+New York, NY 10011", phone_number: "(212) 777-0303", cuisine: "Steakhouse",
+image: File.open("app/assets/images/business_images/steakhouse2.jpg"))
+
+Business.create(name: "The Workroom", address: "34 W 35th St
+New York, NY 10001", phone_number: "(212) 564-4430", cuisine: "Steakhouse",
+image: File.open("app/assets/images/business_images/steakhouse3.jpg"))
+
+Business.create(name: "Magna Carta", address: "454 Van Brunt St
+Brooklyn, NY 11231", phone_number: "(347) 294-4644", cuisine: "Steakhouse",
+image: File.open("app/assets/images/business_images/steakhouse5.jpg"))
+
+Business.create(name: "Steak House 88", address: "766 9th Ave
+New York, NY 10019", phone_number: "(212) 581-0999", cuisine: "Steakhouse",
+image: File.open("app/assets/images/business_images/steakhouse6.jpg"))
+
+
+Business.create(name: "Think Coffe", address: "1415 Second Ave
+New York, NY 10021", phone_number: "(347) 894-5909", cuisine: "Steakhouse",
+image: File.open("app/assets/images/business_images/thinkcoffee.jpg"))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
