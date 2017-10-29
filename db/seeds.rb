@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+Business.destroy_all
 
 Business.create(name: "Hamburger Chilli", address: "701 Flatbush Ave
 Brooklyn, NY 11225", phone_number: "(718) 333-5099", cuisine: "American",
@@ -24,7 +24,7 @@ image: File.open("app/assets/images/business_images/bar.jpg"))
 
 Business.create(name: "Old Town Bar", address: "39 W 19th St
 New York, NY 10011", phone_number: "(646) 833-7532", cuisine: "Bar",
-image: File.open("app/assets/images/business_images/bar.jpg"))
+image: File.open("app/assets/images/business_images/bar2.jpg"))
 
 Business.create(name: "Central Cafe", address: "95 1st Ave
 New York, NY 10003", phone_number: "(646) 791-5400", cuisine: "Cafe",
@@ -36,7 +36,7 @@ image: File.open("app/assets/images/business_images/chinese.jpg"))
 
 Business.create(name: "Coughing Coffee", address: "9 Pell St
 New York, NY 10013", phone_number: "(212) 233-8888", cuisine: "Coffee",
-image: File.open("app/assets/images/business_images/coffee.jpg"))
+image: File.open("app/assets/images/business_images/coffe.jpg"))
 
 Business.create(name: "The Frenchie", address: "244 Smith St
 Brooklyn, NY 11231", phone_number: "(347) 204-2545", cuisine: "Coffee",
@@ -82,7 +82,7 @@ Business.create(name: "Grocer", address: "82 Reade St
 New York, NY 10007", phone_number: "(212) 267-3000", cuisine: "Diner",
 image: File.open("app/assets/images/business_images/diner2.jpg"))
 
-usiness.create(name: "All Night", address: "37-11 30th Ave
+Business.create(name: "All Night", address: "37-11 30th Ave
 Astoria, NY 11103", phone_number: "(718) 606-1900", cuisine: "Diner",
 image: File.open("app/assets/images/business_images/diner3.jpg"))
 
