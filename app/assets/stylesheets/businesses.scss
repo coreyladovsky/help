@@ -1,11 +1,19 @@
 // Place all the styles related to the businesses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.all-biz {
+    display: flex;
+    justify-content: space-between;
+    width: 630px;
+    margin-bottom: 12px;
+    border-top: 1px solid #E6E6E6;
+}
 
 .biz-item {
   margin-top: 17px;
   margin-left: 28px;
   font-family: sans-serif;
+
 }
 
 .business-photo {
@@ -14,14 +22,12 @@
   border-radius: 5px;
 }
 
-.biz-photo-li {
 
-}
 
 .list-item {
-  width: 630px;
+  width: 100%;
   height: 120px;
-  border-top: 1px solid #E6E6E6;
+
   display: flex;
 
 }
@@ -45,25 +51,55 @@
 
 
 .after-biz-photo {
-  margin-right: 70px; 
+  margin-right: 70px;
+}
+
+.business-info {
+  font-size: 14px;
+  width: 219px;
+  color: #333333;
+}
+
+.biz-info-div {
+  margin-top: 19px;
+
 }
 
 
+.rating-bar-line {
+  display: flex;
+  margin-left: 12px;
+}
+
+.price-cuisine {
+  display: flex;
+  margin-left: 12px;
+}
+
+.period {
+  color: #999;
+  width: 5px;
+  margin-bottom: 7px;
+  margin-left: 4px;
+  padding-right: 10px;
+}
 
 
+.period-container {
+  width: 5px;
+  margin-bottom: 7px;
+}
 
+.cuisine {
+  margin-left: 8px;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #0073BB;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+.cuisine:hover {
+  text-decoration: underline;
+}
 
 
 

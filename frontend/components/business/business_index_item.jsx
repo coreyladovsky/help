@@ -8,6 +8,8 @@ class BusinessIndexItem extends React.Component {
     let parsed = parser.parseLocation(this.props.business.address);
   return(
     <div>
+
+    <div className="all-biz">
       <ul className="list-item">
         <li className="biz-photo-li">
           <Link to={ `/businesses/${this.props.business.id}`}><img className="business-photo" src={this.props.business.image} /></Link>
@@ -20,22 +22,37 @@ class BusinessIndexItem extends React.Component {
               {this.props.idx + 1 + "."}
             </li>
             <li className="biz-name-link">
-              <Link to={'/businesses/${this.props.business.id}'}>{this.props.business.name}</Link>
+              <Link to={`/businesses/${this.props.business.name}`}>{this.props.business.name}</Link>
             </li>
 
           </ul>
-          <li>  {this.props.business.cuisine}</li>
-
-      </li>
-      <li>
-          <ul className="business-info">
-            <li>{parsed.zip}</li>
-            <li>{this.props.business.phone_number}</li>
+          <ul className="rating-bar-line">
+            <li>Rating</li>
+            <li>#</li>
+            <li>reviews</li>
           </ul>
+          <ul className="price-cuisine">
+            <li>price</li>
+            <li ><div className="period-container"><div className="period">·</div></div> </li>
+            <li className="cuisine">
+                <Link to={'/search'}>{this.props.business.cuisine}</Link>
+
+            </li>
+          </ul>
+
+
       </li>
     </ul>
+      <div className="biz-info-div">
+          <ul className="business-info">
+            <li>{(parsed.number + " " + parsed.prefix + " " + parsed.street + " " + parsed.type).replace("undefined", "")}</li>
+            <li>{(parsed.city + " " + parsed.state + " " + parsed.zip).replace("undefined", "")}</li>
+            <li>{this.props.business.phone_number}</li>
+          </ul>
+      </div>
 
     </div>
+  </div>
   );
   }
 }
