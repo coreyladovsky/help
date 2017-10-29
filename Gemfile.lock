@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    Indirizzo (0.1.7)
     actioncable (5.1.4)
       actionpack (= 5.1.4)
       nio4r (~> 2.0)
@@ -219,6 +220,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  Indirizzo
   annotate
   aws-sdk (< 3.0)
   bcrypt (~> 3.1.7)
