@@ -2,7 +2,7 @@ class User < ApplicationRecord
   validates :email, :password_digest, :session_token, presence: true
   validates :first_name, :last_name, :zip_code, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
-  validates :email, uniqueness: true 
+  validates :email, uniqueness: true
   after_initialize :ensure_session_token
   attr_reader :password
 
@@ -29,5 +29,8 @@ class User < ApplicationRecord
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64(16)
   end
+
+  has_attached_file :image, default_url: "default.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
 end
