@@ -9,5 +9,5 @@ json.reviews do
 end
 
 json.photos do
-  json.array! @business.photos, partial: 'api/photos/phot', as: :photo
-end 
+  json.array! @business.photos, partial: 'api/photos/photo', as: :photo
+end

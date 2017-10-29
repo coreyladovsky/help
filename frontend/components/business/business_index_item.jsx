@@ -23,7 +23,7 @@ class BusinessIndexItem extends React.Component {
               {this.props.idx + 1 + "."}
             </li>
             <li className="biz-name-link">
-              <Link to={`/businesses/${this.props.business.name}`}>{this.props.business.name}</Link>
+              <Link to={`/businesses/${this.props.business.id}`}>{this.props.business.name}</Link>
             </li>
 
           </ul>
