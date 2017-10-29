@@ -4,12 +4,11 @@ import { Link, withRouter } from 'react-router-dom';
 class BusinessIndexItem extends React.Component {
 
   render() {
-
   return(
     <div>
       <ul>
         <li>
-          <Link to={ `/businesses/${this.props.business.id}`}><img src={window.default} /></Link>
+          <Link to={ `/businesses/${this.props.business.id}`}><img className="business-photo" src={this.props.business.image} /></Link>
         </li>
         <li>
           {this.props.idx + 1}
