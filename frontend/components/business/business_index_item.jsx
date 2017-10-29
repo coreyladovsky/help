@@ -7,8 +7,9 @@ class BusinessIndexItem extends React.Component {
   render() {
     let parsed = parser.parseLocation(this.props.business.address);
   return(
-    <div>
-
+    <div className="main-div">
+      <ul className="holding-box">
+        <li className="biz-content" >
     <div className="all-biz">
       <ul className="list-item">
         <li className="biz-photo-li">
@@ -52,6 +53,11 @@ class BusinessIndexItem extends React.Component {
       </div>
 
     </div>
+    </li>
+    <li className="map">
+
+    </li>
+  </ul>
   </div>
   );
   }

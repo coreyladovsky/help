@@ -1,12 +1,26 @@
 // Place all the styles related to the businesses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.main-div {
+  margin: 0 auto;
+  justify-content: center;
+  width: 100%;
+}
+
+.holding-box {
+  max-width: 1100px;
+  display: flex;
+  margin: 0 auto;
+
+}
 .all-biz {
     display: flex;
     justify-content: space-between;
     width: 630px;
     margin-bottom: 12px;
     border-top: 1px solid #E6E6E6;
+    margin: 0 auto;
 }
 
 .biz-item {
@@ -50,9 +64,7 @@
 }
 
 
-.after-biz-photo {
-  margin-right: 70px;
-}
+
 
 .business-info {
   font-size: 14px;
@@ -61,19 +73,25 @@
 }
 
 .biz-info-div {
-  margin-top: 19px;
+  margin-top: 35px;
 
+}
+
+.index-and-name {
+  margin-top: 5px;
 }
 
 
 .rating-bar-line {
   display: flex;
   margin-left: 12px;
+  margin-top: 5px;
 }
 
 .price-cuisine {
   display: flex;
   margin-left: 12px;
+  margin-top: 5px;
 }
 
 .period {
