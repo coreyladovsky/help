@@ -1,19 +1,29 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import NavBar from "../NavBar";
+import { connect } from 'react-redux';
+import ReviewsIndex from './reviews_index';
+import { fetchReviews } from '../../actions/reviews_actions';
+import { logout, clearPage, nextPage } from '../../actions/session_actions';
 
-class ReviewsContainer extends React.Component {
+const mapStateToProps = (state, ownProps) => {
+  return ({
+    reviews: state.business.reviewIds,
+    currentUser: state.session.currentUser,
+    intendedPage: state.intendedPage
+  });
+};
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+
+  return ({
+    fetchReviews: () => dispatch(fetchReviews()),
+    logout: ()=> dispatch(logout()),
+    clearPage: () => dispatch(clearPage()),
+    nextPage: (page) => dispatch(nextPage(page))
+
+  });
+};
 
 
-  render(){
-    return(
-      <div>
-        <NavBar />
-
-        <Link to={'/'} className="help-landing">Click Me To Go HOME</Link></div>
-    );
-  }
-}
-
-
-export default ReviewsContainer;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ReviewsIndex);

@@ -2,7 +2,7 @@ class Api::ReviewsController < ApplicationController
 
 
   def index
-    @reviews = Reviw.all
+    @reviews = Review.all
   end
 
   def new
@@ -14,7 +14,7 @@ class Api::ReviewsController < ApplicationController
     @review.user_id = current_user
     if @review.save
       business = @review.business_id
-      render json: business, include: [:reviws]
+      render json: business, include: [:reviews]
     else
       render json: @review.errors.full_messages, status: 422
     end
@@ -28,7 +28,7 @@ class Api::ReviewsController < ApplicationController
     @review = current_user.reviews.find(params[:id])
     business = @review.business_id
     @review.destory!
-    render json: business 
+    render json: business
   end
 
   private

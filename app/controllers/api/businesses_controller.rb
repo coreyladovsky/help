@@ -1,6 +1,6 @@
 class Api::BusinessesController < ApplicationController
   def index
-    @businesses = Business.all
+    @businesses = Business.all.includes(:reviews) # running a class method to get average rating for all of these businesses
   end
 
   def show
