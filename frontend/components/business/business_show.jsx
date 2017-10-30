@@ -12,66 +12,82 @@ class BusinessShow extends React.Component {
   }
 
   render() {
-
+    if(this.props.business === undefined) {
+      return null;
+    } else {
     return(
       <div>
           <NavBar currentUser={this.props.currentUser} intendedPage={this.props.intendedPage} logout={this.props.logout} nextPage={this.props.nextPage} clearPage={this.props.clearPage}/>
 
+          <div className="main-div">
 
-          <ul>
+          <ul className="biz-show-head">
             <ul>
-              <li>
+              <li className="biz-name-main">
                 {this.props.business.name}
               </li>
               <li>
-                <ul>
-                  <li>
+                <ul className="rating-review-show">
+                  <li className="star-rating-show">
                     stars
                   </li>
-                  <li>
+                  <li className="review-number-show">
                     #
                   </li>
-                  <li>
+                  <li className="review-text-show">
                     reviews
                   </li>
                 </ul>
-                <ul>
-                  <li>
+                <ul className="price-cuisine-show">
+                  <li className="price-show">
                     dollar signs
                   </li>
-                  <li>
-                    {this.props.business.cuisine}
+                  <li ><div className="period-container"><div className="period">·</div></div> </li>
+                  <li className="cusine-link-show">
+                    <Link to={'/search'}>
+                      {this.props.business.cuisine}
+                    </Link>
                   </li>
                 </ul>
+                <li>
+                  <div className="map-show">
+                    Map Box
+                  </div>
+                </li>
               </li>
             </ul>
-            <li>
-              <button>Write a Review</button>
-            </li>
-            <li>
-              <button>Add Photo</button>
-            </li>
+            <ul>
+
+            <ul className="add-buttons-show">
+              <li className="review-button-show">
+                <button className="review-button-button-show"><i className="fa fa-star" aria-hidden="true"></i> Write a Review</button>
+              </li>
+              <li className="photo-button-show">
+                <button className="add-photo-show"><i class="fa fa-camera" aria-hidden="true"></i>Add Photo</button>
+              </li>
+            </ul>
+            <div>
+              <ul className="picture-list-show">
+                <li className="first-photo-show">
+                  <Link to={"/business/photos"}>Picture 1</Link>
+                </li>
+                <li className="second-photo-show">
+                  <Link to={"/business/photos"}>Picture 2</Link>
+                </li>
+                <li className="third-photo-show">
+                  <Link to={"/business/photos"}>See all photos</Link>
+                </li>
+              </ul>
+            </div>
           </ul>
-          <div>
-            Map Box
-          </div>
+          </ul>
 
-          <div>
-            <ul>
-              <li>
-                <Link to={"/business/photos"}>Picture 1</Link>
-              </li>
-              <li>
-                <Link to={"/business/photos"}>Picture 2</Link>
-              </li>
-              <li>
-                <Link to={"/business/photos"}>See all photos</Link>
-              </li>
-            </ul>
-          </div>
 
-          <div>
-            <ul>
+
+
+          <div className="main-div">
+            <div className="hours-div-show">Hours</div>
+            <ul className="hours-open-show">
               <li>
                 Mon
               </li>
@@ -95,9 +111,10 @@ class BusinessShow extends React.Component {
               </li>
             </ul>
           </div>
+        </div>
       </div>
 
-    );
+    );}
   }
 }
 
