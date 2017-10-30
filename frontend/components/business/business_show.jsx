@@ -7,6 +7,10 @@ class BusinessShow extends React.Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
     this.clickHandler = this.clickHandler.bind(this);
+    this.hours = this.hours.bind(this);
+    this.ampm = this.ampm.bind(this);
+    this.hour = this.hour.bind(this);
+    this.min = this.min.bind(this);
   }
 
   handleClick(event) {
@@ -21,8 +25,62 @@ class BusinessShow extends React.Component {
     this.props.fetchBusiness(this.props.match.params.businessId);
   }
 
-  hours() {
-    let days = ["mon", "tue", "wed", "thur", "fri", "sat", "sun"]; 
+  ampm(time) {
+    let ampm;
+    if(time >= 24) {
+      ampm = "am";
+    }else if(time > 12) {
+      ampm = "pm";
+    } else {
+      ampm = "am";
+    }
+    return ampm;
+  }
+
+  hour(time) {
+    let hour;
+    if(time === 12 || time === 24){
+       hour = 12;
+    } else {
+       hour = Math.floor(time % 12);
+    }
+    return hour;
+  }
+
+  min(time) {
+    let min;
+    if((time + "").includes(".")){
+      min = parseInt(`${time}`.split(".")[1]);
+
+    } else {
+      min = 0 ;
+    }
+    return min;
+  }
+
+
+  hours(start_time, end_time) {
+    if(start_time == 0 && end_time === 0) {
+      return "closed";
+    } else if (start_time === 0 && end_time === 24) {
+      return `12:00 am - $12:00 am`;
+    }
+    let start_ampm = this.ampm(start_time);
+    let end_ampm = this.ampm(end_time);
+    let start_hour = this.hour(start_time);
+    let end_hour = this.hour(end_time);
+
+    let start_min = this.min(start_time);
+    let end_min = this.min(end_time);
+
+    if(start_min < 10) {
+      start_min = "0" + start_min;
+    }
+    if(end_min < 10) {
+      end_min = "0" + end_min;
+    }
+    return `${start_hour}:${start_min} ${start_ampm} - ${end_hour}:${end_min} ${end_ampm}`;
+
   }
 
   render() {
@@ -107,27 +165,62 @@ class BusinessShow extends React.Component {
 
             <div className="hours-div-show">Hours</div>
             <ul className="hours-open-show">
-              <li>
-                Mon
-              </li>
-              <li>
-                Tue
-              </li>
-              <li>
-                Wed
-              </li>
-              <li>
-                Thur
-              </li>
-              <li>
-                Fri
-              </li>
-              <li>
-                Sat
-              </li>
-              <li>
-                Sun
-              </li>
+              <ul>
+                <li>
+                  Mon
+                </li>
+                <li>
+                  <div>{this.hours(this.props.business.mon_start_time, this.props.business.mon_end_time)}</div>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  Tue
+                </li>
+                <li>
+                  <div>{this.hours(this.props.business.tue_start_time, this.props.business.tue_end_time)}</div>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  Wed
+                </li>
+                <li>
+                  <div>{this.hours(this.props.business.wed_start_time, this.props.business.wed_end_time)}</div>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  Thu
+                </li>
+                <li>
+                  <div>{this.hours(this.props.business.thur_start_time, this.props.business.thur_end_time)}</div>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  Fri
+                </li>
+                <li>
+                  <div>{this.hours(this.props.business.fri_start_time, this.props.business.fri_end_time)}</div>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  Sat
+                </li>
+                <li>
+                  <div>{this.hours(this.props.business.sat_start_time, this.props.business.sat_end_time)}</div>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  Sun
+                </li>
+                <li>
+                  <div>{this.hours(this.props.business.sun_start_time, this.props.business.sun_end_time)}</div>
+                </li>
+              </ul>
             </ul>
           </div>
         </div>
