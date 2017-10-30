@@ -63,7 +63,7 @@ class BusinessShow extends React.Component {
     if(start_time == 0 && end_time === 0) {
       return "closed";
     } else if (start_time === 0 && end_time === 24) {
-      return `12:00 am - $12:00 am`;
+      return `12:00 am - 12:00 am`;
     }
     let start_ampm = this.ampm(start_time);
     let end_ampm = this.ampm(end_time);
@@ -131,11 +131,11 @@ class BusinessShow extends React.Component {
             <ul>
 
             <ul className="add-buttons-show">
-              <li className="review-button-show">
-                <Link to={'/reviews'} onClick={this.handleClick} className="review-button-button-show"><i className="fa fa-star" aria-hidden="true"></i> Write a Review</Link>
+              <li className="review-button-button-show">
+                <Link to={'/reviews'} onClick={this.handleClick} className="review-button-show"><i className="fa fa-star" aria-hidden="true"></i> Write a Review</Link>
               </li>
-              <li className="photo-button-show">
-                <Link to={'/photos'} className="add-photo-show" onClick={this.clickHandler}><i class="fa fa-camera" aria-hidden="true"></i>Add Photo</Link>
+              <li className="add-photo-sho">
+                <Link to={'/photos'} className="photo-button-show" onClick={this.clickHandler}><i class="fa fa-camera" aria-hidden="true"></i>Add Photo</Link>
               </li>
             </ul>
             <div>
@@ -164,59 +164,56 @@ class BusinessShow extends React.Component {
             <div className="all-hours-show">
 
             <div className="hours-div-show">Hours</div>
-            <ul className="hours-open-show">
-              <ul>
-                <li>
+            <ul className="hour-container-show">
+              <ul className="hours-open-show">
+                <li className="week-day">
                   Mon
                 </li>
-                <li>
-                  <div>{this.hours(this.props.business.mon_start_time, this.props.business.mon_end_time)}</div>
+
+                <li className="week-day">
+                  Tue
+                </li>
+                <li className="week-day">
+                  Wed
+                </li>
+                <li className="week-day">
+                  Thu
+                </li>
+                <li className="week-day">
+                  Fri
+                </li>
+                <li className="week-day">
+                  Sat
+                </li>
+                <li className="week-day">
+                  Sun
                 </li>
               </ul>
               <ul>
                 <li>
-                  Tue
+                  <div>{this.hours(this.props.business.mon_start_time, this.props.business.mon_end_time)}</div>
                 </li>
                 <li>
                   <div>{this.hours(this.props.business.tue_start_time, this.props.business.tue_end_time)}</div>
                 </li>
-              </ul>
-              <ul>
-                <li>
-                  Wed
-                </li>
+
                 <li>
                   <div>{this.hours(this.props.business.wed_start_time, this.props.business.wed_end_time)}</div>
                 </li>
-              </ul>
-              <ul>
-                <li>
-                  Thu
-                </li>
+
                 <li>
                   <div>{this.hours(this.props.business.thur_start_time, this.props.business.thur_end_time)}</div>
                 </li>
-              </ul>
-              <ul>
-                <li>
-                  Fri
-                </li>
+
                 <li>
                   <div>{this.hours(this.props.business.fri_start_time, this.props.business.fri_end_time)}</div>
                 </li>
-              </ul>
-              <ul>
-                <li>
-                  Sat
-                </li>
+
                 <li>
                   <div>{this.hours(this.props.business.sat_start_time, this.props.business.sat_end_time)}</div>
                 </li>
-              </ul>
-              <ul>
-                <li>
-                  Sun
-                </li>
+
+
                 <li>
                   <div>{this.hours(this.props.business.sun_start_time, this.props.business.sun_end_time)}</div>
                 </li>
@@ -225,6 +222,7 @@ class BusinessShow extends React.Component {
           </div>
         </div>
         </div>
+
       </div>
 
     );}

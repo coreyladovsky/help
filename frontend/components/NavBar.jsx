@@ -55,7 +55,7 @@ class NavBar extends React.Component {
 
             <ul className="thin-red-nav-bar">
               <li className="review-nav">
-                <Link to={'/reviews'} onClick={this.clickHandler}>Write a Review</Link>
+      
               </li>
               <li className="review-nav">
                 {this.loginLink()}
