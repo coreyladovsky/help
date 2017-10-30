@@ -5,6 +5,11 @@ import { Link } from 'react-router-dom';
 class BusinessShow extends React.Component {
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(event) {
+    this.props.nextPage(`${this.props.location.pathname}/reviews`);
   }
 
   componentDidMount() {
@@ -60,7 +65,7 @@ class BusinessShow extends React.Component {
 
             <ul className="add-buttons-show">
               <li className="review-button-show">
-                <button className="review-button-button-show"><i className="fa fa-star" aria-hidden="true"></i> Write a Review</button>
+                <Link to={'/reviews'} onClick={this.handleClick} className="review-button-button-show"><i className="fa fa-star" aria-hidden="true"></i> Write a Review</Link>
               </li>
               <li className="photo-button-show">
                 <button className="add-photo-show"><i class="fa fa-camera" aria-hidden="true"></i>Add Photo</button>
@@ -85,7 +90,12 @@ class BusinessShow extends React.Component {
 
 
 
-          <div className="main-div">
+          <div className="biz-show-head">
+            <div className="biz-show-reviews">
+              Reviews
+            </div>
+            <div className="all-hours-show">
+
             <div className="hours-div-show">Hours</div>
             <ul className="hours-open-show">
               <li>
@@ -111,6 +121,7 @@ class BusinessShow extends React.Component {
               </li>
             </ul>
           </div>
+        </div>
         </div>
       </div>
 
