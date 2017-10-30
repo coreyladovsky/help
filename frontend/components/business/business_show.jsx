@@ -6,14 +6,23 @@ class BusinessShow extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.clickHandler = this.clickHandler.bind(this);
   }
 
   handleClick(event) {
     this.props.nextPage(`${this.props.location.pathname}/reviews`);
   }
 
+  clickHandler(event) {
+    this.props.nextPage(`${this.props.location.pathname}/photos/new`);
+  }
+
   componentDidMount() {
     this.props.fetchBusiness(this.props.match.params.businessId);
+  }
+
+  hours() {
+    let days = ["mon", "tue", "wed", "thur", "fri", "sat", "sun"]; 
   }
 
   render() {
@@ -68,7 +77,7 @@ class BusinessShow extends React.Component {
                 <Link to={'/reviews'} onClick={this.handleClick} className="review-button-button-show"><i className="fa fa-star" aria-hidden="true"></i> Write a Review</Link>
               </li>
               <li className="photo-button-show">
-                <button className="add-photo-show"><i class="fa fa-camera" aria-hidden="true"></i>Add Photo</button>
+                <Link to={'/photos'} className="add-photo-show" onClick={this.clickHandler}><i class="fa fa-camera" aria-hidden="true"></i>Add Photo</Link>
               </li>
             </ul>
             <div>
