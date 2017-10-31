@@ -39,3 +39,8 @@ if(this.props.currentUser) {
 }
 
 {name: "pauls", address: "567 jflajds", cuisine: "chinese", phone_number: "543-43534-34"}
+
+
+
+
+user_id: 1, business_id: 3, body: "This is the greatest place!", rating:5, price_range:3, noise_level:2, delivery: false 
