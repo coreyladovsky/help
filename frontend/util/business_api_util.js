@@ -28,6 +28,6 @@ export const createBusiness = (data) => (
 export const fetchReviewers = (businessId) => (
   $.ajax({
     method: "GET",
-    url: 'api/businesses/' + businessId + 'reviewers'
+    url: 'api/businesses/' + businessId + '/reviewers'
   })
 );
