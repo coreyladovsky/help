@@ -3,11 +3,11 @@ import * as BusinessAPIUtil from '../util/business_api_util';
 
 export const RECEIVE_BUSINESSES = "RECEIVE_BUSINESSES";
 export const RECEIVE_BUSINESS = "RECEIVE_BUSINESS";
-export const RECEIVE_USERS = "RECEIVE_USERS";
+export const RECEIVE_REVIEWERS = "RECEIVE_USERS";
 
 
 export const receiveReviewers = (reviewers) => ({
-  type: RECEIVE_USERS,
+  type: RECEIVE_REVIEWERS,
   reviewers
 });
 

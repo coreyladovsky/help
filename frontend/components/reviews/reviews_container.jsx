@@ -3,6 +3,7 @@ import ReviewIndex from './review_index';
 import { fetchReview } from '../../actions/review_actions';
 import { logout, clearPage, nextPage } from '../../actions/session_actions';
 import { fetchUser } from '../../actions/user_actions';
+import { fetchReviewers } from '../../actions/business_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
@@ -10,14 +11,14 @@ const mapStateToProps = (state, ownProps) => {
     businessId: ownProps.businessId,
     currentUser: state.session.currentUser,
     intendedPage: state.intendedPage,
-    users: state.users
+    reviewers: state.reviewers
   });
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
 
   return ({
-    fetchReview: (reviewId) => dispatch(fetchReview(reviewId)),
+    fetchReviewers: (businessId) => dispatch(fetchReviewers(businessId)),
     logout: ()=> dispatch(logout()),
     clearPage: () => dispatch(clearPage()),
     nextPage: (page) => dispatch(nextPage(page)),

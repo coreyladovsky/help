@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchBusiness, fetchBusinesses } from '../../actions/business_actions';
+import { fetchBusiness, fetchBusinesses, fetchReviewers } from '../../actions/business_actions';
 import { logout, clearPage, nextPage } from '../../actions/session_actions';
 import BusinessShow from './business_show';
 
@@ -9,7 +9,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
     business,
     currentUser: state.session.currentUser,
-    intendedPage: state.intendedPage
+    intendedPage: state.intendedPage,
+    reviewers: state.reviewers
   };
 };
 
@@ -19,7 +20,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     fetchBusiness: (businessId) => dispatch(fetchBusiness(businessId)),
     logout: ()=> dispatch(logout()),
     clearPage: () => dispatch(clearPage()),
-    nextPage: (page) => dispatch(nextPage(page))
+    nextPage: (page) => dispatch(nextPage(page)),
+    fetchReviewers: (businessId) => dispatch(fetchReviewers(businessId))
   };
 };
 

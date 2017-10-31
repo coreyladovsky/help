@@ -24,6 +24,7 @@ class BusinessShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchBusiness(this.props.match.params.businessId);
+    this.props.fetchReviewers(this.props.match.params.businessId);
   }
 
   ampm(time) {
@@ -161,9 +162,9 @@ class BusinessShow extends React.Component {
 
           <div className="biz-show-head">
             <div className="biz-show-reviews">
-              Reviews
+              <div className="biz-show-reviews-text">Reviews</div>
               <ul>
-                <ReviewsContainer businessId={this.props.business.id}/>
+                <ReviewsContainer businessId={this.props.business.id} reviewers={this.props.reviewers}/>
               </ul>
             </div>
             <div className="all-hours-show">
