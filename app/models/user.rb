@@ -7,7 +7,7 @@ class User < ApplicationRecord
   attr_reader :password
 
   has_many :reviews
-  has_many :photos 
+  has_many :photos
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
@@ -33,7 +33,7 @@ class User < ApplicationRecord
     self.session_token ||= SecureRandom.urlsafe_base64(16)
   end
 
-  has_attached_file :image, default_url: "default.png"
+  has_attached_file :image, default_url: "default.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
 end

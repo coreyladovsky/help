@@ -14,7 +14,7 @@ class BusinessShow extends React.Component {
   }
 
   handleClick(event) {
-    this.props.nextPage(`${this.props.location.pathname}/reviews`);
+    this.props.nextPage(`${this.props.location.pathname}/reviews/new`);
   }
 
   clickHandler(event) {

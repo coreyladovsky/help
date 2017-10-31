@@ -1,16 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import NavBar from "../NavBar";
+
 
 class ReviewsContainer extends React.Component {
+  constructor(props) {
+    super(props);
 
+  }
 
   render(){
     return(
       <div>
-        <NavBar />
+        <ul>
+          <ul className="user-info-comment">
+            <li>
+              {this.props}
+            </li>
+          </ul>
 
-        <Link to={'/'} className="help-landing">Click Me To Go HOME</Link></div>
+        </ul>
+        {this.props.review.created_at}
+        {this.props.review.body}
+      </div>
     );
   }
 }
