@@ -37,6 +37,12 @@ class Api::BusinessesController < ApplicationController
     end
   end
 
+  def reviewers
+    @business = Business.includes(:reviewers).find(params[:id])
+    @users = @business.reviewers
+    render :reviewers
+  end
+
   private
 
   def business_params

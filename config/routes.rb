@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resource :session, only: [:new, :create, :destroy]
     resources :businesses do
       resources :reviews, except: [:show, :destroy]
+      get "reviewers", on: :member
     end
     resources :reviews, only: [:show, :destroy]
   end

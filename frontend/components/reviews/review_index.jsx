@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from '../NavBar';
+import ReviewIndexItem from './review_index_item';
 
 class ReviewIndex extends React.Component {
   constructor(props) {
@@ -7,13 +8,16 @@ class ReviewIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchReviews();
+    this.props.fetchUser(this.props.review.user_id);
   }
 
 
   render(){
-    const reviews = this.props.business.reviews.map((review) => {
-      return <ReviewIndexItem key={review.id} review={review} />;
+    if(this.props.reviews === undefined) {
+      return null;
+    } else {
+    const reviews = this.props.reviews.map((review) => {
+      return <ReviewIndexItem key={review.id} review={review} fetchUser={this.props.fetchUser} user={this.props.users[review.user_id]}/>;
     });
 
     return(
@@ -22,7 +26,7 @@ class ReviewIndex extends React.Component {
           {reviews}
         </ul>
       </div>
-    );
+    );}
   }
 
 }

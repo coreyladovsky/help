@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from '../NavBar';
 import { Link } from 'react-router-dom';
+import ReviewsContainer from '../reviews/reviews_container';
 
 class BusinessShow extends React.Component {
   constructor(props) {
@@ -121,11 +122,12 @@ class BusinessShow extends React.Component {
                     </Link>
                   </li>
                 </ul>
-                <li>
+
+                <ul>
                   <div className="map-show">
                     Map Box
                   </div>
-                </li>
+                </ul>
               </li>
             </ul>
             <ul>
@@ -135,7 +137,7 @@ class BusinessShow extends React.Component {
                 <Link to={'/reviews'} onClick={this.handleClick} className="review-button-show"><i className="fa fa-star" aria-hidden="true"></i> Write a Review</Link>
               </li>
               <li className="add-photo-sho">
-                <Link to={'/photos'} className="photo-button-show" onClick={this.clickHandler}><i class="fa fa-camera" aria-hidden="true"></i>Add Photo</Link>
+                <Link to={'/photos'} className="photo-button-show" onClick={this.clickHandler}><i className="fa fa-camera" aria-hidden="true"></i>Add Photo</Link>
               </li>
             </ul>
             <div>
@@ -160,6 +162,9 @@ class BusinessShow extends React.Component {
           <div className="biz-show-head">
             <div className="biz-show-reviews">
               Reviews
+              <ul>
+                <ReviewsContainer businessId={this.props.business.id}/>
+              </ul>
             </div>
             <div className="all-hours-show">
 

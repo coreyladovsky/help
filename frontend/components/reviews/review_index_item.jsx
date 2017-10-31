@@ -2,19 +2,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-class ReviewsContainer extends React.Component {
+class ReviewIndexItem extends React.Component {
   constructor(props) {
     super(props);
 
   }
 
+  componentDidMount() {
+
+  }
+
   render(){
+
     return(
       <div>
         <ul>
           <ul className="user-info-comment">
             <li>
-              {this.props}
+              {this.props.user ? this.props.user.first_name : ""}
             </li>
           </ul>
 
@@ -27,4 +32,4 @@ class ReviewsContainer extends React.Component {
 }
 
 
-export default ReviewsContainer;
+export default ReviewIndexItem;

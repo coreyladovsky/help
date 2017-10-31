@@ -12,7 +12,7 @@ const RootReducer = combineReducers({
     business: BusinessReducer,
     intendedPage: PageReducer,
     reviews: ReviewReducer,
-    user: UserReducer
+    users: UserReducer
 });
 
 export default RootReducer;
