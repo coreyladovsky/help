@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import ReviewsIndex from './reviews_index';
-import { fetchReviews } from '../../actions/reviews_actions';
+import ReviewIndex from './review_index';
+import { fetchReviews } from '../../actions/review_actions';
 import { logout, clearPage, nextPage } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -26,4 +26,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ReviewsIndex);
+)(ReviewIndex);

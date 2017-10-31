@@ -5,6 +5,7 @@ import { logout, clearPage, nextPage } from '../../actions/session_actions';
 import BusinessShow from './business_show';
 
 const mapStateToProps = (state, ownProps) => {
+  debugger
   let business = state.business[ownProps.match.params.businessId];
   return {
     business,
