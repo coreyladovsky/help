@@ -52,12 +52,12 @@ class ReviewForm extends React.Component {
       }).then(()=> this.props.history.push(`/businesses/${this.props.match.params.businessId}`));;
     }
   }
-
-  // checkedCheck(arg1, arg2) {
-  //   if(arg1 === arg2) {
-  //     return "checked";
-  //   }
-  // }
+    //not using this at the moment 
+  checkedCheck(arg1, arg2) {
+    if(arg1 === arg2) {
+      return "checked";
+    }
+  }
 
   bodyChange(event) {
     this.setState({bodyValue: event.target.value});

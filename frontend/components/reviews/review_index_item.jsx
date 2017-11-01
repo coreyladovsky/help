@@ -18,7 +18,9 @@ class ReviewIndexItem extends React.Component {
   }
 
   editLink() {
-    if(this.props.user.id === this.props.currentUser.id) {
+    if(this.props.currentUser === null) {
+      return null;
+    } else if (this.props.user.id === this.props.currentUser.id) {
       return(
 
       <ul>
@@ -36,10 +38,10 @@ class ReviewIndexItem extends React.Component {
 
 
   render(){
-    const date = dateFormat(this.props.review.created_at, 'mm/dd/yyyy');
     if(this.props.user === undefined) {
       return null;
     } else {
+      const date = dateFormat(this.props.review.created_at, 'mm/dd/yyyy');
     return(
       <div>
         <ul className="review-container-comment">

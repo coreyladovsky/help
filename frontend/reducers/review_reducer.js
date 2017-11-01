@@ -13,7 +13,7 @@ const ReviewReducer = (oldState = {}, action) => {
       let newState = merge({}, oldState);
       delete newState[action.reviewId];
       return newState;
-    case RECEIVE_BUSINESS: 
+    case RECEIVE_BUSINESS:
       return action.business.reviews;
     default:
       return oldState;
