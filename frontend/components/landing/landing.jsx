@@ -60,7 +60,7 @@ class Landing extends React.Component {
         <header className="landing-header">
           <ul className="landing-header-ul">
             <li>
-              <Link to={"/reviews"} className="review-link" onClick={this.clickHandler}>Write a Review</Link>
+            
             </li>
             <li>
                 {this.logButton()}

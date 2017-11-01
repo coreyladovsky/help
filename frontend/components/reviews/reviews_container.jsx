@@ -7,7 +7,7 @@ import { fetchReviewers } from '../../actions/business_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
-    reviews: state.reviews,
+    reviews: Object.values(state.reviews),
     businessId: ownProps.businessId,
     currentUser: state.session.currentUser,
     intendedPage: state.intendedPage,

@@ -135,7 +135,7 @@ class BusinessShow extends React.Component {
 
             <ul className="add-buttons-show">
               <li className="review-button-button-show">
-                <Link to={`/${this.props.location.pathname}/reviews/new`} onClick={this.handleClick} className="review-button-show"><i className="fa fa-star" aria-hidden="true"></i> Write a Review</Link>
+                <Link to={`${this.props.location.pathname}/reviews/new`} onClick={this.handleClick} className="review-button-show"><i className="fa fa-star" aria-hidden="true"></i> Write a Review</Link>
               </li>
               <li className="add-photo-sho">
                 <Link to={'/photos'} className="photo-button-show" onClick={this.clickHandler}><i className="fa fa-camera" aria-hidden="true"></i>Add Photo</Link>
