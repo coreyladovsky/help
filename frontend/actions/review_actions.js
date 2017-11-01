@@ -1,4 +1,6 @@
 import * as ReviewAPIUtil from '../util/review_api_util';
+import { receiveErrors, RECEIVE_ERRORS } from '../util/session_api_util';
+
 
 
 export const RECEIVE_REVIEWS = "RECEIVE_REVIEWS";
@@ -29,11 +31,13 @@ export const fetchReview = (reviewId) => dispatch => (
 );
 
 export const createReview = (review) => dispatch => (
-  ReviewAPIUtil.createReview(review).then(rev => dispatch(receiveReview(rev)))
+  ReviewAPIUtil.createReview(review).then(rev => dispatch(receiveReview(rev)),
+  errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
 export const updateReview = (reviewId) => dispatch => (
-  ReviewAPIUtil.updateReview(reviewId).then(review => dispatch(receiveReview(review)))
+  ReviewAPIUtil.updateReview(reviewId).then(review => dispatch(receiveReview(review)),
+  errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
 export const deleteReview = (reviewId) => dispatch => (
