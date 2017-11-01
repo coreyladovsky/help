@@ -1,6 +1,6 @@
 class Review < ApplicationRecord
   validates :rating, :body, :user_id, :business_id, presence: true
-
+  validates_uniqueness_of :user_id, scope: :business_id
   belongs_to :user
   belongs_to :business
 

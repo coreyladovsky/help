@@ -14,7 +14,7 @@ const ReviewReducer = (oldState = {}, action) => {
       delete newState[action.reviewId];
       return newState;
     case RECEIVE_BUSINESS:
-      return action.business.reviews;
+      return action.business.reviews || {};
     default:
       return oldState;
   }

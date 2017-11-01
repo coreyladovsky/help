@@ -16,10 +16,12 @@ export const receiveBusinesses = businesses => ({
   businesses
 });
 
-export const receiveBusiness = business => ({
+export const receiveBusiness = business => {
+
+  return ({
   type: RECEIVE_BUSINESS,
   business
-});
+});};
 
 export const fetchBusinesses = () => dispatch => (
   BusinessAPIUtil.fetchBusinesses().then(businesses => dispatch(receiveBusinesses(businesses)))

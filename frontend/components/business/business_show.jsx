@@ -22,6 +22,14 @@ class BusinessShow extends React.Component {
     this.props.nextPage(`${this.props.location.pathname}/photos/new`);
   }
 
+  componentWillReceiveProps(newProps) {
+
+    if(newProps.match.params.businessId !== this.props.match.params.businessId) {
+      this.props.fetchBusiness(newProps.match.params.businessId);
+      this.props.fetchReviewers(newProps.match.params.businessId);
+    }
+  }
+
   componentDidMount() {
     this.props.fetchBusiness(this.props.match.params.businessId);
     this.props.fetchReviewers(this.props.match.params.businessId);
