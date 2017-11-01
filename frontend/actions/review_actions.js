@@ -1,5 +1,5 @@
 import * as ReviewAPIUtil from '../util/review_api_util';
-import { receiveErrors, RECEIVE_ERRORS } from '../util/session_api_util';
+import { receiveErrors, RECEIVE_ERRORS } from './session_actions';
 
 
 

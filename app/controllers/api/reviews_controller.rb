@@ -13,7 +13,7 @@ class Api::ReviewsController < ApplicationController
     @review.business_id = params[:business_id]
     @review.user_id = current_user.id
     if @review.save
-      business = @review.business_id
+      business = @review.business
       render json: business, include: [:reviews]
     else
       render json: @review.errors.full_messages, status: 422
@@ -42,7 +42,7 @@ class Api::ReviewsController < ApplicationController
     @review = current_user.reviews.find(params[:id])
     business = @review.business_id
     @review.destroy!
-    render json: business
+    render json: @review
   end
 
   private

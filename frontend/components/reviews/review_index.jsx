@@ -17,7 +17,7 @@ class ReviewIndex extends React.Component {
       return null;
     } else {
     const reviews = this.props.reviews.map((review) => {
-      return <ReviewIndexItem key={review.id} review={review} fetchReviewers={this.props.fetchReviewers} user={this.props.reviewers[review.user_id]}/>;
+      return <ReviewIndexItem key={review.id} deleteReview={this.props.deleteReview} bizId={this.props.businessId} currentUser={this.props.currentUser} review={review} fetchReviewers={this.props.fetchReviewers} user={this.props.reviewers[review.user_id]}/>;
     });
 
     return(

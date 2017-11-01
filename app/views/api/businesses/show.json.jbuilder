@@ -5,7 +5,11 @@ json.extract! @business, :mon_start_time, :mon_end_time, :tue_start_time, :tue_e
 :sat_start_time, :sat_end_time, :sun_start_time, :sun_end_time,:price_range, :delivery, :noise_level
 
 json.reviews do
-  json.array! @business.reviews, partial: 'api/reviews/review', as: :review
+  @business.reviews.each do |review|
+    json.set! review.id do
+      json.partial! "api/reviews/review", review: review
+    end
+  end
 end
 
 json.photos do

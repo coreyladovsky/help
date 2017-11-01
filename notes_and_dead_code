@@ -43,4 +43,48 @@ if(this.props.currentUser) {
 
 
 
-user_id: 1, business_id: 3, body: "This is the greatest place!", rating:5, price_range:3, noise_level:2, delivery: false 
+user_id: 1, business_id: 3, body: "This is the greatest place!", rating:5, price_range:3, noise_level:2, delivery: false
+
+
+Review.create!(user_id: 2, business_id: 1, body: "This place really knows what's going on. I also am in love with the waitress. This is it babe, I love you.", rating:4, price_range: null, noise_level:4, delivery: null )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /

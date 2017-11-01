@@ -7,7 +7,7 @@ class ReviewIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.handleRating = this.handleRating.bind(this);
-
+    this.editLink = this.editLink.bind(this);
   }
 
   handleRating() {
@@ -15,6 +15,23 @@ class ReviewIndexItem extends React.Component {
     let rating = this.props.review.rating;
     let pic =  picture[rating];
     return <img className="user-review-rating" src={pic}/>;
+  }
+
+  editLink() {
+    if(this.props.user.id === this.props.currentUser.id) {
+      return(
+
+      <ul>
+
+      <li>
+        <Link to={`/businesses/${this.props.bizId}/reviews/${this.props.review.id}/edit`}>Edit Review</Link>
+      </li>
+      <li>
+        <button onClick={()=> this.props.deleteReview(this.props.review.id)}>Delete</button>
+      </li>
+    </ul>
+  );
+    }
   }
 
 
@@ -61,6 +78,7 @@ class ReviewIndexItem extends React.Component {
             <li className="review-body-comment">
             {this.props.review.body}
             </li>
+            {this.editLink()}
           </ul>
         </li>
         </ul>
