@@ -33,7 +33,7 @@ class User < ApplicationRecord
     self.session_token ||= SecureRandom.urlsafe_base64(16)
   end
 
-  has_attached_file :image, default_url: "default.jpg"
+  has_attached_file :image, default_url: "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/users/images/000/000/005/original/default.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
 end

@@ -11,7 +11,10 @@ class ReviewIndexItem extends React.Component {
   }
 
   handleRating() {
-    let picture = ["", "one-star-review", "two-star-review", "three-star-review", "four-star-review", "five-star-review"]
+    let picture = ["", "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/small-ratings/one_star_review.png", "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/small-ratings/two_star_review.png", "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/small-ratings/three_star_review.png", "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/small-ratings/four_star_review.png", "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/small-ratings/five_star_review.png"];
+    let rating = this.props.review.rating;
+    let pic =  picture[rating];
+    return <img className="user-review-rating" src={pic}/>;
   }
 
 
@@ -22,31 +25,44 @@ class ReviewIndexItem extends React.Component {
     } else {
     return(
       <div>
-        <ul>
+        <ul className="review-container-comment">
+          <li>
+
           <ul>
+            <li>
+
             <ul className="user-info-comment">
-              <li><img src={this.props.user.image} /></li>
-              <li>
+              <li className="user-profile-pic-comment-li"><img className="user-profile-pic-comment" src={this.props.user.image} /></li>
+              <li className="user-profile-name-comment">
                 {this.props.user.first_name}
               </li>
-              <li>
+              <li className="user-profile-name-comment">
                 {this.props.user.last_name.substring(0,1) + "."}
               </li>
             </ul>
-            <li>
+          </li>
+            <li className="zip-code-comment">
               {this.props.user.zip_code}
             </li>
           </ul>
-            <ul>
-              <li>
+        </li>
+        <li className="review-info-comment-show">
+
+          <ul className="review-info-comment">
+            <ul className="review-stars-and-date">
+              <li className="review-stars-comments">
                 {this.handleRating()}
               </li>
-              <li>
+              <li className="review-date-comments">
                 {date}
               </li>
 
             </ul>
+            <li className="review-body-comment">
             {this.props.review.body}
+            </li>
+          </ul>
+        </li>
         </ul>
       </div>
     );
