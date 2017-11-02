@@ -12,6 +12,32 @@ class BusinessShow extends React.Component {
     this.ampm = this.ampm.bind(this);
     this.hour = this.hour.bind(this);
     this.min = this.min.bind(this);
+    this.findRating = this.findRating.bind(this);
+  }
+
+  findRating(rating) {
+    switch(rating) {
+      case 5:
+        return <img src={"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/large-ratings/5_star.png"} />;
+      case 4.5:
+        return <img src={"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/large-ratings/4_5_star.png"} />;
+      case 4:
+        return <img src={"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/large-ratings/4_star.png"} /> ;
+      case 3.5:
+        return <img src={"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/large-ratings/3_5_star.png"} /> ;
+      case 3:
+        return <img src={"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/large-ratings/3_star.png"} /> ;
+      case 2.5:
+        return <img src={"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/large-ratings/2_5_star.png"} /> ;
+      case 2:
+        return <img src={"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/large-ratings/2_star.png"} /> ;
+      case 1.5:
+        return <img src={"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/large-ratings/1_5_star.png"} /> ;
+      case 1:
+        return <img src={"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/large-ratings/1_star.png"} /> ;
+      default:
+        return <div className ="write-the-first"> Write The First Review!</div>;
+    }
   }
 
   handleClick(event) {
@@ -112,13 +138,13 @@ class BusinessShow extends React.Component {
               <li>
                 <ul className="rating-review-show">
                   <li className="star-rating-show">
-                    stars
+                    {this.findRating(this.props.business.average_rating)}
                   </li>
                   <li className="review-number-show">
-                    #
+                    {this.props.business.review_count}
                   </li>
                   <li className="review-text-show">
-                    reviews
+                    {this.props.business.review_count === 1 ? '   review' : '   reviews' }
                   </li>
                 </ul>
                 <ul className="price-cuisine-show">
@@ -156,7 +182,7 @@ class BusinessShow extends React.Component {
                   <Link to={"/business/photos"}>Picture 1</Link>
                 </li>
                 <li className="second-photo-show">
-                  <Link to={"/business/photos"}><img className="second-photo-show" src={this.props.business.image} /> </Link>
+                  <Link to={"/business/photos"}><img className="second-photo-show" src={this.props.business.image_medium} /> </Link>
                 </li>
                 <li className="third-photo-show">
                   <Link to={"/business/photos"}>See all photos</Link>

@@ -4,3 +4,4 @@ json.extract! business, :id, :name, :address, :phone_number,
 
 
 json.image asset_path(business.image.url(:thumb))
+json.image_medium asset_path(business.image.url(:croppable))

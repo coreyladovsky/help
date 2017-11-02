@@ -6,6 +6,22 @@ class BusinessIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.findRating = this.findRating.bind(this);
+    this.priceRange = this.priceRange.bind(this);
+  }
+
+  priceRange(avg) {
+    switch (avg) {
+      case 1:
+        return "$" ;
+      case 2:
+        return "$$" ;
+      case 3:
+        return "$$$" ;
+      case 4:
+        return "$$$$" ;
+      default:
+      return <div className="price-range-undefined">Prices Unknown</div>;
+    }
   }
 
   findRating(rating) {
@@ -29,7 +45,7 @@ class BusinessIndexItem extends React.Component {
       case 1:
         return <img src={"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/show-ratings/1_star.png"} /> ;
       default:
-        return <li className ="write-the-first"> Write The First Review!</li>;
+        return <div className ="write-the-first"> Write The First Review!</div>;
     }
   }
 
@@ -59,11 +75,11 @@ class BusinessIndexItem extends React.Component {
           </ul>
           <ul className="rating-bar-line">
             <li>{this.findRating(this.props.business.average_rating)}</li>
-            <li>{this.props.business.review_count}</li>
-            <li>{this.props.business.review_count === 1 ? '   review' : '   reviews' }</li>
+            <li className="biz-review-count-index">{this.props.business.review_count}</li>
+            <li className="biz-review-text-index">{this.props.business.review_count === 1 ? '   review' : '   reviews' }</li>
           </ul>
           <ul className="price-cuisine">
-            <li>price</li>
+            <li>{this.priceRange(this.props.business.price_range)}</li>
             <li ><div className="period-container"><div className="period">·</div></div> </li>
             <li className="cuisine">
                 <Link to={'/search'}>{this.props.business.cuisine}</Link>

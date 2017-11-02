@@ -17,7 +17,7 @@ class Business < ApplicationRecord
 
   def average_rating
     return 0 unless !!self.reviews
-    (self.reviews.average(:rating).to_i * 2) / 2.0
+    (self.reviews.average(:rating).to_f * 2.to_f).round / 2.0
   end
 
   def review_count
@@ -27,7 +27,17 @@ class Business < ApplicationRecord
 
   def price_range
     return 0 unless self.reviews
-    self.reviews.average(:price_range)
+    self.reviews.average(:price_range).to_i
+  end
+
+  def delivery
+    return false unless self.reviews
+    self.reviews.where(delivery: [true]).count > self.reviews.where(delivery: [false]).count
+  end
+
+  def noise_level
+    return 0 unless self.reviews
+    self.reviews.average(:noise_level).to_i 
   end
 
 end
