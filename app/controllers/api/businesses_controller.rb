@@ -1,6 +1,9 @@
 class Api::BusinessesController < ApplicationController
   def index
-    @businesses = Business.all.includes(:reviews) # running a class method to get average rating for all of these businesses
+    # @businesses = Business.in_bounds(params[:bounds]).includes(:reviews) # running a class method to get average rating for all of these businesses
+    businesses = params[:bounds] ? Business.in_bounds(params[:bounds]) : Business.all
+    @businesses = businesses.includes(:reviews) || {}
+
   end
 
   def show
