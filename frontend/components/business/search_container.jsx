@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import BusinessIndex from './business_index';
+import Search from './search';
 import { fetchBusinesses } from '../../actions/business_actions';
 import { logout, clearPage, nextPage } from '../../actions/session_actions';
 
@@ -26,4 +26,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(BusinessIndex);
+)(Search);
