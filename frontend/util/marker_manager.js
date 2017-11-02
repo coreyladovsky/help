@@ -27,12 +27,15 @@ export default class MarkerManager {
     });
     let img = business.image
     let infowindow =  new google.maps.InfoWindow({
-          content: `<IMG BORDER="0"  ALIGN="Left" SRC=${img}> ` + business.name + " " + business.address 
+          content: `<IMG BORDER="0"  ALIGN="Left" SRC=${img}> ` + business.name + " " + business.address
         });
 
     marker.addListener('click', function() {
       infowindow.open(marker.get('map'), marker);
     });
+    // marker.addListener('click', function() {
+    //   infowindow.close();
+    // });
 
     this.markers[marker.businessId] = marker;
   }
