@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import Search from './search';
 import { fetchBusinesses } from '../../actions/business_actions';
 import { logout, clearPage, nextPage } from '../../actions/session_actions';
+import { updateBounds } from '../../actions/filter_actions'; 
 
 const mapStateToProps = (state, ownProps) => {
   return ({
@@ -14,10 +15,11 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
 
   return ({
-    fetchBusinesses: () => dispatch(fetchBusinesses()),
+    fetchBusinesses: (filters) => dispatch(fetchBusinesses(filters)),
     logout: ()=> dispatch(logout()),
     clearPage: () => dispatch(clearPage()),
-    nextPage: (page) => dispatch(nextPage(page))
+    nextPage: (page) => dispatch(nextPage(page)),
+    updateBounds: (bounds) => dispatch(updateBounds(bounds))
 
   });
 };

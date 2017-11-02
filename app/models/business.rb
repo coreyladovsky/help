@@ -7,7 +7,7 @@ class Business < ApplicationRecord
 
   has_many :reviewers, through: :reviews, source: :user
 
-  has_attached_file :image, styles: { thumb: 'x100', croppable: '600x600>', big: '1000x1000>' }
+  has_attached_file :image, styles: { thumb: '100x100', croppable: '600x600>', big: '1000x1000>' }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   def self.in_bounds(bounds)

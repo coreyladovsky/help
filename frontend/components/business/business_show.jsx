@@ -155,7 +155,7 @@ class BusinessShow extends React.Component {
                   <Link to={"/business/photos"}>Picture 1</Link>
                 </li>
                 <li className="second-photo-show">
-                  <Link to={"/business/photos"}>Picture 2</Link>
+                  <Link to={"/business/photos"}><img className="second-photo-show" src={this.props.business.image} /> </Link>
                 </li>
                 <li className="third-photo-show">
                   <Link to={"/business/photos"}>See all photos</Link>

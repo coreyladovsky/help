@@ -23,8 +23,8 @@ export const receiveBusiness = business => {
   business
 });};
 
-export const fetchBusinesses = () => dispatch => (
-  BusinessAPIUtil.fetchBusinesses().then(businesses => dispatch(receiveBusinesses(businesses)))
+export const fetchBusinesses = (filters) => dispatch => (
+  BusinessAPIUtil.fetchBusinesses(filters).then(businesses => dispatch(receiveBusinesses(businesses)))
 );
 
 export const fetchBusiness = (businessId) => dispatch => (

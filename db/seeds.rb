@@ -1,62 +1,62 @@
 Business.destroy_all
 
-Business.create!(name: "Hamburger Chilli", address: "701 Flatbush Ave
+biz1 = Business.create!(name: "Hamburger Chilli", address: "701 Flatbush Ave
 Brooklyn, NY 11225", phone_number: "(718) 333-5099", cuisine: "American",
 image: "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-photos/american.jpg",
 mon_start_time: 15, mon_end_time: 24, tue_start_time: 15, tue_end_time: 24, wed_start_time: 15,
 wed_end_time: 24, thur_start_time: 15, thur_end_time: 24, fri_start_time: 15, fri_end_time: 24,
 sat_start_time: 13, sat_end_time:24, sun_start_time: 13, sun_end_time: 24, lat: 40.6560593, lng: -73.9597273 )
 
-Business.create!(name: "Pickings & Parry", address: "55 Water St
+biz2 = Business.create!(name: "Pickings & Parry", address: "55 Water St
 Brooklyn, NY 11201", phone_number: "(718) 473-9555", cuisine: "American",
 image: "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-photos/american2.jpg",
 mon_start_time: 15, mon_end_time: 24, tue_start_time: 15, tue_end_time: 24, wed_start_time: 15,
 wed_end_time: 24, thur_start_time: 15, thur_end_time: 24, fri_start_time: 15, fri_end_time: 24,
 sat_start_time: 13, sat_end_time:24, sun_start_time: 13, sun_end_time: 24,lat: 40.7033991, lng: -73.9914091)
 
-Business.create!(name: "Mullied", address: "276 Bay Ridge Ave
+biz3 = Business.create!(name: "Mullied", address: "276 Bay Ridge Ave
 Brooklyn, NY 11220", phone_number: "(541) 231-6160", cuisine: "Bar",
 image: "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-photos/bar.jpg",
 mon_start_time: 16, mon_end_time: 24, tue_start_time: 16, tue_end_time: 24, wed_start_time: 16,
 wed_end_time: 24, thur_start_time: 16, thur_end_time: 24, fri_start_time: 16, fri_end_time: 24,
 sat_start_time: 13, sat_end_time:24, sun_start_time: 13, sun_end_time: 24, lat: 40.63574029999999, lng:-74.0264851)
 
-Business.create!(name: "Old Town Bar", address: "39 W 19th St
+biz4 = Business.create!(name: "Old Town Bar", address: "39 W 19th St
 New York, NY 10011", phone_number: "(646) 833-7532", cuisine: "Bar",
 image: "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-photos/bar2.jpg",
 mon_start_time: 15.3, mon_end_time: 24, tue_start_time: 15.3, tue_end_time: 24, wed_start_time: 15.3,
 wed_end_time: 26, thur_start_time: 15.3, thur_end_time: 26, fri_start_time: 15.3, fri_end_time: 26,
 sat_start_time: 13, sat_end_time:26, sun_start_time: 13, sun_end_time: 26, lat:40.740156, lng:-73.99336599999998)
 
-Business.create!(name: "Central Cafe", address: "95 1st Ave
+biz5 = Business.create!(name: "Central Cafe", address: "95 1st Ave
 New York, NY 10003", phone_number: "(646) 791-5400", cuisine: "Cafe",
 image: "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-photos/cafe.jpg",
 mon_start_time: 15, mon_end_time: 22, tue_start_time: 15, tue_end_time: 22, wed_start_time: 15,
 wed_end_time: 22, thur_start_time: 15, thur_end_time: 22, fri_start_time: 15, fri_end_time: 22,
 sat_start_time: 13, sat_end_time:22, sun_start_time: 13, sun_end_time: 22, lat:40.740156, lng:-73.99336599999998)
 
-Business.create!(name: "Pings", address: "407 Smith St
+biz6 = Business.create!(name: "Pings", address: "407 Smith St
 Brooklyn, NY 11231", phone_number: "(347) 689-3075", cuisine: "Chinese",
 image: "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-photos/chinese.jpg",
 mon_start_time: 16, mon_end_time: 28, tue_start_time: 16, tue_end_time: 28, wed_start_time: 16,
 wed_end_time: 28, thur_start_time: 16, thur_end_time: 28, fri_start_time: 16, fri_end_time: 28,
 sat_start_time: 13, sat_end_time:28, sun_start_time: 13, sun_end_time: 28, lat: 40.6778892, lng:-73.99606799999998)
 
-Business.create!(name: "Coughing Coffee", address: "9 Pell St
+biz7 = Business.create!(name: "Coughing Coffee", address: "9 Pell St
 New York, NY 10013", phone_number: "(212) 233-8888", cuisine: "Coffee",
 image: "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-photos/coffe.jpg",
 mon_start_time: 6, mon_end_time: 18.15, tue_start_time: 6, tue_end_time: 18.15, wed_start_time: 6,
 wed_end_time: 18.15, thur_start_time: 6, thur_end_time: 18.15, fri_start_time: 6, fri_end_time: 18.15,
 sat_start_time: 7.15, sat_end_time:18.15, sun_start_time: 7.15, sun_end_time: 18.15, lat: 40.7146052, lng:-73.99778420000001)
 
-Business.create!(name: "The Frenchie", address: "244 Smith St
+biz8 = Business.create!(name: "The Frenchie", address: "244 Smith St
 Brooklyn, NY 11231", phone_number: "(347) 204-2545", cuisine: "Coffee",
 image: "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-photos/coffee2.jpg",
 mon_start_time: 15, mon_end_time: 24, tue_start_time: 15, tue_end_time: 24, wed_start_time: 15,
 wed_end_time: 24, thur_start_time: 15, thur_end_time: 24, fri_start_time: 15, fri_end_time: 24,
 sat_start_time: 13, sat_end_time:24, sun_start_time: 13, sun_end_time: 24, lat: 40.6834507, lng:-73.99285499999996)
 
-Business.create!(name: "Starbucks", address: "509 Amsterdam Ave
+biz9 = Business.create!(name: "Starbucks", address: "509 Amsterdam Ave
 New York, NY 10024", phone_number: "(212) 470-5566", cuisine: "Coffee",
 image: "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-photos/coffee3.jpg",
 mon_start_time: 5, mon_end_time: 17, tue_start_time: 5, tue_end_time: 17, wed_start_time: 5,
@@ -318,41 +318,41 @@ noe = User.create!(first_name: "noe", last_name: "j",
 
 Review.destroy_all
 
-Review.create!(user_id: corey.id, business_id: 1, body: "This place really knows what's going on",
+Review.create!(user_id: corey.id, business_id: biz1.id, body: "This place really knows what's going on",
  rating:4, price_range:1, noise_level:4, delivery: false )
 
-Review.create!(user_id: max.id, business_id: 1, body: "Bad food, good prices",
+Review.create!(user_id: max.id, business_id: biz1.id, body: "Bad food, good prices",
  rating:3, price_range:1, noise_level:4, delivery: false )
 
-Review.create!(user_id: yama.id, business_id: 1, body: "Moms food is better",
+Review.create!(user_id: yama.id, business_id: biz1.id, body: "Moms food is better",
  rating:1, price_range:2, noise_level:3, delivery: true )
 
-Review.create!(user_id: yama.id, business_id: 2, body: "I'm tired of eating here",
+Review.create!(user_id: yama.id, business_id: biz2.id, body: "I'm tired of eating here",
  rating:2, price_range:1, noise_level:2, delivery: false )
 
-Review.create!(user_id: noe.id, business_id: 2, body: "My favorite place to go on Sundays",
+Review.create!(user_id: noe.id, business_id: biz2.id, body: "My favorite place to go on Sundays",
  rating:5, price_range:3, noise_level:1, delivery: false )
 
-Review.create!(user_id: noe.id, business_id: 3, body: "This places Rocks!",
+Review.create!(user_id: noe.id, business_id: biz3.id, body: "This places Rocks!",
  rating:5, price_range:4, noise_level:1, delivery: false )
 
-Review.create!(user_id: duck.id, business_id: 4, body: "I always get the duck!",
+Review.create!(user_id: duck.id, business_id: biz4.id, body: "I always get the duck!",
  rating:4, price_range:3, noise_level:1, delivery: false )
 
- Review.create!(user_id: corey.id, business_id: 6, body: "This place really knows what's going on",
+ Review.create!(user_id: corey.id, business_id: biz5.id, body: "This place really knows what's going on",
   rating:4, price_range:1, noise_level:4, delivery: false )
 
- Review.create!(user_id: max.id, business_id: 6, body: "Bad food, good prices",
+ Review.create!(user_id: max.id, business_id: biz6.id, body: "Bad food, good prices",
   rating:3, price_range:1, noise_level:4, delivery: false )
 
- Review.create!(user_id: yama.id, business_id: 6, body: "Moms food is better",
+ Review.create!(user_id: yama.id, business_id: biz6.id, body: "Moms food is better",
   rating:1, price_range:2, noise_level:3, delivery: true )
 
-  Review.create!(user_id: corey.id, business_id: 7, body: "This place really knows what's going on",
+  Review.create!(user_id: corey.id, business_id: biz7.id, body: "This place really knows what's going on",
    rating:4, price_range:1, noise_level:4, delivery: false )
 
-  Review.create!(user_id: max.id, business_id: 7, body: "Bad food, good prices",
+  Review.create!(user_id: max.id, business_id: biz7.id, body: "Bad food, good prices",
    rating:3, price_range:1, noise_level:4, delivery: false )
 
-  Review.create!(user_id: yama.id, business_id: 7, body: "Moms food is better",
+  Review.create!(user_id: yama.id, business_id: biz7.id, body: "Moms food is better",
    rating:1, price_range:2, noise_level:3, delivery: true )
