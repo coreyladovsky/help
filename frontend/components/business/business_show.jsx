@@ -2,6 +2,7 @@ import React from 'react';
 import NavBar from '../NavBar';
 import { Link } from 'react-router-dom';
 import ReviewsContainer from '../reviews/reviews_container';
+import BizShowMap from './biz_show_map';
 
 class BusinessShow extends React.Component {
   constructor(props) {
@@ -13,6 +14,49 @@ class BusinessShow extends React.Component {
     this.hour = this.hour.bind(this);
     this.min = this.min.bind(this);
     this.findRating = this.findRating.bind(this);
+    this.priceRange = this.priceRange.bind(this);
+    this.noiseLevel = this.noiseLevel.bind(this);
+    this.delivery = this.delivery.bind(this);
+  }
+
+  delivery(arg) {
+    if(arg === undefined) {
+      return "Unsure";
+    } else if (arg === true){
+      return "Yes";
+    } else {
+      return "No";
+    }
+  }
+
+  noiseLevel(avg) {
+    switch (avg) {
+      case 1:
+        return "Quiet" ;
+      case 2:
+        return "Average" ;
+      case 3:
+        return "Loud" ;
+      case 4:
+        return "Very Loud" ;
+      default:
+      return "Not Sure";
+    }
+  }
+
+  priceRange(avg) {
+    switch (avg) {
+      case 1:
+        return "$" ;
+      case 2:
+        return "$$" ;
+      case 3:
+        return "$$$" ;
+      case 4:
+        return "$$$$" ;
+      default:
+      return <div className="price-range-undefined">Prices Unknown</div>;
+    }
   }
 
   findRating(rating) {
@@ -36,7 +80,7 @@ class BusinessShow extends React.Component {
       case 1:
         return <img src={"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/large-ratings/1_star.png"} /> ;
       default:
-        return <div className ="write-the-first"> Write The First Review!</div>;
+        return <Link to={this.props.location.pathname + "/reviews/new"} onClick={this.handleClick} > Write The First Review!</Link>;
     }
   }
 
@@ -149,7 +193,7 @@ class BusinessShow extends React.Component {
                 </ul>
                 <ul className="price-cuisine-show">
                   <li className="price-show">
-                    dollar signs
+                    {this.priceRange(this.props.business.price_range)}
                   </li>
                   <li ><div className="period-container"><div className="period">·</div></div> </li>
                   <li className="cusine-link-show">
@@ -161,7 +205,7 @@ class BusinessShow extends React.Component {
 
                 <ul>
                   <div className="map-show">
-                    Map Box
+                    <BizShowMap business={this.props.business} />
                   </div>
                 </ul>
               </li>
@@ -261,8 +305,24 @@ class BusinessShow extends React.Component {
               </ul>
             </ul>
           </div>
+
+
         </div>
-        </div>
+          </div>
+          <ul>
+
+            <div className="hours-div-show">More business info</div>
+            <ul className="addition-info-show">
+              <ul className="noise-level-info-show">
+                <li>Noise Level</li>
+                <li>{this.noiseLevel(this.props.business.noise_level)}</li>
+              </ul>
+              <ul className="delivery-info-show">
+                <li> Delivery </li>
+                <li>{this.delivery(this.props.business.delivery)}</li>
+              </ul>
+            </ul>
+          </ul>
 
       </div>
 
