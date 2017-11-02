@@ -15,4 +15,19 @@ class Business < ApplicationRecord
     .where("lng < ?", bounds[:northEast][:lng]).where("lng < ?" ,bounds[:southWest][:lng])
   end
 
+  def average_rating
+    return 0 unless !!self.reviews
+    (self.reviews.average(:rating).to_i * 2) / 2.0
+  end
+
+  def review_count
+    return 0 unless self.reviews
+    self.reviews.count
+  end
+
+  def price_range
+    return 0 unless self.reviews
+    self.reviews.average(:price_range)
+  end
+
 end

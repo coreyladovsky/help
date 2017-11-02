@@ -40,7 +40,7 @@ class SessionForm extends React.Component {
             Find
           </li>
           <li className={this.props.path === "/" ? "find-input-land" :"find-input-field"}>
-            <input className={this.props.path === "/" ? "land-input-find" :"nav-input-find"} onChange={this.findChange} value={this.state.findValue} text="type" placeholder="Restaurnts"/>
+            <input className={this.props.path === "/" ? "land-input-find" :"nav-input-find"} onChange={this.findChange} value={this.state.findValue} text="type" placeholder="Restaurants"/>
           </li>
           <li className={this.props.path === "/" ? "land-seperator" : "seperator"}><div className={this.props.path === "/" ? "land-seperator-div" :"seperator-div"}></div></li>
           <li className={this.props.path === "/" ? "near-text-land" :"near-text-nav"}> Near</li>
