@@ -3,8 +3,8 @@ import BusinessIndexItem from './business_index_item';
 
 
 class BusinessIndex extends React.Component {
-  constructor({props}) {
-    super({props});
+  constructor(props) {
+    super(props);
   }
 
   componentDidMount() {

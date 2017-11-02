@@ -14,8 +14,10 @@ class Search extends React.Component {
 
     <div>
       <NavBar currentUser={this.props.currentUser} intendedPage={this.props.intendedPage} logout={this.props.logout} nextPage={this.props.nextPage} clearPage={this.props.clearPage}/>
-      <BusinessMap />
-      <BusinessIndex props={this.props} />
+      <ul className="map-and-index-ul">
+        <BusinessIndex props={this.props} />
+        <BusinessMap businesses={this.props.business}/>
+      </ul>
     </div>
   );
   }
