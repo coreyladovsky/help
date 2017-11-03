@@ -304,26 +304,32 @@ class BusinessShow extends React.Component {
                 </li>
               </ul>
             </ul>
+
+            <ul>
+
+            <div className="more-info-div" ><div className="hours-div-show">More business info</div>
+              <ul className="addition-info-show">
+                <ul className="noise-level-info-show">
+                  <li className="info-col-show">Noise Level</li>
+                  <li className="info-col-ans-show">{this.noiseLevel(this.props.business.noise_level)}</li>
+                </ul>
+                <ul className="delivery-info-show">
+                  <li className="info-col-show"> Delivery </li>
+                  <li  className="info-col-ans-show">{this.delivery(this.props.business.delivery)}</li>
+                </ul>
+              </ul>
+            </div>
+          </ul>
+
           </div>
 
 
         </div>
+
           </div>
           <ul>
 
-            <div className="hours-div-show">More business info</div>
-            <ul className="addition-info-show">
-              <ul className="noise-level-info-show">
-                <li>Noise Level</li>
-                <li>{this.noiseLevel(this.props.business.noise_level)}</li>
-              </ul>
-              <ul className="delivery-info-show">
-                <li> Delivery </li>
-                <li>{this.delivery(this.props.business.delivery)}</li>
-              </ul>
-            </ul>
           </ul>
-
       </div>
 
     );}

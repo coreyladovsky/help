@@ -14,7 +14,6 @@ class ReviewForm extends React.Component {
       priceRangeValue: this.props.review.price_range,
       noiseLevelValue: this.props.review.noise_level,
       deliveryValue: `${this.props.review.delivery}`,
-      selected: this.props.review.rating
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,8 +24,27 @@ class ReviewForm extends React.Component {
     this.deliveryChange = this.deliveryChange.bind(this);
     this.checkedCheck = this.checkedCheck.bind(this);
     this.updateRating = this.updateRating.bind(this);
+    this.clearState = this.clearState.bind(this);
     // this.starVal = this.starVal.bind(this);
 
+  }
+
+  clearState() {
+    this.setState({
+      bodyValue: "",
+      ratingValue: "",
+      priceRangeValue: "",
+      noiseLevelValue: "",
+      deliveryValue: "",
+    });
+
+  }
+
+  componentWillReceiveProps(nextprops) {
+    if(this.props.formType !== nextprops.formType){
+      this.props.clearErrors();
+      this.clearState();
+    }
   }
 
   handleSubmit(event) {
@@ -54,7 +72,7 @@ class ReviewForm extends React.Component {
         business_id: this.props.match.params.businessId,
         user_id: this.props.currentUser.id,
         id: this.props.review.id
-      }).then(()=> this.props.history.push(`/businesses/${this.props.match.params.businessId}`));;
+      }).then(()=> this.props.history.push(`/businesses/${this.props.match.params.businessId}`));
     }
   }
     //not using this at the moment
@@ -111,7 +129,9 @@ class ReviewForm extends React.Component {
       // }
       let parsed = parser.parseLocation(this.props.business.address);
 
-
+      const errs = this.props.errors.map((err, idx) => {
+        return (<li key={idx} className="session-error">{err}</li>);
+      });
     return(
       <div>
         <NavBar currentUser={this.props.currentUser} intendedPage={this.props.intendedPage} logout={this.props.logout} nextPage={this.props.nextPage} clearPage={this.props.clearPage}/>
@@ -219,8 +239,9 @@ class ReviewForm extends React.Component {
                 </form>
             </li>
 
-
-
+            <ul className="session-errors">
+              {errs}
+            </ul>
         </ul>
         </div>
       </li>

@@ -74,11 +74,36 @@
 
 }
 
+.editors {
+  display: flex;
+  margin-top: 15px;
+  margin-left: 125px;
+}
+
+.edit-review-link {
+  color: #0073BB;
+  font-size: 13px;
+  font-family: sans-serif;
+
+  padding-top:  10px
+}
+
+.edit-review-link:hover {
+  text-decoration: underline;
+}
 
 
+.delete-link-button {
+  color: #0073BB;
+  font-size: 13px;
+  font-family: sans-serif;
 
+  margin-left: 30px;
+}
 
-
+.delete-link-button:hover {
+  text-decoration: underline;
+}
 
 
 

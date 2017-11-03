@@ -7,6 +7,11 @@ class BusinessIndexItem extends React.Component {
     super(props);
     this.findRating = this.findRating.bind(this);
     this.priceRange = this.priceRange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(event) {
+    this.props.nextPage(`/businesses/${this.props.business.id}/reviews/new`);
   }
 
   priceRange(avg) {
@@ -45,12 +50,11 @@ class BusinessIndexItem extends React.Component {
       case 1:
         return <img src={"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/show-ratings/1_star.png"} /> ;
       default:
-        return <div className ="write-the-first"> Write The First Review!</div>;
+        return   <Link to={"businesses/" + this.props.business.id + "/reviews/new"} onClick={this.handleClick} className ="write-the-first"> Write The First Review!</Link>;
     }
   }
 
   render() {
-
     let parsed = parser.parseLocation(this.props.business.address);
   return(
     <div className="main-div">

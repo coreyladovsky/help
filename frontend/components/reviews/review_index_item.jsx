@@ -23,13 +23,13 @@ class ReviewIndexItem extends React.Component {
     } else if (this.props.user.id === this.props.currentUser.id) {
       return(
 
-      <ul>
+      <ul className="editors">
 
       <li>
-        <Link to={`/businesses/${this.props.bizId}/reviews/${this.props.review.id}/edit`}>Edit Review</Link>
+        <Link className="edit-review-link" to={`/businesses/${this.props.bizId}/reviews/${this.props.review.id}/edit`}>Edit Review</Link>
       </li>
       <li>
-        <button onClick={()=> this.props.deleteReview(this.props.review.id)}>Delete</button>
+        <button className="delete-link-button" onClick={()=> this.props.deleteReview(this.props.review.id)}>Delete</button>
       </li>
     </ul>
   );
