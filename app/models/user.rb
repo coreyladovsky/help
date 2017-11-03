@@ -33,7 +33,7 @@ class User < ApplicationRecord
     self.session_token ||= SecureRandom.urlsafe_base64(16)
   end
 
-  has_attached_file :image, default_url: "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/users/images/000/000/005/original/default.jpg"
+  has_attached_file :image, default_url: "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/users/images/000/000/005/original/default.jpg", styles: { thumb: '100x100', croppable: '600x600>', big: '1000x1000>' }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
 end

@@ -2,7 +2,7 @@
 
 Hey there and welcome! Thanks for checking out Help. Help is a yelp like application that allows users to rate and review restaurants. Navigating the site is literally as easy as clicking a button. You're able to Sign up, log in (or demo login) and get straight to looking for delicious places to eat. From the index page you can see the rating of each restaurant as well as it's price ranges. Besides the restaurants basic composition, all qualities are derived from user scored averages.
 
-Check out the site! [Help: it's where the foods at!](https://help-by-corey-ladovsky.herokuapp.com/#/)
+Check out the site! [Help: it's where the food's at!](https://help-by-corey-ladovsky.herokuapp.com/#/)
 
 ### Technologies
 
@@ -22,4 +22,4 @@ Please feel free to reach out to me with any questions or request. Have a wonder
 
 
 Things I plan to implement in the near future: I'd like to add working search/ filters. I want clicks on the cuisine type to automatically send a search request to similar cuisines. I'd love to focus on being able to filter by 'open now'.
-I'd also like to make my app more adaptive to different screen sizes. 
+I'd also like to make my app more adaptive to different screen sizes.
