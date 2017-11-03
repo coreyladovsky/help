@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { clearErrors, clearPage } from '../../actions/session_actions';
+import { clearErrors, clearPage, nextPage, logout } from '../../actions/session_actions';
 import { createReview, updateReview, fetchReview } from '../../actions/review_actions';
 import { fetchBusiness } from '../../actions/business_actions';
 import { withRouter } from 'react-router-dom';
@@ -17,7 +17,8 @@ const mapStateToProps = (state, ownProps) => {
       review,
       errors: state.errors.session,
       business: state.business[ownProps.match.params.businessId],
-      currentUser: state.session.currentUser
+      currentUser: state.session.currentUser,
+      intendedPage: state.intendedPage
     };
   } else {
     return {
@@ -25,7 +26,8 @@ const mapStateToProps = (state, ownProps) => {
       review: state.reviews[ownProps.match.params.reviewId],
       business: state.business[ownProps.match.params.businessId],
       currentUser: state.session.currentUser,
-      errors: state.errors.session
+      errors: state.errors.session,
+      intendedPage: state.intendedPage
     };
   }
 };
@@ -38,7 +40,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       createReview: (review) => dispatch(createReview(review)),
       clearErrors: () => dispatch(clearErrors()),
       clearPage: () => dispatch(clearPage()),
-      fetchBusiness: (businessId) => dispatch(fetchBusiness(businessId))
+      fetchBusiness: (businessId) => dispatch(fetchBusiness(businessId)),
+      logout: ()=> dispatch(logout()),
+      nextPage: (page) => dispatch(nextPage(page)),
 
   };
 
@@ -48,7 +52,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       updateReview: (review) => dispatch(updateReview(review)),
       clearErrors: () => dispatch(clearErrors()),
       clearPage: () => dispatch(clearPage()),
-      fetchBusiness: (businessId) => dispatch(fetchBusiness(businessId))
+      fetchBusiness: (businessId) => dispatch(fetchBusiness(businessId)),
+      logout: ()=> dispatch(logout()),
+      nextPage: (page) => dispatch(nextPage(page)),
     };
   }
 };
