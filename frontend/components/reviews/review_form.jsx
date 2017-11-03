@@ -174,7 +174,7 @@ class ReviewForm extends React.Component {
                           <input type="radio" value="1" name="star-scale" onClick={this.ratingChange} checked={parseInt(this.state.ratingValue) === 1 ? "checked" : ""}/>
                           <ul>
                             <li>
-                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
                             </li>
                           </ul>
                         </li>
@@ -182,10 +182,10 @@ class ReviewForm extends React.Component {
                           <input type="radio" value="2" name="star-scale" onClick={this.ratingChange} checked={parseInt(this.state.ratingValue) === 2 ? "checked" : ""} />
                           <ul>
                             <li>
-                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
                             </li>
                             <li>
-                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
                             </li>
                           </ul>
                         </li>
@@ -193,13 +193,13 @@ class ReviewForm extends React.Component {
                           <input type="radio" value="3" name="star-scale" onClick={this.ratingChange} checked={parseInt(this.state.ratingValue) === 3 ? "checked" : ""}/>
                           <ul>
                             <li>
-                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
                             </li>
                             <li>
-                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
                             </li>
                             <li>
-                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
                             </li>
                           </ul>
                         </li>
@@ -207,16 +207,16 @@ class ReviewForm extends React.Component {
                           <input type="radio" value="4" name="star-scale" onClick={this.ratingChange} checked={parseInt(this.state.ratingValue) === 4 ? "checked" : ""}/>
                           <ul>
                             <li>
-                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
                             </li>
                             <li>
-                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
                             </li>
                             <li>
-                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
                             </li>
                             <li>
-                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
                             </li>
                           </ul>
                         </li>
@@ -224,19 +224,19 @@ class ReviewForm extends React.Component {
                           <input type="radio" value="5" name="star-scale" onClick={this.ratingChange} checked={parseInt(this.state.ratingValue) === 5 ? "checked" : ""}/>
                           <ul>
                             <li>
-                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
                             </li>
                             <li>
-                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
                             </li>
                             <li>
-                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
                             </li>
                             <li>
-                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
                             </li>
                             <li>
-                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
                             </li>
                           </ul>
                         </li>
