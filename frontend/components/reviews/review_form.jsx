@@ -14,6 +14,7 @@ class ReviewForm extends React.Component {
       priceRangeValue: this.props.review.price_range,
       noiseLevelValue: this.props.review.noise_level,
       deliveryValue: `${this.props.review.delivery}`,
+      classColor: "default"
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,6 +26,7 @@ class ReviewForm extends React.Component {
     this.checkedCheck = this.checkedCheck.bind(this);
     this.updateRating = this.updateRating.bind(this);
     this.clearState = this.clearState.bind(this);
+    this.updateClass = this.updateClass.bind(this);
     // this.starVal = this.starVal.bind(this);
 
   }
@@ -115,6 +117,11 @@ class ReviewForm extends React.Component {
     this.setState({ratingValue: event.currentTarget.value});
   }
 
+  updateClass(event) {
+    event.preventDefault();
+    this.setState({classColor: "color" + event.currentTarget.value});
+  }
+
 
   render() {
     if(this.props.business === undefined) {
@@ -163,31 +170,76 @@ class ReviewForm extends React.Component {
                   <div className= "stars-and-review-body">
                     <div className="stars-review-biz-form" value={this.state.ratingValue}>
                       <ul className="stars-ratings-form" >
-                        <button className="default five " value="1" onClick={this.updateRating}>
-                          <li  className="default" >
-                          <i className="fa fa-star" aria-hidden="true"  >    </i>
+                        <li>
+                          <input type="radio" value="1" name="star-scale" onClick={this.ratingChange} checked={parseInt(this.state.ratingValue) === 1 ? "checked" : ""}/>
+                          <ul>
+                            <li>
+                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                            </li>
+                          </ul>
                         </li>
-                      </button>
-                        <button className="default four five" value="2" onClick={this.updateRating}>
-                          <li  className="default" >
-                          <i className="fa fa-star" aria-hidden="true"  >    </i>
+                        <li>
+                          <input type="radio" value="2" name="star-scale" onClick={this.ratingChange} checked={parseInt(this.state.ratingValue) === 2 ? "checked" : ""} />
+                          <ul>
+                            <li>
+                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                            </li>
+                            <li>
+                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                            </li>
+                          </ul>
                         </li>
-                      </button>
-                        <button className="default three four five" value="3" onClick={this.updateRating}>
-                          <li  className="default" >
-                          <i className="fa fa-star" aria-hidden="true"  >    </i>
+                        <li>
+                          <input type="radio" value="3" name="star-scale" onClick={this.ratingChange} checked={parseInt(this.state.ratingValue) === 3 ? "checked" : ""}/>
+                          <ul>
+                            <li>
+                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                            </li>
+                            <li>
+                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                            </li>
+                            <li>
+                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                            </li>
+                          </ul>
                         </li>
-                      </button>
-                        <button className="default two three four five" value="4" onClick={this.updateRating}>
-                          <li  className="default" >
-                          <i className="fa fa-star" aria-hidden="true"  >    </i>
+                        <li>
+                          <input type="radio" value="4" name="star-scale" onClick={this.ratingChange} checked={parseInt(this.state.ratingValue) === 4 ? "checked" : ""}/>
+                          <ul>
+                            <li>
+                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                            </li>
+                            <li>
+                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                            </li>
+                            <li>
+                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                            </li>
+                            <li>
+                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                            </li>
+                          </ul>
                         </li>
-                      </button>
-                        <button className="default one two three four five" value="5" onClick={this.updateRating} >
-                          <li  className="default" >
-                          <i className="fa fa-star" aria-hidden="true"  >    </i>
+                        <li>
+                          <input type="radio" value="5" name="star-scale" onClick={this.ratingChange} checked={parseInt(this.state.ratingValue) === 5 ? "checked" : ""}/>
+                          <ul>
+                            <li>
+                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                            </li>
+                            <li>
+                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                            </li>
+                            <li>
+                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                            </li>
+                            <li>
+                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                            </li>
+                            <li>
+                              <i className="fa fa-star" aria-hidden="true"  >    </i>
+                            </li>
+                          </ul>
                         </li>
-                      </button>
 
                       </ul>
                     </div>

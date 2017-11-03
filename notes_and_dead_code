@@ -53,7 +53,31 @@ Review.create!(user_id: 2, business_id: 1, body: "This place really knows what's
 
 
 
-
+<button className={"default color1 color2 color3 color4 color5".includes(this.state.class ) ? "default color1 color2 color3 color4 color5" : "" }value="1" onClick={this.updateRating} onClick={this.updateClass}>
+  <li  className="default" >
+  <i className="fa fa-star" aria-hidden="true"  >    </i>
+</li>
+</button>
+<button className={"default color2 color3 color4 color5".includes(this.state.class ) ? "default color2 color3 color4 color5" : "" } onClick={this.updateRating} onClick={this.updateClass}>
+  <li  className="default" >
+  <i className="fa fa-star" aria-hidden="true"  >    </i>
+</li>
+</button>
+<button className={"default  color3 color4 color5".includes(this.state.class ) ? "default  color3 color4 color5" : "" } value="3" onClick={this.updateRating} onClick={this.updateClass}>
+  <li  className="default" >
+  <i className="fa fa-star" aria-hidden="true"  >    </i>
+</li>
+</button>
+<button className={"default color4 color5".includes(this.state.class ) ? "default  color4 color5" : "" } value="4" onClick={this.updateRating} onClick={this.updateClass}>
+  <li  className="default" >
+  <i className="fa fa-star" aria-hidden="true"  >    </i>
+</li>
+</button>
+<button className={"default color5".includes(this.state.class ) ? "default  color5" : "" } value="5" onClick={this.updateRating} onClick={this.updateClass}>
+  <li  className="default" >
+  <i className="fa fa-star" aria-hidden="true"  >    </i>
+</li>
+</button>
 
 
 

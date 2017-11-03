@@ -56,7 +56,7 @@
 }
 
 .stars-and-review-body {
-  height: 237px;
+  height: 600px;
   width: 630px;
   border: 1px solid #999999;
   border-radius: 4px;
@@ -76,8 +76,8 @@
 
 .stars-ratings-form {
 
-  display: flex;
-  margin-top: 30px;
+
+
 
 }
 
@@ -86,7 +86,7 @@
 }
 
 .stars-review-biz-form {
-  height: 65px;
+  height: 300px;
   width: 600px;
   border-bottom: 1px solid #999999;
   margin-left: 14px;
@@ -116,6 +116,39 @@
 
 }
 
+.color5 {
+  background-color: red;
+}
+
+.color4 {
+  background-color: orange;
+}
+.color3 {
+  background-color: orange;
+}
+.color2 {
+  background-color: yellow;
+}
+
+
+.color1 {
+  background-color: yellow;
+}
+
+.fa-star {
+  color: red;
+}
+
+.stars-ratings-form {
+  display: flex;
+  flex-direction: column;
+
+}
+.stars-ratings-form ul {
+  display: flex;
+}
+
+
 .fa-star {
   font-size: 25px;
   height: 32px;
@@ -124,11 +157,10 @@
   margin-left: 6px;
 }
 
-.default-star {
-  transform: scale(1.75);
-  z-index: 10;
-}
-
+// .default-star {
+//   transform: scale(1.75);
+//   z-index: 10;
+// }
 
 
 
