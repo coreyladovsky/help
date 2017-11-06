@@ -50,7 +50,7 @@ class BusinessIndexItem extends React.Component {
       case 1:
         return <img src={"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/show-ratings/1_star.png"} /> ;
       default:
-        return   <Link to={"businesses/" + this.props.business.id + "/reviews/new"} onClick={this.handleClick} className ="write-the-first"> Write The First Review!</Link>;
+        return   <div className="write-review-index-item"><Link to={"businesses/" + this.props.business.id + "/reviews/new"} onClick={this.handleClick} className ="write-the-first"> Write The First Review!</Link></div>;
     }
   }
 

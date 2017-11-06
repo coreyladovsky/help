@@ -87,6 +87,42 @@ Review.create!(user_id: 2, business_id: 1, body: "This place really knows what's
 
 
 
+corey = User.create!(first_name: "Corey", last_name: "Sky",
+  email: "coreyskymusic@gmail.com", zip_code:"11211", password: "starwars", image: "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/users/images/000/000/001/original/ayo-ogunseinde-93181.jpg")
+
+max = User.create!(first_name: "Max", last_name: "Currier",
+  email: "BandB@gmail.com", zip_code:"11207", password: "starwars", image: "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/users/images/000/000/001/original/brian-fraser-337137.jpg")
+
+yama = User.create!(first_name: "Yama", last_name: "Cat",
+  email: "yama", zip_code:"11211", password: "starwars", image: "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/users/images/000/000/001/original/brooke-cagle-224815.jpg")
+
+duck= User.create!(first_name: "Duck", last_name: "Goose",
+  email: "fairytales@gmail.com", zip_code:"11211", password: "starwars", image: "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/users/images/000/000/001/original/christopher-campbell-28567.jpg")
+
+noe = User.create!(first_name: "Noe", last_name: "J",
+  email: "orangeboy@gmail.com", zip_code:"11211", password: "starwars", image: "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/users/images/000/000/001/original/ciocan-ciprian-324091.jpg")
+
+ellis = User.create!(first_name: "Ellis", last_name: "Kelly",
+  email: "zoo@gmail.com", zip_code:"10237", password: "starwars", image: "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/users/images/000/000/001/original/els-fattah-371118.jpg")
+
+eric = User.create!(first_name: "Eric", last_name: "Norton",
+  email: "blueboy@gmail.com", zip_code:"11211", password: "starwars", image: "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/users/images/000/000/001/original/eric-froehling-311481.jpg")
+
+e = User.create!(first_name: "E", last_name: "J",
+  email: "hungry@gmail.com", zip_code:"11211", password: "starwars", image: "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/users/images/000/000/001/original/erik-lucatero-310633.jpg")
+
+ilya = User.create!(first_name: "Ilya", last_name: "Wykomb",
+  email: "icouldfly@gmail.com", zip_code:"11211", password: "starwars", image: "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/users/images/000/000/001/original/ilya-yakover-268547.jpg")
+
+janka = User.create!(first_name: "Janka", last_name: "Williams",
+  email: "hotcity@gmail.com", zip_code:"11211", password: "starwars", image: "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/users/images/000/000/001/original/janko-ferlic-337879.jpg")
+
+jared = User.create!(first_name: "Jared", last_name: "Ken",
+  email: "jarjarken@gmail.com", zip_code:"11211", password: "starwars", image: "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/users/images/000/000/001/original/jared-sluyter-260692.jpg")
+
+jeremy = User.create!(first_name: "Jeremy", last_name: "Bishop",
+  email: "knightandbishops@gmail.com", zip_code:"11211", password: "starwars", image: "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/users/images/000/000/001/original/jeremy-bishop-140086.jpg")
+
 
 
 

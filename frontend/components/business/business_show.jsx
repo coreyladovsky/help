@@ -62,7 +62,7 @@ class BusinessShow extends React.Component {
   findRating(rating) {
     switch(rating) {
       case 5:
-        return <img src={"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/large-ratings/5_star.png"} />;
+        return <img src={"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/large-ratings/5-star.png"} />;
       case 4.5:
         return <img src={"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/large-ratings/4_5_star.png"} />;
       case 4:
@@ -80,7 +80,7 @@ class BusinessShow extends React.Component {
       case 1:
         return <img src={"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/large-ratings/1_star.png"} /> ;
       default:
-        return <Link to={this.props.location.pathname + "/reviews/new"} onClick={this.handleClick} > Write The First Review!</Link>;
+        return <div className="review-div-show"><Link to={this.props.location.pathname + "/reviews/new"} onClick={this.handleClick} className="write-review-show-page-link" > Write The First Review!</Link></div>;
     }
   }
 

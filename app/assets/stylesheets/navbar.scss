@@ -30,9 +30,6 @@
   justify-content: center;
   position: sticky;
   left: 28px;
-
-  // margin-left: -200px;
-
 }
 
 .search-form-nav {
@@ -184,14 +181,10 @@
   font-size: 12px;
   font-weight: bold;
   background-color: #BD1F1F;
-  width: 930px;
+  width: 917px;
   height: 28px;
   justify-content: space-between;
 
-}
-
-.thin-red-nav-bar li {
-  // margin-top: 5px;
 }
 
 .review-nav:hover {
@@ -203,18 +196,11 @@
   margin-bottom: 2px;
   padding-top: 6px;
   padding-left: 15px;
-  padding-right: -1px;
-  align-items: center;
-  margin-left: 30px;
 }
 
 .home-nav {
   width: 100%;
-//   margin-top: 3px;
-  padding-left: 10px;
-//   padding-right: -1px;
-//   border: 1px solid yellow;
-
+  margin-left: 25px;
 }
 
 .dark-nav-thin {
