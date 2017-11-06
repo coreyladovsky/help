@@ -27,7 +27,6 @@ class ReviewForm extends React.Component {
     this.updateRating = this.updateRating.bind(this);
     this.clearState = this.clearState.bind(this);
     this.updateClass = this.updateClass.bind(this);
-    // this.starVal = this.starVal.bind(this);
 
   }
 
@@ -130,13 +129,6 @@ class ReviewForm extends React.Component {
     if(this.props.business === undefined) {
       return null;
     } else {
-      let starVal = this.state.starVal;
-      // switch (starVal) {
-      //   case starVal >= 5 :
-      //     starfive = "five";
-      //   case starVal >= 4 ;
-      //     starfour
-      // }
       let parsed = parser.parseLocation(this.props.business.address);
 
       const errs = this.props.errors.map((err, idx) => {
@@ -155,9 +147,9 @@ class ReviewForm extends React.Component {
             <li className="write-a-review-form">
               <div className="write-review-text-form">Write a Review</div>
                 <div className="biz-info-div">
-                  <li className="biz-photo-li">
+                  <div className="biz-photo-li">
                     <Link to={ `/businesses/${this.props.business.id}`}><img className="business-photo-review-form" src={this.props.business.image} /></Link>
-                  </li>
+                  </div>
                   <ul className="business-info">
                   <li className="biz-name-link">
                     <Link to={`/businesses/${this.props.business.id}`}>{this.props.business.name}</Link>
@@ -174,7 +166,7 @@ class ReviewForm extends React.Component {
                     <div className="stars-review-biz-form" value={this.state.ratingValue}>
                       <ul className="stars-ratings-form" >
                         <li>
-                          <input type="radio" value="1" name="star-scale" onClick={this.ratingChange} checked={parseInt(this.state.ratingValue) === 1 ? "checked" : ""}/>
+                          <input type="radio" value="1" name="star-scale" onChange={this.ratingChange} checked={parseInt(this.state.ratingValue) === 1 ? "checked" : ""}/>
                           <ul>
                             <li>
                               <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
@@ -182,22 +174,8 @@ class ReviewForm extends React.Component {
                           </ul>
                         </li>
                         <li>
-                          <input type="radio" value="2" name="star-scale" onClick={this.ratingChange} checked={parseInt(this.state.ratingValue) === 2 ? "checked" : ""} />
+                          <input type="radio" value="2" name="star-scale" onChange={this.ratingChange} checked={parseInt(this.state.ratingValue) === 2 ? "checked" : ""} />
                           <ul>
-                            <li>
-                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
-                            </li>
-                            <li>
-                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          <input type="radio" value="3" name="star-scale" onClick={this.ratingChange} checked={parseInt(this.state.ratingValue) === 3 ? "checked" : ""}/>
-                          <ul>
-                            <li>
-                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
-                            </li>
                             <li>
                               <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
                             </li>
@@ -207,11 +185,8 @@ class ReviewForm extends React.Component {
                           </ul>
                         </li>
                         <li>
-                          <input type="radio" value="4" name="star-scale" onClick={this.ratingChange} checked={parseInt(this.state.ratingValue) === 4 ? "checked" : ""}/>
+                          <input type="radio" value="3" name="star-scale" onChange={this.ratingChange} checked={parseInt(this.state.ratingValue) === 3 ? "checked" : ""}/>
                           <ul>
-                            <li>
-                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
-                            </li>
                             <li>
                               <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
                             </li>
@@ -224,7 +199,24 @@ class ReviewForm extends React.Component {
                           </ul>
                         </li>
                         <li>
-                          <input type="radio" value="5" name="star-scale" onClick={this.ratingChange} checked={parseInt(this.state.ratingValue) === 5 ? "checked" : ""}/>
+                          <input type="radio" value="4" name="star-scale" onChange={this.ratingChange} checked={parseInt(this.state.ratingValue) === 4 ? "checked" : ""}/>
+                          <ul>
+                            <li>
+                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
+                            </li>
+                            <li>
+                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
+                            </li>
+                            <li>
+                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
+                            </li>
+                            <li>
+                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <input type="radio" value="5" name="star-scale" onChange={this.ratingChange} checked={parseInt(this.state.ratingValue) === 5 ? "checked" : ""}/>
                           <ul>
                             <li>
                               <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
@@ -266,8 +258,8 @@ class ReviewForm extends React.Component {
                 <div className="delivery-review" onChange={this.deliveryChange}>
                   <div className="delivery-form">Delivers?</div>
                   <ul  className="price-list-form">
-                  <li> <input type="radio" name="boolean-radio" value="true" checked={this.state.deliveryValue === "true" ? "checked" : ""}/></li>Yes
-                    <li><input type="radio" name="boolean-radio" value="false" checked={this.state.deliveryValue === "false" ? "checked" : ""}/></li>No
+                  <li> <input onChange={this.deliveryChange} type="radio" name="boolean-radio" value="true" checked={this.state.deliveryValue === "true" ? "checked" : ""}/></li>Yes
+                    <li><input onChange={this.deliveryChange} type="radio" name="boolean-radio" value="false" checked={this.state.deliveryValue === "false" ? "checked" : ""}/></li>No
                   </ul>
                 </div>
 
@@ -276,10 +268,10 @@ class ReviewForm extends React.Component {
                   <div className="price-range-form">Noise Level
                     <ul className="price-list-form">
 
-                      <li> <input name="noise-radio" type="radio" value="1" checked={parseInt(this.state.noiseLevelValue) === 1 ? "checked" : ""}/></li>Quiet
-                      <li> <input name="noise-radio" type="radio" value="2" checked={parseInt(this.state.noiseLevelValue) === 2 ? "checked" : ""}/></li>Average
-                      <li><input name="noise-radio" type="radio" value="3" checked={parseInt(this.state.noiseLevelValue) === 3 ? "checked" : ""}/></li>Loud
-                      <li><input name="noise-radio" type="radio" value="4" checked={parseInt(this.state.noiseLevelValue) === 4 ? "checked" : ""}/></li>Very Loud
+                      <li> <input onChange={this.noiseChange} name="noise-radio" type="radio" value="1" checked={parseInt(this.state.noiseLevelValue) === 1 ? "checked" : ""}/></li>Quiet
+                      <li> <input onChange={this.noiseChange} name="noise-radio" type="radio" value="2" checked={parseInt(this.state.noiseLevelValue) === 2 ? "checked" : ""}/></li>Average
+                      <li><input onChange={this.noiseChange} name="noise-radio" type="radio" value="3" checked={parseInt(this.state.noiseLevelValue) === 3 ? "checked" : ""}/></li>Loud
+                      <li><input onChange={this.noiseChange} name="noise-radio" type="radio" value="4" checked={parseInt(this.state.noiseLevelValue) === 4 ? "checked" : ""}/></li>Very Loud
                   </ul>
                 </div>
 

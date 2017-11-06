@@ -7,10 +7,6 @@ class ReviewIndex extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-
-  }
-
 
   render(){
     if(this.props.reviews === undefined) {
