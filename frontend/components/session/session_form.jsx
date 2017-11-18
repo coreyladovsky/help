@@ -252,36 +252,43 @@ class SessionForm extends React.Component {
       </header>
 
       <section>
-        <h2 className="login-signup-string">
-          {this.props.formType === '/login' ? "Log In to Help" : "Sign Up for Help"}
-        </h2>
-
-        {this.littleMessage()}
-
-      <form onSubmit={this.handleSubmit} className="auth-form">
-        <ul className="auth-list">
+        <ul className="session-flex">
           <li>
-            {this.props.formType === "/signup" ? this.nameInputs() : ""}
+            <h2 className="login-signup-string">
+              {this.props.formType === '/login' ? "Log In to Help" : "Sign Up for Help"}
+            </h2>
+
+            {this.littleMessage()}
+
+          <form onSubmit={this.handleSubmit} className="auth-form">
+            <ul className="auth-list">
+              <li>
+                {this.props.formType === "/signup" ? this.nameInputs() : ""}
+              </li>
+              <li>
+                <input type="email" className="email" onChange={this.emailChange} value={this.state.emailValue}
+                  placeholder="Email"/>
+              </li>
+              <li>
+                <input type="password" className="password" onChange={this.passwordChange} value={this.state.passwordValue}
+                  placeholder="Password"/>
+              </li>
+              {this.props.formType === "/signup" ? this.zipCodeInput() : ""}
+              {this.props.formType === "/signup" ? this.allDropDowns() : ""}
+            </ul>
+
+            <button className="submit-button">{this.props.formType === '/login' ? "Log In" : "Sign Up"}</button>
+
+          </form>
+            <button className="guest-log-in" onClick={this.guestLogIn}>Guest Log In</button>
+            {this.closing()}
+            <ul className="session-errors">
+              {errs}
+            </ul>
           </li>
           <li>
-            <input type="text" className="email" onChange={this.emailChange} value={this.state.emailValue}
-              placeholder="Email"/>
+            <img className="welcome-image" src="https://s3.amazonaws.com/helpcoreyladovskyprojectdev/random-photos/welcome_design.png"/>
           </li>
-          <li>
-            <input type="password" className="password" onChange={this.passwordChange} value={this.state.passwordValue}
-              placeholder="Password"/>
-          </li>
-          {this.props.formType === "/signup" ? this.zipCodeInput() : ""}
-          {this.props.formType === "/signup" ? this.allDropDowns() : ""}
-        </ul>
-
-        <button className="submit-button">{this.props.formType === '/login' ? "Log In" : "Sign Up"}</button>
-
-      </form>
-        <button className="guest-log-in" onClick={this.guestLogIn}>Guest Log In</button>
-        {this.closing()}
-        <ul className="session-errors">
-          {errs}
         </ul>
         </section>
         <footer>

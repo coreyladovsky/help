@@ -57,6 +57,7 @@ class BusinessIndexItem extends React.Component {
   render() {
     let parsed = parser.parseLocation(this.props.business.address);
   return(
+    <div className="biz-idx-page">
     <div className="main-div">
       <ul className="holding-box">
         <li className="biz-content" >
@@ -108,6 +109,7 @@ class BusinessIndexItem extends React.Component {
 
     </li>
   </ul>
+  </div>
   </div>
   );
   }

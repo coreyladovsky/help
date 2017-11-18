@@ -227,7 +227,7 @@
   color: red;
   font-size: 12px;
   font-family: sans-serif;
-  text-decoration: underline;
+  // text-decoration: underline;
   text-decoration-color: red;
 }
 
@@ -254,9 +254,17 @@ footer {
   text-decoration: underline;
 }
 
+.session-flex {
+  display: flex;
+  justify-content: space-around;
+}
 
-
-
+.welcome-image {
+  height: 375px;
+  width: 375px;
+  margin-top: 30%;
+  margin-right: 20%;
+}
 
 
 
