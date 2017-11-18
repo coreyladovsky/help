@@ -11,6 +11,7 @@ import BusinessShowContainer from './business/business_show_container';
 
 const App = () => (
   <div>
+  
     <header>
     </header>
     <Switch>

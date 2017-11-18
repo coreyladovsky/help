@@ -45,5 +45,8 @@
   "bugs": {
     "url": "https://github.com/coreyladovsky/help/issues"
   },
-  "homepage": "https://github.com/coreyladovsky/help#readme"
+  "homepage": "https://github.com/coreyladovsky/help#readme",
+  "devDependencies": {
+    "inline-environment-variables-webpack-plugin": "^1.2.1"
+  }
 }
