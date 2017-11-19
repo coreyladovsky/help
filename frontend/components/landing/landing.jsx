@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SessionFormContainer from '../session/session_form_container';
-import SearchForm from "../search_form";
+import SearchFormContainer from "../search_form_container";
 
 class Landing extends React.Component {
   constructor(props){
@@ -60,7 +60,7 @@ class Landing extends React.Component {
         <header className="landing-header">
           <ul className="landing-header-ul">
             <li>
-            
+
             </li>
             <li>
                 {this.logButton()}
@@ -71,7 +71,7 @@ class Landing extends React.Component {
           <div className="help-div-landing">
             <Link to={'/'} className="help-landing">help</Link>
           </div>
-            <SearchForm path={this.props.match.path} />
+            <SearchFormContainer path={this.props.match.path} props={this.props} />
         </section>
         <footer>
         <a className="git-link" href="https://github.com/coreyladovsky">Corey Ladovsky</a>

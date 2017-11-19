@@ -1,8 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+// import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
 
-
-class SessionForm extends React.Component {
+class SearchForm extends React.Component {
   constructor(props) {
     super(props);
 
@@ -17,9 +17,18 @@ class SessionForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault;
-    this.props.history.push("/search");
+    this.props.fetchBusinesses({
+      name: this.state.findValue,
+      bounds: this.state.nearValue
+    });
+
 
   }
+
+  //  activatePlacesSearch() {
+  //   var input = document.getElementById('search_term');
+  //   var autocomplete = new google.maps.places.Autocomplete(input);
+  // }
 
   findChange(event) {
     this.setState({findValue: event.target.value});
@@ -27,11 +36,18 @@ class SessionForm extends React.Component {
 
   nearChange(event) {
     this.setState({nearValue: event.target.value});
+    // this.activatePlacesSearch();
   }
 
 
 
   render() {
+    // let filteredBusinesses = this.props.businesses.filter(
+    //   (business) => {
+    //     return business.name.toLowerCase().indexOf(this.state.nearValue.toLowerCase() !== -1);
+    //   }
+    // )
+
     return(
       <form className={this.props.path === "/" ? "landing-form" : "serach-nav"} >
         <ul className={this.props.path === "/" ? "landing-form-ul" :"search-form-nav"}>
@@ -45,7 +61,7 @@ class SessionForm extends React.Component {
           <li className={this.props.path === "/" ? "land-seperator" : "seperator"}><div className={this.props.path === "/" ? "land-seperator-div" :"seperator-div"}></div></li>
           <li className={this.props.path === "/" ? "near-text-land" :"near-text-nav"}> Near</li>
           <li>
-            <input  className={this.props.path === "/" ? "near-input-land" :"near-input-nav"} onChange={this.nearChange} value={this.state.nearValue} text="type" placeholder="Current Location" />
+            <input id="serch_term"  className={this.props.path === "/" ? "near-input-land" :"near-input-nav"} onChange={this.nearChange} value={this.state.nearValue} text="type" placeholder="Current Location" />
           </li>
           <li>
             <button className={this.props.path === "/" ? "mag-land" :"mag"} onClick={this.handleSubmit}><i className={this.props.path ==="/" ? "land-icon fa fa-search" : "icon fa fa-search" }></i></button>
@@ -61,4 +77,4 @@ class SessionForm extends React.Component {
 
 }
 
-export default withRouter(SessionForm);
+export default withRouter(SearchForm);

@@ -1,8 +1,18 @@
 class Api::BusinessesController < ApplicationController
   def index
     # @businesses = Business.in_bounds(params[:bounds]).includes(:reviews) # running a class method to get average rating for all of these businesses
-    businesses = params[:bounds] ? Business.in_bounds(params[:bounds]) : Business.all
-    @businesses = businesses.includes(:reviews) || {}
+    # businesses = params[:bounds] ? Business.in_bounds(params[:bounds]) : Business.all
+    # @businesses = businesses.includes(:reviews) || {}
+
+    @businesses = Business.all.includes(:reviews)
+    @businesses = @businesses.where(["name LIKE ?", "#{business_params[:name]}"])
+    @businesses = @businesses.where(["cuisine LIKE ?", "#{business_params[:cuisine]}"])
+    @businesses = @businesses.where(["price_range <= ?", "#{business_params[:price_range]}"])
+    @businesses = @businesses.where(["noise_level <= ?", "#{business_params[:noise_level]}"])
+    @businesses = @businesses.where(["delivery ===  ?", "#{business_params[:delivery]}"])
+
+
+
 
   end
 

@@ -4,6 +4,14 @@ import * as BusinessAPIUtil from '../util/business_api_util';
 export const RECEIVE_BUSINESSES = "RECEIVE_BUSINESSES";
 export const RECEIVE_BUSINESS = "RECEIVE_BUSINESS";
 export const RECEIVE_REVIEWERS = "RECEIVE_USERS";
+export const UPDATE_BOUNDS = "UPDATE_BOUNDS";
+
+export const updateBounds = (bounds, value) => ({
+  type: UPDATE_BOUNDS,
+  bounds,
+  value
+});
+
 
 
 export const receiveReviewers = (reviewers) => ({

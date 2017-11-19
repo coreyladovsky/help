@@ -12,11 +12,13 @@
     "parse-address": "0.0.8",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-places-autocomplete": "^5.4.3",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
+    "url-loader": "^0.6.2",
     "webpack": "^3.8.1"
   },
   "engines": {

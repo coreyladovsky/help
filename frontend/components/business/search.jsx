@@ -4,8 +4,16 @@ import BusinessMap from './business_map';
 import NavBar from '../NavBar';
 
 
-class Search extends React.Component {
 
+class Search extends React.Component {
+  constructor(props){
+    super(props);
+
+  }
+
+  // componentDidMount() {
+  //   this.props.fetchBusinesses();
+  // }
 
 
   render() {
@@ -13,7 +21,8 @@ class Search extends React.Component {
     return(
 
     <div>
-      <NavBar currentUser={this.props.currentUser} intendedPage={this.props.intendedPage} logout={this.props.logout} nextPage={this.props.nextPage} clearPage={this.props.clearPage}/>
+      <NavBar props={this.props}/>
+
       <ul className="map-and-index-ul">
         <li>
           <BusinessIndex updateBounds={this.props.updateBounds} props={this.props} />
