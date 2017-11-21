@@ -5,12 +5,27 @@ class Api::BusinessesController < ApplicationController
     # @businesses = businesses.includes(:reviews) || {}
 
     @businesses = Business.all.includes(:reviews)
-    @businesses = @businesses.where(["name LIKE ?", "#{business_params[:name]}"])
-    @businesses = @businesses.where(["cuisine LIKE ?", "#{business_params[:cuisine]}"])
-    @businesses = @businesses.where(["price_range <= ?", "#{business_params[:price_range]}"])
-    @businesses = @businesses.where(["noise_level <= ?", "#{business_params[:noise_level]}"])
-    @businesses = @businesses.where(["delivery ===  ?", "#{business_params[:delivery]}"])
+    @businesses = @businesses.where(["name LIKE ? OR cuisine LIKE ?", "#{business_params[:name]}", "#{business_params[:cuisine]}" ]) if business_params[:name] != ""|| business_params[:cuisine] !=""
+    # @businesses = @businesses.where(["price_range <= ?", "#{business_params[:price_range]}"]) if business_params[:price_range]
+    # @businesses = @businesses.where(["noise_level <= ?", "#{business_params[:noise_level]}"]) if business_params[:noise_level]
+    # @businesses = @businesses.where(["delivery ===  ?", "#{business_params[:delivery]}"]) if business_params[:delivery]
+    quality_bizs = []
+    delivers = []
+    @businesses.each do |business|
+      if business_params[:delivery] == true
+        next if business.delivery == false
+      end
+      if business.price_range <= business_params[:price_range].to_i &&
+        business.noise_level <= business_params[:noise_level].to_i
 
+          quality_bizs << business
+
+
+        # (business.delivery === true if business_params[:delivery]=== true)
+        # (business.in_bounds(business_params[:bounds]) if business_params[:bounds] != "")
+      end
+    end
+    @businesses = quality_bizs.concat(delivers)
 
 
 
@@ -63,6 +78,6 @@ class Api::BusinessesController < ApplicationController
     :mon_start_time, :mon_end_time, :tue_start_time, :tue_end_time, :wed_start_time,
   :wed_end_time, :thur_start_time, :thur_end_time, :fri_start_time, :fri_end_time,
 :sat_start_time, :sat_end_time, :sun_start_time, :sun_end_time, :website, :image, :price_range,
-:average_rating, :review_count, :delivery, :noise_level, :lat, :lng)
+:average_rating, :review_count, :delivery, :noise_level, :lat, :lng, :bounds)
   end
 end

@@ -8,6 +8,7 @@ class BusinessIndexItem extends React.Component {
     this.findRating = this.findRating.bind(this);
     this.priceRange = this.priceRange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.searchSubmit = this.searchSubmit.bind(this);
   }
 
   handleClick(event) {
@@ -54,7 +55,17 @@ class BusinessIndexItem extends React.Component {
     }
   }
 
+  searchSubmit() {
+    this.props.fetchBusinesses({
+      cuisine: this.props.business.cuisine
+
+    });
+    debugger
+
+  }
+
   render() {
+
     let parsed = parser.parseLocation(this.props.business.address);
   return(
     <div className="biz-idx-page">
@@ -87,7 +98,7 @@ class BusinessIndexItem extends React.Component {
             <li>{this.priceRange(this.props.business.price_range)}</li>
             <li ><div className="period-container"><div className="period">·</div></div> </li>
             <li className="cuisine">
-                <Link to={'/search'}>{this.props.business.cuisine}</Link>
+                <Link to={'/search'} onClick={this.searchSubmit}>{this.props.business.cuisine}</Link>
 
             </li>
           </ul>

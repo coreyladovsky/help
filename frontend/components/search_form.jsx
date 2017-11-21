@@ -19,8 +19,13 @@ class SearchForm extends React.Component {
     event.preventDefault;
     this.props.fetchBusinesses({
       name: this.state.findValue,
+      cuisine: this.state.findValue,
+      price_range: 4,
+      noise_level: 4,
+      delivery: false,
       bounds: this.state.nearValue
     });
+    this.props.history.push("/search");
 
 
   }
