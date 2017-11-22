@@ -27,6 +27,7 @@ class ReviewForm extends React.Component {
     this.updateRating = this.updateRating.bind(this);
     this.clearState = this.clearState.bind(this);
     this.updateClass = this.updateClass.bind(this);
+    this.searchSubmit = this.searchSubmit.bind(this);
 
   }
 
@@ -124,6 +125,19 @@ class ReviewForm extends React.Component {
     this.setState({classColor: "color" + event.currentTarget.value});
   }
 
+  searchSubmit() {
+    this.props.fetchBusinesses({cuisine: this.props.business.cuisine,
+      price_range: 4,
+      noise_level: 4,
+      delivery: false,
+      bounds: "",
+      name: ""});
+
+    this.props.history.push("/search");
+
+
+  }
+
 
   render() {
     if(this.props.business === undefined) {
@@ -155,7 +169,7 @@ class ReviewForm extends React.Component {
                     <Link to={`/businesses/${this.props.business.id}`}>{this.props.business.name}</Link>
 
                   </li>
-                  <li className="cuisine-link-review-form"><Link to={"/search"}>{this.props.business.cuisine}</Link></li>
+                  <li className="cuisine-link-review-form"><button onClick={this.searchSubmit}>{this.props.business.cuisine}</button></li>
                       <li className="biz-address-review-forms">{(parsed.number + " " + parsed.prefix + " " + parsed.street + " " + parsed.type).replace("undefined", "")}</li>
                       <li className="biz-address-review-forms">{(parsed.city + ", " + parsed.state + " " + parsed.zip).replace("undefined", "")}</li>
                     </ul>

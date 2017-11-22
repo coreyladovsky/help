@@ -8,9 +8,9 @@ class BusinessMap extends React.Component {
 
 
   componentDidMount() {
-    const mapOptions = {
+    let mapOptions = {
       center: { lat: 40.751300 , lng: -73.983665 },
-      zoom: 13
+      zoom:13
     };
 
     this.mapNode = document.getElementById('map-container');
@@ -20,6 +20,15 @@ class BusinessMap extends React.Component {
   }
 
   componentDidUpdate() {
+    let mapOptions = {
+     center: { lat: this.props.businesses[0].lat , lng: this.props.businesses[0].lng },
+     zoom: 11
+   };
+   this.mapNode = document.getElementById('map-container');
+
+    this.map = new google.maps.Map(this.mapNode, mapOptions);
+    this.MarkerManager = new MarkerManager(this.map);
+
     this.MarkerManager.updateMarkers(this.props.businesses);
 
   }

@@ -28,7 +28,7 @@ class SearchForm extends React.Component {
       delivery: false,
       bounds: this.state.nearValue
     });
-    if(this.props.path !== "/search" ) {
+    if(this.props.match.path !== "/search" ) {
       this.props.history.push("/search");
     }
 
