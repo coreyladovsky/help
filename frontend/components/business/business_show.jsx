@@ -17,6 +17,7 @@ class BusinessShow extends React.Component {
     this.priceRange = this.priceRange.bind(this);
     this.noiseLevel = this.noiseLevel.bind(this);
     this.delivery = this.delivery.bind(this);
+    this.searchSubmit = this.searchSubmit.bind(this);
   }
 
   delivery(arg) {
@@ -164,6 +165,19 @@ class BusinessShow extends React.Component {
 
   }
 
+  searchSubmit() {
+    this.props.fetchBusinesses({cuisine: this.props.business.cuisine,
+      price_range: 4,
+      noise_level: 4,
+      delivery: false,
+      bounds: "",
+      name: ""});
+
+    this.props.history.push("/search");
+
+
+  }
+
   render() {
     if(this.props.business === undefined) {
       return null;
@@ -197,9 +211,7 @@ class BusinessShow extends React.Component {
                   </li>
                   <li ><div className="period-container"><div className="period">·</div></div> </li>
                   <li className="cusine-link-show">
-                    <Link to={'/search'}>
-                      {this.props.business.cuisine}
-                    </Link>
+                    <button onClick={this.searchSubmit}>{this.props.business.cuisine}</button>
                   </li>
                 </ul>
 

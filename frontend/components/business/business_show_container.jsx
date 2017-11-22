@@ -21,7 +21,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     logout: ()=> dispatch(logout()),
     clearPage: () => dispatch(clearPage()),
     nextPage: (page) => dispatch(nextPage(page)),
-    fetchReviewers: (businessId) => dispatch(fetchReviewers(businessId))
+    fetchReviewers: (businessId) => dispatch(fetchReviewers(businessId)),
+    fetchBusinesses: (filters) => dispatch(fetchBusinesses(filters)),
   };
 };
 
