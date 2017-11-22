@@ -20,6 +20,8 @@ class BusinessMap extends React.Component {
   }
 
   componentDidUpdate() {
+    if(this.props.businesses[0] !== undefined) {
+
     let mapOptions = {
      center: { lat: this.props.businesses[0].lat , lng: this.props.businesses[0].lng },
      zoom: 11
@@ -28,6 +30,7 @@ class BusinessMap extends React.Component {
 
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
+  }
 
     this.MarkerManager.updateMarkers(this.props.businesses);
 
