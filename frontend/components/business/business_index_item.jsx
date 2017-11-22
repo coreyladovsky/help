@@ -56,11 +56,12 @@ class BusinessIndexItem extends React.Component {
   }
 
   searchSubmit() {
-    this.props.fetchBusinesses({
-      cuisine: this.props.business.cuisine
-
-    });
-    debugger
+    this.props.fetchBusinesses({cuisine: this.props.business.cuisine,
+      price_range: 4,
+      noise_level: 4,
+      delivery: false,
+      bounds: "",
+      name: ""});
 
   }
 
@@ -98,7 +99,7 @@ class BusinessIndexItem extends React.Component {
             <li>{this.priceRange(this.props.business.price_range)}</li>
             <li ><div className="period-container"><div className="period">·</div></div> </li>
             <li className="cuisine">
-                <Link to={'/search'} onClick={this.searchSubmit}>{this.props.business.cuisine}</Link>
+                <button onClick={this.searchSubmit}>{this.props.business.cuisine}</button>
 
             </li>
           </ul>

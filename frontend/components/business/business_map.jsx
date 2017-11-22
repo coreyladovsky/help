@@ -21,9 +21,17 @@ class BusinessMap extends React.Component {
 
   componentDidUpdate() {
     this.MarkerManager.updateMarkers(this.props.businesses);
+
   }
 
+  // componentWillReceiveProps() {
+  //
+  //     this.MarkerManager.updateMarkers(this.props.businesses);
+  //
+  // }
+
   render() {
+
     return(
       <div id='map-container' ref={ map => this.mapNode = map}>
       </div>

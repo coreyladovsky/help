@@ -8,6 +8,9 @@ export default class MarkerManager {
 
   updateMarkers(businesses) {
     const businessesObj ={};
+    for(let key in this.markers) {
+      this.markers[key].setMap(null);
+    }
     businesses.forEach(business => {
       if(!Object.keys(this.markers).includes(business.id)) {
         this.createMarkerFromBusiness(business);
