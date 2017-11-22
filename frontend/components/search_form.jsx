@@ -19,7 +19,7 @@ class SearchForm extends React.Component {
 
   handleSubmit(event) {
 
-    event.preventDefault;
+    event.preventDefault();
     this.props.fetchBusinesses({
       name: this.state.findValue,
       cuisine: this.state.findValue.charAt(0).toUpperCase() + this.state.findValue.slice(1),
