@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 // import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
 
+
 class SearchForm extends React.Component {
   constructor(props) {
     super(props);
@@ -11,21 +12,25 @@ class SearchForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.findChange = this.findChange.bind(this);
     this.nearChange = this.nearChange.bind(this);
+
  }
 
 
 
   handleSubmit(event) {
+
     event.preventDefault;
     this.props.fetchBusinesses({
       name: this.state.findValue,
-      cuisine: this.state.findValue,
+      cuisine: this.state.findValue.charAt(0).toUpperCase() + this.state.findValue.slice(1),
       price_range: 4,
       noise_level: 4,
       delivery: false,
       bounds: this.state.nearValue
     });
-    this.props.history.push("/search");
+    if(this.props.path !== "/search" ) {
+      this.props.history.push("/search");
+    }
 
 
   }
@@ -54,7 +59,7 @@ class SearchForm extends React.Component {
     // )
 
     return(
-      <form className={this.props.path === "/" ? "landing-form" : "serach-nav"} >
+      <form onSubmit={this.handleSubmit} className={this.props.path === "/" ? "landing-form" : "serach-nav"} >
         <ul className={this.props.path === "/" ? "landing-form-ul" :"search-form-nav"}>
 
           <li className={this.props.path === "/" ? "find-text-land" :"find-text-nav"}>
@@ -69,7 +74,7 @@ class SearchForm extends React.Component {
             <input id="serch_term"  className={this.props.path === "/" ? "near-input-land" :"near-input-nav"} onChange={this.nearChange} value={this.state.nearValue} text="type" placeholder="Current Location" />
           </li>
           <li>
-            <button className={this.props.path === "/" ? "mag-land" :"mag"} onClick={this.handleSubmit}><i className={this.props.path ==="/" ? "land-icon fa fa-search" : "icon fa fa-search" }></i></button>
+            <button type="submit" className={this.props.path === "/" ? "mag-land" :"mag"} onKeyDown={this.handleSubmit} onClick={this.handleSubmit}><i className={this.props.path ==="/" ? "land-icon fa fa-search" : "icon fa fa-search" }></i></button>
 
           </li>
         </ul>

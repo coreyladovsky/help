@@ -43,6 +43,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       fetchBusiness: (businessId) => dispatch(fetchBusiness(businessId)),
       logout: ()=> dispatch(logout()),
       nextPage: (page) => dispatch(nextPage(page)),
+      fetchBusinesses: (filters) => dispatch(fetchBusinesses(filters)),
 
   };
 
@@ -55,6 +56,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       fetchBusiness: (businessId) => dispatch(fetchBusiness(businessId)),
       logout: ()=> dispatch(logout()),
       nextPage: (page) => dispatch(nextPage(page)),
+      fetchBusinesses: (filters) => dispatch(fetchBusinesses(filters)),
     };
   }
 };
