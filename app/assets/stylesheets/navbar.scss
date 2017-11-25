@@ -26,9 +26,10 @@
 
 .top-nav-search {
   display: flex;
-  width: 1100px;
+  width: 100%;
+  // width: 1100px;
   justify-content: center;
-  position: sticky;
+  // position: sticky;
   left: 28px;
 }
 
@@ -187,7 +188,7 @@
 
 }
 
-.review-nav:hover {
+.review-nav:last-child:hover {
   background-color: #A71C1C;
 }
 

@@ -10,7 +10,6 @@ class Api::BusinessesController < ApplicationController
     quality_bizs = []
     delivers = []
     @businesses.each do |business|
-      # debugger
       if business_params[:delivery] == "true"
         next if business.delivery == false
       end
@@ -18,7 +17,6 @@ class Api::BusinessesController < ApplicationController
 
       if (business.price_range <= business_params[:price_range].to_i) &&
         (business.noise_level <= business_params[:noise_level].to_i) && business.in_bounds(params[:business][:bounds])
-        # debugger
           quality_bizs << business
       end
     end

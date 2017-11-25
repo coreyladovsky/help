@@ -87,31 +87,34 @@ class SearchForm extends React.Component {
   filter() {
 
   return(
-      <div className="filter-box">
+      <span className="filter-box">
         <ul className="price-filter">
           <li>
-            <label> $
-              <input onChange={this.priceChange}  type="radio" value="1" name="price-range" />
+            <label className="price-label"> $
+              <input className="price" onChange={this.priceChange}  type="radio" value="1" name="price-range" />
             </label>
           </li>
           <li>
-            <label> $$
-              <input onChange={this.priceChange}  type="radio" value="2" name="price-range" />
+            <label className="price-label"> $$
+              <input className="price" onChange={this.priceChange}  type="radio" value="2" name="price-range" />
             </label>
           </li>
           <li>
-            <label> $$$
-              <input onChange={this.priceChange}  type="radio" value="3" name="price-range" />
+            <label className="price-label"> $$$
+              <input className="price" onChange={this.priceChange}  type="radio" value="3" name="price-range" />
             </label>
           </li>
           <li>
-            <label> $$$$
-              <input onChange={this.priceChange}  type="radio" value="4" name="price-range" />
+            <label className="price-label"> $$$$
+              <input className="price" onChange={this.priceChange}  type="radio" value="4" name="price-range" />
             </label>
           </li>
         </ul>
 
         <ul className="noise-filter">
+          <li>
+            Noise Level:
+          </li>
           <li>
             <label> Quiet
               <input onChange={this.noiseChange}  type="radio" value="1" name="noise-range" />
@@ -119,22 +122,25 @@ class SearchForm extends React.Component {
           </li>
           <li>
             <label> Average
-              <input onChange={this.noiseChange}  type="radio" value="1" name="noise-range" />
+              <input onChange={this.noiseChange}  type="radio" value="2" name="noise-range" />
             </label>
           </li>
           <li>
             <label> Loud
-              <input onChange={this.noiseChange}  type="radio" value="1" name="noise-range" />
+              <input onChange={this.noiseChange}  type="radio" value="3" name="noise-range" />
             </label>
           </li>
           <li>
             <label> Very Loud
-              <input onChange={this.noiseChange}  type="radio" value="1" name="noise-range" />
+              <input onChange={this.noiseChange}  type="radio" value="4" name="noise-range" />
             </label>
           </li>
         </ul>
 
         <ul className="delivery-filter">
+          <li>
+            Delivers?
+          </li>
           <li>
             <label> Yes
               <input onChange={this.deliveryChange}  type="radio" value="true" name="delivers" />
@@ -147,7 +153,7 @@ class SearchForm extends React.Component {
           </li>
         </ul>
 
-      </div>
+      </span>
   );
 }
 
@@ -157,7 +163,7 @@ class SearchForm extends React.Component {
 
 
     return(
-      <form id="search-form" onSubmit={this.handleSubmit} className={this.props.path === "/" ? "landing-form" : "serach-nav"} >
+      <form id="search-form" onSubmit={this.handleSubmit} className={this.props.path === "/" ? "landing-form" : "search-nav"} >
         <ul className={this.props.path === "/" ? "landing-form-ul" :"search-form-nav"}>
 
           <li className={this.props.path === "/" ? "find-text-land" :"find-text-nav"}>
