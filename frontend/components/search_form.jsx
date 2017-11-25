@@ -73,11 +73,11 @@ class SearchForm extends React.Component {
   }
 
   priceChange(event) {
-    this.setState({priceRangeValue: event.target.value});
+    this.setState({priceValue: event.target.value});
   }
 
   noiseChange(event) {
-    this.setState({noiseLevelValue: event.target.value});
+    this.setState({noiseValue: event.target.value});
   }
 
   deliveryChange(event) {
@@ -87,7 +87,7 @@ class SearchForm extends React.Component {
   filter() {
 
   return(
-      <div>
+      <div className="filter-box">
         <ul className="price-filter">
           <li>
             <label> $
@@ -111,7 +111,7 @@ class SearchForm extends React.Component {
           </li>
         </ul>
 
-        <ul>
+        <ul className="noise-filter">
           <li>
             <label> Quiet
               <input onChange={this.noiseChange}  type="radio" value="1" name="noise-range" />
@@ -134,7 +134,7 @@ class SearchForm extends React.Component {
           </li>
         </ul>
 
-        <ul>
+        <ul className="delivery-filter">
           <li>
             <label> Yes
               <input onChange={this.deliveryChange}  type="radio" value="true" name="delivers" />
@@ -153,22 +153,6 @@ class SearchForm extends React.Component {
 
 
   render() {
-    // let filteredBusinesses = this.props.businesses.filter(
-    //   (business) => {
-    //     return business.name.toLowerCase().indexOf(this.state.nearValue.toLowerCase() !== -1);
-    //   }
-    // )
-    // let defaultBounds = new google.maps.LatLngBounds(
-    //   new google.maps.LatLng(40.751300 , -73.983665 ),
-    //   new google.maps.LatLng(42, -74.5)
-    // );
-    //
-    // let input = document.getElementById("autocomplete");
-    // // var options = {
-    // //   bounds: defaultBounds,
-    // //   types: ["establishment"]
-    // // };
-    // let autocomplete = new google.maps.places.Autocomplete(input);
 
 
 
