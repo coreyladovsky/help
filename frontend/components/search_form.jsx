@@ -7,13 +7,17 @@ class SearchForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {findValue: "", nearValue: ""};
+    this.state = {findValue: "", nearValue: "", priceValue: 4, noiseValue:4, delivery: false};
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.findChange = this.findChange.bind(this);
     this.nearChange = this.nearChange.bind(this);
+    this.priceChange = this.priceChange.bind(this);
+    this.noiseChange = this.noiseChange.bind(this);
+    this.deliveryChange = this.deliveryChange.bind(this);
     this.activatePlacesSearch = this.activatePlacesSearch.bind(this);
     this.getLatLng = this.getLatLng.bind(this);
+    this.filter = this.filter.bind(this);
     this.autocomplete;
 
  }
@@ -38,9 +42,9 @@ class SearchForm extends React.Component {
       this.props.fetchBusinesses({
         name: this.state.findValue,
         cuisine: this.state.findValue.charAt(0).toUpperCase() + this.state.findValue.slice(1),
-        price_range: 4,
-        noise_level: 4,
-        delivery: false,
+        price_range: this.state.priceValue,
+        noise_level: this.state.noiseValue,
+        delivery: this.state.deliveryValue,
         bounds: this.getLatLng(this.state.nearValue)
       });
       if(this.props.match.path !== "/search" ) {
@@ -68,6 +72,84 @@ class SearchForm extends React.Component {
     // this.activatePlacesSearch();
   }
 
+  priceChange(event) {
+    this.setState({priceRangeValue: event.target.value});
+  }
+
+  noiseChange(event) {
+    this.setState({noiseLevelValue: event.target.value});
+  }
+
+  deliveryChange(event) {
+    this.setState({deliveryValue: event.target.value});
+  }
+
+  filter() {
+
+  return(
+      <div>
+        <ul className="price-filter">
+          <li>
+            <label> $
+              <input onChange={this.priceChange}  type="radio" value="1" name="price-range" />
+            </label>
+          </li>
+          <li>
+            <label> $$
+              <input onChange={this.priceChange}  type="radio" value="2" name="price-range" />
+            </label>
+          </li>
+          <li>
+            <label> $$$
+              <input onChange={this.priceChange}  type="radio" value="3" name="price-range" />
+            </label>
+          </li>
+          <li>
+            <label> $$$$
+              <input onChange={this.priceChange}  type="radio" value="4" name="price-range" />
+            </label>
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            <label> Quiet
+              <input onChange={this.noiseChange}  type="radio" value="1" name="noise-range" />
+            </label>
+          </li>
+          <li>
+            <label> Average
+              <input onChange={this.noiseChange}  type="radio" value="1" name="noise-range" />
+            </label>
+          </li>
+          <li>
+            <label> Loud
+              <input onChange={this.noiseChange}  type="radio" value="1" name="noise-range" />
+            </label>
+          </li>
+          <li>
+            <label> Very Loud
+              <input onChange={this.noiseChange}  type="radio" value="1" name="noise-range" />
+            </label>
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            <label> Yes
+              <input onChange={this.deliveryChange}  type="radio" value="true" name="delivers" />
+            </label>
+          </li>
+          <li>
+            <label> No
+              <input onChange={this.deliveryChange}  type="radio" value="false" name="delivers" />
+            </label>
+          </li>
+        </ul>
+
+      </div>
+  );
+}
 
 
   render() {
@@ -87,6 +169,7 @@ class SearchForm extends React.Component {
     // //   types: ["establishment"]
     // // };
     // let autocomplete = new google.maps.places.Autocomplete(input);
+
 
 
     return(
@@ -116,6 +199,8 @@ class SearchForm extends React.Component {
 
           </li>
         </ul>
+
+        {this.props.path === "/" ? "" : this.filter()}
       </form>
 
     );
