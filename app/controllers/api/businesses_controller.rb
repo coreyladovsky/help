@@ -6,21 +6,14 @@ class Api::BusinessesController < ApplicationController
 
     @businesses = Business.all.includes(:reviews)
     @businesses = @businesses.where(["name LIKE ? OR cuisine LIKE ?", "#{business_params[:name]}", "#{business_params[:cuisine]}" ]) if business_params[:name] != ""|| business_params[:cuisine] !=""
-    # @businesses = @businesses.where(["price_range <= ?", "#{business_params[:price_range]}"]) if business_params[:price_range]
-    # @businesses = @businesses.where(["noise_level <= ?", "#{business_params[:noise_level]}"]) if business_params[:noise_level]
-    # @businesses = @businesses.where(["delivery ===  ?", "#{business_params[:delivery]}"]) if business_params[:delivery]
-    # debugger
+
     quality_bizs = []
     delivers = []
     @businesses.each do |business|
       if business_params[:delivery] == true
         next if business.delivery == false
       end
-      # debugger
-      # if !business.in_bounds(params[:business][:bounds])
-      #   # debugger
-      #   next
-      # end
+
 
       if (business.price_range <= business_params[:price_range].to_i if business_params[:price_range]) &&
         (business.noise_level <= business_params[:noise_level].to_i if business_params[:price_range]) && business.in_bounds(params[:business][:bounds])
