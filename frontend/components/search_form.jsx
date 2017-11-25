@@ -7,7 +7,7 @@ class SearchForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {findValue: "", nearValue: "", priceValue: 4, noiseValue:4, delivery: false};
+    this.state = {findValue: "", nearValue: "", priceValue: 5, noiseValue:5, delivery: false};
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.findChange = this.findChange.bind(this);
@@ -90,65 +90,65 @@ class SearchForm extends React.Component {
       <span className="filter-box">
         <ul className="price-filter">
           <li>
-            <label className="price-label"> $
+            <label className={parseInt(this.state.priceValue) === 1 ? "price-label first-price green" : "price-label first-price"}> $
               <input className="price" onChange={this.priceChange}  type="radio" value="1" name="price-range" />
             </label>
           </li>
           <li>
-            <label className="price-label"> $$
+            <label className={parseInt(this.state.priceValue) === 2 ? "price-label green" : "price-label "}> $$
               <input className="price" onChange={this.priceChange}  type="radio" value="2" name="price-range" />
             </label>
           </li>
           <li>
-            <label className="price-label"> $$$
+            <label className={parseInt(this.state.priceValue) === 3 ? "price-label green" : "price-label "}> $$$
               <input className="price" onChange={this.priceChange}  type="radio" value="3" name="price-range" />
             </label>
           </li>
           <li>
-            <label className="price-label"> $$$$
+            <label className={parseInt(this.state.priceValue) === 4 ? "price-label last-price green" : "price-label last-price "}> $$$$
               <input className="price" onChange={this.priceChange}  type="radio" value="4" name="price-range" />
             </label>
           </li>
         </ul>
 
         <ul className="noise-filter">
-          <li>
+          <li className="noise-level">
             Noise Level:
           </li>
           <li>
-            <label> Quiet
-              <input onChange={this.noiseChange}  type="radio" value="1" name="noise-range" />
+            <label className={parseInt(this.state.noiseValue) === 1 ? "price-label first-price green" : "price-label first-price"}> Quiet
+              <input className="price" onChange={this.noiseChange}  type="radio" value="1" name="noise-range" />
             </label>
           </li>
           <li>
-            <label> Average
-              <input onChange={this.noiseChange}  type="radio" value="2" name="noise-range" />
+            <label className={parseInt(this.state.noiseValue) === 2 ? "price-label green" : "price-label "}> Average
+              <input  className="price" onChange={this.noiseChange}  type="radio" value="2" name="noise-range" />
             </label>
           </li>
           <li>
-            <label> Loud
-              <input onChange={this.noiseChange}  type="radio" value="3" name="noise-range" />
+            <label className={parseInt(this.state.noiseValue) === 3 ? "price-label green" : "price-label "}> Loud
+              <input className="price"  onChange={this.noiseChange}  type="radio" value="3" name="noise-range" />
             </label>
           </li>
           <li>
-            <label> Very Loud
-              <input onChange={this.noiseChange}  type="radio" value="4" name="noise-range" />
+            <label className={parseInt(this.state.noiseValue) === 4 ? "price-label last-price green" : "price-label last-price "}> Very Loud
+              <input className="price"  onChange={this.noiseChange}  type="radio" value="4" name="noise-range" />
             </label>
           </li>
         </ul>
 
         <ul className="delivery-filter">
-          <li>
+          <li className="noise-level">
             Delivers?
           </li>
           <li>
-            <label> Yes
-              <input onChange={this.deliveryChange}  type="radio" value="true" name="delivers" />
+            <label className={this.state.deliveryValue === "true" ? "price-label first-price green" : "price-label first-price"}> Yes
+              <input  className="price" onChange={this.deliveryChange}  type="radio" value="true" name="delivers" />
             </label>
           </li>
           <li>
-            <label> No
-              <input onChange={this.deliveryChange}  type="radio" value="false" name="delivers" />
+            <label className={this.state.deliveryValue === "false"? "price-label last-price green" : "price-label last-price "}> No
+              <input className="price" onChange={this.deliveryChange}  type="radio" value="false" name="delivers" />
             </label>
           </li>
         </ul>
