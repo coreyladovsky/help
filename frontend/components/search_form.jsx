@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+// import geocoder from 'geocoder';
 
 
 class SearchForm extends React.Component {
@@ -12,30 +13,35 @@ class SearchForm extends React.Component {
     this.findChange = this.findChange.bind(this);
     this.nearChange = this.nearChange.bind(this);
     this.activatePlacesSearch = this.activatePlacesSearch.bind(this);
-    this.getBounds = this.getBounds.bind(this);
+    this.getLatLng = this.getLatLng.bind(this);
+    this.autocomplete;
 
  }
 
-  getBounds(address) {
-    let geocoder = new google.maps.Geocoder();
-    let ltlng = geocoder.geocode({'address': address});
-    debugger
+  getLatLng(address) {
+    if(address === "") {
+      return "";
+    }
+    let place = this.autocomplete.getPlace();
+    let lat = place.geometry.location.lat();
+    let lng = place.geometry.location.lng();
+    return [lat, lng];
   }
 
 
 
   handleSubmit(event) {
     event.preventDefault();
-    this.setState({nearValue: document.getElementById("autocomplete").value})
+    this.setState({nearValue: document.getElementById("autocomplete").value});
     setTimeout(() => {
-      this.getBounds(this.state.nearValue)
+
       this.props.fetchBusinesses({
         name: this.state.findValue,
         cuisine: this.state.findValue.charAt(0).toUpperCase() + this.state.findValue.slice(1),
         price_range: 4,
         noise_level: 4,
         delivery: false,
-        bounds: this.state.nearValue
+        bounds: this.getLatLng(this.state.nearValue)
       });
       if(this.props.match.path !== "/search" ) {
         this.props.history.push("/search");
@@ -47,7 +53,8 @@ class SearchForm extends React.Component {
 
    activatePlacesSearch() {
     var input = document.getElementById('autocomplete');
-    var autocomplete = new google.maps.places.Autocomplete(input);
+     this.autocomplete = new google.maps.places.Autocomplete(input);
+
     // console.log(this.state);
   }
 
@@ -64,7 +71,6 @@ class SearchForm extends React.Component {
 
 
   render() {
-    console.log(this.state);
     // let filteredBusinesses = this.props.businesses.filter(
     //   (business) => {
     //     return business.name.toLowerCase().indexOf(this.state.nearValue.toLowerCase() !== -1);

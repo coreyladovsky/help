@@ -9,20 +9,23 @@ class Api::BusinessesController < ApplicationController
     # @businesses = @businesses.where(["price_range <= ?", "#{business_params[:price_range]}"]) if business_params[:price_range]
     # @businesses = @businesses.where(["noise_level <= ?", "#{business_params[:noise_level]}"]) if business_params[:noise_level]
     # @businesses = @businesses.where(["delivery ===  ?", "#{business_params[:delivery]}"]) if business_params[:delivery]
+    # debugger
     quality_bizs = []
     delivers = []
     @businesses.each do |business|
       if business_params[:delivery] == true
         next if business.delivery == false
       end
+      # debugger
+      # if !business.in_bounds(params[:business][:bounds])
+      #   # debugger
+      #   next
+      # end
+
       if (business.price_range <= business_params[:price_range].to_i if business_params[:price_range]) &&
-        (business.noise_level <= business_params[:noise_level].to_i if business_params[:price_range])
+        (business.noise_level <= business_params[:noise_level].to_i if business_params[:price_range]) && business.in_bounds(params[:business][:bounds])
 
           quality_bizs << business
-
-
-        # (business.delivery === true if business_params[:delivery]=== true)
-        # (business.in_bounds(business_params[:bounds]) if business_params[:bounds] != "")
       end
     end
     @businesses = quality_bizs.concat(delivers)
@@ -78,6 +81,6 @@ class Api::BusinessesController < ApplicationController
     :mon_start_time, :mon_end_time, :tue_start_time, :tue_end_time, :wed_start_time,
   :wed_end_time, :thur_start_time, :thur_end_time, :fri_start_time, :fri_end_time,
 :sat_start_time, :sat_end_time, :sun_start_time, :sun_end_time, :website, :image, :price_range,
-:average_rating, :review_count, :delivery, :noise_level, :lat, :lng, :bounds)
+:average_rating, :review_count, :delivery, :noise_level, :lat, :lng, :bounds, :in_bounds)
   end
 end

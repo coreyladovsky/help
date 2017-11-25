@@ -10,9 +10,14 @@ class Business < ApplicationRecord
   has_attached_file :image, styles: { thumb: '100x100', croppable: '600x600>', big: '1000x1000>' }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
-  def self.in_bounds(bounds)
-    self.where("lat < ?", bounds[:northEast][:lat]).where("lat > ?", bounds[:southWest][:lat])
-    .where("lng < ?", bounds[:northEast][:lng]).where("lng < ?" ,bounds[:southWest][:lng])
+  def in_bounds(bounds)
+
+    return true if bounds == "" || bounds.nil?
+      ky = 4000 / 360
+      kx = Math.cos(Math::PI * bounds[0].to_f / 180.0) * ky
+      dx = (bounds[1].to_f - self.lng).abs * kx
+      dy = (bounds[0].to_f - self.lat).abs * ky
+      Math.sqrt(dx * dx + dy * dy ) <= 0.8
   end
 
   def average_rating
@@ -37,7 +42,7 @@ class Business < ApplicationRecord
 
   def noise_level
     return 0 unless self.reviews
-    self.reviews.average(:noise_level).to_i 
+    self.reviews.average(:noise_level).to_i
   end
 
 end
