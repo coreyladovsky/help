@@ -28,7 +28,12 @@ class ReviewForm extends React.Component {
     this.clearState = this.clearState.bind(this);
     this.updateClass = this.updateClass.bind(this);
     this.searchSubmit = this.searchSubmit.bind(this);
-    
+    this.oneCheck = this.oneCheck.bind(this);
+    this.twoCheck = this.twoCheck.bind(this);
+    this.threeCheck = this.threeCheck.bind(this);
+    this.fourCheck = this.fourCheck.bind(this);
+    this.fiveCheck = this.fiveCheck.bind(this);
+
 
   }
 
@@ -139,6 +144,90 @@ class ReviewForm extends React.Component {
 
   }
 
+  oneCheck() {
+    switch (parseInt(this.state.ratingValue)) {
+      case 1:
+        return "pale-yellow default";
+      case 2:
+        return "yellow default";
+      case 3:
+        return "orangy default";
+      case 4:
+        return "pale-red default";
+      case 5:
+        return "red default";
+      default:
+        return "default";
+    }
+  }
+  twoCheck() {
+    switch (parseInt(this.state.ratingValue)) {
+      case 1:
+        return "default";
+      case 2:
+        return "yellow default";
+      case 3:
+        return "orangy default";
+      case 4:
+        return "pale-red default";
+      case 5:
+        return "red default";
+      default:
+        return "default";
+    }
+  }
+
+  threeCheck() {
+    switch (parseInt(this.state.ratingValue)) {
+      case 1:
+        return "default";
+      case 2:
+        return "default";
+      case 3:
+        return "orangy default";
+      case 4:
+        return "pale-red default";
+      case 5:
+        return "red default";
+      default:
+        return "default";
+    }
+  }
+  fourCheck() {
+    switch (parseInt(this.state.ratingValue)) {
+      case 1:
+        return "default";
+      case 2:
+        return "default";
+      case 3:
+        return "default";
+      case 4:
+        return "pale-red default";
+      case 5:
+        return "red default";
+      default:
+        return "default";
+    }
+  }
+  fiveCheck() {
+    switch (parseInt(this.state.ratingValue)) {
+      case 1:
+        return "default";
+      case 2:
+        return "default";
+      case 3:
+        return "default";
+      case 4:
+        return "default";
+      case 5:
+        return "red default";
+      default:
+        return "default";
+    }
+  }
+
+
+
 
   render() {
     if(this.props.business === undefined) {
@@ -179,30 +268,30 @@ class ReviewForm extends React.Component {
                   <div className="your-review-text">Your review</div>
                   <div className= "stars-and-review-body">
                     <div className="stars-review-biz-form" value={this.state.ratingValue}>
-                      <ul className="yelp-stars">
+                      <ul className="yelp-stars" onChange={this.ratingChange}>
                         <li>
-                          <label className={parseInt(this.state.ratingValue) === 5 ? "red default" : "default"}> <i className="fa fa-star" aria-hidden="true"  >    </i>
-                            <input className="price" onChange={this.ratingChange}  type="radio" value="5" name="rating"/>
+                          <label className={this.fiveCheck()}> <i className="fa fa-star" aria-hidden="true"  >    </i>
+                            <input className="price"   type="radio" value="5" name="rating"/>
                           </label>
                         </li>
                         <li>
-                          <label className={parseInt(this.state.ratingValue) === 4 ? "pale-red default" : "default"}> <i className="fa fa-star" aria-hidden="true"  >    </i>
-                            <input className="price" onChange={this.ratingChange}  type="radio" value="4" name="rating"/>
+                          <label className={this.fourCheck()}> <i className="fa fa-star" aria-hidden="true"  >    </i>
+                            <input className="price"   type="radio" value="4" name="rating"/>
                             </label>
                           </li>
                         <li>
-                          <label className={parseInt(this.state.ratingValue) === 3 ? "orangy default" : "default"}> <i className="fa fa-star" aria-hidden="true"  >    </i>
-                            <input className="price" onChange={this.ratingChange}  type="radio" value="3" name="rating" />
+                          <label className={this.threeCheck()}> <i className="fa fa-star" aria-hidden="true"  >    </i>
+                            <input className="price"  type="radio" value="3" name="rating" />
                             </label>
                           </li>
                         <li>
-                          <label className={parseInt(this.state.ratingValue) === 2 ? "yellow default" : "default"}> <i className="fa fa-star" aria-hidden="true"  >    </i>
-                            <input className="price" onChange={this.ratingChange}  type="radio" value="2" name="rating" />
+                          <label className={this.twoCheck()}> <i className="fa fa-star" aria-hidden="true"  >    </i>
+                            <input className="price"  type="radio" value="2" name="rating" />
                             </label>
                           </li>
                         <li>
-                          <label className={parseInt(this.state.ratingValue) === 1 ? "pale-yellow default" : "default"}> <i className="fa fa-star" aria-hidden="true"  ></i>
-                            <input className="price" onChange={this.ratingChange}  type="radio" value="1" name="rating" />
+                          <label className={this.oneCheck()}> <i className="fa fa-star" aria-hidden="true"  ></i>
+                            <input className="price"  type="radio" value="1" name="rating" />
                             </label>
                           </li>
                       </ul>
