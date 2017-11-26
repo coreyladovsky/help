@@ -28,6 +28,7 @@ class ReviewForm extends React.Component {
     this.clearState = this.clearState.bind(this);
     this.updateClass = this.updateClass.bind(this);
     this.searchSubmit = this.searchSubmit.bind(this);
+    
 
   }
 
@@ -180,30 +181,30 @@ class ReviewForm extends React.Component {
                     <div className="stars-review-biz-form" value={this.state.ratingValue}>
                       <ul className="yelp-stars">
                         <li>
-                          <label className="default"> <i className="fa fa-star" aria-hidden="true"  >    </i>
-                            <input className="price" onChange={this.ratingChange}  type="radio" value="1" name="rating" checked={parseInt(this.state.ratingValue) === 1 ? "checked" : ""}/>
+                          <label className={parseInt(this.state.ratingValue) === 5 ? "red default" : "default"}> <i className="fa fa-star" aria-hidden="true"  >    </i>
+                            <input className="price" onChange={this.ratingChange}  type="radio" value="5" name="rating"/>
                           </label>
                         </li>
                         <li>
-                          <label className="default"> <i className="fa fa-star" aria-hidden="true"  >    </i>
-                            <input className="price" onChange={this.ratingChange}  type="radio" value="2" name="rating" checked={parseInt(this.state.ratingValue) === 2 ? "checked" : ""}/>
-                          </label>
-                        </li>
+                          <label className={parseInt(this.state.ratingValue) === 4 ? "pale-red default" : "default"}> <i className="fa fa-star" aria-hidden="true"  >    </i>
+                            <input className="price" onChange={this.ratingChange}  type="radio" value="4" name="rating"/>
+                            </label>
+                          </li>
                         <li>
-                          <label className="default"> <i className="fa fa-star" aria-hidden="true"  >    </i>
-                            <input className="price" onChange={this.ratingChange}  type="radio" value="3" name="rating" checked={parseInt(this.state.ratingValue) === 3 ? "checked" : ""}/>
-                          </label>
-                        </li>
+                          <label className={parseInt(this.state.ratingValue) === 3 ? "orangy default" : "default"}> <i className="fa fa-star" aria-hidden="true"  >    </i>
+                            <input className="price" onChange={this.ratingChange}  type="radio" value="3" name="rating" />
+                            </label>
+                          </li>
                         <li>
-                          <label className="default"> <i className="fa fa-star" aria-hidden="true"  >    </i>
-                            <input className="price" onChange={this.ratingChange}  type="radio" value="4" name="rating" checked={parseInt(this.state.ratingValue) === 4 ? "checked" : ""}/>
-                          </label>
-                        </li>
+                          <label className={parseInt(this.state.ratingValue) === 2 ? "yellow default" : "default"}> <i className="fa fa-star" aria-hidden="true"  >    </i>
+                            <input className="price" onChange={this.ratingChange}  type="radio" value="2" name="rating" />
+                            </label>
+                          </li>
                         <li>
-                          <label className="default"> <i className="fa fa-star" aria-hidden="true"  >    </i>
-                            <input className="price" onChange={this.ratingChange}  type="radio" value="5" name="rating" checked={parseInt(this.state.ratingValue) === 5 ? "checked" : ""}/>
-                          </label>
-                        </li>
+                          <label className={parseInt(this.state.ratingValue) === 1 ? "pale-yellow default" : "default"}> <i className="fa fa-star" aria-hidden="true"  ></i>
+                            <input className="price" onChange={this.ratingChange}  type="radio" value="1" name="rating" />
+                            </label>
+                          </li>
                       </ul>
                     </div>
 
