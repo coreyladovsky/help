@@ -178,78 +178,32 @@ class ReviewForm extends React.Component {
                   <div className="your-review-text">Your review</div>
                   <div className= "stars-and-review-body">
                     <div className="stars-review-biz-form" value={this.state.ratingValue}>
-                      <ul className="stars-ratings-form" >
+                      <ul className="yelp-stars">
                         <li>
-                          <input type="radio" value="1" name="star-scale" onChange={this.ratingChange} checked={parseInt(this.state.ratingValue) === 1 ? "checked" : ""}/>
-                          <ul>
-                            <li>
-                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
-                            </li>
-                          </ul>
+                          <label className="default"> <i className="fa fa-star" aria-hidden="true"  >    </i>
+                            <input className="price" onChange={this.ratingChange}  type="radio" value="1" name="rating" checked={parseInt(this.state.ratingValue) === 1 ? "checked" : ""}/>
+                          </label>
                         </li>
                         <li>
-                          <input type="radio" value="2" name="star-scale" onChange={this.ratingChange} checked={parseInt(this.state.ratingValue) === 2 ? "checked" : ""} />
-                          <ul>
-                            <li>
-                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
-                            </li>
-                            <li>
-                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
-                            </li>
-                          </ul>
+                          <label className="default"> <i className="fa fa-star" aria-hidden="true"  >    </i>
+                            <input className="price" onChange={this.ratingChange}  type="radio" value="2" name="rating" checked={parseInt(this.state.ratingValue) === 2 ? "checked" : ""}/>
+                          </label>
                         </li>
                         <li>
-                          <input type="radio" value="3" name="star-scale" onChange={this.ratingChange} checked={parseInt(this.state.ratingValue) === 3 ? "checked" : ""}/>
-                          <ul>
-                            <li>
-                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
-                            </li>
-                            <li>
-                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
-                            </li>
-                            <li>
-                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
-                            </li>
-                          </ul>
+                          <label className="default"> <i className="fa fa-star" aria-hidden="true"  >    </i>
+                            <input className="price" onChange={this.ratingChange}  type="radio" value="3" name="rating" checked={parseInt(this.state.ratingValue) === 3 ? "checked" : ""}/>
+                          </label>
                         </li>
                         <li>
-                          <input type="radio" value="4" name="star-scale" onChange={this.ratingChange} checked={parseInt(this.state.ratingValue) === 4 ? "checked" : ""}/>
-                          <ul>
-                            <li>
-                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
-                            </li>
-                            <li>
-                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
-                            </li>
-                            <li>
-                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
-                            </li>
-                            <li>
-                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
-                            </li>
-                          </ul>
+                          <label className="default"> <i className="fa fa-star" aria-hidden="true"  >    </i>
+                            <input className="price" onChange={this.ratingChange}  type="radio" value="4" name="rating" checked={parseInt(this.state.ratingValue) === 4 ? "checked" : ""}/>
+                          </label>
                         </li>
                         <li>
-                          <input type="radio" value="5" name="star-scale" onChange={this.ratingChange} checked={parseInt(this.state.ratingValue) === 5 ? "checked" : ""}/>
-                          <ul>
-                            <li>
-                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
-                            </li>
-                            <li>
-                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
-                            </li>
-                            <li>
-                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
-                            </li>
-                            <li>
-                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
-                            </li>
-                            <li>
-                              <i className="fa fa-star real-star" aria-hidden="true"  >    </i>
-                            </li>
-                          </ul>
+                          <label className="default"> <i className="fa fa-star" aria-hidden="true"  >    </i>
+                            <input className="price" onChange={this.ratingChange}  type="radio" value="5" name="rating" checked={parseInt(this.state.ratingValue) === 5 ? "checked" : ""}/>
+                          </label>
                         </li>
-
                       </ul>
                     </div>
 

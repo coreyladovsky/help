@@ -102,6 +102,10 @@
 
 }
 
+.yelp-stars {
+  display: flex;
+}
+
 .default {
   height: 32px;
   width: 32px;
@@ -112,7 +116,7 @@
   justify-content: center;
   border-radius: 4px;
   font-size: 23px;
-
+  cursor: pointer;
 }
 
 .default:hover {
@@ -258,7 +262,7 @@
   display: flex;
   width: 100%;
   justify-content: center;
-  margin-top: 70px; 
+  margin-top: 70px;
 }
 
 
