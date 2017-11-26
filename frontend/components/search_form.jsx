@@ -137,7 +137,7 @@ class SearchForm extends React.Component {
           </li>
         </ul>
 
-        <ul className="delivery-filter">
+        <ul className="noise-filter">
           <li className="noise-level">
             Delivers?
           </li>

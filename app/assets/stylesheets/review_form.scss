@@ -145,6 +145,20 @@
 }
 
 
+// Yelp css inspired by Roko C. Buljan from stack overflow
+
+.yelp-stars>label:nth-child(1):hover,
+.yelp-stars>label:nth-child(1):hover ~ label{background-color: #D4202B;}
+.yelp-stars>label:nth-child(2):hover,
+.yelp-stars>label:nth-child(2):hover ~ label{background-color: #F25A54;}
+.yelp-stars>label:nth-child(3):hover,
+.yelp-stars>label:nth-child(3):hover ~ label{background-color: #FF9151;}
+.yelp-stars>label:nth-child(4):hover,
+.yelp-stars>label:nth-child(4):hover ~ label{background-color: #FDC116;}
+.yelp-stars>label:nth-child(5):hover,
+.yelp-stars>label:nth-child(5):hover ~ label{background-color: #F2BC82;}
+
+
 
 
 .stars-ratings-form {

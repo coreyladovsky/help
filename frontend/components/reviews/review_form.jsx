@@ -34,6 +34,7 @@ class ReviewForm extends React.Component {
     this.fourCheck = this.fourCheck.bind(this);
     this.fiveCheck = this.fiveCheck.bind(this);
     this.changeClass = this.changeClass.bind(this);
+    this.fiveCheckHover = this.fiveCheckHover.bind(this);
 
 
   }
@@ -148,70 +149,86 @@ class ReviewForm extends React.Component {
   oneCheck() {
     switch (parseInt(this.state.ratingValue)) {
       case 1:
-        return "pale-yellow default";
+        return "pale-yellow fourer threer default";
       case 2:
-        return "yellow default";
+        return "yellow fourer threer default";
       case 3:
-        return "orangy default";
+        return "orangy fourer threer default";
       case 4:
-        return "pale-red default";
+        return "pale-red fourer threer default";
       case 5:
-        return "red default";
-      default:
-        return "default";
+        return "red fourer threer default";
+       default:
+        return "fourer threer default";
     }
   }
   twoCheck() {
     switch (parseInt(this.state.ratingValue)) {
       case 1:
-        return "default";
+        return "fourer threer default";
       case 2:
-        return "yellow default";
+        return "yellow fourer threer default";
       case 3:
-        return "orangy default";
+        return "orangy fourer threer default";
       case 4:
-        return "pale-red default";
+        return "pale-red fourer threer default";
       case 5:
-        return "red default";
-      default:
-        return "default";
+        return "red fourer threer default";
+       default:
+        return "fourer threer default";
     }
   }
 
   threeCheck() {
     switch (parseInt(this.state.ratingValue)) {
       case 1:
-        return "default";
+        return "fourer threer default";
       case 2:
-        return "default";
+        return "fourer threer default";
       case 3:
-        return "orangy default";
+        return "orangy fourer threer default";
       case 4:
-        return "pale-red default";
+        return "pale-red fourer threer default";
       case 5:
-        return "red default";
-      default:
-        return "default";
+        return "red fourer threer default";
+       default:
+        return "fourer threer default";
     }
   }
   fourCheck() {
     switch (parseInt(this.state.ratingValue)) {
       case 1:
-        return "default";
+        return "fourer default";
       case 2:
-        return "default";
+        return "fourer default";
       case 3:
-        return "default";
+        return "fourer default";
       case 4:
-        return "pale-red default";
+        return "pale-red fourer default";
       case 5:
-        return "red default";
-      default:
-        return "default";
+        return "red fourer default";
+       default:
+        return "fourer default";
     }
   }
   fiveCheck() {
     switch (parseInt(this.state.ratingValue)) {
+      case 1:
+        return "fiver fourer default";
+      case 2:
+        return "fiver default";
+      case 3:
+        return "fiver default";
+      case 4:
+        return "fiver default";
+      case 5:
+        return " fiver red default";
+      default:
+        return "fiver default";
+    }
+  }
+  fiveCheckHover(event) {
+    switch (parseInt(event.target.value)) {
       case 1:
         return "default";
       case 2:
@@ -227,16 +244,12 @@ class ReviewForm extends React.Component {
     }
   }
 
-
   changeClass(id, callback) {
-
-    setTimeout(()=>{
-
     switch(id) {
       case "five":
         document.getElementById("five").className = callback + " default";
         document.getElementById("four").className = callback + " default" ;
-        document.getElementById("three3").className = callback + " default";
+        document.getElementById("three").className = callback + " default";
         document.getElementById("two").className = callback + " default";
         document.getElementById("one").className = callback + " default";
         break;
@@ -244,35 +257,34 @@ class ReviewForm extends React.Component {
       case "four":
               document.getElementById("five").className = " default";
               document.getElementById("four").className = callback + " default" ;
-              document.getElementById("three3").className = callback + " default";
+              document.getElementById("three").className = callback + " default";
               document.getElementById("two").className = callback + " default";
               document.getElementById("one").className = callback + " default";
         break;
          case "three":
           document.getElementById("five").className = "default";
           document.getElementById("four").className = "default" ;
-          document.getElementById("three3").className = callback + " default";
+          document.getElementById("three").className = callback + " default";
           document.getElementById("two").className = callback + " default";
           document.getElementById("one").className = callback + " default";
         break;
       case "two":
           document.getElementById(id).className = " default";
           document.getElementById("four").className = " default" ;
-          document.getElementById("three3").className = " default";
+          document.getElementById("three").className = " default";
           document.getElementById("two").className = callback + " default";
           document.getElementById("one").className = callback + " default";
         break;
         case "one":
           document.getElementById(id).className = " default";
           document.getElementById("four").className = " default" ;
-          document.getElementById("three3").className =  " default";
+          document.getElementById("three").className =  " default";
           document.getElementById("two").className =  " default";
           document.getElementById("one").className = callback + " default";
         break;
     default:
     return;
-  }
-}, 20);
+    }
   }
 
 
@@ -318,31 +330,32 @@ class ReviewForm extends React.Component {
                   <div className= "stars-and-review-body">
                     <div className="stars-review-biz-form" value={this.state.ratingValue}>
                       <ul className="yelp-stars" onChange={this.ratingChange}>
-                        <li>
-                          <label id="five" className={this.fiveCheck()} onMouseOver={()=> this.changeClass("five", "red")}> <i className="fa fa-star" aria-hidden="true"  ></i>
+  
+
+                          <label id="five" className={this.fiveCheck()} > <i className="fa fa-star" aria-hidden="true"  ></i>
                             <input className="price"   type="radio" value="5" name="rating"/>
                           </label>
-                        </li>
-                        <li>
-                          <label id="four" className={this.fourCheck()} onMouseOver={()=>this.changeClass("four", "pale-red")}> <i className="fa fa-star" aria-hidden="true"  ></i>
+
+
+                          <label id="four" className={this.fourCheck()} > <i className="fa fa-star" aria-hidden="true"  ></i>
                             <input className="price"   type="radio" value="4" name="rating"/>
                             </label>
-                          </li>
-                        <li>
-                          <label id="three3" className={this.threeCheck()} onMouseOver={this.changeClass("three3", "orangy")}> <i className="fa fa-star" aria-hidden="true"  ></i>
+
+
+                          <label id="three" className={this.threeCheck()} > <i className="fa fa-star" aria-hidden="true"  ></i>
                             <input className="price"  type="radio" value="3" name="rating" />
                             </label>
-                          </li>
-                        <li>
-                          <label id="two" className={this.twoCheck()} onMouseOver={()=>this.changeClass("two", "yellow")}> <i className="fa fa-star" aria-hidden="true"  ></i>
+
+
+                          <label id="two" className={this.twoCheck()} > <i className="fa fa-star" aria-hidden="true"  ></i>
                             <input className="price"  type="radio" value="2" name="rating" />
                             </label>
-                          </li>
-                        <li>
-                          <label id="one" className={this.oneCheck()} onMouseOver={()=>this.changeClass("one", "pale-yellow")}> <i className="fa fa-star" aria-hidden="true"  ></i>
+
+
+                          <label id="one" className={this.oneCheck()}> <i className="fa fa-star" aria-hidden="true"  ></i>
                             <input className="price"  type="radio" value="1" name="rating" />
                             </label>
-                          </li>
+
                       </ul>
                     </div>
 
