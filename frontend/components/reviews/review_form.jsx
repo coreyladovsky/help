@@ -226,21 +226,22 @@ class ReviewForm extends React.Component {
   reviewCheck() {
     switch (parseInt(this.state.ratingValue)) {
       case 1:
-        document.getElementById("rating-text").innnerHTML = "Eek! Methinks not.";
+        return document.getElementById("rating-text").innnerHTML = "Eek! Methinks not.";
         break;
       case 2:
-      document.getElementById("rating-text").innnerHTML = "Eek! Methinks not.";
+      return document.getElementById("rating-text").innnerHTML = "Meh. I've experienced better.";
         break;
       case 3:
-      document.getElementById("rating-text").innnerHTML = "Eek! Methinks not.";
+      return document.getElementById("rating-text").innnerHTML = "A=OK.";
         break;
       case 4:
-      document.getElementById("rating-text").innnerHTML = "Eek! Methinks not.";
+      return document.getElementById("rating-text").innnerHTML = "Yay! I'm a fan.";
         break;
       case 5:
-      document.getElementById("rating-text").innnerHTML = "Eek! Methinks not.";
+      return document.getElementById("rating-text").innnerHTML = "Woohoo! As good as it gets!";
         break;
       default:
+      return document.getElementById("rating-text").innnerHTML = "Select your rating.";
         break;
     }
   }
@@ -299,10 +300,12 @@ class ReviewForm extends React.Component {
                 <form  onSubmit={this.handleSubmit}>
                   <div className={"your-review-text"}>Your review</div>
                   <div className= "stars-and-review-body">
-                    <div className="stars-review-biz-form" value={this.state.ratingValue}>
+                    <div className="stars-review-biz-form" value={this.state.ratingValue} onChange={this.reviewCheck}>
                       <ul className="yelp-stars" onChange={this.ratingChange} onMouseOver={this.clearClass} onMouseOut={this.reinstateClass}>
 
-                          <div id="rating-text" className="rating-text-review"> Select your rating.</div>
+                          <div id="rating-text" className="rating-text-review" > Select your rating.
+                          </div>
+
                           <label id="five" className={this.fiveCheck()} > <i className="fa fa-star" aria-hidden="true"  ></i>
                             <input className="price"   type="radio" value="5" name="rating"/>
                           </label>
