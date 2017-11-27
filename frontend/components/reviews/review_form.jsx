@@ -34,7 +34,7 @@ class ReviewForm extends React.Component {
     this.fiveCheck = this.fiveCheck.bind(this);
     this.clearClass = this.clearClass.bind(this);
     this.reinstateClass = this.reinstateClass.bind(this);
-    this.reviewCheck = this.reviewCheck.bind(this); 
+    this.reviewCheck = this.reviewCheck.bind(this);
 
   }
 
@@ -144,82 +144,104 @@ class ReviewForm extends React.Component {
   oneCheck() {
     switch (parseInt(this.state.ratingValue)) {
       case 1:
-        return "pale-yellow fourer threer default";
+        return "pale-yellow  default";
       case 2:
-        return "yellow fourer threer default";
+        return "yellow  default";
       case 3:
-        return "orangy fourer threer default";
+        return "orangy  default";
       case 4:
-        return "pale-red fourer threer default";
+        return "pale-red  default";
       case 5:
-        return "red fourer threer default";
+        return "red  default";
        default:
-        return "fourer threer default";
+        return " default";
     }
   }
   twoCheck() {
     switch (parseInt(this.state.ratingValue)) {
       case 1:
-        return "fourer threer default";
+        return " default";
       case 2:
-        return "yellow fourer threer default";
+        return "yellow  default";
       case 3:
-        return "orangy fourer threer default";
+        return "orangy  default";
       case 4:
-        return "pale-red fourer threer default";
+        return "pale-red  default";
       case 5:
-        return "red fourer threer default";
+        return "red  default";
        default:
-        return "fourer threer default";
+        return " default";
     }
   }
 
   threeCheck() {
     switch (parseInt(this.state.ratingValue)) {
       case 1:
-        return "fourer threer default";
+        return " default";
       case 2:
-        return "fourer threer default";
+        return " default";
       case 3:
-        return "orangy fourer threer default";
+        return "orangy  default";
       case 4:
-        return "pale-red fourer threer default";
+        return "pale-red  default";
       case 5:
-        return "red fourer threer default";
+        return "red  default";
        default:
-        return "fourer threer default";
+        return " default";
     }
   }
   fourCheck() {
     switch (parseInt(this.state.ratingValue)) {
       case 1:
-        return "fourer default";
+        return " default";
       case 2:
-        return "fourer default";
+        return " default";
       case 3:
-        return "fourer default";
+        return " default";
       case 4:
-        return "pale-red fourer default";
+        return "pale-red  default";
       case 5:
-        return "red fourer default";
+        return "red  default";
        default:
-        return "fourer default";
+        return " default";
     }
   }
   fiveCheck() {
     switch (parseInt(this.state.ratingValue)) {
       case 1:
-        return "fiver fourer default";
+        return "  default";
       case 2:
-        return "fiver default";
+        return " default";
       case 3:
-        return "fiver default";
+        return " default";
       case 4:
-        return "fiver default";
+        return " default";
       case 5:
-        return " fiver red default";
+        return "  red default";
       default:
-        return "fiver default";
+        return " default";
+    }
+  }
+
+  reviewCheck() {
+    switch (parseInt(this.state.ratingValue)) {
+      case 1:
+        document.getElementById("rating-text").innnerHTML = "Eek! Methinks not.";
+        break;
+      case 2:
+      document.getElementById("rating-text").innnerHTML = "Eek! Methinks not.";
+        break;
+      case 3:
+      document.getElementById("rating-text").innnerHTML = "Eek! Methinks not.";
+        break;
+      case 4:
+      document.getElementById("rating-text").innnerHTML = "Eek! Methinks not.";
+        break;
+      case 5:
+      document.getElementById("rating-text").innnerHTML = "Eek! Methinks not.";
+        break;
+      default:
+        break;
     }
   }
 
@@ -275,7 +297,7 @@ class ReviewForm extends React.Component {
                     </ul>
                 </div>
                 <form  onSubmit={this.handleSubmit}>
-                  <div className="your-review-text">Your review</div>
+                  <div className={"your-review-text"}>Your review</div>
                   <div className= "stars-and-review-body">
                     <div className="stars-review-biz-form" value={this.state.ratingValue}>
                       <ul className="yelp-stars" onChange={this.ratingChange} onMouseOver={this.clearClass} onMouseOut={this.reinstateClass}>
