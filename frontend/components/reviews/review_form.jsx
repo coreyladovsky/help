@@ -35,7 +35,7 @@ class ReviewForm extends React.Component {
     this.fiveCheck = this.fiveCheck.bind(this);
     this.changeClass = this.changeClass.bind(this);
     this.fiveCheckHover = this.fiveCheckHover.bind(this);
-
+    this.reinstateClass = this.reinstateClass.bind(this);
 
   }
 
@@ -227,21 +227,21 @@ class ReviewForm extends React.Component {
         return "fiver default";
     }
   }
-  fiveCheckHover(event) {
-    switch (parseInt(event.target.value)) {
-      case 1:
-        return "default";
-      case 2:
-        return "default";
-      case 3:
-        return "default";
-      case 4:
-        return "default";
-      case 5:
-        return "red default";
-      default:
-        return "default";
-    }
+
+  reinstateClass() {
+    document.getElementById("five").className = this.fiveCheck();
+    document.getElementById("four").className = this.fourCheck();
+    document.getElementById("three").className = this.threeCheck();
+    document.getElementById("two").className =  this.twoCheck();
+    document.getElementById("one").className = this.oneCheck();
+  }
+
+  fiveCheckHover() {
+    document.getElementById("five").className = " default";
+    document.getElementById("four").className = " default" ;
+    document.getElementById("three").className = " default";
+    document.getElementById("two").className =  " default";
+    document.getElementById("one").className = " default";
   }
 
   changeClass(id, callback) {
@@ -329,8 +329,8 @@ class ReviewForm extends React.Component {
                   <div className="your-review-text">Your review</div>
                   <div className= "stars-and-review-body">
                     <div className="stars-review-biz-form" value={this.state.ratingValue}>
-                      <ul className="yelp-stars" onChange={this.ratingChange}>
-  
+                      <ul className="yelp-stars" onChange={this.ratingChange} onMouseOver={this.fiveCheckHover} onMouseOut={this.reinstateClass}>
+
 
                           <label id="five" className={this.fiveCheck()} > <i className="fa fa-star" aria-hidden="true"  ></i>
                             <input className="price"   type="radio" value="5" name="rating"/>
