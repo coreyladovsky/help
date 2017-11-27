@@ -336,6 +336,33 @@ jared = User.create!(first_name: "Jared", last_name: "Ken",
 jeremy = User.create!(first_name: "Jeremy", last_name: "Bishop",
   email: "knightandbishops@gmail.com", zip_code:"11211", password: "starwars", image: "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/users/images/000/000/001/original/jeremy-bishop-140086.jpg")
 
+Photo.destroy_all
+
+Photo.create!(user_id: corey.id, business_id: biz1.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-extra-photos/american.jpg")
+Photo.create!(user_id: max.id, business_id: biz1.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-extra-photos/american2.jpg")
+Photo.create!(user_id: yama.id, business_id: biz2.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-extra-photos/american3.jpg")
+Photo.create!(user_id: noe.id, business_id: biz2.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-extra-photos/american4.jpg")
+Photo.create!(user_id: ilya.id, business_id: biz3.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-extra-photos/bar1.jpg")
+Photo.create!(user_id: duck.id, business_id: biz3.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-extra-photos/bar2.jpg")
+Photo.create!(user_id: e.id, business_id: biz4.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-extra-photos/bar3.jpg")
+Photo.create!(user_id: eric.id, business_id: biz4.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-extra-photos/bar4.jpg")
+Photo.create!(user_id: janka.id, business_id: biz5.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-extra-photos/cafe1.jpg")
+Photo.create!(user_id: jared.id, business_id: biz5.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-extra-photos/cafe2.jpg")
+Photo.create!(user_id: ellis.id, business_id: biz6.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-extra-photos/chinese1.jpg")
+Photo.create!(user_id: jeremy.id, business_id: biz6.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-extra-photos/chinese2.jpg")
+
+Photo.create!(user_id: corey.id, business_id: biz7.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-extra-photos/coffee1.jpg")
+Photo.create!(user_id: max.id, business_id: biz7.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-extra-photos/coffee10.jpg")
+Photo.create!(user_id: yama.id, business_id: biz8.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-extra-photos/coffee11.jpg")
+Photo.create!(user_id: noe.id, business_id: biz8.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-extra-photos/coffee13.jpg")
+Photo.create!(user_id: ilya.id, business_id: biz9.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-extra-photos/coffee14.jpg")
+Photo.create!(user_id: duck.id, business_id: biz9.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-extra-photos/coffee15.jpg")
+Photo.create!(user_id: e.id, business_id: biz10.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-extra-photos/coffee16.jpg")
+Photo.create!(user_id: eric.id, business_id: biz10.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-extra-photos/coffee17.jpg")
+Photo.create!(user_id: janka.id, business_id: biz11.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-extra-photos/coffee19.jpg")
+Photo.create!(user_id: jared.id, business_id: biz11.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-extra-photos/coffee2.jpg")
+Photo.create!(user_id: ellis.id, business_id: biz41.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-extra-photos/coffee20.jpg")
+Photo.create!(user_id: jeremy.id, business_id: biz41.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-extra-photos/coffee3.jpg")
 
 Review.destroy_all
 
