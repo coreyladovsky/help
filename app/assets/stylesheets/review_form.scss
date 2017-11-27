@@ -74,15 +74,6 @@
   padding-bottom: 7px;
 }
 
-.stars-ratings-form {
-
-
-
-
-}
-.fake-star {
-  color: white;
-}
 
 .stars-ratings-form ~ .five {
   background-color: #D00D24;
@@ -97,10 +88,6 @@
 
 }
 
-.star-5 {
-  // opacity: 0;
-
-}
 
 .yelp-stars {
   margin-top: 18px;
@@ -117,13 +104,12 @@
   width: 32px;
   background-color: #CCCCCC;
   color: white;
-  // margin-right: 5px;
   display: flex;
   justify-content: center;
-  border-radius: 4px;
+  border-radius: 5px;
   font-size: 23px;
   cursor: pointer;
-  border: 2px solid white; 
+  border: 2px solid white;
 }
 
 
@@ -178,13 +164,6 @@
   margin-top: 4px;
   margin-left: 6px;
 }
-
-// .default-star {
-//   transform: scale(1.75);
-//   z-index: 10;
-// }
-
-
 
 
 .text-review-form {

@@ -26,15 +26,13 @@ class ReviewForm extends React.Component {
     this.checkedCheck = this.checkedCheck.bind(this);
     this.updateRating = this.updateRating.bind(this);
     this.clearState = this.clearState.bind(this);
-    this.updateClass = this.updateClass.bind(this);
     this.searchSubmit = this.searchSubmit.bind(this);
     this.oneCheck = this.oneCheck.bind(this);
     this.twoCheck = this.twoCheck.bind(this);
     this.threeCheck = this.threeCheck.bind(this);
     this.fourCheck = this.fourCheck.bind(this);
     this.fiveCheck = this.fiveCheck.bind(this);
-    this.changeClass = this.changeClass.bind(this);
-    this.fiveCheckHover = this.fiveCheckHover.bind(this);
+    this.clearClass = this.clearClass.bind(this);
     this.reinstateClass = this.reinstateClass.bind(this);
 
   }
@@ -128,10 +126,6 @@ class ReviewForm extends React.Component {
     this.setState({ratingValue: event.currentTarget.value});
   }
 
-  updateClass(event) {
-    event.preventDefault();
-    this.setState({classColor: "color" + event.currentTarget.value});
-  }
 
   searchSubmit() {
     this.props.fetchBusinesses({cuisine: this.props.business.cuisine,
@@ -236,59 +230,13 @@ class ReviewForm extends React.Component {
     document.getElementById("one").className = this.oneCheck();
   }
 
-  fiveCheckHover() {
+  clearClass() {
     document.getElementById("five").className = " default";
     document.getElementById("four").className = " default" ;
     document.getElementById("three").className = " default";
     document.getElementById("two").className =  " default";
     document.getElementById("one").className = " default";
   }
-
-  changeClass(id, callback) {
-    switch(id) {
-      case "five":
-        document.getElementById("five").className = callback + " default";
-        document.getElementById("four").className = callback + " default" ;
-        document.getElementById("three").className = callback + " default";
-        document.getElementById("two").className = callback + " default";
-        document.getElementById("one").className = callback + " default";
-        break;
-
-      case "four":
-              document.getElementById("five").className = " default";
-              document.getElementById("four").className = callback + " default" ;
-              document.getElementById("three").className = callback + " default";
-              document.getElementById("two").className = callback + " default";
-              document.getElementById("one").className = callback + " default";
-        break;
-         case "three":
-          document.getElementById("five").className = "default";
-          document.getElementById("four").className = "default" ;
-          document.getElementById("three").className = callback + " default";
-          document.getElementById("two").className = callback + " default";
-          document.getElementById("one").className = callback + " default";
-        break;
-      case "two":
-          document.getElementById(id).className = " default";
-          document.getElementById("four").className = " default" ;
-          document.getElementById("three").className = " default";
-          document.getElementById("two").className = callback + " default";
-          document.getElementById("one").className = callback + " default";
-        break;
-        case "one":
-          document.getElementById(id).className = " default";
-          document.getElementById("four").className = " default" ;
-          document.getElementById("three").className =  " default";
-          document.getElementById("two").className =  " default";
-          document.getElementById("one").className = callback + " default";
-        break;
-    default:
-    return;
-    }
-  }
-
-
-
 
   render() {
     if(this.props.business === undefined) {
@@ -329,7 +277,7 @@ class ReviewForm extends React.Component {
                   <div className="your-review-text">Your review</div>
                   <div className= "stars-and-review-body">
                     <div className="stars-review-biz-form" value={this.state.ratingValue}>
-                      <ul className="yelp-stars" onChange={this.ratingChange} onMouseOver={this.fiveCheckHover} onMouseOut={this.reinstateClass}>
+                      <ul className="yelp-stars" onChange={this.ratingChange} onMouseOver={this.clearClass} onMouseOut={this.reinstateClass}>
 
 
                           <label id="five" className={this.fiveCheck()} > <i className="fa fa-star" aria-hidden="true"  ></i>
