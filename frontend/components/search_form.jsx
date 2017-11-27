@@ -88,71 +88,72 @@ class SearchForm extends React.Component {
 
   return(
       <span className="filter-box">
-        <ul className="price-filter">
-          <li>
-            <label className={parseInt(this.state.priceValue) === 1 ? "price-label first-price green" : "price-label first-price"}> $
-              <input className="price" onChange={this.priceChange}  type="radio" value="1" name="price-range" />
-            </label>
-          </li>
-          <li>
-            <label className={parseInt(this.state.priceValue) === 2 ? "price-label green" : "price-label "}> $$
-              <input className="price" onChange={this.priceChange}  type="radio" value="2" name="price-range" />
-            </label>
-          </li>
-          <li>
-            <label className={parseInt(this.state.priceValue) === 3 ? "price-label green" : "price-label "}> $$$
-              <input className="price" onChange={this.priceChange}  type="radio" value="3" name="price-range" />
-            </label>
-          </li>
-          <li>
-            <label className={parseInt(this.state.priceValue) === 4 ? "price-label last-price green" : "price-label last-price "}> $$$$
-              <input className="price" onChange={this.priceChange}  type="radio" value="4" name="price-range" />
-            </label>
-          </li>
-        </ul>
+        <div className="smaller-filter-box">
+          <ul className="price-filter">
+            <li>
+              <label className={parseInt(this.state.priceValue) === 1 ? "price-label first-price green" : "price-label first-price"}> $
+                <input className="price" onChange={this.priceChange}  type="radio" value="1" name="price-range" />
+              </label>
+            </li>
+            <li>
+              <label className={parseInt(this.state.priceValue) === 2 ? "price-label green" : "price-label "}> $$
+                <input className="price" onChange={this.priceChange}  type="radio" value="2" name="price-range" />
+              </label>
+            </li>
+            <li>
+              <label className={parseInt(this.state.priceValue) === 3 ? "price-label green" : "price-label "}> $$$
+                <input className="price" onChange={this.priceChange}  type="radio" value="3" name="price-range" />
+              </label>
+            </li>
+            <li>
+              <label className={parseInt(this.state.priceValue) === 4 ? "price-label last-price green" : "price-label last-price "}> $$$$
+                <input className="price" onChange={this.priceChange}  type="radio" value="4" name="price-range" />
+              </label>
+            </li>
+          </ul>
 
-        <ul className="noise-filter">
-          <li className="noise-level">
-            Noise Level:
-          </li>
-          <li>
-            <label className={parseInt(this.state.noiseValue) === 1 ? "price-label first-price green" : "price-label first-price"}> Quiet
-              <input className="price" onChange={this.noiseChange}  type="radio" value="1" name="noise-range" />
-            </label>
-          </li>
-          <li>
-            <label className={parseInt(this.state.noiseValue) === 2 ? "price-label green" : "price-label "}> Average
-              <input  className="price" onChange={this.noiseChange}  type="radio" value="2" name="noise-range" />
-            </label>
-          </li>
-          <li>
-            <label className={parseInt(this.state.noiseValue) === 3 ? "price-label green" : "price-label "}> Loud
-              <input className="price"  onChange={this.noiseChange}  type="radio" value="3" name="noise-range" />
-            </label>
-          </li>
-          <li>
-            <label className={parseInt(this.state.noiseValue) === 4 ? "price-label last-price green" : "price-label last-price "}> Very Loud
-              <input className="price"  onChange={this.noiseChange}  type="radio" value="4" name="noise-range" />
-            </label>
-          </li>
-        </ul>
+          <ul className="noise-filter">
+            <li className="noise-level">
+              Noise Level:
+            </li>
+            <li>
+              <label className={parseInt(this.state.noiseValue) === 1 ? "price-label first-price green" : "price-label first-price"}> Quiet
+                <input className="price" onChange={this.noiseChange}  type="radio" value="1" name="noise-range" />
+              </label>
+            </li>
+            <li>
+              <label className={parseInt(this.state.noiseValue) === 2 ? "price-label green" : "price-label "}> Average
+                <input  className="price" onChange={this.noiseChange}  type="radio" value="2" name="noise-range" />
+              </label>
+            </li>
+            <li>
+              <label className={parseInt(this.state.noiseValue) === 3 ? "price-label green" : "price-label "}> Loud
+                <input className="price"  onChange={this.noiseChange}  type="radio" value="3" name="noise-range" />
+              </label>
+            </li>
+            <li>
+              <label className={parseInt(this.state.noiseValue) === 4 ? "price-label last-price green" : "price-label last-price "}> Very Loud
+                <input className="price"  onChange={this.noiseChange}  type="radio" value="4" name="noise-range" />
+              </label>
+            </li>
+          </ul>
 
-        <ul className="noise-filter">
-          <li className="noise-level">
-            Delivers?
-          </li>
-          <li>
-            <label className={this.state.deliveryValue === "true" ? "price-label first-price green" : "price-label first-price"}> Yes
-              <input  className="price" onChange={this.deliveryChange}  type="radio" value="true" name="delivers" />
-            </label>
-          </li>
-          <li>
-            <label className={this.state.deliveryValue === "false"? "price-label last-price green" : "price-label last-price "}> No
-              <input className="price" onChange={this.deliveryChange}  type="radio" value="false" name="delivers" />
-            </label>
-          </li>
-        </ul>
-
+          <ul className="noise-filter">
+            <li className="noise-level">
+              Delivers?
+            </li>
+            <li>
+              <label className={this.state.deliveryValue === "true" ? "price-label first-price green" : "price-label first-price"}> Yes
+                <input  className="price" onChange={this.deliveryChange}  type="radio" value="true" name="delivers" />
+              </label>
+            </li>
+            <li>
+              <label className={this.state.deliveryValue === "false"? "price-label last-price green" : "price-label last-price "}> No
+                <input className="price" onChange={this.deliveryChange}  type="radio" value="false" name="delivers" />
+              </label>
+            </li>
+          </ul>
+        </div>
       </span>
   );
 }

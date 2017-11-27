@@ -34,6 +34,7 @@ class ReviewForm extends React.Component {
     this.fiveCheck = this.fiveCheck.bind(this);
     this.clearClass = this.clearClass.bind(this);
     this.reinstateClass = this.reinstateClass.bind(this);
+    this.reviewCheck = this.reviewCheck.bind(this); 
 
   }
 
@@ -279,7 +280,7 @@ class ReviewForm extends React.Component {
                     <div className="stars-review-biz-form" value={this.state.ratingValue}>
                       <ul className="yelp-stars" onChange={this.ratingChange} onMouseOver={this.clearClass} onMouseOut={this.reinstateClass}>
 
-
+                          <div id="rating-text" className="rating-text-review"> Select your rating.</div>
                           <label id="five" className={this.fiveCheck()} > <i className="fa fa-star" aria-hidden="true"  ></i>
                             <input className="price"   type="radio" value="5" name="rating"/>
                           </label>
@@ -369,10 +370,6 @@ class ReviewForm extends React.Component {
       );
     }
   }
-
-
-
-
 
 }
 

@@ -1,6 +1,6 @@
 
 .filter-box {
-  display: flex;
+  // display: flex;
   height: 70px;
   background-color: #F5F5F5;
   width: 100%;
@@ -9,7 +9,15 @@
   left: 0px;
   top: 92px;
   // border: 1px solid green;
-  justify-content: space-around;
+  // justify-content: space-around;
+}
+
+.smaller-filter-box {
+  width: 960px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  padding-left: 20px;
 }
 
 .filter-box ul {

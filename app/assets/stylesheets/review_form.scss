@@ -112,6 +112,15 @@
   border: 2px solid white;
 }
 
+.rating-text-review {
+  display: flex;
+  font-family: sans-serif;
+  font-size: 13px;
+  margin-top: 10px;
+  min-width: 200px;
+  margin-left: 5px;
+}
+
 
 .pale-yellow {
   background-color: #F2BC82;
@@ -134,16 +143,16 @@
 
 
 // Yelp css inspired by Roko C. Buljan from stack overflow
-.yelp-stars>label:nth-child(1):hover,
-.yelp-stars>label:nth-child(1):hover ~ label{background-color: #D4202B;}
 .yelp-stars>label:nth-child(2):hover,
-.yelp-stars>label:nth-child(2):hover ~ label{background-color: #F25A54;}
+.yelp-stars>label:nth-child(2):hover ~ label{background-color: #D4202B;}
 .yelp-stars>label:nth-child(3):hover,
-.yelp-stars>label:nth-child(3):hover ~ label{background-color: #FF9151;}
+.yelp-stars>label:nth-child(3):hover ~ label{background-color: #F25A54;}
 .yelp-stars>label:nth-child(4):hover,
-.yelp-stars>label:nth-child(4):hover ~ label{background-color: #FDC116;}
+.yelp-stars>label:nth-child(4):hover ~ label{background-color: #FF9151;}
 .yelp-stars>label:nth-child(5):hover,
-.yelp-stars>label:nth-child(5):hover ~ label{background-color: #F2BC82;}
+.yelp-stars>label:nth-child(5):hover ~ label{background-color: #FDC116;}
+.yelp-stars>label:nth-child(6):hover,
+.yelp-stars>label:nth-child(6):hover ~ label{background-color: #F2BC82;}
 
 
 
@@ -155,6 +164,8 @@
 .stars-ratings-form ul {
   display: flex;
 }
+
+
 
 
 .fa-star {
@@ -249,13 +260,14 @@
 .other-reviews {
   display: flex;
   justify-content: space-between;
+  margin: auto;
+  padding-left: 20px;
 }
 
 
 .main-div-form {
   display: flex;
   width: 100%;
-  justify-content: center;
   margin-top: 70px;
 }
 

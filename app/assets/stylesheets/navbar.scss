@@ -19,6 +19,8 @@
   height:64px;
   justify-content: center;
   display: flex;
+  margin: auto;
+  padding-left: 20px;
 
 
 
@@ -161,7 +163,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  // align-items: center;
   background-color: #D32323;
   margin: 0 auto;
 
@@ -185,6 +187,8 @@
   width: 917px;
   height: 28px;
   justify-content: space-between;
+  margin: auto;
+  padding-left: 20px; 
 
 }
 
