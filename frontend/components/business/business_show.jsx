@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import ReviewsContainer from '../reviews/reviews_container';
 import BizShowMap from './biz_show_map';
 
+
 class BusinessShow extends React.Component {
   constructor(props) {
     super(props);
@@ -234,6 +235,7 @@ class BusinessShow extends React.Component {
             </ul>
             <div>
               <ul className="picture-list-show">
+
                 <li className="first-photo-show">
                   <Link to={"/business/photos"}>Picture 1</Link>
                 </li>
