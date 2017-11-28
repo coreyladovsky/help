@@ -5,6 +5,7 @@ import BusinessReducer from './business_reducer';
 import PageReducer from './page_reducer';
 import ReviewReducer from './review_reducer';
 import UserReducer from './user_reducer';
+import PhotoReducer from './photo_reducer';
 
 const RootReducer = combineReducers({
     session: SessionReducer,
@@ -12,7 +13,8 @@ const RootReducer = combineReducers({
     business: BusinessReducer,
     intendedPage: PageReducer,
     reviews: ReviewReducer,
-    reviewers: UserReducer
+    reviewers: UserReducer,
+    photos: PhotoReducer,
 });
 
 export default RootReducer;
