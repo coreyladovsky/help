@@ -235,7 +235,7 @@ class BusinessShow extends React.Component {
               </li>
             </ul>
             <div>
-        
+
                 <PhotosContainer businessId={this.props.business.id} photos={this.props.business.photos}/>
 
             </div>
