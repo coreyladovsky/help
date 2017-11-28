@@ -14,6 +14,7 @@
       #   json.array! business.reviews, partial: 'api/reviews/review', as: :review
       # end
     json.reviewIds business.reviews.map(&:id)
+    json.photoIds business.photos.map(&:id)
   end
 
 end
