@@ -7,7 +7,7 @@ class PhotoIndex extends React.Component {
   }
 
   render() {
-    if(this.props.photos === undefined) {
+    if(this.props.photos.length === 0) {
       return null;
     } else {
       const photos = this.props.photos.map((photo) => {
@@ -17,7 +17,9 @@ class PhotoIndex extends React.Component {
       return(
 
           <ul className="photo-items-ul">
-            {photos}
+            <li><img className="biz-indiv-photo" src={this.props.photos[0].image}/></li>
+            <li><img src={this.props.photos[1].image}/></li>
+            <li><img className="biz-indiv-photo"  src={this.props.photos[this.props.photos.length - 1].image}/></li>
           </ul>
 
       );
@@ -28,9 +30,3 @@ class PhotoIndex extends React.Component {
 
 
 export default PhotoIndex;
-
-
-
-// <li><img className="biz-indiv-photo" src={this.props.photos[0].image}/></li>
-//   <li><img src={this.props.photos[1].image}/></li>
-//     <li><img className="biz-indiv-photo"  src={this.props.photos[2].image}/></li>

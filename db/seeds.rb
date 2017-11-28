@@ -349,7 +349,6 @@ Photo.create!(user_id: ilya.id, business_id: biz3.id, image:"https://s3.amazonaw
 Photo.create!(user_id: duck.id, business_id: biz3.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-extra-photos/bar2.jpg")
 Photo.create!(user_id: e.id, business_id: biz4.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-extra-photos/bar3.jpg")
 Photo.create!(user_id: e.id, business_id: biz4.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-photos/bar2.jpg")
-Photo.create!(user_id: e.id, business_id: biz4.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-photos/bar2.jpg")
 Photo.create!(user_id: eric.id, business_id: biz4.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-extra-photos/bar4.jpg")
 Photo.create!(user_id: janka.id, business_id: biz5.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-extra-photos/cafe1.jpg")
 Photo.create!(user_id: janka.id, business_id: biz5.id, image:"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-photos/cafe.jpg")
