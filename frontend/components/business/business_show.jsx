@@ -235,10 +235,9 @@ class BusinessShow extends React.Component {
               </li>
             </ul>
             <div>
-              <ul className="picture-list-show">
+        
                 <PhotosContainer businessId={this.props.business.id} photos={this.props.business.photos}/>
 
-              </ul>
             </div>
           </ul>
           </ul>

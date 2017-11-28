@@ -10,16 +10,18 @@ class PhotoIndex extends React.Component {
     if(this.props.photos === undefined) {
       return null;
     } else {
-      const photos = this.props.photos.map((photo) => {
+      const photos = this.props.photos.slice(0,3).map((photo) => {
         return <PhotoIndexItem key={photo.id} bizId={this.props.businessId} photo={photo} />;
       });
 
       return(
-        <div>
+
           <ul className="photo-items-ul">
-            {photos}
+            <li><img className="biz-indiv-photo" src={this.props.photos[0].image}/></li>
+            <li><img src={this.props.photos[1].image}/></li>
+            <li><img className="biz-indiv-photo"  src={this.props.photos[2].image}/></li>
           </ul>
-        </div>
+
       );
     }
   }

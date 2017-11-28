@@ -8,9 +8,9 @@ class PhotoIndexItem extends React.Component {
 
   render() {
     return(
-      <div>
-        <img className="biz-indiv-photo"src={this.props.photo.image}/>
-      </div>
+      <li>
+        <img src={this.props.photo.image}/>
+      </li>
     );
   }
 }
