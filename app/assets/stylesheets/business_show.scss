@@ -161,6 +161,16 @@
   display: none;
 }
 
+.biz-indiv-photo {
+  height: 220px;
+  width: 250px;
+  object-fit: cover;
+}
+
+.photo-items-ul {
+  display: flex;
+}
+
 .all-hours-show {
 margin-bottom: 200px;
 

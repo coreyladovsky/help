@@ -3,6 +3,7 @@ import NavBar from '../NavBar';
 import { Link } from 'react-router-dom';
 import ReviewsContainer from '../reviews/reviews_container';
 import BizShowMap from './biz_show_map';
+import PhotosContainer from '../photos/photos_container';
 
 
 class BusinessShow extends React.Component {
@@ -235,6 +236,7 @@ class BusinessShow extends React.Component {
             </ul>
             <div>
               <ul className="picture-list-show">
+                <PhotosContainer businessId={this.props.business.id} photos={this.props.business.photos}/>
 
                 <li className="first-photo-show">
                   <Link to={"/business/photos"}>Picture 1</Link>

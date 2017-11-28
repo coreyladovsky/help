@@ -9,8 +9,10 @@ class PhotoIndexItem extends React.Component {
   render() {
     return(
       <div>
-        <img className="biz-indiv-photo"src={this.props.photo.image_medium}/>
+        <img className="biz-indiv-photo"src={this.props.photo.image}/>
       </div>
     );
   }
 }
+
+export default PhotoIndexItem;

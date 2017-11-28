@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import PhotoIndex from './photo_index';
 import { fetchPhoto } from '../../actions/photo_actions';
+import PhotoIndex from './photo_index';
 
 const mapStateToProps = (state, ownProps) => {
   return({
@@ -16,4 +16,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(PhotoIndex); 
+)(PhotoIndex);
