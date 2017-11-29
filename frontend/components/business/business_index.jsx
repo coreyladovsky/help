@@ -1,11 +1,12 @@
 import React from 'react';
 import BusinessIndexItem from './business_index_item';
-
+import { shuffle } from 'underscore';
 
 class BusinessIndex extends React.Component {
   constructor(props) {
     super(props);
     this.compareValues = this.compareValues.bind(this);
+    this.shuffle = this.shuffle.bind(this);
   }
 
   compareValues(arg1, arg2) {
@@ -16,9 +17,13 @@ class BusinessIndex extends React.Component {
     return parseInt(arg1) >= arg2;
   }
 
+  shuffle(array) {
+
+  }
+
   render() {
     let count= 0;
-    const businesses = this.props.props.business.map((business, idx) => {
+    const businesses = shuffle(this.props.props.business).map((business, idx) => {
       if(!this.props.props.filters) {
         count++;
         if(count <= 20) {
