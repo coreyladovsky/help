@@ -5,9 +5,16 @@ import BusinessIndexItem from './business_index_item';
 class BusinessIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.compareValues = this.compareValues.bind(this);
   }
 
-
+  compareValues(arg1, arg2) {
+    if(arg1 === "false") return true;
+    if(arg1 === "true") {
+      return true === arg2;
+    }
+    return parseInt(arg1) >= arg2;
+  }
 
   render() {
     let count= 0;
@@ -25,7 +32,9 @@ class BusinessIndex extends React.Component {
         //   } else {
         //     parseInt(this.props.props.filters[filter]) >= business[filter];
         //   }
-          parseInt(this.props.props.filters[filter]) >= business[filter]
+          // parseInt(this.props.props.filters[filter]) >= business[filter]
+
+          this.compareValues(this.props.props.filters[filter], business[filter])
 
        // }
      )) {

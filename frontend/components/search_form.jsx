@@ -91,7 +91,7 @@ class SearchForm extends React.Component {
 
   deliveryChange(event) {
     this.setState({deliveryValue: event.target.value});
-    this.props.frontFilter({deliver: event.target.value});
+    this.props.frontFilter({delivery: event.target.value});
   }
 
   filter() {
