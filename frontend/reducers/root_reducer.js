@@ -6,6 +6,7 @@ import PageReducer from './page_reducer';
 import ReviewReducer from './review_reducer';
 import UserReducer from './user_reducer';
 import PhotoReducer from './photo_reducer';
+import FilterReducer from './filter_reducer';
 
 const RootReducer = combineReducers({
     session: SessionReducer,
@@ -15,6 +16,7 @@ const RootReducer = combineReducers({
     reviews: ReviewReducer,
     reviewers: UserReducer,
     photos: PhotoReducer,
+    filters: FilterReducer,
 });
 
 export default RootReducer;

@@ -10,9 +10,29 @@ class BusinessIndex extends React.Component {
 
 
   render() {
-
+    let count= 0;
     const businesses = this.props.props.business.map((business, idx) => {
-      return <BusinessIndexItem key={business.id} idx={idx} business={business} fetchBusinesses={this.props.props.fetchBusinesses} nextPage={this.props.props.nextPage} />;
+      if(!this.props.props.filters) {
+        count++;
+        return <BusinessIndexItem key={business.id} idx={count} business={business} fetchBusinesses={this.props.props.fetchBusinesses} nextPage={this.props.props.nextPage} />;
+      } else if(Object.keys(this.props.props.filters).every(filter =>
+        // {
+        // debugger
+        //   if (this.props.props.filters[filter] === "true") {
+        //     // this.props.props.filters[filter] = 0;
+        //   } else if(this.props.props.filters[filter] === "false") {
+        //     // this.props.props.filters[filter] = 1;
+        //   } else {
+        //     parseInt(this.props.props.filters[filter]) >= business[filter];
+        //   }
+          parseInt(this.props.props.filters[filter]) >= business[filter]
+
+       // }
+     )) {
+        count++;
+        return <BusinessIndexItem key={business.id} idx={count} business={business} fetchBusinesses={this.props.props.fetchBusinesses} nextPage={this.props.props.nextPage} />;
+      }
+
     });
 
     return(

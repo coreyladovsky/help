@@ -18,6 +18,7 @@ class SearchForm extends React.Component {
     this.activatePlacesSearch = this.activatePlacesSearch.bind(this);
     this.getLatLng = this.getLatLng.bind(this);
     this.filter = this.filter.bind(this);
+    this.clearFilterVals = this.clearFilterVals.bind(this);
     this.autocomplete;
 
  }
@@ -32,19 +33,25 @@ class SearchForm extends React.Component {
     return [lat, lng];
   }
 
+  clearFilterVals() {
+    this.setState({priceValue: 5, noiseValue: 5, delivery: false});
+  }
+
 
 
   handleSubmit(event) {
     event.preventDefault();
     this.setState({nearValue: document.getElementById("autocomplete").value});
+    this.props.clearFilter();
+    this.clearFilterVals();
     setTimeout(() => {
+      // price_range: this.state.priceValue,
+      // noise_level: this.state.noiseValue,
+      // delivery: this.state.deliveryValue,
 
       this.props.fetchBusinesses({
         name: this.state.findValue,
         cuisine: this.state.findValue.charAt(0).toUpperCase() + this.state.findValue.slice(1),
-        price_range: this.state.priceValue,
-        noise_level: this.state.noiseValue,
-        delivery: this.state.deliveryValue,
         bounds: this.getLatLng(this.state.nearValue)
       });
       if(this.props.match.path !== "/search" ) {
@@ -64,7 +71,7 @@ class SearchForm extends React.Component {
 
   findChange(event) {
     this.setState({findValue: event.target.value});
-    this.setState({nearValue: document.getElementById("autocomplete").value})
+    this.setState({nearValue: document.getElementById("autocomplete").value});
   }
 
   nearChange(event) {
@@ -74,14 +81,17 @@ class SearchForm extends React.Component {
 
   priceChange(event) {
     this.setState({priceValue: event.target.value});
+    this.props.frontFilter({price_range: event.target.value});
   }
 
   noiseChange(event) {
     this.setState({noiseValue: event.target.value});
+    this.props.frontFilter({noise_level: event.target.value});
   }
 
   deliveryChange(event) {
     this.setState({deliveryValue: event.target.value});
+    this.props.frontFilter({deliver: event.target.value});
   }
 
   filter() {

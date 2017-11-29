@@ -10,7 +10,9 @@ class PhotoIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.resetPhotos();
+    if(this.props.photos.length > 0) {
+      this.resetPhotos();
+    }
   }
 
   enlargeFirst() {
