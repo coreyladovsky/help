@@ -56,10 +56,8 @@ class BusinessIndexItem extends React.Component {
   }
 
   searchSubmit() {
+    this.props.clearFilter();
     this.props.fetchBusinesses({cuisine: this.props.business.cuisine,
-      price_range: 4,
-      noise_level: 4,
-      delivery: false,
       bounds: "",
       name: ""});
 

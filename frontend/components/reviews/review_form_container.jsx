@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
 import { clearErrors, clearPage, nextPage, logout } from '../../actions/session_actions';
 import { createReview, updateReview, fetchReview } from '../../actions/review_actions';
-import { fetchBusiness } from '../../actions/business_actions';
+import { fetchBusiness, fetchBusinesses } from '../../actions/business_actions';
 import { withRouter } from 'react-router-dom';
 import ReviewForm from './review_form';
+import { clearFilter } from '../../actions/filter_actions';
 
 const mapStateToProps = (state, ownProps) => {
 
@@ -44,6 +45,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       logout: ()=> dispatch(logout()),
       nextPage: (page) => dispatch(nextPage(page)),
       fetchBusinesses: (filters) => dispatch(fetchBusinesses(filters)),
+      clearFilter: () => dispatch(clearFilter()),
 
   };
 
@@ -57,6 +59,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       logout: ()=> dispatch(logout()),
       nextPage: (page) => dispatch(nextPage(page)),
       fetchBusinesses: (filters) => dispatch(fetchBusinesses(filters)),
+      clearFilter: () => dispatch(clearFilter()),
     };
   }
 };
