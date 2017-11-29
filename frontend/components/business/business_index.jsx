@@ -21,25 +21,16 @@ class BusinessIndex extends React.Component {
     const businesses = this.props.props.business.map((business, idx) => {
       if(!this.props.props.filters) {
         count++;
-        return <BusinessIndexItem key={business.id} idx={count} business={business} fetchBusinesses={this.props.props.fetchBusinesses} nextPage={this.props.props.nextPage} />;
+        if(count <= 20) {
+          return <BusinessIndexItem key={business.id} idx={count} business={business} fetchBusinesses={this.props.props.fetchBusinesses} nextPage={this.props.props.nextPage} />;
+        }
       } else if(Object.keys(this.props.props.filters).every(filter =>
-        // {
-        // debugger
-        //   if (this.props.props.filters[filter] === "true") {
-        //     // this.props.props.filters[filter] = 0;
-        //   } else if(this.props.props.filters[filter] === "false") {
-        //     // this.props.props.filters[filter] = 1;
-        //   } else {
-        //     parseInt(this.props.props.filters[filter]) >= business[filter];
-        //   }
-          // parseInt(this.props.props.filters[filter]) >= business[filter]
-
           this.compareValues(this.props.props.filters[filter], business[filter])
-
-       // }
      )) {
         count++;
-        return <BusinessIndexItem key={business.id} idx={count} business={business} fetchBusinesses={this.props.props.fetchBusinesses} nextPage={this.props.props.nextPage} />;
+        if(count <= 20) {
+          return <BusinessIndexItem key={business.id} idx={count} business={business} fetchBusinesses={this.props.props.fetchBusinesses} nextPage={this.props.props.nextPage} />;
+        }
       }
 
     });
