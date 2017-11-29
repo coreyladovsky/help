@@ -217,11 +217,23 @@ class BusinessShow extends React.Component {
                   </li>
                 </ul>
 
+
+
                 <ul>
                   <div className="map-show">
                     <BizShowMap business={this.props.business} />
+                      <div className="biz-address-show">
+                        {this.props.business.address}
+                      </div>
+                      <div className="biz-address-show">
+                        {this.props.business.phone_number}
+                      </div>
+                      <div className="website-link">
+                        {this.props.business.website}
+                      </div>
                   </div>
                 </ul>
+
               </li>
             </ul>
             <ul>
