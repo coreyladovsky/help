@@ -12,9 +12,9 @@ export default class MarkerManager {
       this.markers[key].setMap(null);
     }
     businesses.forEach(business => {
-      if(!Object.keys(this.markers).includes(business.id)) {
+      // if(!Object.keys(this.markers).includes(business.id)) {
         this.createMarkerFromBusiness(business);
-      }
+      // }
     });
   }
 

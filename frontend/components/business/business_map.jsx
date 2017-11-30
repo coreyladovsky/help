@@ -42,11 +42,10 @@ class BusinessMap extends React.Component {
 
       this.map = new google.maps.Map(this.mapNode, mapOptions);
       this.MarkerManager = new MarkerManager(this.map);
-
-
+      
       let bizzys = [];
       let count = 0;
-    for(let i = 0; i < 20 && i < this.props.props.business.length; i++) {
+    for(let i = 0; i < this.props.props.business.length; i++) {
       if(!this.props.props.filters) {
         bizzys.push(this.props.props.business[i]);
       }
@@ -55,7 +54,7 @@ class BusinessMap extends React.Component {
       }
     }
 
-    this.MarkerManager.updateMarkers(bizzys);
+    this.MarkerManager.updateMarkers(bizzys.slice(0,20));
   }
 
 }
