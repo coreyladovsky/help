@@ -15,10 +15,11 @@ class Search extends React.Component {
 
   render() {
 
+
     return(
 
     <div>
-      <NavBar props={this.props}/>
+      <NavBar business={this.props.business} currentUser={this.props.currentUser} logout={this.props.logout}/>
 
       <ul className="map-and-index-ul">
         <li>
