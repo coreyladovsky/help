@@ -50,8 +50,8 @@ class SearchForm extends React.Component {
       // delivery: this.state.deliveryValue,
 
       this.props.fetchBusinesses({
-        name: this.state.findValue,
-        cuisine: this.state.findValue.charAt(0).toUpperCase() + this.state.findValue.slice(1),
+        name: this.state.findValue.toLowerCase(),
+        cuisine: this.state.findValue.toLowerCase(),
         bounds: this.getLatLng(this.state.nearValue)
       });
       if(this.props.match.path !== "/search" ) {

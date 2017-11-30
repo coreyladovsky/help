@@ -5,7 +5,7 @@ class Api::BusinessesController < ApplicationController
     # @businesses = businesses.includes(:reviews) || {}
 
     @businesses = Business.all.includes(:reviews).includes(:photos)
-    @businesses = @businesses.where(["name LIKE ? OR cuisine LIKE ?", "#{business_params[:name]}", "#{business_params[:cuisine]}" ]) if business_params[:name] != ""|| business_params[:cuisine] !=""
+    @businesses = @businesses.where(["lower(name) LIKE ? OR lower(cuisine) LIKE ?", "%#{business_params[:name]}%", "%#{business_params[:cuisine]}%" ]) if business_params[:name] != ""|| business_params[:cuisine] !=""
 
     quality_bizs = []
     delivers = []
