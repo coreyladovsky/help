@@ -26,6 +26,7 @@ class Api::BusinessesController < ApplicationController
 
 
 
+
   end
 
   def show

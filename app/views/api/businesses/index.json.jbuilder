@@ -6,7 +6,6 @@
 # @businesses = @businesses.where(["noise_level <= ?", noise_level]) if noise_level.present?
 # @businesses = @businesses.where(["delivery === true"]) if delivery.present?
 
-
 @businesses.each do |business|
   json.set! business.id do
     json.partial! "business", business: business
