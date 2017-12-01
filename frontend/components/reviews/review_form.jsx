@@ -35,6 +35,7 @@ class ReviewForm extends React.Component {
     this.clearClass = this.clearClass.bind(this);
     this.reinstateClass = this.reinstateClass.bind(this);
     this.reviewCheck = this.reviewCheck.bind(this);
+    this.reviewReinstate = this.reviewReinstate.bind(this);
 
   }
 
@@ -220,25 +221,48 @@ class ReviewForm extends React.Component {
     }
   }
 
-  reviewCheck() {
-    switch (parseInt(this.state.ratingValue)) {
-      case 1:
-        return document.getElementById("rating-text").innnerHTML = "Eek! Methinks not.";
+  reviewCheck(el) {
+    switch (el) {
+      case "one":
+        return   $("#rating-text").text("Eek! Methinks not.");
         break;
-      case 2:
-      return document.getElementById("rating-text").innnerHTML = "Meh. I've experienced better.";
+      case "two":
+      return $("#rating-text").text("Meh. I've experienced better.");
         break;
-      case 3:
-      return document.getElementById("rating-text").innnerHTML = "A=OK.";
+      case "three":
+      return $("#rating-text").text("A-OK.");
         break;
-      case 4:
-      return document.getElementById("rating-text").innnerHTML = "Yay! I'm a fan.";
+      case "four":
+      return $("#rating-text").text("Yay! I'm a fan.");
         break;
-      case 5:
-      return document.getElementById("rating-text").innnerHTML = "Woohoo! As good as it gets!";
+      case "five":
+      return $("#rating-text").text("Woohoo! As good as it gets!");
         break;
       default:
-      return document.getElementById("rating-text").innnerHTML = "Select your rating.";
+      return ;
+        break;
+    }
+  }
+
+  reviewReinstate() {
+    switch (parseInt(this.state.ratingValue)) {
+      case 1:
+        return   $("#rating-text").text("Eek! Methinks not.");
+        break;
+      case 2:
+      return $("#rating-text").text("Meh. I've experienced better.");
+        break;
+      case 3:
+      return $("#rating-text").text("A-OK.");
+        break;
+      case 4:
+      return $("#rating-text").text("Yay! I'm a fan.");
+        break;
+      case 5:
+      return $("#rating-text").text("Woohoo! As good as it gets!");
+        break;
+      default: $("#rating-text").text("Select your rating.");
+      return ;
         break;
     }
   }
@@ -249,6 +273,7 @@ class ReviewForm extends React.Component {
     document.getElementById("three").className = this.threeCheck();
     document.getElementById("two").className =  this.twoCheck();
     document.getElementById("one").className = this.oneCheck();
+    this.reviewReinstate();
   }
 
   clearClass() {
@@ -297,37 +322,37 @@ class ReviewForm extends React.Component {
                 <form  onSubmit={this.handleSubmit}>
                   <div className={"your-review-text"}>Your review</div>
                   <div className= "stars-and-review-body">
-                    <div className="stars-review-biz-form" value={this.state.ratingValue} onChange={this.reviewCheck}>
+                    <div className="stars-review-biz-form" value={this.state.ratingValue}  >
                       <ul className="yelp-stars" onChange={this.ratingChange} onMouseOver={this.clearClass} onMouseOut={this.reinstateClass}>
 
-                          <div id="rating-text" className="rating-text-review" > Select your rating.
-                          </div>
 
-                          <label id="five" className={this.fiveCheck()} > <i className="fa fa-star" aria-hidden="true"  ></i>
+                          <label id="five" className={this.fiveCheck()} onMouseOver={()=> this.reviewCheck("five")}> <i className="fa fa-star" aria-hidden="true"  ></i>
                             <input className="price"   type="radio" value="5" name="rating"/>
                           </label>
 
 
-                          <label id="four" className={this.fourCheck()} > <i className="fa fa-star" aria-hidden="true"  ></i>
+                          <label id="four" className={this.fourCheck()} onMouseOver={()=> this.reviewCheck("four")}> <i className="fa fa-star" aria-hidden="true"  ></i>
                             <input className="price"   type="radio" value="4" name="rating"/>
                             </label>
 
 
-                          <label id="three" className={this.threeCheck()} > <i className="fa fa-star" aria-hidden="true"  ></i>
+                          <label id="three" className={this.threeCheck()} onMouseOver={()=> this.reviewCheck("three")}> <i className="fa fa-star" aria-hidden="true"  ></i>
                             <input className="price"  type="radio" value="3" name="rating" />
                             </label>
 
 
-                          <label id="two" className={this.twoCheck()} > <i className="fa fa-star" aria-hidden="true"  ></i>
+                          <label id="two" className={this.twoCheck()} onMouseOver={()=> this.reviewCheck("two")} > <i className="fa fa-star" aria-hidden="true"  ></i>
                             <input className="price"  type="radio" value="2" name="rating" />
                             </label>
 
 
-                          <label id="one" className={this.oneCheck()}> <i className="fa fa-star" aria-hidden="true"  ></i>
+                          <label id="one" className={this.oneCheck()} onMouseOver={()=> this.reviewCheck("one")}> <i className="fa fa-star" aria-hidden="true"  ></i>
                             <input className="price"  type="radio" value="1" name="rating" />
                             </label>
 
                       </ul>
+                      <div id="rating-text" className="rating-text-review" > Select your rating.
+                      </div>
                     </div>
 
                     <textarea className="text-review-form" placeholder="Your review helps others learn about great businesses." onChange={this.bodyChange} value={this.state.bodyValue}></textarea>
