@@ -15,6 +15,10 @@ class Landing extends React.Component {
       this.setState();
     }
   }
+  
+  clickHandler(event) {
+    this.props.nextPage("/reviews");
+  }
 
   componentDidMount() {
     if(this.props.intendedPage) {
@@ -46,9 +50,6 @@ class Landing extends React.Component {
     }
   }
 
-  clickHandler(event) {
-    this.props.nextPage("/reviews");
-  }
 
   render() {
     const classes = ["landing-background1", "landing-background1", "landing-background3", "landing-background4",

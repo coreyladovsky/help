@@ -129,9 +129,9 @@ class ReviewForm extends React.Component {
 
 
   searchSubmit() {
-    this.props.fetchBusinesses({cuisine: this.props.business.cuisine,
+    this.props.fetchBusinesses({cuisine: this.props.business.cuisine.toLowerCase(),
       bounds: "",
-      name: ""});
+      name: this.props.business.cuisine.toLowerCase()});
       this.props.clearFilter();
     this.props.history.push("/search");
 

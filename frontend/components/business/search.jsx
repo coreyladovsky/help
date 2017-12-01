@@ -28,7 +28,7 @@ class Search extends React.Component {
         </li>
         <li className="biz-map-index-page">
 
-        <BusinessMap props={this.props}/>
+        <BusinessMap business={this.props.business} filters={this.props.filters}/>
       </li>
       </ul>
     </div>

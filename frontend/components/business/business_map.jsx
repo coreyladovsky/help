@@ -31,10 +31,10 @@ class BusinessMap extends React.Component {
   }
 
   componentDidUpdate() {
-    if(this.props.props.business.length !== 0) {
+    if(this.props.business.length !== 0) {
 
       let mapOptions = {
-       center: { lat: this.props.props.business[0].lat , lng: this.props.props.business[0].lng },
+       center: { lat: this.props.business[0].lat , lng: this.props.business[0].lng },
        zoom: 11
        };
 
@@ -42,15 +42,15 @@ class BusinessMap extends React.Component {
 
       this.map = new google.maps.Map(this.mapNode, mapOptions);
       this.MarkerManager = new MarkerManager(this.map);
-      
+
       let bizzys = [];
       let count = 0;
-    for(let i = 0; i < this.props.props.business.length; i++) {
-      if(!this.props.props.filters) {
+    for(let i = 0; i < this.props.business.length; i++) {
+      if(!this.props.filters) {
         bizzys.push(this.props.props.business[i]);
       }
-      else if(Object.keys(this.props.props.filters).every(filter => this.compareValues(this.props.props.filters[filter], this.props.props.business[i][filter]))) {
-        bizzys.push(this.props.props.business[i]);
+      else if(Object.keys(this.props.filters).every(filter => this.compareValues(this.props.filters[filter], this.props.business[i][filter]))) {
+        bizzys.push(this.props.business[i]);
       }
     }
 
