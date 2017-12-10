@@ -107,6 +107,7 @@ class BusinessShow extends React.Component {
     window.scrollTo(0, 0);
     this.props.fetchBusiness(this.props.match.params.businessId);
     this.props.fetchReviewers(this.props.match.params.businessId);
+    this.props.clearPage();
   }
 
   ampm(time) {

@@ -23,14 +23,18 @@ class BusinessIndex extends React.Component {
       if(!this.props.props.filters) {
         count++;
         if(count <= 20) {
-          return <BusinessIndexItem key={business.id} idx={count} business={business} fetchBusinesses={this.props.props.fetchBusinesses} clearFilter={this.props.props.clearFilter} nextPage={this.props.props.nextPage} />;
+          return <BusinessIndexItem key={business.id} idx={count}
+            business={business} fetchBusinesses={this.props.props.fetchBusinesses}
+            clearFilter={this.props.props.clearFilter} nextPage={this.props.props.nextPage} />;
         }
       } else if(Object.keys(this.props.props.filters).every(filter =>
           this.compareValues(this.props.props.filters[filter], business[filter])
      )) {
         count++;
         if(count <= 20) {
-          return <BusinessIndexItem key={business.id} idx={count} business={business} fetchBusinesses={this.props.props.fetchBusinesses} clearFilter={this.props.props.clearFilter} nextPage={this.props.props.nextPage} />;
+          return <BusinessIndexItem key={business.id} idx={count}
+            business={business} fetchBusinesses={this.props.props.fetchBusinesses}
+            clearFilter={this.props.props.clearFilter} nextPage={this.props.props.nextPage} />;
         }
       }
 
