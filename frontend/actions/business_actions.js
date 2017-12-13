@@ -12,8 +12,6 @@ export const updateBounds = (bounds, value) => ({
   value
 });
 
-
-
 export const receiveReviewers = (reviewers) => ({
   type: RECEIVE_REVIEWERS,
   reviewers

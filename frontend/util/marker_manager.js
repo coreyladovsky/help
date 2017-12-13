@@ -12,9 +12,7 @@ export default class MarkerManager {
       this.markers[key].setMap(null);
     }
     businesses.forEach(business => {
-      // if(!Object.keys(this.markers).includes(business.id)) {
         this.createMarkerFromBusiness(business);
-      // }
     });
   }
 
@@ -28,7 +26,7 @@ export default class MarkerManager {
       businessId: business.id,
       animation: google.maps.Animation.DROP
     });
-    let img = business.image
+    let img = business.image;
     let infowindow =  new google.maps.InfoWindow({
           content: `<IMG BORDER="0"  ALIGN="Left" SRC=${img}> ` + business.name + " " + business.address
         });
@@ -36,9 +34,6 @@ export default class MarkerManager {
     marker.addListener('click', function() {
       infowindow.open(marker.get('map'), marker);
     });
-    // marker.addListener('click', function() {
-    //   infowindow.close();
-    // });
 
     this.markers[marker.businessId] = marker;
   }

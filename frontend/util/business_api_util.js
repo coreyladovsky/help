@@ -1,6 +1,4 @@
 
-
-
 export const fetchBusinesses = data => {
     return $.ajax({
     method: "GET",
@@ -16,7 +14,6 @@ export const fetchBusiness = (businessId) => (
   })
 );
 
-
 export const createBusiness = (data) => (
   $.ajax({
     method: "POST",
@@ -24,7 +21,6 @@ export const createBusiness = (data) => (
     data: { data }
   })
 );
-
 
 export const fetchReviewers = (businessId) => (
   $.ajax({

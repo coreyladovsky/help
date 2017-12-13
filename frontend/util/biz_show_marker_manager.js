@@ -20,7 +20,7 @@ export default class MarkerManager {
       businessId: business.id,
       animation: google.maps.Animation.DROP
     });
-    let img = business.image
+    let img = business.image;
     let infowindow =  new google.maps.InfoWindow({
           content: `<IMG BORDER="0"  ALIGN="Left" SRC=${img}> ` + business.name + " " + business.address
         });

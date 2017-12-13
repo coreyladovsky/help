@@ -5,8 +5,6 @@ export const fetchPhoto = (photoId) => (
   })
 );
 
-
-
 export const fetchPhotos = (businessId) => (
   $.ajax({
     method: "GET",
