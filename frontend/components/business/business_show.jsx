@@ -175,10 +175,7 @@ class BusinessShow extends React.Component {
       delivery: false,
       bounds: "",
       name: this.props.business.cuisine.toLowerCase()});
-
     this.props.history.push("/search");
-
-
   }
 
   render() {

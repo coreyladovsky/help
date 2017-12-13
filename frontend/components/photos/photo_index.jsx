@@ -44,9 +44,20 @@ class PhotoIndex extends React.Component {
 
       return(
           <ul className="photo-items-ul">
-            <li><img id="first_photo" onMouseOver={this.enlargeFirst} onMouseOut={this.resetPhotos} className="biz-indiv-photo" src={this.props.photos[0].image}/></li>
-            <li><img id="second_photo" src={this.props.photos[1].image} className="biz-indiv-photo"/></li>
-            <li><img id="third_photo" onMouseOver={this.enlargeLast} onMouseOut={this.resetPhotos} className="biz-indiv-photo"  src={this.props.photos[this.props.photos.length - 1].image}/></li>
+            <li>
+              <img id="first_photo" onMouseOver={this.enlargeFirst}
+              onMouseOut={this.resetPhotos} className="biz-indiv-photo"
+              src={this.props.photos[0].image}/>
+            </li>
+            <li>
+              <img id="second_photo" src={this.props.photos[1].image}
+                className="biz-indiv-photo"/>
+            </li>
+            <li>
+              <img id="third_photo" onMouseOver={this.enlargeLast}
+              onMouseOut={this.resetPhotos} className="biz-indiv-photo"
+              src={this.props.photos[this.props.photos.length - 1].image}/>
+            </li>
           </ul>
 
       );

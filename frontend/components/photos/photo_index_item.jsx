@@ -10,12 +10,10 @@ class PhotoIndexItem extends React.Component {
     if(this.props.photo === undefined) {
       return null;
     } else {
-
-
-    return(
-      <li>
-        <img src={this.props.photo.image}/>
-      </li>
+      return(
+        <li>
+          <img src={this.props.photo.image}/>
+        </li>
     );}
   }
 }

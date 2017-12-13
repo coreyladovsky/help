@@ -4,7 +4,6 @@ import { fetchBusinesses } from '../../actions/business_actions';
 import { logout, clearPage, nextPage } from '../../actions/session_actions';
 import { updateBounds, frontFilter, clearFilter } from '../../actions/filter_actions';
 
-
 const mapStateToProps = (state, ownProps) => {
   return ({
     business: Object.values(state.business),
@@ -15,7 +14,6 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-
   return ({
     fetchBusinesses: (filters) => dispatch(fetchBusinesses(filters)),
     logout: ()=> dispatch(logout()),
@@ -23,11 +21,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     nextPage: (page) => dispatch(nextPage(page)),
     updateBounds: (bounds) => dispatch(updateBounds(bounds)),
     clearFilter: () => dispatch(clearFilter()),
-
-
   });
 };
-
 
 export default connect(
   mapStateToProps,

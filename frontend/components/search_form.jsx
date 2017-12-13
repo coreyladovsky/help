@@ -65,8 +65,6 @@ class SearchForm extends React.Component {
    activatePlacesSearch() {
     var input = document.getElementById('autocomplete');
      this.autocomplete = new google.maps.places.Autocomplete(input);
-
-    // console.log(this.state);
   }
 
   findChange(event) {

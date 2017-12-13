@@ -60,7 +60,6 @@ class BusinessIndexItem extends React.Component {
     this.props.fetchBusinesses({cuisine: this.props.business.cuisine.toLowerCase(),
       bounds: "",
       name: this.props.business.cuisine.toLowerCase()});
-
   }
 
   render() {
@@ -74,7 +73,9 @@ class BusinessIndexItem extends React.Component {
     <div className="all-biz">
       <ul className="list-item">
         <li className="biz-photo-li">
-          <Link to={ `/businesses/${this.props.business.id}`}><img className="business-photo" src={this.props.business.image} /></Link>
+          <Link to={ `/businesses/${this.props.business.id}`}>
+            <img className="business-photo" src={this.props.business.image}/>            
+          </Link>
         </li>
 
         <li className="after-biz-photo">

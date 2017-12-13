@@ -8,7 +8,6 @@ class BusinessMap extends React.Component {
   constructor(props) {
     super(props);
     this.compareValues = this.compareValues.bind(this);
-
   }
 
   componentDidMount() {
@@ -17,9 +16,8 @@ class BusinessMap extends React.Component {
       zoom:13
     };
     this.mapNode = document.getElementById('map-container');
-
-     this.map = new google.maps.Map(this.mapNode, mapOptions);
-     this.MarkerManager = new MarkerManager(this.map);
+    this.map = new google.maps.Map(this.mapNode, mapOptions);
+    this.MarkerManager = new MarkerManager(this.map);
   }
 
   compareValues(arg1, arg2) {
@@ -39,20 +37,19 @@ class BusinessMap extends React.Component {
        };
 
       this.mapNode = document.getElementById('map-container');
-
       this.map = new google.maps.Map(this.mapNode, mapOptions);
       this.MarkerManager = new MarkerManager(this.map);
 
       let bizzys = [];
       let count = 0;
-    for(let i = 0; i < this.props.business.length; i++) {
-      if(!this.props.filters) {
-        bizzys.push(this.props.props.business[i]);
+      for(let i = 0; i < this.props.business.length; i++) {
+        if(!this.props.filters) {
+          bizzys.push(this.props.props.business[i]);
+        }
+        else if(Object.keys(this.props.filters).every(filter => this.compareValues(this.props.filters[filter], this.props.business[i][filter]))) {
+          bizzys.push(this.props.business[i]);
+        }
       }
-      else if(Object.keys(this.props.filters).every(filter => this.compareValues(this.props.filters[filter], this.props.business[i][filter]))) {
-        bizzys.push(this.props.business[i]);
-      }
-    }
 
     this.MarkerManager.updateMarkers(bizzys.slice(0,20));
   }

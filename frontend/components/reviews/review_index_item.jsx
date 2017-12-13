@@ -50,19 +50,24 @@ class ReviewIndexItem extends React.Component {
           <ul>
             <li>
 
-            <ul className="user-info-comment">
-              <li className="user-profile-pic-comment-li"><img className="user-profile-pic-comment" src={this.props.user.image} /></li>
-              <li className="user-profile-name-comment">
-                {this.props.user.first_name}
-              </li>
-              <li className="user-profile-name-comment">
-                {this.props.user.last_name.substring(0,1) + "."}
-              </li>
-            </ul>
-          </li>
+              <ul className="user-info-comment">
+                <li className="user-profile-pic-comment-li">
+                  <img className="user-profile-pic-comment" src={this.props.user.image}/>
+                </li>
+                <li className="user-profile-name-comment">
+                  {this.props.user.first_name}
+                </li>
+                <li className="user-profile-name-comment">
+                  {this.props.user.last_name.substring(0,1) + "."}
+                </li>
+              </ul>
+
+            </li>
+
             <li className="zip-code-comment">
               {this.props.user.zip_code}
             </li>
+
           </ul>
         </li>
         <li className="review-info-comment-show">

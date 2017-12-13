@@ -6,7 +6,6 @@ import MarkerManager from '../../util/biz_show_marker_manager';
 
 class BizShowMap extends React.Component {
 
-
   componentDidMount() {
     const mapOptions = {
       center: { lat: this.props.business.lat , lng: this.props.business.lng },
@@ -14,9 +13,8 @@ class BizShowMap extends React.Component {
     };
 
     this.mapNode = document.getElementById('map-container');
-
-     this.map = new google.maps.Map(this.mapNode, mapOptions);
-     this.MarkerManager = new MarkerManager(this.map);
+    this.map = new google.maps.Map(this.mapNode, mapOptions);
+    this.MarkerManager = new MarkerManager(this.map);
   }
 
   componentDidUpdate() {
@@ -29,7 +27,6 @@ class BizShowMap extends React.Component {
       </div>
     );
   }
-
 
 }
 

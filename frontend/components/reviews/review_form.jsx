@@ -295,7 +295,11 @@ class ReviewForm extends React.Component {
       });
     return(
       <div>
-        <NavBar currentUser={this.props.currentUser} intendedPage={this.props.intendedPage} logout={this.props.logout} nextPage={this.props.nextPage} clearPage={this.props.clearPage}/>
+        <NavBar currentUser={this.props.currentUser}
+          intendedPage={this.props.intendedPage}
+          logout={this.props.logout} nextPage={this.props.nextPage}
+          clearPage={this.props.clearPage}/>
+
         <div className="main-div-form">
         <ul className="other-reviews">
         <li>

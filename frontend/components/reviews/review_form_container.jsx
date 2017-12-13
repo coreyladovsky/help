@@ -36,7 +36,6 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   if(ownProps.match.path === "/businesses/:businessId/reviews/new"){
 
-
     return {
       createReview: (review) => dispatch(createReview(review)),
       clearErrors: () => dispatch(clearErrors()),
@@ -46,10 +45,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       nextPage: (page) => dispatch(nextPage(page)),
       fetchBusinesses: (filters) => dispatch(fetchBusinesses(filters)),
       clearFilter: () => dispatch(clearFilter()),
-
-  };
-
+    };
   } else {
+    
     return {
       fetchReview: (reviewId) => dispatch(fetchReview(reviewId)),
       updateReview: (review) => dispatch(updateReview(review)),
