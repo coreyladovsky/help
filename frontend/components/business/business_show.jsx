@@ -353,39 +353,3 @@ class BusinessShow extends React.Component {
 }
 
 export default BusinessShow;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// <li className="first-photo-show">
-//   <Link to={"/business/photos"}>Picture 1</Link>
-//   </li>
-//   <li className="second-photo-show">
-//     <Link to={"/business/photos"}><img className="second-photo-show" src={this.props.business.image_medium} /> </Link>
-//     </li>
-//     <li className="third-photo-show">
-//       <Link to={"/business/photos"}>See all photos</Link>
-//       </li>
