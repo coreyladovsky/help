@@ -179,7 +179,7 @@ class SearchForm extends React.Component {
           <li className={this.props.path === "/" ? "find-input-land" :"find-input-field"}>
             <input className={this.props.path === "/" ? "land-input-find" :"nav-input-find"}
               onChange={this.findChange} value={this.state.findValue}
-              text="type" placeholder="Restaurants"/>
+              type="text" placeholder="Restaurants"/>
           </li>
           <li className={this.props.path === "/" ? "land-seperator" : "seperator"}>
             <div className={this.props.path === "/" ? "land-seperator-div" :"seperator-div"}></div>
@@ -192,7 +192,7 @@ class SearchForm extends React.Component {
               className={this.props.path === "/" ? "near-input-land" :"near-input-nav"}
               onChange={this.nearChange}
               value={this.state.nearValue}
-              text="type"
+              type="text"
               placeholder="Current Location" />
           </li>
           <li>
