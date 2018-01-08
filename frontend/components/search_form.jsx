@@ -1,7 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-// import geocoder from 'geocoder';
-
 
 class SearchForm extends React.Component {
   constructor(props) {
@@ -179,9 +177,13 @@ class SearchForm extends React.Component {
             Find
           </li>
           <li className={this.props.path === "/" ? "find-input-land" :"find-input-field"}>
-            <input className={this.props.path === "/" ? "land-input-find" :"nav-input-find"} onChange={this.findChange} value={this.state.findValue} text="type" placeholder="Restaurants"/>
+            <input className={this.props.path === "/" ? "land-input-find" :"nav-input-find"}
+              onChange={this.findChange} value={this.state.findValue}
+              text="type" placeholder="Restaurants"/>
           </li>
-          <li className={this.props.path === "/" ? "land-seperator" : "seperator"}><div className={this.props.path === "/" ? "land-seperator-div" :"seperator-div"}></div></li>
+          <li className={this.props.path === "/" ? "land-seperator" : "seperator"}>
+            <div className={this.props.path === "/" ? "land-seperator-div" :"seperator-div"}></div>
+          </li>
           <li className={this.props.path === "/" ? "near-text-land" :"near-text-nav"}> Near</li>
           <li>
             <input id="autocomplete"
@@ -194,7 +196,12 @@ class SearchForm extends React.Component {
               placeholder="Current Location" />
           </li>
           <li>
-            <button type="submit" className={this.props.path === "/" ? "mag-land" :"mag"} onKeyDown={this.handleSubmit} onClick={this.handleSubmit}><i className={this.props.path ==="/" ? "land-icon fa fa-search" : "icon fa fa-search" }></i></button>
+            <button type="submit"
+              className={this.props.path === "/" ? "mag-land" :"mag"}
+              onKeyDown={this.handleSubmit}
+              onClick={this.handleSubmit}>
+              <i className={this.props.path ==="/" ? "land-icon fa fa-search" : "icon fa fa-search" }></i>
+            </button>
 
           </li>
         </ul>
