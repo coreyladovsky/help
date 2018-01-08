@@ -45,14 +45,14 @@ class SearchForm extends React.Component {
     this.props.clearFilter();
     this.clearFilterVals();
     setTimeout(() => {
-      // price_range: this.state.priceValue,
-      // noise_level: this.state.noiseValue,
-      // delivery: this.state.deliveryValue,
 
       this.props.fetchBusinesses({
         name: this.state.findValue.toLowerCase(),
         cuisine: this.state.findValue.toLowerCase(),
-        bounds: this.getLatLng(this.state.nearValue)
+        bounds: this.getLatLng(this.state.nearValue),
+        price_range: this.state.priceValue,
+        noise_level: this.state.noiseValue,
+        delivery: this.state.deliveryValue,
       });
       if(this.props.match.path !== "/search" ) {
         this.props.history.push("/search");

@@ -26,14 +26,14 @@ New York, NY 10011", phone_number: "(646) 833-7532", cuisine: "Bar",
 image: "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-photos/bar2.jpg",
 mon_start_time: 15.3, mon_end_time: 24, tue_start_time: 15.3, tue_end_time: 24, wed_start_time: 15.3,
 wed_end_time: 26, thur_start_time: 15.3, thur_end_time: 26, fri_start_time: 15.3, fri_end_time: 26,
-sat_start_time: 13, sat_end_time:26, sun_start_time: 13, sun_end_time: 26, lat:40.740156, lng:-73.99336599999998, website: "www.oldtownbar.com")
+sat_start_time: 13, sat_end_time:26, sun_start_time: 13, sun_end_time: 26, lat:40.740156, lng:-73.993366, website: "www.oldtownbar.com")
 
 biz5 = Business.create!(name: "Central Cafe", address: "95 1st Ave
 New York, NY 10003", phone_number: "(646) 791-5400", cuisine: "Cafe",
 image: "https://s3.amazonaws.com/helpcoreyladovskyprojectdev/biz-photos/cafe.jpg",
 mon_start_time: 15, mon_end_time: 22, tue_start_time: 15, tue_end_time: 22, wed_start_time: 15,
 wed_end_time: 22, thur_start_time: 15, thur_end_time: 22, fri_start_time: 15, fri_end_time: 22,
-sat_start_time: 13, sat_end_time:22, sun_start_time: 13, sun_end_time: 22, lat:40.740156, lng:-73.99336599999998, website: "www.centralcafe.com")
+sat_start_time: 13, sat_end_time:22, sun_start_time: 13, sun_end_time: 22, lat:40.726354, lng:-73.986553, website: "www.centralcafe.com")
 
 biz6 = Business.create!(name: "Pings", address: "407 Smith St
 Brooklyn, NY 11231", phone_number: "(347) 689-3075", cuisine: "Chinese",
