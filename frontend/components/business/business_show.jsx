@@ -240,7 +240,7 @@ class BusinessShow extends React.Component {
               <li className="review-button-button-show">
                 <Link to={this.props.location.pathname + "/reviews/new"} onClick={this.handleClick} className="review-button-show"><i className="fa fa-star fake-star" aria-hidden="true"></i> Write a Review</Link>
               </li>
-              <li className="add-photo-sho">
+              <li className="add-photo-show">
                 <Link to={this.props.location.pathname +'/photos'} className="photo-button-show" onClick={this.clickHandler}><i className="fa fa-camera" aria-hidden="true"></i>Add Photo</Link>
               </li>
             </ul>
