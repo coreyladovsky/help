@@ -19,6 +19,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     clearPage: () => dispatch(clearPage()),
     logout: ()=> dispatch(logout()),
     nextPage: (page) => dispatch(nextPage(page)),
+    createPhoto: (photo) => dispatch(createPhoto(photo)),
 
   };
 };
