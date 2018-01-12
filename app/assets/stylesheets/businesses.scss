@@ -11,7 +11,7 @@
 .biz-idx-page {
   display: flex;
   justify-content: center;
-  width: 100%; 
+  width: 100%;
 }
 
 .holding-box {
@@ -40,6 +40,7 @@
   height: 92px;
   width: 92px;
   border-radius: 5px;
+  object-fit: cover; 
 }
 
 
