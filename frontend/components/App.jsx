@@ -7,6 +7,8 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import ReviewsContainer from './reviews/reviews_container';
 import ReviewFormContainer from './reviews/review_form_container';
 import BusinessShowContainer from './business/business_show_container';
+import PhotoUploadContainer from './photos/photo_upload_container';
+
 
 
 const App = () => (
@@ -21,10 +23,10 @@ const App = () => (
       <ProtectedRoute path="/businesses/:businessId/reviews/:reviewId/edit" component={ReviewFormContainer}/>
       <ProtectedRoute path="/reviews" component={ReviewsContainer}/>
       <ProtectedRoute exact path="/businesses/:businessId/reviews" component={ReviewsContainer}/>
+      <ProtectedRoute path="/businesses/:businessId/photos/new" component={PhotoUploadContainer}/>
       <Route exact path="/businesses/:businessId" component={BusinessShowContainer}/>
       <Route exact path="/search" component={SearchContainer} />
       <Route exact path="/" component={LandingContainer} />
-      <ProtectedRoute path="/businesses/:businessId/photos/new" />
 
     </Switch>
   </div>
