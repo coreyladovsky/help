@@ -13,8 +13,8 @@ export const receivePhoto = photo => ({
   photo
 });
 
-export const fetchPhotos = (businessId) => dispatch => (
-  PhotoAPIUtil.fetchPhotos(businessId).then(photos => dispatch(receivePhotos(photos)))
+export const fetchBizPhotos = (businessId) => dispatch => (
+  PhotoAPIUtil.fetchBizPhotos(businessId).then(photos => dispatch(receivePhotos(photos)))
 );
 
 export const fetchPhoto = (photoId) => dispatch => (

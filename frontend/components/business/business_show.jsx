@@ -184,7 +184,11 @@ class BusinessShow extends React.Component {
     } else {
     return(
       <div>
-          <NavBar currentUser={this.props.currentUser} intendedPage={this.props.intendedPage} logout={this.props.logout} nextPage={this.props.nextPage} clearPage={this.props.clearPage}/>
+          <NavBar currentUser={this.props.currentUser}
+            intendedPage={this.props.intendedPage}
+            logout={this.props.logout}
+            nextPage={this.props.nextPage}
+            clearPage={this.props.clearPage}/>
 
           <div className="main-div">
 
@@ -238,15 +242,25 @@ class BusinessShow extends React.Component {
 
             <ul className="add-buttons-show">
               <li className="review-button-button-show">
-                <Link to={this.props.location.pathname + "/reviews/new"} onClick={this.handleClick} className="review-button-show"><i className="fa fa-star fake-star" aria-hidden="true"></i> Write a Review</Link>
+                <Link to={this.props.location.pathname + "/reviews/new"}
+                  onClick={this.handleClick} className="review-button-show">
+                  <i className="fa fa-star fake-star" aria-hidden="true">
+                  </i> Write a Review
+                </Link>
               </li>
               <li className="add-photo-show">
-                <Link to={this.props.location.pathname +'/photos'} className="photo-button-show" onClick={this.clickHandler}><i className="fa fa-camera" aria-hidden="true"></i>Add Photo</Link>
+                <Link to={this.props.location.pathname +'/photos/new'}
+                  className="photo-button-show"
+                  onClick={this.clickHandler}>
+                  <i className="fa fa-camera" aria-hidden="true">
+                  </i>Add Photo
+                </Link>
               </li>
             </ul>
             <div>
 
-                <PhotosContainer businessId={this.props.business.id} photos={this.props.business.photos}/>
+                <PhotosContainer businessId={this.props.business.id}
+                  photos={this.props.business.photos}/>
 
             </div>
           </ul>

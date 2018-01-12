@@ -11,7 +11,7 @@ import BusinessShowContainer from './business/business_show_container';
 
 const App = () => (
   <div>
-  
+
     <header>
     </header>
     <Switch>
@@ -24,6 +24,8 @@ const App = () => (
       <Route exact path="/businesses/:businessId" component={BusinessShowContainer}/>
       <Route exact path="/search" component={SearchContainer} />
       <Route exact path="/" component={LandingContainer} />
+      <ProtectedRoute path="/businesses/:businessId/photos/new" />
+
     </Switch>
   </div>
 );
