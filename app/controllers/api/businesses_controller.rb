@@ -21,13 +21,10 @@ class Api::BusinessesController < ApplicationController
         if  business.in_bounds(params[:business][:bounds])
             quality_bizs << business
         end
-      end 
+      end
     end
     @businesses = quality_bizs.concat(delivers)
-
-
-
-
+    
   end
 
   def show
