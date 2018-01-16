@@ -7,10 +7,11 @@ import { clearErrors, clearPage, nextPage, logout } from '../../actions/session_
 
 
 const mapStateToProps = (state, ownProps) => {
-
+  debugger
   return {
     currentUser: state.session.currentUser,
-    intendedPage: state.intendedPage
+    intendedPage: state.intendedPage,
+    business: state.business[ownProps.match.params.businessId],
   };
 };
 

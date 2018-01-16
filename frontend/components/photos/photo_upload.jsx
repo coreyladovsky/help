@@ -30,21 +30,28 @@ class PhotoUpload extends React.Component {
   }
 
   render() {
+    if(this.props.business === undefined) {
+      return null;
+    } else {
+
 
     return(
-    <div>
-      <NavBar currentUser={this.props.currentUser}
-        intendedPage={this.props.intendedPage}
-        logout={this.props.logout} nextPage={this.props.nextPage}
-        clearPage={this.props.clearPage}/>
+      <div>
+        <NavBar currentUser={this.props.currentUser}
+          intendedPage={this.props.intendedPage}
+          logout={this.props.logout} nextPage={this.props.nextPage}
+          clearPage={this.props.clearPage}/>
 
-      <div className="image-upload">
-        <input className="image-uploaded" type="file" onChange={this.updateFile}/>
-        <img className="image-preview" src={this.state.imageUrl}/>
+        <Link to={`/businesses/${this.props.business.id}`}>{this.props.business.name}</Link>
+
+        <div className="image-upload">
+          <input className="image-uploaded" type="file" onChange={this.updateFile}/>
+          <img className="image-preview" src={this.state.imageUrl}/>
+        </div>
+
       </div>
-
-    </div>
-  );
+    );
+    }
   }
 }
 

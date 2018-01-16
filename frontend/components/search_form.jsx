@@ -167,7 +167,7 @@ class SearchForm extends React.Component {
 
   render() {
 
-
+  
 
     return(
       <form id="search-form" onSubmit={this.handleSubmit} className={this.props.path === "/" ? "landing-form" : "search-nav"} >
@@ -206,7 +206,7 @@ class SearchForm extends React.Component {
           </li>
         </ul>
 
-        {this.props.path === "/" ? "" : this.filter()}
+        {this.props.match.path !== "/search" ? "" : this.filter()}
       </form>
 
     );

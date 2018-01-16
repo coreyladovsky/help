@@ -4,6 +4,7 @@
   margin-top: 200px;
   width: 600px;
   height: 400px;
+  border-radius: 4px; 
   border: 1px solid red;
 }
 
@@ -11,13 +12,13 @@
   z-index: 1;
   width: 1000000px;
   height: 400px;
-  border: 1px solid green;
+  // border: 1px solid green;
   opacity: 0;
 }
 
 
 .image-preview {
-  border: 1px solid yellow;
+  // border: 1px solid yellow;
   margin: 0px;
   width: 600px;
   height: 400px;
