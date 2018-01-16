@@ -13,6 +13,10 @@ class PhotoUpload extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchBusiness(this.props.match.params.businessId);
+  }
+
   updateFile(e) {
     let file = e.currentTarget.files[0];
     let fileReader = new FileReader();
@@ -41,8 +45,23 @@ class PhotoUpload extends React.Component {
           intendedPage={this.props.intendedPage}
           logout={this.props.logout} nextPage={this.props.nextPage}
           clearPage={this.props.clearPage}/>
+        <div className="photo-upload-container">
+          <div className="biz-heading-photos">
+            <ul className="photo-page-ul">
+              <li>
+                <div className="biz-name-photo">
+                  <Link to={`/businesses/${this.props.business.id}`}>{this.props.business.name + ":"}</Link>
+                </div>
+              </li>
+              <li className="add-photo-text">
+                Add Photos
+              </li>
+            </ul>
+            <div className="all-photos-tag">
+              <Link to={`/businesses/${this.props.business.id}/photos`}>View all photos</Link>
+            </div>
+          </div>
 
-        <Link to={`/businesses/${this.props.business.id}`}>{this.props.business.name}</Link>
 
         <div className="image-upload">
           <input className="image-uploaded" type="file" onChange={this.updateFile}/>
@@ -50,6 +69,8 @@ class PhotoUpload extends React.Component {
         </div>
 
       </div>
+      
+    </div>
     );
     }
   }

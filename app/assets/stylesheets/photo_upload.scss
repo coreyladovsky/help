@@ -1,24 +1,78 @@
-.image-upload {
+.photo-upload-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.biz-heading-photos {
   display: flex;
   margin: auto;
-  margin-top: 200px;
+  margin-top: 18px;
+  flex-direction: column;
+  padding-left: 20px;
+  width: 400px;
+
+}
+
+.photo-page-ul {
+  display: flex;
+}
+
+.biz-name-photo {
+  font-size: 22px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #0F70BB;
+
+}
+
+.biz-name-photo:hover {
+  text-decoration: underline;
+}
+
+.add-photo-text {
+  font-size: 22px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #D00D25;
+  margin-left: 5px;
+}
+
+.all-photos-tag {
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #0F70BB;
+  margin-top: 6px;
+
+}
+
+.all-photos-tag:hover {
+  text-decoration: underline;
+}
+
+
+
+
+.image-upload {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 60px;
   width: 600px;
   height: 400px;
-  border-radius: 4px; 
-  border: 1px solid red;
+  border-radius: 5px;
+  border: 3px dashed #B2B2B2;
+
 }
 
 .image-uploaded {
   z-index: 1;
   width: 1000000px;
   height: 400px;
-  // border: 1px solid green;
   opacity: 0;
 }
 
 
 .image-preview {
-  // border: 1px solid yellow;
   margin: 0px;
   width: 600px;
   height: 400px;

@@ -3,11 +3,11 @@ import { withRouter } from 'react-router-dom';
 import PhotoUpload from './photo_upload';
 import { createPhoto } from '../../actions/photo_actions';
 import { clearErrors, clearPage, nextPage, logout } from '../../actions/session_actions';
+import { fetchBusiness } from '../../actions/business_actions';
 
 
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   return {
     currentUser: state.session.currentUser,
     intendedPage: state.intendedPage,
@@ -21,6 +21,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     logout: ()=> dispatch(logout()),
     nextPage: (page) => dispatch(nextPage(page)),
     createPhoto: (photo) => dispatch(createPhoto(photo)),
+    fetchBusiness: (businessId) => dispatch(fetchBusiness(businessId))
 
   };
 };
