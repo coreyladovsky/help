@@ -39,8 +39,8 @@ class PhotoUpload extends React.Component {
         clearPage={this.props.clearPage}/>
 
       <div className="image-upload">
-        <input type="file" onChange={this.updateFile}/>
-        <img src={this.state.imageUrl}/>
+        <input className="image-uploaded" type="file" onChange={this.updateFile}/>
+        <img className="image-preview" src={this.state.imageUrl}/>
       </div>
 
     </div>
