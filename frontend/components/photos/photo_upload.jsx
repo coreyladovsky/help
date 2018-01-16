@@ -11,10 +11,32 @@ class PhotoUpload extends React.Component {
     };
     this.updateFile = this.updateFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.photoText = this.photoText.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchBusiness(this.props.match.params.businessId);
+  }
+
+  photoText() {
+    if(this.state.imageFile) {
+      return "";
+    } else {
+      return(
+        <div className="upload-text">
+          <ul>
+            <li>
+              <h1>Drag and drop your photos here</h1>
+            </li>
+            <li>
+              <div>OR</div>
+            </li>
+              <button>Browse Files</button>
+          </ul>
+        </div>
+      );
+
+    }
   }
 
   updateFile(e) {
@@ -37,7 +59,6 @@ class PhotoUpload extends React.Component {
     if(this.props.business === undefined) {
       return null;
     } else {
-
 
     return(
       <div>
@@ -64,12 +85,13 @@ class PhotoUpload extends React.Component {
 
 
         <div className="image-upload">
+          {this.photoText()}
           <input className="image-uploaded" type="file" onChange={this.updateFile}/>
           <img className="image-preview" src={this.state.imageUrl}/>
         </div>
 
       </div>
-      
+
     </div>
     );
     }

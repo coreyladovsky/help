@@ -49,7 +49,34 @@
 .all-photos-tag:hover {
   text-decoration: underline;
 }
+ // TEXT INSIDE OF PHOTO UPLOAD
+.upload-text {
+  width: 600px;
+  height: 400px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
 
+}
+
+.upload-text h1 {
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #333333;
+  font-size: 29px;
+  margin-top: 80px;
+}
+
+.upload-text div {
+
+}
+
+
+// <div className="upload-text">
+//   <h1>Drag and drop your photos here</h1>
+//   <div>OR</div>
+//   <button>Browse Files</button>
+// </div>
 
 
 
@@ -61,6 +88,7 @@
   height: 400px;
   border-radius: 5px;
   border: 3px dashed #B2B2B2;
+
 
 }
 
