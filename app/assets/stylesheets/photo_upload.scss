@@ -90,7 +90,7 @@
 }
 
 .browse-files-button {
-  height: 39px;
+  height: 15px;
   width: 127px;
   background-color: #D70306;
   color: white;
@@ -100,6 +100,21 @@
   border: 1px solid #8D0005;
   border-radius: 5px;
   text-align: center;
+  z-index: 2;
+  padding-top: 10px;
+  padding-bottom: 13px;
+}
+
+.second-upload {
+  opacity: 0;
+  height: 40px;
+  width: 127px;
+  left: 39.2%;
+  bottom: 30.5%;
+  position: absolute;
+}
+.second-upload:hover {
+  cursor: pointer;
 }
 
 .browse-files-button:hover {

@@ -34,7 +34,9 @@ class PhotoUpload extends React.Component {
               <div class="center-line"></div>
             </li>
             <li className="browse-files">
-              <button className="browse-files-button">Browse Files</button>
+              <div className="browse-files-button">Browse Files
+                <input className="second-upload" type="file" onChange={this.updateFile}/>
+              </div>
             </li>
           </ul>
         </div>
