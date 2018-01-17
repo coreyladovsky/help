@@ -28,10 +28,14 @@ class PhotoUpload extends React.Component {
             <li>
               <h1>Drag and drop your photos here</h1>
             </li>
-            <li>
-              <div>OR</div>
+            <li className="ok-partition">
+              <div class="center-line"></div>
+              <div className="ok-text">OR</div>
+              <div class="center-line"></div>
             </li>
-              <button>Browse Files</button>
+            <li className="browse-files">
+              <button className="browse-files-button">Browse Files</button>
+            </li>
           </ul>
         </div>
       );

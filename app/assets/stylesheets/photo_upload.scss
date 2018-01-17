@@ -67,6 +67,46 @@
   margin-top: 80px;
 }
 
+.center-line {
+  border-top: 1px solid #B2B2B2;
+  margin-top: .5em;
+  width: 200px;
+}
+
+.ok-text {
+  color: #666674;
+}
+
+.ok-partition {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.browse-files {
+  display: flex;
+  justify-content: center;
+  margin-top: 55px;
+}
+
+.browse-files-button {
+  height: 39px;
+  width: 127px;
+  background-color: #D70306;
+  color: white;
+  font-size: 15px;
+  font-family: sans-serif;
+  font-weight: bold;
+  border: 1px solid #8D0005;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.browse-files-button:hover {
+  background-color: #E02E33;
+
+}
+
 .upload-text div {
 
 }
