@@ -27,7 +27,7 @@ class PhotoIndex extends React.Component {
   }
 
   enlargeLast() {
-    document.getElementById("third_photo").style.cssText = "transform: scale(1.1) perspective(1px); z-index: 1"
+    document.getElementById("third_photo").style.cssText = "transform: scale(1.1) perspective(1px); z-index: 1; transition-duration: 0.2s"
     document.getElementById("second_photo").style.cssText = "transform: scale(1) perspective(1px); z-index: 0; transition-duration: 0.2s"
   }
 
