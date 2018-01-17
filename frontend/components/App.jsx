@@ -24,6 +24,7 @@ const App = () => (
       <ProtectedRoute path="/reviews" component={ReviewsContainer}/>
       <ProtectedRoute exact path="/businesses/:businessId/reviews" component={ReviewsContainer}/>
       <ProtectedRoute path="/businesses/:businessId/photos/new" component={PhotoUploadContainer}/>
+      <Route path="/businesses/:businessId/photos" />
       <Route exact path="/businesses/:businessId" component={BusinessShowContainer}/>
       <Route exact path="/search" component={SearchContainer} />
       <Route exact path="/" component={LandingContainer} />

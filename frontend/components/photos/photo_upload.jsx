@@ -12,6 +12,7 @@ class PhotoUpload extends React.Component {
     this.updateFile = this.updateFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.photoText = this.photoText.bind(this);
+    this.submitPhoto = this.submitPhoto.bind(this);
   }
 
   componentDidMount() {
@@ -29,9 +30,9 @@ class PhotoUpload extends React.Component {
               <h1>Drag and drop your photos here</h1>
             </li>
             <li className="ok-partition">
-              <div class="center-line"></div>
+              <div className="center-line"></div>
               <div className="ok-text">OR</div>
-              <div class="center-line"></div>
+              <div className="center-line"></div>
             </li>
             <li className="browse-files">
               <div className="browse-files-button">Browse Files
@@ -56,9 +57,25 @@ class PhotoUpload extends React.Component {
     }
   }
 
+  submitPhoto() {
+    if(!this.state.imageFile) {
+      return "";
+    } else {
+      return(
+        <button onClick={this.handleSubmit}>Add Photo</button>
+      );
+    }
+  }
+
   handleSubmit(e) {
     let formData = new FormData();
-    formData.append("bussiness[image]", this.state.imageFile);
+    formData.append("photo[image]", this.state.imageFile);
+    formData.append("photo[user_id]", this.props.currentUser.id);
+    formData.append("photo[business_id]", this.props.business.id);
+    this.props.createPhoto(formData).then(() => {
+      this.props.history.push(`/businesses/${this.props.business.id}/photos`);
+    });
+
   }
 
   render() {
@@ -89,12 +106,15 @@ class PhotoUpload extends React.Component {
             </div>
           </div>
 
-
-        <div className="image-upload">
-          {this.photoText()}
-          <input className="image-uploaded" type="file" onChange={this.updateFile}/>
-          <img className="image-preview" src={this.state.imageUrl}/>
-        </div>
+        <form>
+          <div className="image-upload">
+            {this.photoText()}
+            <input className="image-uploaded" type="file" onChange={this.updateFile}/>
+            <img className="image-preview" src={this.state.imageUrl}/>
+          </div>
+          {this.submitPhoto()}
+        </form>
+        <div>Cancel</div>
 
       </div>
 
