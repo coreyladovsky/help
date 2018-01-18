@@ -59,7 +59,11 @@ class BusinessIndexItem extends React.Component {
     this.props.clearFilter();
     this.props.fetchBusinesses({cuisine: this.props.business.cuisine.toLowerCase(),
       bounds: "",
-      name: this.props.business.cuisine.toLowerCase()});
+      name: this.props.business.cuisine.toLowerCase(),
+      price_range: 4,
+      noise_level: 4,
+      delivery: false
+    });
   }
 
   render() {

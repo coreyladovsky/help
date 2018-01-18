@@ -6,7 +6,6 @@ class Api::BusinessesController < ApplicationController
 
     @businesses = Business.all.includes(:reviews).includes(:photos)
     @businesses = @businesses.where(["lower(name) LIKE ? OR lower(cuisine) LIKE ?", "%#{business_params[:name]}%", "%#{business_params[:cuisine]}%" ]) if business_params[:cuisine] !=""
-
     quality_bizs = []
     delivers = []
     @businesses.each do |business|
@@ -24,7 +23,6 @@ class Api::BusinessesController < ApplicationController
       end
     end
     @businesses = quality_bizs.concat(delivers)
-    
   end
 
   def show

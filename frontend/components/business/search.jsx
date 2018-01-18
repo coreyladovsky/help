@@ -23,14 +23,15 @@ class Search extends React.Component {
 
       <ul className="map-and-index-ul">
         <li>
-          <BusinessIndex updateBounds={this.props.updateBounds} props={this.props} />
+          <BusinessIndex updateBounds={this.props.updateBounds} business={this.props.business} fetchBusinesses={this.props.fetchBusinesses}
+          clearFilter={this.props.clearFilter} nextPage={this.props.nextPage}/>
         </li>
 
         <li className="biz-map-index-page">
-          <BusinessMap business={this.props.business} filters={this.props.filters}/>
+          <BusinessMap business={this.props.business} filters={this.props.filters} />
         </li>
       </ul>
-      
+
     </div>
   );
   }
