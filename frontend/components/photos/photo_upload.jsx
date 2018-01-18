@@ -76,7 +76,7 @@ class PhotoUpload extends React.Component {
       return "";
     } else {
       return(
-        <button onClick={this.handleSubmit}>Add Photo</button>
+        <button className="photo-submit-button" onClick={this.handleSubmit}>Add Photo</button>
       );
     }
   }
@@ -95,7 +95,10 @@ class PhotoUpload extends React.Component {
     });
 
   }
-
+// This code will be added to return after i have a photos index page 
+  // <div className="all-photos-tag">
+  //   <Link to={`/businesses/${this.props.business.id}/photos`}>View all photos</Link>
+  // </div>
   render() {
     if(this.props.business === undefined) {
       return null;
@@ -119,12 +122,9 @@ class PhotoUpload extends React.Component {
                 Add Photos
               </li>
             </ul>
-            <div className="all-photos-tag">
-              <Link to={`/businesses/${this.props.business.id}/photos`}>View all photos</Link>
-            </div>
           </div>
 
-        <form>
+        <form className="photo-form">
           <div className="image-upload">
             {this.photoText()}
             {this.spinSpinner()}
