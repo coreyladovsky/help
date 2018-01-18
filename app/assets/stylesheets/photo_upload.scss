@@ -118,7 +118,7 @@
 }
 
 input[type="file"]:hover {
-  opacity: 0; 
+  opacity: 0;
 }
 
 .browse-files-button:hover {
@@ -165,4 +165,26 @@ input[type="file"]:hover {
   height: 400px;
   position: absolute;
   object-fit: cover;
+}
+
+.spin-container {
+  width: 600px;
+  height: 400px;
+  position: absolute;
+  background-color:black;
+  opacity: .5;
+  color: white;
+  font-size: 40px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.small-spin {
+  display: flex;
+  justify-content: center;
+  height: 120px;
+  width: 120px;
+  margin-top: 110px;
+
 }
