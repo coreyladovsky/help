@@ -18,6 +18,10 @@ class BusinessIndex extends React.Component {
 
 
   render() {
+
+    let none = <h1 className="no-biz">Sorry No Businesses Found, <br />
+        Please Try an Alternative Search <br/>  </h1>  ;
+
     let count= 0;
     const businesses = this.props.props.business.map((business, idx) => {
       if(!this.props.props.filters) {
@@ -44,7 +48,7 @@ class BusinessIndex extends React.Component {
       <div>
 
           <ul className="biz-item">
-            {businesses}
+            {businesses.length > 0 ? businesses :  none}
           </ul>
       </div>
     );

@@ -7,13 +7,19 @@ export default class MarkerManager {
   }
 
   updateMarkers(businesses) {
-    const businessesObj ={};
-    for(let key in this.markers) {
-      this.markers[key].setMap(null);
+    if (businesses === "clear") {
+      for(let key in this.markers) {
+        this.markers[key].setMap(null);
+      }
+    } else {    
+      const businessesObj ={};
+      for(let key in this.markers) {
+        this.markers[key].setMap(null);
+      }
+      businesses.forEach(business => {
+          this.createMarkerFromBusiness(business);
+      });
     }
-    businesses.forEach(business => {
-        this.createMarkerFromBusiness(business);
-    });
   }
 
 

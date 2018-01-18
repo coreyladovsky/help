@@ -52,6 +52,8 @@ class BusinessMap extends React.Component {
       }
 
     this.MarkerManager.updateMarkers(bizzys.slice(0,20));
+  } else {
+    this.MarkerManager.updateMarkers("clear");
   }
 
 }

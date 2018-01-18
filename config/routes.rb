@@ -14,5 +14,6 @@ Rails.application.routes.draw do
       get "reviewers", on: :member
     end
     resources :reviews, only: [:show, :destroy]
+    resources :photos
   end
 end

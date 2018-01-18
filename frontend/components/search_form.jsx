@@ -167,7 +167,7 @@ class SearchForm extends React.Component {
 
   render() {
 
-
+  
 
     return(
       <form id="search-form" onSubmit={this.handleSubmit} className={this.props.path === "/" ? "landing-form" : "search-nav"} >
@@ -179,7 +179,7 @@ class SearchForm extends React.Component {
           <li className={this.props.path === "/" ? "find-input-land" :"find-input-field"}>
             <input className={this.props.path === "/" ? "land-input-find" :"nav-input-find"}
               onChange={this.findChange} value={this.state.findValue}
-              type="text" placeholder="Restaurants"/>
+              type="text" placeholder="Coffee, Diner, American, etc.."/>
           </li>
           <li className={this.props.path === "/" ? "land-seperator" : "seperator"}>
             <div className={this.props.path === "/" ? "land-seperator-div" :"seperator-div"}></div>
@@ -206,7 +206,7 @@ class SearchForm extends React.Component {
           </li>
         </ul>
 
-        {this.props.path === "/" ? "" : this.filter()}
+        {this.props.match.path !== "/search" ? "" : this.filter()}
       </form>
 
     );
