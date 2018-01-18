@@ -18,6 +18,13 @@ class Api::PhotosController < ApplicationController
     end
   end
 
+  def destroy
+    @photo = Photo.find(params[:id])
+    business = @photo.business
+    @photo.destroy!
+    render json: business, include: [:photos]
+  end
+
   private
   def photo_params
     params.require(:photo).permit(:image, :business_id, :user_id)
