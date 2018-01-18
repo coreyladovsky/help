@@ -53,7 +53,7 @@ class PhotoUpload extends React.Component {
       return(
         <div className="spin-container">
           <div className="small-spin">
-            <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+            <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
           </div>
         </div>
         );
@@ -95,7 +95,7 @@ class PhotoUpload extends React.Component {
     });
 
   }
-// This code will be added to return after i have a photos index page 
+// This code will be added to return after i have a photos index page
   // <div className="all-photos-tag">
   //   <Link to={`/businesses/${this.props.business.id}/photos`}>View all photos</Link>
   // </div>

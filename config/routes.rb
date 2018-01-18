@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       resources :reviews, except: [:show, :destroy]
       get "reviewers", on: :member
     end
-    resources :reviews, only: [:show, :destroy]
     resources :photos
+    resources :reviews, only: [:show, :destroy]
   end
 end

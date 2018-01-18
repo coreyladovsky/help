@@ -63,7 +63,6 @@ class BusinessIndexItem extends React.Component {
   }
 
   render() {
-
     let parsed = parser.parseLocation(this.props.business.address);
   return(
     <div className="biz-idx-page">
@@ -74,7 +73,7 @@ class BusinessIndexItem extends React.Component {
       <ul className="list-item">
         <li className="biz-photo-li">
           <Link to={ `/businesses/${this.props.business.id}`}>
-            <img className="business-photo" src={this.props.business.image}/>            
+            <img className="business-photo" src={this.props.business.image}/>
           </Link>
         </li>
 
