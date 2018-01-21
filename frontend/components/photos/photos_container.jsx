@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchPhoto, fetchBizPhotos } from '../../actions/photo_actions';
+import { fetchBusiness } from '../../actions/business_actions';
 import PhotoIndex from './photo_index';
 import { withRouter } from 'react-router-dom';
 
@@ -14,7 +15,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return({
-    fetchBizPhotos: (businessId) => dispatch(fetchBizPhotos(businessId))
+    fetchBizPhotos: (businessId) => dispatch(fetchBizPhotos(businessId)),
+    fetchBusiness: (businessId) => dispatch(fetchBusiness(businessId))
   });
 };
 

@@ -14,9 +14,8 @@ class PhotoIndex extends React.Component {
     if(this.props.photos.length > 0 && this.props.match.path === "/businesses/:businessId") {
       this.resetPhotos();
     } else if(this.props.match.path === "/businesses/:businessId/photos") {
-      debugger
-      this.props.fetchBizPhotos(this.props.businessId);
-    } 
+      this.props.fetchBusiness(this.props.match.params.businessId);
+    }
   }
 
   enlargeFirst() {

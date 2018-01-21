@@ -12,7 +12,6 @@ Rails.application.routes.draw do
     resources :businesses do
       resources :reviews, except: [:show, :destroy]
       get "reviewers", on: :member
-      resources :photos, only: [:index]
     end
     resources :photos
     resources :reviews, only: [:show, :destroy]
