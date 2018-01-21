@@ -95,10 +95,6 @@ class PhotoUpload extends React.Component {
     });
 
   }
-// This code will be added to return after i have a photos index page
-  // <div className="all-photos-tag">
-  //   <Link to={`/businesses/${this.props.business.id}/photos`}>View all photos</Link>
-  // </div>
   render() {
     if(this.props.business === undefined) {
       return null;
@@ -116,6 +112,9 @@ class PhotoUpload extends React.Component {
               <li>
                 <div className="biz-name-photo">
                   <Link to={`/businesses/${this.props.business.id}`}>{this.props.business.name + ":"}</Link>
+                </div>
+                <div className="all-photos-tag">
+                  <Link to={`/businesses/${this.props.business.id}/photos`}>View all photos</Link>
                 </div>
               </li>
               <li className="add-photo-text">

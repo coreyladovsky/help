@@ -7,10 +7,11 @@ class PhotoIndex extends React.Component {
     this.enlargeFirst = this.enlargeFirst.bind(this);
     this.enlargeLast = this.enlargeLast.bind(this);
     this.resetPhotos = this.resetPhotos.bind(this);
+    this.allPhotos = this.allPhotos.bind(this);
   }
 
   componentDidMount() {
-    if(this.props.photos.length > 0) {
+    if(this.props.photos.length > 0 && this.props.match.path === "/businesses/:businessId") {
       this.resetPhotos();
     }
   }
@@ -31,19 +32,19 @@ class PhotoIndex extends React.Component {
     document.getElementById("second_photo").style.cssText = "transform: scale(1) perspective(1px); z-index: 0; transition-duration: 0.2s"
   }
 
+  allPhotos() {
+     this.props.history.push(`/businesses/${this.props.businessId}/photos`);
+  }
+
+
+
   render() {
     if(this.props.photos.length === 0) {
       return null;
-    } else {
-      const photos = this.props.photos.map((photo) => {
-        return <PhotoIndexItem key={photo.id} bizId={this.props.businessId} photo={photo} />;
-      });
-
-
-
+    } else if (this.props.match.path === "/businesses/:businessId") {
 
       return(
-          <ul className="photo-items-ul">
+          <ul className="photo-items-ul" onClick={this.allPhotos}>
             <li>
               <img id="first_photo" onMouseOver={this.enlargeFirst}
               onMouseOut={this.resetPhotos} className="biz-indiv-photo"
@@ -59,9 +60,16 @@ class PhotoIndex extends React.Component {
               src={this.props.photos[this.props.photos.length - 1].image}/>
             </li>
           </ul>
-
+      );
+    } else {
+      const photos = this.props.photos.map((photo) => {
+        return <PhotoIndexItem key={photo.id} photo={photo} />;
+      });
+      return (
+        photos
       );
     }
+
   }
 
 }
