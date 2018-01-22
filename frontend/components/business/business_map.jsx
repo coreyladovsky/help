@@ -42,14 +42,16 @@ class BusinessMap extends React.Component {
 
       let bizzys = [];
       let count = 0;
-      for(let i = 0; i < this.props.business.length; i++) {
+      this.props.business.forEach((bus, i) => {
         if(!this.props.filters) {
-          bizzys.push(this.props.props.business[i]);
+          bizzys.push(bus);
         }
         else if(Object.keys(this.props.filters).every(filter => this.compareValues(this.props.filters[filter], this.props.business[i][filter]))) {
           bizzys.push(this.props.business[i]);
         }
       }
+
+    )
 
     this.MarkerManager.updateMarkers(bizzys.slice(0,20));
   } else {
