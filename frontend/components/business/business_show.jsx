@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from '../NavBar';
+import NavBar from '../NavBar/NavBar';
 import { Link } from 'react-router-dom';
 import ReviewsContainer from '../reviews/reviews_container';
 import BizShowMap from './biz_show_map';

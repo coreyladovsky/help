@@ -1,7 +1,7 @@
 import React from 'react';
 import BusinessIndex from './business_index';
 import BusinessMap from './business_map';
-import NavBar from '../NavBar';
+import NavBar from '../NavBar/NavBar';
 
 
 

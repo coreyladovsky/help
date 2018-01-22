@@ -1,5 +1,6 @@
 import React from 'react';
 import PhotoIndexItem from './photo_index_item';
+import NavBarContainer from '../NavBar/NavBar_container';
 
 class PhotoIndex extends React.Component {
   constructor(props) {
@@ -68,9 +69,12 @@ class PhotoIndex extends React.Component {
         return <PhotoIndexItem key={photo.id} photo={photo} />;
       });
       return (
-        <ul className="photo-index-ul">
-          {photos}
-        </ul>
+        <div>
+          <NavBarContainer/>
+          <ul className="photo-index-ul">
+            {photos}
+          </ul>
+        </div>
       );
     }
 

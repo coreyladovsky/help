@@ -1,10 +1,15 @@
 .photo-index-ul {
   display: flex;
+  justify-content: space-between;
   list-style-type: none;
+  max-width: 965px;
+  flex-wrap: wrap;
 }
 
 .index-image {
   height: 150px;
   width: 150px;
   border-radius: 5px;
+  object-fit: cover;
+  margin-top: 12px;
 }
