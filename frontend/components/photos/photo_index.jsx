@@ -1,6 +1,8 @@
 import React from 'react';
 import PhotoIndexItem from './photo_index_item';
 import NavBarContainer from '../NavBar/NavBar_container';
+import { Link } from 'react-router-dom';
+
 
 class PhotoIndex extends React.Component {
   constructor(props) {
@@ -9,11 +11,14 @@ class PhotoIndex extends React.Component {
     this.enlargeLast = this.enlargeLast.bind(this);
     this.resetPhotos = this.resetPhotos.bind(this);
     this.allPhotos = this.allPhotos.bind(this);
+    this.clickHandler = this.clickHandler.bind(this);
+
   }
 
   componentDidMount() {
     if(this.props.photos.length > 0 && this.props.match.path === "/businesses/:businessId") {
       this.resetPhotos();
+      this.props.fetchBusiness(this.props.match.params.businessId);
     } else if(this.props.match.path === "/businesses/:businessId/photos") {
       this.props.fetchBusiness(this.props.match.params.businessId);
     }
@@ -38,6 +43,11 @@ class PhotoIndex extends React.Component {
   allPhotos() {
      this.props.history.push(`/businesses/${this.props.businessId}/photos`);
   }
+
+  clickHandler(event) {
+    this.props.nextPage(`${this.props.location.pathname}/new`);
+  }
+
 
 
 
@@ -65,12 +75,31 @@ class PhotoIndex extends React.Component {
           </ul>
       );
     } else {
+
       const photos = this.props.photos.map((photo) => {
         return <PhotoIndexItem key={photo.id} photo={photo} />;
       });
+
       return (
         <div>
           <NavBarContainer/>
+          <ul>
+            <li>
+              <ul>
+                <li>Photos for</li>
+                <li>{this.props.business.name}</li>
+              </ul>
+            </li>
+            <li className="add-photo-photos">
+              <Link to={this.props.location.pathname +'/new'}
+                className="photo-button-photos"
+                onClick={this.clickHandler}>
+                <i className="fa fa-camera camera-photos" aria-hidden="true">
+                </i>Add photos
+              </Link>
+            </li>
+          </ul>
+
           <ul className="photo-index-ul">
             {photos}
           </ul>
