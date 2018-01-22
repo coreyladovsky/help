@@ -1,9 +1,9 @@
 .photo-index-ul {
-  display: flex;
-  justify-content: space-between;
+  // display: flex;
+  // justify-content: space-between;
   list-style-type: none;
   max-width: 965px;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
 }
 
 .index-image {
@@ -11,5 +11,15 @@
   width: 150px;
   border-radius: 5px;
   object-fit: cover;
-  margin-top: 12px;
+
+
+}
+
+.index-li {
+  margin: 6px;
+  height: 150px;
+  width: 150px;
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
 }
