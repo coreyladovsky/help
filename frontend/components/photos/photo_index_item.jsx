@@ -12,7 +12,7 @@ class PhotoIndexItem extends React.Component {
     } else {
       return(
         <li>
-          <img src={this.props.photo.image}/>
+          <img className="index-image" src={this.props.photo.image}/>
         </li>
     );}
   }
