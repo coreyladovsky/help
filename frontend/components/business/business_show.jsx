@@ -265,7 +265,7 @@ class BusinessShow extends React.Component {
                   <Link to={`/businesses/${this.props.business.id}/photos`}>
                     <ul className="see-all-photos">
                     <i className="fa fa-th-large" aria-hidden="true"></i>
-                    <div className="see-all-text">See all {this.props.business.photos.length}
+                    <div className="see-all-text">See all {this.props.business.photos ? this.props.business.photos.length : ""}
                     </div>
                   </ul>
                   </Link>
