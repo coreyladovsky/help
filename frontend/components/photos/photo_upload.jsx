@@ -89,7 +89,7 @@ class PhotoUpload extends React.Component {
     this.setState({ loading: true });
     this.props.createPhoto(formData).then((res) => {
       this.setState({ loading: false });
-      this.props.history.push(`/businesses/${this.props.business.id}`);
+      this.props.history.push(`/businesses/${this.props.business.id}/photos`);
     }, (res) => {
       this.setState({ loading: false });
     });
