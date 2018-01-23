@@ -1,0 +1,123 @@
+.container-photo-index {
+  display: flex;
+  justify-content: center;
+}
+
+.main-photo-index {
+  margin-left: 27px;
+  align-self: center;
+}
+
+.title-biz-index {
+  font-size: 27px;
+  font-family: sans-serif;
+  font-weight: bold;
+  display: flex;
+  margin-top: 45px;
+}
+.title-biz-index :last-child {
+  margin-left: 8px;
+}
+
+.photo-index-ul {
+  list-style-type: none;
+  max-width: 975px;
+}
+
+.photo-index-header-container {
+  max-width: 965px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding-bottom: 45px;
+  border-bottom: 1px solid #E6E6E6;
+  margin-bottom: 13px;
+}
+
+.index-image {
+  height: 150px;
+  width: 150px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.biz-info-photo-index {
+  display: flex;
+}
+
+.rating-and-reviews-photo-index {
+  display: flex;
+}
+
+.index-li {
+  margin: 6px;
+  height: 150px;
+  width: 150px;
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.biz-image-photo-index {
+  height: 30px;
+  width: 30px;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.biz-name-link-photos {
+  color: #0073BB;
+  font-size: 14px;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.biz-name-link-photos:hover {
+  text-decoration: underline;
+}
+
+.biz-review-text-photos {
+  color: #666666;
+  font-size: 12px;
+  font-family: sans-serif;
+  margin-left: 4px;
+  padding-top: 4px;
+}
+
+.biz-review-count-photos {
+  color: #666666;
+  font-size: 12px;
+  font-family: sans-serif;
+  padding-top: 4px;
+  margin-left: 4px;
+}
+
+.add-photo-photos {
+  width: 148px;
+  height: 35px;
+  border: 1px solid #8D0005;
+  background-color: #D70306;
+  border-radius: 4px;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 15px;
+  display: table;
+
+}
+
+.photo-button-photos {
+  display: table-cell;
+  vertical-align: middle;
+
+}
+
+
+
+ .photo-index-rating {
+   height: 20px;
+   width: 80px;
+   padding-bottom: 5px;
+ }

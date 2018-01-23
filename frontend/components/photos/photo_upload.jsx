@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from '../NavBar';
+import NavBar from '../NavBar/NavBar';
 import  { Link } from 'react-router-dom';
 
 class PhotoUpload extends React.Component {
@@ -89,16 +89,12 @@ class PhotoUpload extends React.Component {
     this.setState({ loading: true });
     this.props.createPhoto(formData).then((res) => {
       this.setState({ loading: false });
-      this.props.history.push(`/businesses/${this.props.business.id}`);
+      this.props.history.push(`/businesses/${this.props.business.id}/photos`);
     }, (res) => {
       this.setState({ loading: false });
     });
 
   }
-// This code will be added to return after i have a photos index page
-  // <div className="all-photos-tag">
-  //   <Link to={`/businesses/${this.props.business.id}/photos`}>View all photos</Link>
-  // </div>
   render() {
     if(this.props.business === undefined) {
       return null;
@@ -116,6 +112,9 @@ class PhotoUpload extends React.Component {
               <li>
                 <div className="biz-name-photo">
                   <Link to={`/businesses/${this.props.business.id}`}>{this.props.business.name + ":"}</Link>
+                </div>
+                <div className="all-photos-tag">
+                  <Link to={`/businesses/${this.props.business.id}/photos`}>View all photos</Link>
                 </div>
               </li>
               <li className="add-photo-text">

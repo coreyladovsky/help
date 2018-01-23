@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import parser from 'parse-address';
-import NavBar from '../NavBar';
+import NavBar from '../NavBar/NavBar';
 import ReviewsContainer from './reviews_container';
 
 class ReviewForm extends React.Component {

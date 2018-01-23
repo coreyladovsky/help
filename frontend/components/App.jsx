@@ -8,6 +8,7 @@ import ReviewsContainer from './reviews/reviews_container';
 import ReviewFormContainer from './reviews/review_form_container';
 import BusinessShowContainer from './business/business_show_container';
 import PhotoUploadContainer from './photos/photo_upload_container';
+import PhotosContainer from './photos/photos_container';
 
 
 
@@ -24,7 +25,7 @@ const App = () => (
       <ProtectedRoute path="/reviews" component={ReviewsContainer}/>
       <ProtectedRoute exact path="/businesses/:businessId/reviews" component={ReviewsContainer}/>
       <ProtectedRoute path="/businesses/:businessId/photos/new" component={PhotoUploadContainer}/>
-      <Route path="/businesses/:businessId/photos" />
+      <Route path="/businesses/:businessId/photos" component={PhotosContainer}/>
       <Route exact path="/businesses/:businessId" component={BusinessShowContainer}/>
       <Route exact path="/search" component={SearchContainer} />
       <Route exact path="/" component={LandingContainer} />

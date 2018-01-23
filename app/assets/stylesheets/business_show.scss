@@ -300,7 +300,7 @@ margin-top: 28px;
 .write-review-show-page-link {
   font-family: sans-serif;
   font-size: 13px;
-  color: #0574B5;
+  color: #5399CE;
   position: relative;
   align-self: baseline;
 }
@@ -316,5 +316,27 @@ margin-top: 28px;
 .price-range-undefined {
   margin-top: 4px;
 }
+
+.see-all-photos {
+  color:#0F70BB;
+  display: flex;
+  float: right;
+}
+
+.see-all-photos div {
+  margin-left: 5px;
+}
+.see-all-photos div:hover {
+  text-decoration: underline;
+}
+
+
+.fa-th-large {
+  font-size: 10px;
+  color: #666666;
+}
+
+
+
 
 //
