@@ -109,56 +109,60 @@ class PhotoIndex extends React.Component {
       return (
         <div>
           <NavBarContainer/>
+          <div className="container-photo-index">
 
 
-              <ul className="title-biz-index">
-                <li>Photos for </li>
-                <li>  {this.props.business.name}</li>
-              </ul>
+          <div className="main-photo-index">
+                <ul className="title-biz-index">
+                  <li>Photos for </li>
+                  <li>  {this.props.business.name}</li>
+                </ul>
 
-              <ul className="photo-index-header-container">
-                <div>
-                  <ul className="biz-info-photo-index">
-                    <li>
-                      <img className="biz-image-photo-index" src={this.props.business.image} />
-                    </li>
+                <ul className="photo-index-header-container">
+                  <div>
+                    <ul className="biz-info-photo-index">
+                      <li>
+                        <img className="biz-image-photo-index" src={this.props.business.image} />
+                      </li>
 
-                    <li>
-                      <ul>
-                        <li className="biz-name-link-photos">
-                          <Link to={`/businesses/${this.props.business.id}`}>{this.props.business.name}</Link>
-                        </li>
+                      <li>
+                        <ul>
+                          <li className="biz-name-link-photos">
+                            <Link to={`/businesses/${this.props.business.id}`}>{this.props.business.name}</Link>
+                          </li>
 
-                        <li>
-                          <ul className="rating-and-reviews-photo-index">
-                            <li>{this.findRating(this.props.business.average_rating)}</li>
-                            <li className="biz-review-count-photos">{this.props.business.review_count}</li>
-                            <li className="biz-review-text-photos">{this.props.business.review_count === 1 ? '   review' : '   reviews' }</li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
+                          <li>
+                            <ul className="rating-and-reviews-photo-index">
+                              <li>{this.findRating(this.props.business.average_rating)}</li>
+                              <li className="biz-review-count-photos">{this.props.business.review_count}</li>
+                              <li className="biz-review-text-photos">{this.props.business.review_count === 1 ? '   review' : '   reviews' }</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
 
-                  </ul>
+                    </ul>
                 </div>
 
-                <div className="add-photo-photos">
-                  <Link to={this.props.location.pathname +'/new'}
-                    className="photo-button-photos"
-                    onClick={this.clickHandler}>
-                    <i className="fa fa-camera camera-photos" aria-hidden="true">
-                    </i>Add photos
-                  </Link>
+                  <div className="add-photo-photos">
+                    <Link to={this.props.location.pathname +'/new'}
+                      className="photo-button-photos"
+                      onClick={this.clickHandler}>
+                      <i className="fa fa-camera camera-photos" aria-hidden="true">
+                      </i>Add photos
+                    </Link>
 
-                </div>
+                  </div>
 
-              </ul>
+                </ul>
 
 
 
-          <ul className="photo-index-ul">
-            {photos}
-          </ul>
+            <ul className="photo-index-ul">
+              {photos}
+            </ul>
+          </div>
+        </div>
         </div>
       );
     }

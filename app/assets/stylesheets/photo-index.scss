@@ -1,3 +1,13 @@
+.container-photo-index {
+  display: flex;
+  justify-content: center;
+}
+
+.main-photo-index {
+  margin-left: 27px;
+  align-self: center;
+}
+
 .title-biz-index {
   font-size: 27px;
   font-family: sans-serif;
@@ -19,7 +29,9 @@
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
-  margin-bottom: 65px;
+  padding-bottom: 45px;
+  border-bottom: 1px solid #E6E6E6;
+  margin-bottom: 13px;
 }
 
 .index-image {
