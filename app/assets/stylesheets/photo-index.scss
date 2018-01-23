@@ -3,6 +3,7 @@
   font-family: sans-serif;
   font-weight: bold;
   display: flex;
+  margin-top: 45px;
 }
 .title-biz-index :last-child {
   margin-left: 8px;
@@ -17,6 +18,8 @@
   max-width: 965px;
   display: flex;
   justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 65px;
 }
 
 .index-image {
@@ -70,12 +73,32 @@
   padding-top: 4px;
 }
 
-.biz-review-count-photos{
+.biz-review-count-photos {
   color: #666666;
   font-size: 12px;
   font-family: sans-serif;
   padding-top: 4px;
   margin-left: 4px;
+}
+
+.add-photo-photos {
+  width: 148px;
+  height: 35px;
+  border: 1px solid #8D0005;
+  background-color: #D70306;
+  border-radius: 4px;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 15px;
+  display: table;
+
+}
+
+.photo-button-photos {
+  display: table-cell;
+  vertical-align: middle;
 
 }
 
