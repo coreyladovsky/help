@@ -17,13 +17,17 @@ class PhotoIndex extends React.Component {
   }
 
   componentDidMount() {
+
     if(this.props.photos.length > 0 && this.props.match.path === "/businesses/:businessId") {
       this.resetPhotos();
       this.props.fetchBusiness(this.props.match.params.businessId);
-    } else if(this.props.match.path === "/businesses/:businessId/photos") {
+    }else if(this.props.match.path === "/businesses/:businessId/photos") {
       this.props.fetchBusiness(this.props.match.params.businessId);
     }
+
   }
+
+
 
   enlargeFirst() {
     document.getElementById("first_photo").style.cssText = "transform: scale(1.1) perspective(1px); z-index: 1; transition-duration: 0.2s"

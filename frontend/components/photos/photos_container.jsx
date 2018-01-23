@@ -7,11 +7,12 @@ import { logout, clearPage, nextPage } from '../../actions/session_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
+  
   return({
     photos: Object.values(state.photos),
-    businessId: ownProps.businessId,
+    businessId: ownProps.match.params.businessId,
     currentUser: state.session.currentUser,
-    business: Object.values(state.business)[0],
+    business: state.business[ownProps.match.params.businessId],
 
   });
 };

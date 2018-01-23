@@ -38,7 +38,7 @@ class PhotoUpload extends React.Component {
             </li>
             <li className="browse-files">
               <div className="browse-files-button">Browse Files
-                <input className="second-upload" type="file" onChange={this.updateFile}/>
+                <input className="second-upload" type="file" accept="image/*" onChange={this.updateFile}/>
               </div>
             </li>
           </ul>
@@ -127,7 +127,7 @@ class PhotoUpload extends React.Component {
           <div className="image-upload">
             {this.photoText()}
             {this.spinSpinner()}
-            <input className="image-uploaded" type="file" onChange={this.updateFile}/>
+            <input className="image-uploaded" type="file" accept="image/*" onChange={this.updateFile}/>
             <img className="image-preview" src={this.state.imageUrl}/>
           </div>
           {this.submitPhoto()}
