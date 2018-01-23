@@ -1,9 +1,22 @@
+.title-biz-index {
+  font-size: 27px;
+  font-family: sans-serif;
+  font-weight: bold;
+  display: flex;
+}
+.title-biz-index :last-child {
+  margin-left: 8px;
+}
+
 .photo-index-ul {
-  // display: flex;
-  // justify-content: space-between;
   list-style-type: none;
+  max-width: 975px;
+}
+
+.photo-index-header-container {
   max-width: 965px;
-  // flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
 }
 
 .index-image {
@@ -11,8 +24,14 @@
   width: 150px;
   border-radius: 5px;
   object-fit: cover;
+}
 
+.biz-info-photo-index {
+  display: flex;
+}
 
+.rating-and-reviews-photo-index {
+  display: flex;
 }
 
 .index-li {
@@ -23,3 +42,47 @@
   box-sizing: border-box;
   display: inline-block;
 }
+
+.biz-image-photo-index {
+  height: 30px;
+  width: 30px;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.biz-name-link-photos {
+  color: #0073BB;
+  font-size: 14px;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.biz-name-link-photos:hover {
+  text-decoration: underline;
+}
+
+.biz-review-text-photos {
+  color: #666666;
+  font-size: 12px;
+  font-family: sans-serif;
+  margin-left: 4px;
+  padding-top: 4px;
+}
+
+.biz-review-count-photos{
+  color: #666666;
+  font-size: 12px;
+  font-family: sans-serif;
+  padding-top: 4px;
+  margin-left: 4px;
+
+}
+
+
+
+ .photo-index-rating {
+   height: 20px;
+   width: 80px;
+   padding-bottom: 5px;
+ }

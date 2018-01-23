@@ -12,6 +12,7 @@ class PhotoIndex extends React.Component {
     this.resetPhotos = this.resetPhotos.bind(this);
     this.allPhotos = this.allPhotos.bind(this);
     this.clickHandler = this.clickHandler.bind(this);
+    this.findRating = this.findRating.bind(this);
 
   }
 
@@ -46,6 +47,31 @@ class PhotoIndex extends React.Component {
 
   clickHandler(event) {
     this.props.nextPage(`${this.props.location.pathname}/new`);
+  }
+
+  findRating(rating) {
+    switch(rating) {
+      case 5:
+        return <img className="photo-index-rating" src={"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/show-ratings/5_star.png"} />;
+      case 4.5:
+        return <img src={"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/show-ratings/4_5_star.png"} />;
+      case 4:
+        return <img className="photo-index-rating" src={"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/show-ratings/4_star.png"} /> ;
+      case 3.5:
+        return <img  className="photo-index-rating" src={"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/show-ratings/3_5_star.png"} /> ;
+      case 3:
+        return <img  className="photo-index-rating" src={"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/show-ratings/3_star.png"} /> ;
+      case 2.5:
+        return <img  className="photo-index-rating" src={"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/show-ratings/2_5_star.png"} /> ;
+      case 2:
+        return <img  className="photo-index-rating" src={"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/show-ratings/2_star.png"} /> ;
+      case 1.5:
+        return <img  className="photo-index-rating" src={"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/show-ratings/1_5_star.png"} /> ;
+      case 1:
+        return <img  className="photo-index-rating" src={"https://s3.amazonaws.com/helpcoreyladovskyprojectdev/show-ratings/1_star.png"} /> ;
+      default:
+        return   <div ><Link to={"businesses/" + this.props.business.id + "/reviews/new"} onClick={this.handleClick} className ="write-the-first"> Write The First Review!</Link></div>;
+    }
   }
 
 
@@ -83,22 +109,52 @@ class PhotoIndex extends React.Component {
       return (
         <div>
           <NavBarContainer/>
-          <ul>
-            <li>
-              <ul>
-                <li>Photos for</li>
-                <li>{this.props.business.name}</li>
+
+
+              <ul className="title-biz-index">
+                <li>Photos for </li>
+                <li>  {this.props.business.name}</li>
               </ul>
-            </li>
-            <li className="add-photo-photos">
-              <Link to={this.props.location.pathname +'/new'}
-                className="photo-button-photos"
-                onClick={this.clickHandler}>
-                <i className="fa fa-camera camera-photos" aria-hidden="true">
-                </i>Add photos
-              </Link>
-            </li>
-          </ul>
+
+              <ul className="photo-index-header-container">
+                <div>
+                  <ul className="biz-info-photo-index">
+                    <li>
+                      <img className="biz-image-photo-index" src={this.props.business.image} />
+                    </li>
+
+                    <li>
+                      <ul>
+                        <li className="biz-name-link-photos">
+                          <Link to={`/businesses/${this.props.business.id}`}>{this.props.business.name}</Link>
+                        </li>
+
+                        <li>
+                          <ul className="rating-and-reviews-photo-index">
+                            <li>{this.findRating(this.props.business.average_rating)}</li>
+                            <li className="biz-review-count-photos">{this.props.business.review_count}</li>
+                            <li className="biz-review-text-photos">{this.props.business.review_count === 1 ? '   review' : '   reviews' }</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+
+                  </ul>
+                </div>
+
+                <div className="add-photo-photos">
+                  <Link to={this.props.location.pathname +'/new'}
+                    className="photo-button-photos"
+                    onClick={this.clickHandler}>
+                    <i className="fa fa-camera camera-photos" aria-hidden="true">
+                    </i>Add photos
+                  </Link>
+
+                </div>
+
+              </ul>
+
+
 
           <ul className="photo-index-ul">
             {photos}
