@@ -72,7 +72,6 @@ class SearchForm extends React.Component {
 
   nearChange(event) {
     this.setState({nearValue: event.target.value});
-    // this.activatePlacesSearch();
   }
 
   priceChange(event) {
@@ -167,7 +166,7 @@ class SearchForm extends React.Component {
 
   render() {
 
-  
+
 
     return(
       <form id="search-form" onSubmit={this.handleSubmit} className={this.props.path === "/" ? "landing-form" : "search-nav"} >

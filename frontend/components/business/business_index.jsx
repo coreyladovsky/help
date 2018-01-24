@@ -17,6 +17,7 @@ class BusinessIndex extends React.Component {
   }
 
 
+
   render() {
 
     let none = <h1 className="no-biz">Sorry No Businesses Found, <br />
@@ -31,8 +32,8 @@ class BusinessIndex extends React.Component {
             business={business} fetchBusinesses={this.props.fetchBusinesses}
             clearFilter={this.props.clearFilter} nextPage={this.props.nextPage} />;
         }
-      } else if(Object.keys(this.props.props.filters).every(filter =>
-          this.compareValues(this.props.props.filters[filter], business[filter])
+      } else if(Object.keys(this.props.filters).every(filter =>
+          this.compareValues(this.props.filters[filter], business[filter])
      )) {
         count++;
         if(count <= 20) {

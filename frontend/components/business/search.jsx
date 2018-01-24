@@ -15,7 +15,6 @@ class Search extends React.Component {
 
   render() {
 
-
     return(
 
     <div>
@@ -23,7 +22,7 @@ class Search extends React.Component {
 
       <ul className="map-and-index-ul">
         <li>
-          <BusinessIndex updateBounds={this.props.updateBounds} business={this.props.business} fetchBusinesses={this.props.fetchBusinesses}
+          <BusinessIndex updateBounds={this.props.updateBounds} business={this.props.business} filters={this.props.filters} fetchBusinesses={this.props.fetchBusinesses}
           clearFilter={this.props.clearFilter} nextPage={this.props.nextPage}/>
         </li>
 
