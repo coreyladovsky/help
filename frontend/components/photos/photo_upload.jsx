@@ -18,6 +18,7 @@ class PhotoUpload extends React.Component {
   }
 
   componentDidMount() {
+    this.props.clearPage(); 
     this.props.fetchBusiness(this.props.match.params.businessId);
   }
 

@@ -117,6 +117,7 @@ class ReviewForm extends React.Component {
 
 
   componentDidMount() {
+    this.props.clearPage(); 
     this.props.fetchBusiness(this.props.match.params.businessId);
     if(this.props.formType === 'edit') {
       this.props.fetchReview(this.props.review.id);
