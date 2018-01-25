@@ -20,6 +20,7 @@ class PhotoIndex extends React.Component {
 
     if(this.props.photos.length > 0 && this.props.match.path === "/businesses/:businessId") {
       this.resetPhotos();
+    
       this.props.fetchBusiness(this.props.match.params.businessId);
     }else if(this.props.match.path === "/businesses/:businessId/photos") {
       this.props.fetchBusiness(this.props.match.params.businessId);
@@ -35,6 +36,7 @@ class PhotoIndex extends React.Component {
   }
 
   resetPhotos() {
+
     document.getElementById("first_photo").style.cssText = "transform: scale(1) perspective(1px); z-index: 0; transition-duration: 0.2s"
     document.getElementById("second_photo").style.cssText = "transform: scale(1.1) perspective(1px); z-index: 1; transition-duration: 0.2s"
     document.getElementById("third_photo").style.cssText = "transform: scale(1) perspective(1px); z-index: 0; transition-duration: 0.2s"
