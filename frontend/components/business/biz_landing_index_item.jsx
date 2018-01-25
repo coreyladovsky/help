@@ -35,18 +35,18 @@ class BizLandingIndexItem extends React.Component {
   render() {
     return(
 
-    <div>
-      <img className="business-photo" src={this.props.business.image}/>
-      <li>
+    <li className="biz-landing-li-item">
+      <img className="biz-landing-photo" src={this.props.business.image_medium}/>
+      <div>
       <Link to={`/businesses/${this.props.business.id}`}>{this.props.business.name}</Link>
-      </li>
+      </div>
       <ul className="rating-bar-line">
         <li>{this.findRating(this.props.business.average_rating)}</li>
         <li className="biz-review-count-index">{this.props.business.review_count}</li>
         <li className="biz-review-text-index">{this.props.business.review_count === 1 ? '   review' : '   reviews' }</li>
       </ul>
 
-    </div>
+    </li>
     );
   }
 
