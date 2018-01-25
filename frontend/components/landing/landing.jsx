@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SessionFormContainer from '../session/session_form_container';
 import SearchFormContainer from "../search_form_container";
+import BizLandingIndex from "../business/business_landing_container";
 
 class Landing extends React.Component {
   constructor(props){
@@ -25,6 +26,13 @@ class Landing extends React.Component {
     if(this.props.intendedPage) {
       this.props.history.push(this.props.intendedPage);
       this.props.clearPage();
+    } else {
+      this.props.fetchBusinesses({cuisine: "",
+            price_range: 4,
+            noise_level: 4,
+            delivery: false,
+            bounds: "",
+            name: ""});
     }
   }
 
@@ -101,11 +109,11 @@ class Landing extends React.Component {
           <div className="places-to-try">
             Help Places To Try
           </div>
+
+          <BizLandingIndex/>
+
+
         </div>
-
-
-
-
     </div>
     );
   }
