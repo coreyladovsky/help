@@ -231,19 +231,20 @@
   text-decoration-color: red;
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  height: 60px;
-  width: 100%;
-  background-color: #F5F5F5;
-  border-top: 1px solid lightgray;
-}
+// footer {
+//   position: absolute;
+//   bottom: 0;
+//   height: 60px;
+//   width: 100%;
+//   background-color: #F5F5F5;
+//   border-top: 1px solid lightgray;
+// }
 
 .git-link {
   position: absolute;
   color: blue;
   font-size: 12px;
+  font-family: sans-serif;
   bottom: 0;
   right: 0;
   margin-bottom: 25px;

@@ -8,6 +8,7 @@ class Landing extends React.Component {
     super(props);
     this.logButton = this.logButton.bind(this);
     this.clickHandler = this.clickHandler.bind(this);
+    this.searchSubmit = this.searchSubmit.bind(this);
   }
 
   componentWillReceiveProps(nextprops) {
@@ -15,7 +16,7 @@ class Landing extends React.Component {
       this.setState();
     }
   }
-  
+
   clickHandler(event) {
     this.props.nextPage("/reviews");
   }
@@ -25,6 +26,17 @@ class Landing extends React.Component {
       this.props.history.push(this.props.intendedPage);
       this.props.clearPage();
     }
+  }
+
+  searchSubmit() {
+    this.props.fetchBusinesses({cuisine: "",
+      price_range: 4,
+      noise_level: 4,
+      delivery: false,
+      bounds: "",
+      name: ""});
+    this.props.history.push("/search");
+
   }
 
   logButton() {
@@ -50,6 +62,10 @@ class Landing extends React.Component {
     }
   }
 
+  //
+  // <footer>
+  // <a className="git-link" href="https://github.com/coreyladovsky">Corey Ladovsky</a>
+  // </footer>
 
   render() {
     const classes = ["landing-background1", "landing-background1", "landing-background3", "landing-background4",
@@ -68,15 +84,27 @@ class Landing extends React.Component {
             </li>
           </ul>
         </header>
-        <section className="landing-body">
+        <body className={"landing-container"}>
+        <div className="landing-body">
           <div className="help-div-landing">
             <Link to={'/'} className="help-landing">help</Link>
           </div>
             <SearchFormContainer path={this.props.match.path} props={this.props} />
-        </section>
-        <footer>
-        <a className="git-link" href="https://github.com/coreyladovsky">Corey Ladovsky</a>
-        </footer>
+            <div className="all-biz-landing">
+              <i className="fa fa-cutlery" aria-hidden="true"></i>
+                <button onClick={this.searchSubmit} className="restaurant-landing-text">
+                  Restaurants
+                </button>
+            </div>
+        </div>
+
+        <div className="additional-places-landing">
+          Yelp Places To Try
+        </div>
+
+      </body>
+
+
 
       </main>
     );
