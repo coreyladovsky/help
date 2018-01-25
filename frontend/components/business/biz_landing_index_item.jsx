@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import parser from 'parse-address';
+
 
 class BizLandingIndexItem extends React.Component {
   constructor(props) {
@@ -33,19 +35,28 @@ class BizLandingIndexItem extends React.Component {
   }
 
   render() {
+
+    let parsed_address = parser.parseLocation(this.props.business.address);
     return(
 
     <li className="biz-landing-li-item">
-      <img className="biz-landing-photo" src={this.props.business.image_medium}/>
-      <div>
-      <Link to={`/businesses/${this.props.business.id}`}>{this.props.business.name}</Link>
-      </div>
+      <Link to={`/businesses/${this.props.business.id}`}>
+        <img className="biz-landing-photo" src={this.props.business.image_medium}/>
+      </Link>
+
+      <Link to={`/businesses/${this.props.business.id}`} className="biz-landing-index-name">
+        {this.props.business.name}
+      </Link>
+
       <ul className="rating-bar-line">
         <li>{this.findRating(this.props.business.average_rating)}</li>
         <li className="biz-review-count-index">{this.props.business.review_count}</li>
         <li className="biz-review-text-index">{this.props.business.review_count === 1 ? '   review' : '   reviews' }</li>
       </ul>
-
+      <div className="biz-landing-info">
+        <div>{this.props.business.cuisine}</div>
+        <div className="address-landing">{parsed_address.city + ", " + parsed_address.state}</div>
+      </div>
     </li>
     );
   }
