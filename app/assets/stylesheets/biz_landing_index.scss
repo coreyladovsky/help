@@ -1,8 +1,21 @@
+.biz-landing-index-container {
+  display: flex;
+  justify-content: center;
+}
+
+.biz-landing-index-ul {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 985px;
+}
+
+
 .biz-landing-li-item {
   width: 300px;
   height: 320px;
   border: 1px solid #CCCCCC;
   border-radius: 4px;
+  margin: 12px;
 }
 
 
@@ -11,5 +24,4 @@
   height: 184px;
   object-fit: cover;
   border-radius: 4px 4px 0px 0px;
-
 }

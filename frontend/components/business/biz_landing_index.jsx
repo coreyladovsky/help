@@ -14,9 +14,11 @@ class BizLandingIndex extends React.Component {
 
     });
     return(
-      <ul>
-        {businesses}
-      </ul>
+      <div className="biz-landing-index-container">
+        <ul className="biz-landing-index-ul">
+          {businesses}
+        </ul>
+      </div>
     );
 
   }
