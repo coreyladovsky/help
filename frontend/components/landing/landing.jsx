@@ -73,17 +73,14 @@ class Landing extends React.Component {
      let picClass = classes[Math.floor(Math.random() * classes.length)];
      let final = "landing-background " + picClass;
     return (
-      <main className={final}>
-        <header className="landing-header">
+      <div >
+        <div className={final}>
+        <div className="landing-header">
           <ul className="landing-header-ul">
-            <li>
-
-            </li>
-            <li>
-                {this.logButton()}
-            </li>
+            <li></li>
+            <li>{this.logButton()}</li>
           </ul>
-        </header>
+        </div>
         <body className={"landing-container"}>
         <div className="landing-body">
           <div className="help-div-landing">
@@ -98,15 +95,18 @@ class Landing extends React.Component {
             </div>
         </div>
 
+      </body>
+      </div>
         <div className="additional-places-landing">
-          Yelp Places To Try
+          <div className="places-to-try">
+            Help Places To Try
+          </div>
         </div>
 
-      </body>
 
 
 
-      </main>
+    </div>
     );
   }
 

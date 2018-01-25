@@ -34,10 +34,10 @@
   background-size:cover;
   background-position: 50% 50%;
   // object-fit: cover;
-  position: fixed;
-  min-height: 800px;
+  // position: fixed;
+  min-height: 500px;
   width: 100%;
-  top: 0px;
+  // top: 0px;
 }
 
 .landing-header-ul {
@@ -47,7 +47,8 @@
   font-weight: bold;
   font-size: 15px;
   justify-content: space-between;
-  margin-top: 38px;
+  padding-top: 38px; 
+  // margin-top: 38px;
 }
 
 
@@ -272,13 +273,13 @@
 
 
 .additional-places-landing {
-  color: red;
+
   border: 1px solid red;
-  margin-top: 280px;
+  // margin-top: 280px;
   background-color: #FFFFFF;
-  top: 40%;
-  bottom:0px;
-  position: absolute;
+  // top: 40%;
+  // bottom:0px;
+  // position: absolute;
   width: 100%;
 }
 
@@ -288,7 +289,14 @@
 }
 
 
-
+.places-to-try {
+  text-align: center;
+  color: #D70306;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 22px;
+  margin-top: 40px;
+}
 
 
 
