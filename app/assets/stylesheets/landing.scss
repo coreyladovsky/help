@@ -293,6 +293,38 @@
   margin-bottom: 30px;
 }
 
+.cuisine-pic {
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
+
+.coffee {
+  background-image: asset-url('coffee.svg');
+}
+.beer {
+  background-image: asset-url('beer.svg');
+}
+.dessert {
+  background-image: asset-url('dessert.svg');
+}
+.diner {
+  background-image: asset-url('diner.svg');
+}
+.french {
+  background-image: asset-url('french.svg');
+}
+.italy {
+  background-image: asset-url('italy.svg');
+}
+.pizza {
+  background-image: asset-url('pizza.svg');
+}
+.steak {
+  background-image: asset-url('steak.svg');
+}
+
 
 
 

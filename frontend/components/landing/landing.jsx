@@ -75,6 +75,9 @@ class Landing extends React.Component {
   // <a className="git-link" href="https://github.com/coreyladovsky">Corey Ladovsky</a>
   // </footer>
 
+  // <button onClick={this.searchSubmit} className="log-in-landing">
+  //   Restaurants
+  // </button>
   render() {
     const classes = ["landing-background1", "landing-background1", "landing-background3", "landing-background4",
   "landing-background5", "landing-background6", "landing-background7", "landing-background8", "landing-background9"];
@@ -85,7 +88,8 @@ class Landing extends React.Component {
         <div className={final}>
         <div className="landing-header">
           <ul className="landing-header-ul">
-            <li></li>
+            <li>
+            </li>
             <li>{this.logButton()}</li>
           </ul>
         </div>
@@ -110,10 +114,52 @@ class Landing extends React.Component {
             Help Places To Try
           </div>
 
+
+
           <BizLandingIndex/>
 
 
         </div>
+        <div>
+          <div className="places-to-try">
+            Browse Business By Categoy
+          </div>
+          <ul className="cuisine-landing-ul">
+            <li>
+              <div className="cuisine-pic coffee">
+              </div>
+            </li>
+            <li>
+              <div className="cuisine-pic beer">
+              </div>
+            </li>
+            <li>
+              <div className="cuisine-pic dessert">
+              </div>
+            </li>
+            <li>
+              <div className="cuisine-pic diner">
+              </div>
+            </li>
+            <li>
+              <div className="cuisine-pic french">
+              </div>
+            </li>
+            <li>
+              <div className="cuisine-pic pizza">
+              </div>
+            </li>
+            <li>
+              <div className="cuisine-pic steak">
+              </div>
+            </li>
+            <li>
+              <div className="cuisine-pic italy">
+              </div>
+            </li>
+          </ul>
+      </div>
+
     </div>
     );
   }
