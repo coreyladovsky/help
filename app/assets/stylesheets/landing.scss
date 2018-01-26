@@ -148,7 +148,6 @@
 .landing-form-ul {
   display: flex;
   height: 45px;
-  // border: solid 1px yellow;
   width: 960px;
 }
 
@@ -293,11 +292,50 @@
   margin-bottom: 30px;
 }
 
+.biz-browse-text {
+  padding-top: 35px;
+}
+
+.cuisine-search-landing {
+  background-color: #F5F5F5;
+
+}
+
+.cuisine-landing-container {
+  display: flex;
+  justify-content: center;
+}
+
+.cuisine-landing-ul {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1020px;
+
+}
+
+.cuisine-landing-ul li {
+  width: 220px;
+  height: 140px;
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 4px;
+  margin: 15px;
+
+
+}
+
 .cuisine-pic {
-  width: 100px;
-  height: 100px;
+  width: 65px;
+  height: 80px;
   background-repeat: no-repeat;
   object-fit: cover;
+  margin-left: 78px;
+  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .coffee {

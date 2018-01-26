@@ -1,15 +1,12 @@
 
 .filter-box {
-  // display: flex;
   height: 70px;
   background-color: #F5F5F5;
   width: 100%;
   position: absolute;
-  // left: -150px;
   left: 0px;
   top: 92px;
-  // border: 1px solid green;
-  // justify-content: space-around;
+
 }
 
 .smaller-filter-box {
@@ -27,9 +24,6 @@
 
 .price-filter {
   display: flex;
-  // border-radius: 4px;
-  // border: 1px solid pink;
-
 }
 
 .price-label {

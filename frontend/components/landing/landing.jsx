@@ -120,44 +120,54 @@ class Landing extends React.Component {
 
 
         </div>
-        <div>
-          <div className="places-to-try">
+        <div className="cuisine-search-landing">
+          <div className="places-to-try biz-browse-text">
             Browse Business By Categoy
           </div>
-          <ul className="cuisine-landing-ul">
-            <li>
-              <div className="cuisine-pic coffee">
-              </div>
-            </li>
-            <li>
-              <div className="cuisine-pic beer">
-              </div>
-            </li>
-            <li>
-              <div className="cuisine-pic dessert">
-              </div>
-            </li>
-            <li>
-              <div className="cuisine-pic diner">
-              </div>
-            </li>
-            <li>
-              <div className="cuisine-pic french">
-              </div>
-            </li>
-            <li>
-              <div className="cuisine-pic pizza">
-              </div>
-            </li>
-            <li>
-              <div className="cuisine-pic steak">
-              </div>
-            </li>
-            <li>
-              <div className="cuisine-pic italy">
-              </div>
-            </li>
-          </ul>
+          <div className="cuisine-landing-container">
+            <ul className="cuisine-landing-ul">
+              <li>
+                <div className="cuisine-pic coffee">
+                </div>
+                Coffee
+              </li>
+              <li>
+                <div className="cuisine-pic beer">
+                </div>
+                Bars
+              </li>
+              <li>
+                <div className="cuisine-pic dessert">
+                </div>
+                Desserts
+              </li>
+              <li>
+                <div className="cuisine-pic diner">
+                </div>
+                Diners
+              </li>
+              <li>
+                <div className="cuisine-pic french">
+                </div>
+                French
+              </li>
+              <li>
+                <div className="cuisine-pic pizza">
+                </div>
+                Pizza
+              </li>
+              <li>
+                <div className="cuisine-pic steak">
+                </div>
+                Steakhouses
+              </li>
+              <li>
+                <div className="cuisine-pic italy">
+                </div>
+                Italian
+              </li>
+            </ul>
+        </div>
       </div>
 
     </div>
