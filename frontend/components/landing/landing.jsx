@@ -196,7 +196,7 @@ class Landing extends React.Component {
             Connect
           </li>
           <li className="info-landing-ul">
-            <a className="git-link" href="https://github.com/coreyladovsky" target="_blank">GitHub</a>
+            <a href="https://github.com/coreyladovsky" target="_blank">GitHub</a>
             <a href="https://www.linkedin.com/in/corey-ladovsky/" target="_blank"> LinkedIn </a>
             <a href="https://angel.co/corey-ladovsky" target="_blank"> Angel </a>
           </li>
