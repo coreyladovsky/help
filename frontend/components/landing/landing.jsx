@@ -50,12 +50,12 @@ class Landing extends React.Component {
 
   cuisineSearch(event) {
     this.props.fetchBusinesses({
-      cuisine: event._targetInst.memoizedProps.value,
+      cuisine: event._targetInst.memoizedProps.value.toLowerCase(),
       price_range: 4,
       noise_level: 4,
       delivery: false,
       bounds: "",
-      name: event._targetInst.memoizedProps.value});
+      name: event._targetInst.memoizedProps.value.toLowerCase()});
     this.props.history.push("/search");
   }
 
