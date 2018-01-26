@@ -10,6 +10,7 @@ class Landing extends React.Component {
     this.logButton = this.logButton.bind(this);
     this.clickHandler = this.clickHandler.bind(this);
     this.searchSubmit = this.searchSubmit.bind(this);
+    this.cuisineSearch = this.cuisineSearch.bind(this);
   }
 
   componentWillReceiveProps(nextprops) {
@@ -45,6 +46,17 @@ class Landing extends React.Component {
       name: ""});
     this.props.history.push("/search");
 
+  }
+
+  cuisineSearch(event) {
+    this.props.fetchBusinesses({
+      cuisine: event._targetInst.memoizedProps.value,
+      price_range: 4,
+      noise_level: 4,
+      delivery: false,
+      bounds: "",
+      name: event._targetInst.memoizedProps.value});
+    this.props.history.push("/search");
   }
 
   logButton() {
@@ -93,7 +105,7 @@ class Landing extends React.Component {
             <li>{this.logButton()}</li>
           </ul>
         </div>
-        <body className={"landing-container"}>
+        <div className={"landing-container"}>
         <div className="landing-body">
           <div className="help-div-landing">
             <Link to={'/'} className="help-landing">help</Link>
@@ -107,7 +119,7 @@ class Landing extends React.Component {
             </div>
         </div>
 
-      </body>
+      </div>
       </div>
         <div className="additional-places-landing">
           <div className="places-to-try">
@@ -125,44 +137,44 @@ class Landing extends React.Component {
             Browse Business By Categoy
           </div>
           <div className="cuisine-landing-container">
-            <ul className="cuisine-landing-ul">
-              <li>
-                <div className="cuisine-pic coffee">
+            <ul className="cuisine-landing-ul" onClick={this.cuisineSearch}>
+              <li value="Coffee">
+                <div className="cuisine-pic coffee" value="Coffee">
                 </div>
                 Coffee
               </li>
-              <li>
-                <div className="cuisine-pic beer">
+              <li value="Bar">
+                <div className="cuisine-pic beer" value="Bar">
                 </div>
                 Bars
               </li>
-              <li>
-                <div className="cuisine-pic dessert">
+              <li value="Dessert">
+                <div className="cuisine-pic dessert" value="Dessert">
                 </div>
                 Desserts
               </li>
-              <li>
-                <div className="cuisine-pic diner">
+              <li value="Diner">
+                <div className="cuisine-pic diner" value="Diner">
                 </div>
                 Diners
               </li>
-              <li>
-                <div className="cuisine-pic french">
+              <li value="French">
+                <div className="cuisine-pic french" value="French">
                 </div>
                 French
               </li>
-              <li>
-                <div className="cuisine-pic pizza">
+              <li value="Pizza">
+                <div className="cuisine-pic pizza" value="Pizza">
                 </div>
                 Pizza
               </li>
-              <li>
-                <div className="cuisine-pic steak">
+              <li value="Steakhouse">
+                <div className="cuisine-pic steak" value="Steakhouse">
                 </div>
                 Steakhouses
               </li>
-              <li>
-                <div className="cuisine-pic italy">
+              <li value="Italian">
+                <div className="cuisine-pic italy" value="Italian">
                 </div>
                 Italian
               </li>

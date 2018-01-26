@@ -324,10 +324,13 @@
   font-size: 14px;
   border-radius: 4px;
   margin: 15px;
-
-
 }
 
+.cuisine-landing-ul li:hover {
+  color: #0F78C9;
+  border: 1px solid #0F78C9;
+  cursor: pointer;
+}
 .cuisine-pic {
   width: 65px;
   height: 80px;
