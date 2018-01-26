@@ -298,12 +298,13 @@
 
 .cuisine-search-landing {
   background-color: #F5F5F5;
-
+  margin-top: 50px;
 }
 
 .cuisine-landing-container {
   display: flex;
   justify-content: center;
+  padding-bottom: 50px;
 }
 
 .cuisine-landing-ul {
@@ -364,6 +365,21 @@
 }
 .steak {
   background-image: asset-url('steak.svg');
+}
+
+
+.footer-pic {
+  background-image: image-url('footer_cityscape.png');
+  height: 150px;
+  width: 653px;
+  background-repeat: no-repeat;
+
+}
+
+.footer {
+  border-top: 1px solid #CCCCCC;
+  display: flex;
+  justify-content: center;
 }
 
 

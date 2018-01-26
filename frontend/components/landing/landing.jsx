@@ -181,6 +181,10 @@ class Landing extends React.Component {
             </ul>
         </div>
       </div>
+      <div className="footer">
+        <div className="footer-pic">
+        </div>
+      </div>
 
     </div>
     );
