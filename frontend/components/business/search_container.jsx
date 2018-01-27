@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Search from './search';
 import { fetchBusinesses } from '../../actions/business_actions';
+import { fetchUser } from '../../actions/user_actions';
 import { logout, clearPage, nextPage } from '../../actions/session_actions';
 import { updateBounds, frontFilter, clearFilter } from '../../actions/filter_actions';
 
@@ -21,6 +22,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     nextPage: (page) => dispatch(nextPage(page)),
     updateBounds: (bounds) => dispatch(updateBounds(bounds)),
     clearFilter: () => dispatch(clearFilter()),
+    fetchUser: (userId) => dispatch(fetchUser(userId)),
+
   });
 };
 

@@ -11,6 +11,8 @@ class BusinessIndexItem extends React.Component {
     this.searchSubmit = this.searchSubmit.bind(this);
   }
 
+
+
   handleClick(event) {
     this.props.nextPage(`/businesses/${this.props.business.id}/reviews/new`);
   }
@@ -29,6 +31,7 @@ class BusinessIndexItem extends React.Component {
       return <div className="price-range-undefined">Prices Unknown</div>;
     }
   }
+
 
   findRating(rating) {
     switch(rating) {
@@ -67,6 +70,16 @@ class BusinessIndexItem extends React.Component {
   }
 
   render() {
+    let reviewer;
+    this.props.business.reviewers.forEach(rev => {
+      if(this.props.business.reviews[0].user_id === rev.id) {
+        reviewer = rev;
+      }
+    })
+
+
+    debugger
+
     let parsed = parser.parseLocation(this.props.business.address);
   return(
     <div className="biz-idx-page">
@@ -77,7 +90,7 @@ class BusinessIndexItem extends React.Component {
       <ul className="list-item">
         <li className="biz-photo-li">
           <Link to={ `/businesses/${this.props.business.id}`}>
-            <img className="business-photo" src={this.props.business.image}/>
+            <img className="business-photo" src={reviewer.image}/>
           </Link>
         </li>
 
@@ -116,7 +129,10 @@ class BusinessIndexItem extends React.Component {
             <li>{this.props.business.phone_number}</li>
           </ul>
       </div>
-
+      <div>
+        {reviewer !== undefined ? reviewer.image : ""}
+        {this.props.business.reviews[0] ? this.props.business.reviews[0].body : ""}
+      </div>
     </div>
     </li>
     <li className="map">

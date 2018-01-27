@@ -22,16 +22,24 @@ class Search extends React.Component {
     return(
 
     <div>
-      <NavBar business={this.props.business} currentUser={this.props.currentUser} logout={this.props.logout}/>
+      <NavBar business={this.props.business}
+        currentUser={this.props.currentUser}
+        logout={this.props.logout}/>
 
       <ul className="map-and-index-ul">
         <li>
-          <BusinessIndex updateBounds={this.props.updateBounds} business={this.props.business} filters={this.props.filters} fetchBusinesses={this.props.fetchBusinesses}
-          clearFilter={this.props.clearFilter} nextPage={this.props.nextPage}/>
+          <BusinessIndex updateBounds={this.props.updateBounds}
+            business={this.props.business} filters={this.props.filters}
+            fetchBusinesses={this.props.fetchBusinesses}
+            clearFilter={this.props.clearFilter}
+            nextPage={this.props.nextPage}
+            fetchUser={this.props.fetchUser} />
         </li>
 
         <li className="biz-map-index-page">
-          <BusinessMap business={this.props.business} filters={this.props.filters} />
+          <BusinessMap business={this.props.business}
+            filters={this.props.filters}
+            />
         </li>
       </ul>
 
