@@ -33,7 +33,7 @@ class Search extends React.Component {
             fetchBusinesses={this.props.fetchBusinesses}
             clearFilter={this.props.clearFilter}
             nextPage={this.props.nextPage}
-            fetchUser={this.props.fetchUser} />
+             />
         </li>
 
         <li className="biz-map-index-page">

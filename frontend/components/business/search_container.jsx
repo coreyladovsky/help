@@ -22,7 +22,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     nextPage: (page) => dispatch(nextPage(page)),
     updateBounds: (bounds) => dispatch(updateBounds(bounds)),
     clearFilter: () => dispatch(clearFilter()),
-    fetchUser: (userId) => dispatch(fetchUser(userId)),
+
 
   });
 };
