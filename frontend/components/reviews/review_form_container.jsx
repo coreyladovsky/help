@@ -22,14 +22,14 @@ const mapStateToProps = (state, ownProps) => {
       intendedPage: state.intendedPage
     };
   } else {
-    let review_to_use = state.reviews[ownProps.match.params.reviewId]
-    let review = {}
-    if(review_to_use) {
-      for(var key in review_to_use) {
-        if(review_to_use[key] === null) {
-          review[key] = ""
+    let reviewToUse = state.reviews[ownProps.match.params.reviewId];
+    let review = {};
+    if(reviewToUse) {
+      for(var key in reviewToUse) {
+        if(reviewToUse[key] === null) {
+          review[key] = "";
         } else {
-          review[key] = review_to_use[key]
+          review[key] = reviewToUse[key];
         }
       }
     }

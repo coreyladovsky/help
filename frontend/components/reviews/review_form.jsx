@@ -7,7 +7,6 @@ import ReviewsContainer from './reviews_container';
 class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       bodyValue: this.props.review.body,
       ratingValue: this.props.review.rating,
@@ -37,14 +36,24 @@ class ReviewForm extends React.Component {
     this.reinstateClass = this.reinstateClass.bind(this);
     this.reviewCheck = this.reviewCheck.bind(this);
     this.reviewReinstate = this.reviewReinstate.bind(this);
+    this.updateAllState = this.updateAllState.bind(this);
+  }
 
+  updateAllState() {
+    this.setState({
+      bodyValue: this.props.review.body,
+      ratingValue: this.props.review.rating,
+      priceRangeValue: this.props.review.price_range,
+      noiseLevelValue: this.props.review.noise_level,
+      deliveryValue: `${this.props.review.delivery}`
+    });
   }
 
   componentDidMount() {
     this.props.clearPage();
     this.props.fetchBusiness(this.props.match.params.businessId);
     if(this.props.formType === 'edit') {
-      this.props.fetchReview(this.props.match.params.reviewId);
+      this.props.fetchReview(this.props.match.params.reviewId).then(this.updateAllState)
     }
   }
 
