@@ -138,7 +138,7 @@ class BusinessIndexItem extends React.Component {
           </ul>
       </div>
       <div>
-        {reviewer ? <img className="business-photo" src={reviewer.image}/> : ""}
+        {reviewer ? <img className="business-photo" src={reviewer.image_file_name}/> : ""}
         {this.props.business.reviews[0] ? this.props.business.reviews[0].body : ""}
       </div>
     </div>

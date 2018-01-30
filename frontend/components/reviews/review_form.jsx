@@ -7,6 +7,7 @@ import ReviewsContainer from './reviews_container';
 class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
+    if(this.props.review) {
 
     this.state = {
       bodyValue: this.props.review.body,
@@ -16,6 +17,7 @@ class ReviewForm extends React.Component {
       deliveryValue: `${this.props.review.delivery}`,
       classColor: "default"
     };
+  }
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.bodyChange = this.bodyChange.bind(this);
@@ -37,6 +39,15 @@ class ReviewForm extends React.Component {
     this.reviewCheck = this.reviewCheck.bind(this);
     this.reviewReinstate = this.reviewReinstate.bind(this);
 
+  }
+
+  componentDidMount() {
+    this.props.clearPage();
+    this.props.fetchBusiness(this.props.match.params.businessId);
+    if(this.props.formType === 'edit') {
+      debugger
+      this.props.fetchReview(this.props.match.params.reviewId);
+    }
   }
 
   clearState() {
@@ -116,13 +127,7 @@ class ReviewForm extends React.Component {
   }
 
 
-  componentDidMount() {
-    this.props.clearPage(); 
-    this.props.fetchBusiness(this.props.match.params.businessId);
-    if(this.props.formType === 'edit') {
-      this.props.fetchReview(this.props.review.id);
-    }
-  }
+
 
   updateRating(event) {
     event.preventDefault();

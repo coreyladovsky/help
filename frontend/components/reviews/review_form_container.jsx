@@ -47,7 +47,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       clearFilter: () => dispatch(clearFilter()),
     };
   } else {
-    
+
     return {
       fetchReview: (reviewId) => dispatch(fetchReview(reviewId)),
       updateReview: (review) => dispatch(updateReview(review)),
