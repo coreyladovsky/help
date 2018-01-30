@@ -85,7 +85,7 @@ class PhotoIndex extends React.Component {
       return null;
     } else if (this.props.match.path === "/businesses/:businessId") {
       return(
-          <ul className="photo-items-ul" onClick={this.allPhotos}>
+          <ul className="photo-items-ul" onClick={this.allPhotos} onLoad={this.resetPhotos}>
             <li>
               <img id="first_photo" onMouseOver={this.enlargeFirst}
               onMouseOut={this.resetPhotos} className="biz-indiv-photo"
