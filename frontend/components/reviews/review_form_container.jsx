@@ -22,9 +22,20 @@ const mapStateToProps = (state, ownProps) => {
       intendedPage: state.intendedPage
     };
   } else {
+    let review_to_use = state.reviews[ownProps.match.params.reviewId]
+    let review = {}
+    if(review_to_use) {
+      for(var key in review_to_use) {
+        if(review_to_use[key] === null) {
+          review[key] = ""
+        } else {
+          review[key] = review_to_use[key]
+        }
+      }
+    }
     return {
       formType: "edit",
-      review: state.reviews[ownProps.match.params.reviewId],
+      review,
       business: state.business[ownProps.match.params.businessId],
       currentUser: state.session.currentUser,
       errors: state.errors.session,

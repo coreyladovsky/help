@@ -7,7 +7,6 @@ import ReviewsContainer from './reviews_container';
 class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
-    if(this.props.review) {
 
     this.state = {
       bodyValue: this.props.review.body,
@@ -17,7 +16,7 @@ class ReviewForm extends React.Component {
       deliveryValue: `${this.props.review.delivery}`,
       classColor: "default"
     };
-  }
+
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.bodyChange = this.bodyChange.bind(this);
@@ -26,7 +25,7 @@ class ReviewForm extends React.Component {
     this.noiseChange = this.noiseChange.bind(this);
     this.deliveryChange = this.deliveryChange.bind(this);
     this.checkedCheck = this.checkedCheck.bind(this);
-    this.updateRating = this.updateRating.bind(this);
+    // this.updateRating = this.updateRating.bind(this);
     this.clearState = this.clearState.bind(this);
     this.searchSubmit = this.searchSubmit.bind(this);
     this.oneCheck = this.oneCheck.bind(this);
@@ -45,7 +44,6 @@ class ReviewForm extends React.Component {
     this.props.clearPage();
     this.props.fetchBusiness(this.props.match.params.businessId);
     if(this.props.formType === 'edit') {
-      debugger
       this.props.fetchReview(this.props.match.params.reviewId);
     }
   }
@@ -128,11 +126,11 @@ class ReviewForm extends React.Component {
 
 
 
-
-  updateRating(event) {
-    event.preventDefault();
-    this.setState({ratingValue: event.currentTarget.value});
-  }
+  //
+  // updateRating(event) {
+  //   event.preventDefault();
+  //   this.setState({ratingValue: event.currentTarget.value});
+  // }
 
 
   searchSubmit() {
@@ -298,6 +296,8 @@ class ReviewForm extends React.Component {
   render() {
     if(this.props.business === undefined) {
       return null;
+    } else if(!this.props.review) {
+      return null
     } else {
       let parsed = parser.parseLocation(this.props.business.address);
 
