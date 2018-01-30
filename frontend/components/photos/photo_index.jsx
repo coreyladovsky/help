@@ -19,7 +19,7 @@ class PhotoIndex extends React.Component {
   componentDidMount() {
     if(this.props.photos.length > 0 && this.props.match.path === "/businesses/:businessId") {
       this.resetPhotos();
-      this.props.fetchBusiness(this.props.match.params.businessId);
+      this.props.fetchBusiness(this.props.match.params.businessId).then(this.resetPhotos);
     }else if(this.props.match.path === "/businesses/:businessId/photos") {
       this.props.fetchBusiness(this.props.match.params.businessId);
     }
@@ -84,7 +84,6 @@ class PhotoIndex extends React.Component {
     if(this.props.photos.length === 0) {
       return null;
     } else if (this.props.match.path === "/businesses/:businessId") {
-
       return(
           <ul className="photo-items-ul" onClick={this.allPhotos}>
             <li>

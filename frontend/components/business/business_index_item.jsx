@@ -70,21 +70,23 @@ class BusinessIndexItem extends React.Component {
     });
   }
 
+  // let user
+  // if(this.props.business.reviews[0]) {
+  //   user = this.props.business.reviews[0].user_id
+  //
+  // }
+  // let reviewer;
+  // this.props.business.reviewers.forEach(rev => {
+  //   if(user) {
+  //     if(user  === rev.id) {
+  //       reviewer = rev;
+  //     }
+  //   }
+  //
+  // })
+  // {reviewer ? <img className="business-photo" src={reviewer.image_file_name}/> : ""}
+  // {this.props.business.reviews[0] ? this.props.business.reviews[0].body : ""}
   render() {
-    let user
-    if(this.props.business.reviews[0]) {
-       user = this.props.business.reviews[0].user_id
-
-    }
-    let reviewer;
-    this.props.business.reviewers.forEach(rev => {
-      if(user) {
-      if(user  === rev.id) {
-        reviewer = rev;
-      }
-    }
-
-    })
 
 
 
@@ -137,10 +139,7 @@ class BusinessIndexItem extends React.Component {
             <li>{this.props.business.phone_number}</li>
           </ul>
       </div>
-      <div>
-        {reviewer ? <img className="business-photo" src={reviewer.image_file_name}/> : ""}
-        {this.props.business.reviews[0] ? this.props.business.reviews[0].body : ""}
-      </div>
+    
     </div>
     </li>
     <li className="map">
