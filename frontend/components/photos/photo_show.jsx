@@ -7,6 +7,11 @@ class PhotoShow extends React.Component {
   }
 
   render() {
+    return(
+      <div className="photo-modal">
+      </div>
+    );
+
 
   }
 }

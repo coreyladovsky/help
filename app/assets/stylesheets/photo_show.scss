@@ -1,0 +1,10 @@
+.photo-modal {
+  position: absolute;
+  top: 0;
+  display: block;
+  z-index: 3;
+  min-height: 100%;
+  min-width: 100%;
+  opacity: .5;
+  background-color: black;
+}

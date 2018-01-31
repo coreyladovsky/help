@@ -1,7 +1,8 @@
 import React from 'react';
 import PhotoIndexItem from './photo_index_item';
 import NavBarContainer from '../NavBar/NavBar_container';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
+import photoShowContainer from './photo_show_container';
 
 
 class PhotoIndex extends React.Component {
@@ -111,6 +112,7 @@ class PhotoIndex extends React.Component {
       return (
         <div>
           <NavBarContainer/>
+          <Route path="/businesses/:businessId/photos/:photoId" component={photoShowContainer}/>
           <div className="container-photo-index">
 
 
