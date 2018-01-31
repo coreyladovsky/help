@@ -9,11 +9,14 @@ import ReviewFormContainer from './reviews/review_form_container';
 import BusinessShowContainer from './business/business_show_container';
 import PhotoUploadContainer from './photos/photo_upload_container';
 import PhotosContainer from './photos/photos_container';
+import { Footer } from './footer.jsx';
 
 
+const App = () =>
+{
 
-const App = () => (
-  <div>
+return(
+  <div className='photo-modal'>
 
     <header>
     </header>
@@ -31,46 +34,8 @@ const App = () => (
       <Route exact path="/" component={LandingContainer} />
 
     </Switch>
-
-    <div className="footer">
-      <div className="all-landing-conatiner">
-    <div className="all-landing-ul">
-      <ul >
-        <li className="landing-ul-header">
-          About
-        </li>
-        <li className="info-landing-ul">
-          <a href="https://github.com/coreyladovsky/help" target="_blank"> About Help</a>
-          <a href="http://www.coreyladovsky.com" target="_blank"> Corey Ladovsky </a>
-        </li>
-      </ul>
-      <ul >
-        <li className="landing-ul-header">
-          Connect
-        </li>
-        <li className="info-landing-ul">
-          <a href="https://github.com/coreyladovsky" target="_blank">GitHub</a>
-          <a href="https://www.linkedin.com/in/corey-ladovsky/" target="_blank"> LinkedIn </a>
-          <a href="https://angel.co/corey-ladovsky" target="_blank"> Angel </a>
-        </li>
-      </ul>
-
-      <ul >
-        <li className="landing-ul-header">
-          Other Projects
-        </li>
-        <li className="info-landing-ul">
-          <a href="http://www.coreyladovsky.com/Maze-Spinner/" target="_blank"> Maze Spinner</a>
-          <a href="http://www.coreyladovsky.com/Master-Of-The-Domain/" target="_blank"> Master Of The Domain </a>
-        </li>
-      </ul>
-    </div>
-
-    </div>
-      <div className="footer-pic">
-      </div>
-    </div>
+    <Route path="/" component={Footer}/>
   </div>
 );
-
+}
 export default App;
