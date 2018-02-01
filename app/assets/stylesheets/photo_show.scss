@@ -9,6 +9,7 @@
   opacity: .8;
   background-color: black;
   justify-content: center;
+  overflow: hidden;
 
 }
 
@@ -22,4 +23,9 @@
   min-height: 615px;
   margin-top: 100px;
   margin-bottom: 100px;
+}
+
+.photo-page-container {
+  position: relative;
+  overflow: hidden;
 }

@@ -105,13 +105,14 @@ class PhotoIndex extends React.Component {
       );
     } else {
 
+      const path = this.props.location.pathname;
       const photos = this.props.photos.map((photo) => {
-        return <PhotoIndexItem key={photo.id} photo={photo} />;
+        return <PhotoIndexItem key={photo.id} photo={photo} path={path} />;
       });
 
 
       return (
-        <div id="photo-page-container">
+        <div className="photo-page-container">
           <NavBarContainer/>
           <Route path="/businesses/:businessId/photos/:photoId" component={photoShowContainer}/>
           <div className="container-photo-index">
