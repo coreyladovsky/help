@@ -16,8 +16,7 @@ const App = () =>
 {
 
 return(
-  <div className='photo-modal'>
-
+  <div>
     <header>
     </header>
     <Switch>
@@ -37,5 +36,5 @@ return(
     <Route path="/" component={Footer}/>
   </div>
 );
-}
+};
 export default App;
