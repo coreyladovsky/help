@@ -4,9 +4,22 @@
   bottom: 0;
   left: 0;
   right: 0;
-  display: block;
+  display: flex;
   z-index: 1;
-  opacity: .5;
+  opacity: .8;
   background-color: black;
-  display: table;
+  justify-content: center;
+
+}
+
+.photo-content {
+  display: flex;
+  max-width: 1300px;
+  max-height: 905px;
+  border: 1px solid red;
+  z-index: 2;
+  min-width: 962px;
+  min-height: 615px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
