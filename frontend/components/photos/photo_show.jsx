@@ -25,16 +25,15 @@ class PhotoShow extends React.Component {
 
   render() {
     if(this.props.photo === undefined) {
-      debugger
       return null ;
     } else {
 
       return (
         <div className="photo-modal" onClick={this.pageReturn}>
           <div className="photo-content">
-            <div className="photo-of-photo-show" />
-              <img src={this.props.photo.image} />
-            <div />
+            <div className="photo-of-photo-show" >
+              <img className="photo-image-show" src={this.props.photo.image} />
+            </div>
           </div>
         </div>
       );

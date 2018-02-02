@@ -5,12 +5,9 @@
   left: 0;
   right: 0;
   display: flex;
-  z-index: 1;
-  opacity: .8;
-  background-color: black;
   justify-content: center;
-  overflow: hidden;
-
+  z-index: 1;
+  background-image: image_url("transpBlack75.png")
 }
 
 .photo-content {
@@ -25,7 +22,13 @@
   margin-bottom: 100px;
 }
 
-.photo-page-container {
-  position: relative;
-  overflow: hidden;
+.photo-of-photo-show {
+  border: 1px solid green;
+  background-color: pink;
+}
+
+.photo-image-show {
+  height: 100%;
+  z-index: 5;
+  opacity: 1;
 }
