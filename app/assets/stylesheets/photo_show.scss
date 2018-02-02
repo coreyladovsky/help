@@ -6,6 +6,7 @@
   right: 0;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   z-index: 1;
   background-image: image_url("transpBlack75.png");
 }
@@ -13,19 +14,21 @@
 .photo-content {
   background-image: image_url("transpBlack90.png");
   display: flex;
-  width: 1300px;
+  width: 1100px;
   max-height: 905px;
-  border: 1px solid red;
+
   z-index: 2;
   min-width: 962px;
   min-height: 615px;
   margin-top: 50px;
   margin-bottom: 50px;
-  // justify-content: center;
+  margin: 0 auto;
+  border-radius: 5px;
 }
 
 .photo-of-photo-show {
-  border: 1px solid green;
+
+  min-width: 550px;
 }
 
 .photo-image-show {
@@ -34,14 +37,16 @@
   object-fit: cover;
 }
 
+.photo-image-show:hover {
+  cursor: pointer;
+}
+
 .left-scroll {
   z-index: 3;
   color: white;
   font-size: 60px;
-  height: 100%;
   width: 10%;
   text-align: center;
-  display: table;
 }
 
 .fa-angle-right {
@@ -63,7 +68,28 @@
   z-index: 3;
   color: white;
   font-size: 60px;
-  height: 100%;
   width: 10%;
   text-align: center;
+}
+
+.close-modal {
+  float: right;
+  color: #666666;
+  font-family: sans-serif;
+  font-size: 16px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.close-container {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.close-modal i {
+  margin-left: 5px;
+}
+.close-modal:hover {
+  cursor: pointer;
+  color: white;
 }
