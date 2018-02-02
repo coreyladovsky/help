@@ -27,7 +27,7 @@ class PhotoShow extends React.Component {
   }
 
   lastPhoto() {
-    
+
     let last = this.props.photoNumber - 1;
     if(last < 0) {
       last = last + this.props.photos.length;
@@ -37,10 +37,12 @@ class PhotoShow extends React.Component {
     );
   }
 
-  pageReturn() {
-    this.props.history.push(
-      "/businesses/" + this.props.match.params.businessId + "/photos"
-    );
+  pageReturn(e) {
+    if(e._targetInst.memoizedProps.value) {
+      this.props.history.push(
+        "/businesses/" + this.props.match.params.businessId + "/photos"
+      );
+    }
   }
 
   render() {
@@ -49,7 +51,7 @@ class PhotoShow extends React.Component {
     } else {
 
       return (
-        <div className="photo-modal" onClick={this.pageReturn}>
+        <div className="photo-modal" value="exit" onClick={this.pageReturn}>
           <div className="photo-content">
             <div className="left-scroll" onClick={this.lastPhoto}><i className="far fa fa-angle-left angles"></i></div>
             <div className="photo-of-photo-show" >
