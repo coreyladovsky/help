@@ -6,13 +6,26 @@ import { withRouter } from 'react-router-dom';
 
 
 const mapStateToProps = (state, ownProps) => {
+  let photoNumber;
+  let photo;
+  let photoId = parseInt(ownProps.match.params.photoId);
+  let photos = Object.values(state.photos)
+  for(let i = 0; i < photos.length; i++) {
+    if(photos[i].id === photoId) {
+      photo = photos[i];
+      photoNumber = i;
+      break;
+    }
+  }
 
   return({
-    photos: Object.values(state.photos),
+    photos,
     businessId: ownProps.match.params.businessId,
     currentUser: state.session.currentUser,
     business: state.business[ownProps.match.params.businessId],
-    photoId: state.photos[ownProps.match.params.photoId]
+    photo,
+    photoNumber,
+    photoId
 
   });
 };

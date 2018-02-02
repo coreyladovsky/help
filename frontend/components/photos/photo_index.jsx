@@ -106,8 +106,9 @@ class PhotoIndex extends React.Component {
     } else {
 
       const path = this.props.location.pathname;
+      const history = this.props.history;
       const photos = this.props.photos.map((photo) => {
-        return <PhotoIndexItem key={photo.id} photo={photo} path={path} />;
+        return <PhotoIndexItem key={photo.id} photo={photo} path={path} history={history} />;
       });
 
 

@@ -9,6 +9,8 @@ class PhotoShow extends React.Component {
 
   componentDidMount() {
     document.querySelector("html").setAttribute("style", "overflow: hidden;");
+    // debugger
+    // this.props.fetchPhoto()
   }
 
   componentWillUnmount() {
@@ -17,19 +19,26 @@ class PhotoShow extends React.Component {
 
   pageReturn() {
     this.props.history.push(
-      "/businesses/" + this.props.match.params.businessId + "/photos/"
+      "/businesses/" + this.props.match.params.businessId + "/photos"
     );
   }
 
   render() {
-    return (
-      <div className="photo-modal" onClick={this.pageReturn}>
-        <div className="photo-content">
-          <div className="photo-of-photo-show" />
-          <div />
+    if(this.props.photo === undefined) {
+      debugger
+      return null ;
+    } else {
+
+      return (
+        <div className="photo-modal" onClick={this.pageReturn}>
+          <div className="photo-content">
+            <div className="photo-of-photo-show" />
+              <img src={this.props.photo.image} />
+            <div />
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
 }
 

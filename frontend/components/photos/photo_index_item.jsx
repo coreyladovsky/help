@@ -8,7 +8,7 @@ class PhotoIndexItem extends React.Component {
   }
 
   photoLink() {
-    this.props.history.push(this.props.path + this.props.photo.id);
+    this.props.history.push(this.props.path + "/" + this.props.photo.id);
   }
 
   render() {
