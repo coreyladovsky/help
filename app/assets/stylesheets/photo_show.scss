@@ -14,11 +14,12 @@
 .photo-content {
   background-image: image_url("transpBlack90.png");
   display: flex;
-  width: 1100px;
+  // width: 1100px;
+  width: 900px;
   max-height: 905px;
 
   z-index: 2;
-  min-width: 962px;
+  // min-width: 962px;
   min-height: 615px;
   margin-top: 50px;
   margin-bottom: 50px;
@@ -28,7 +29,8 @@
 
 .photo-of-photo-show {
   position: relative;
-  width: 550px;
+  // width: 550px;
+  width: 1000px;
   height: 615px;
 }
 
@@ -46,7 +48,8 @@
   z-index: 3;
   color: white;
   font-size: 60px;
-  width: 10%;
+  // width: 10%;
+  width: 20%;
   text-align: center;
 }
 
@@ -69,7 +72,8 @@
   z-index: 3;
   color: white;
   font-size: 60px;
-  width: 10%;
+  // width: 10%;
+  width: 20%;
   text-align: center;
 }
 
@@ -83,7 +87,8 @@
 }
 
 .close-container {
-  width: 1100px;
+  // width: 1100px;
+  width: 900px;
   margin: 0 auto;
 }
 
