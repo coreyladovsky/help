@@ -28,7 +28,8 @@
 
 .photo-of-photo-show {
   position: relative;
-  min-width: 550px;
+  width: 550px;
+  height: 615px;
 }
 
 .photo-image-show {
@@ -98,12 +99,12 @@
   position: absolute;
   bottom: 0;
   min-width: 100%;
-  min-height: 25px;
+  min-height: 20px;
   z-index: 4;
   background-image: image_url("transpBlack75.png");
   color: #666666;
   font-family: sans-serif;
   text-align: center;
   font-size: 12px;
-  padding-top: 15px;
+  padding-top: 10px;
 }
