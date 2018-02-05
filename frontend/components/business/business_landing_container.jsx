@@ -1,21 +1,18 @@
-import { connect } from 'react-redux';
-import BizLandingIndex from './biz_landing_index';
-import { fetchBusinesses } from '../../actions/business_actions';
+import { connect } from "react-redux";
+import BizLandingIndex from "./biz_landing_index";
+import { fetchBusinesses } from "../../actions/business_actions";
 
 const mapStateToProps = (state, ownProps) => {
-  return ({
+  return {
     business: Object.values(state.business),
-    currentUser: state.session.currentUser,
-  });
+    currentUser: state.session.currentUser
+  };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  return ({
-    fetchBusinesses: (filters) => dispatch(fetchBusinesses(filters)),
-  });
+  return {
+    fetchBusinesses: filters => dispatch(fetchBusinesses(filters))
+  };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(BizLandingIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(BizLandingIndex);

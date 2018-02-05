@@ -1,6 +1,6 @@
-import React from 'react';
-import BizLandingIndexItem from './biz_landing_index_item';
-import { shuffle } from 'underscore';
+import React from "react";
+import BizLandingIndexItem from "./biz_landing_index_item";
+import { shuffle } from "underscore";
 
 class BizLandingIndex extends React.Component {
   constructor(props) {
@@ -9,18 +9,13 @@ class BizLandingIndex extends React.Component {
 
   render() {
     const businesses = this.props.business.slice(0, 6).map(business => {
-      return <BizLandingIndexItem business={business} key={business.id}/>;
-
-
+      return <BizLandingIndexItem business={business} key={business.id} />;
     });
-    return(
+    return (
       <div className="biz-landing-index-container">
-        <ul className="biz-landing-index-ul">
-          {businesses}
-        </ul>
+        <ul className="biz-landing-index-ul">{businesses}</ul>
       </div>
     );
-
   }
 }
 

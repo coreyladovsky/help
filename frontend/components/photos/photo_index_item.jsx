@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 class PhotoIndexItem extends React.Component {
   constructor(props) {
@@ -12,15 +12,15 @@ class PhotoIndexItem extends React.Component {
   }
 
   render() {
-    if(this.props.photo === undefined) {
+    if (this.props.photo === undefined) {
       return null;
     } else {
-      return(
-
+      return (
         <li className="index-li" onClick={this.photoLink}>
-          <img className="index-image" src={this.props.photo.image}/>
+          <img className="index-image" src={this.props.photo.image} />
         </li>
-    );}
+      );
+    }
   }
 }
 
