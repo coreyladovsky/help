@@ -1,14 +1,14 @@
-import { RECEIVE_USER } from '../actions/user_actions';
-import { RECEIVE_REVIEWERS } from '../actions/business_actions'; 
-import merge from 'lodash/merge';
+import { RECEIVE_USER } from "../actions/user_actions";
+import { RECEIVE_REVIEWERS } from "../actions/business_actions";
+import merge from "lodash/merge";
 
 const UserReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
-  switch(action.type) {
+  switch (action.type) {
     case RECEIVE_REVIEWERS:
       return action.reviewers;
     case RECEIVE_USER:
-      return merge ({}, oldState, {[action.user.id]: action.user});
+      return merge({}, oldState, { [action.user.id]: action.user });
     default:
       return oldState;
   }

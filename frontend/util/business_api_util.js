@@ -1,30 +1,26 @@
-
 export const fetchBusinesses = data => {
-    return $.ajax({
+  return $.ajax({
     method: "GET",
     url: "api/businesses",
-    data: {business: data}
+    data: { business: data }
   });
 };
 
-export const fetchBusiness = (businessId) => (
+export const fetchBusiness = businessId =>
   $.ajax({
     method: "GET",
-    url: `api/businesses/${businessId}`,
-  })
-);
+    url: `api/businesses/${businessId}`
+  });
 
-export const createBusiness = (data) => (
+export const createBusiness = data =>
   $.ajax({
     method: "POST",
-    url: 'api/business',
+    url: "api/business",
     data: { data }
-  })
-);
+  });
 
-export const fetchReviewers = (businessId) => (
+export const fetchReviewers = businessId =>
   $.ajax({
     method: "GET",
-    url: 'api/businesses/' + businessId + '/reviewers'
-  })
-);
+    url: "api/businesses/" + businessId + "/reviewers"
+  });
