@@ -11,6 +11,7 @@ class Landing extends React.Component {
     this.clickHandler = this.clickHandler.bind(this);
     this.searchSubmit = this.searchSubmit.bind(this);
     this.cuisineSearch = this.cuisineSearch.bind(this);
+    this.heroChange = this.heroChange.bind(this);
   }
 
   componentWillReceiveProps(nextprops) {
@@ -90,10 +91,7 @@ class Landing extends React.Component {
     }
   }
 
-  // <button onClick={this.searchSubmit} className="log-in-landing">
-  //   Restaurants
-  // </button>
-  render() {
+  heroChange() {
     const classes = [
       "landing-background1",
       "landing-background1",
@@ -105,11 +103,33 @@ class Landing extends React.Component {
       "landing-background8",
       "landing-background9"
     ];
-    let picClass = classes[Math.floor(Math.random() * classes.length)];
-    let final = "landing-background " + picClass;
+
+     setInterval(()=> {
+       $("#landing-hero").removeClass();
+
+      let picClass = classes[Math.floor(Math.random() * classes.length)];
+       $("#landing-hero").addClass("landing-background " + picClass);
+    }, 1000);
+  }
+
+
+  render() {
+    // const classes = [
+    //   "landing-background1",
+    //   "landing-background1",
+    //   "landing-background3",
+    //   "landing-background4",
+    //   "landing-background5",
+    //   "landing-background6",
+    //   "landing-background7",
+    //   "landing-background8",
+    //   "landing-background9"
+    // ];
+    // let picClass = classes[Math.floor(Math.random() * classes.length)];
+    // let final =  "landing-background " + this.heroChange();
     return (
       <div>
-        <div className={final}>
+        <div id="landing-hero" className={this.heroChange()}>
           <div className="landing-header">
             <ul className="landing-header-ul">
               <li />
