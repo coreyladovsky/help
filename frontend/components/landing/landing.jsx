@@ -12,6 +12,17 @@ class Landing extends React.Component {
     this.searchSubmit = this.searchSubmit.bind(this);
     this.cuisineSearch = this.cuisineSearch.bind(this);
     this.heroChange = this.heroChange.bind(this);
+    this.classes = [
+      "landing-background1",
+      "landing-background1",
+      "landing-background3",
+      "landing-background4",
+      "landing-background5",
+      "landing-background6",
+      "landing-background7",
+      "landing-background8",
+      "landing-background9"
+    ];
   }
 
   componentWillReceiveProps(nextprops) {
@@ -92,44 +103,23 @@ class Landing extends React.Component {
   }
 
   heroChange() {
-    const classes = [
-      "landing-background1",
-      "landing-background1",
-      "landing-background3",
-      "landing-background4",
-      "landing-background5",
-      "landing-background6",
-      "landing-background7",
-      "landing-background8",
-      "landing-background9"
-    ];
-
-     setInterval(()=> {
-       $("#landing-hero").removeClass();
-
-      let picClass = classes[Math.floor(Math.random() * classes.length)];
-       $("#landing-hero").addClass("landing-background " + picClass);
-    }, 1000);
+    setInterval(() => {
+      $("#landing-hero").removeClass();
+      let picClass = this.classes[
+        Math.floor(Math.random() * this.classes.length)
+      ];
+      $("#landing-hero").addClass("landing-background " + picClass);
+    }, 5000);
   }
 
-
   render() {
-    // const classes = [
-    //   "landing-background1",
-    //   "landing-background1",
-    //   "landing-background3",
-    //   "landing-background4",
-    //   "landing-background5",
-    //   "landing-background6",
-    //   "landing-background7",
-    //   "landing-background8",
-    //   "landing-background9"
-    // ];
-    // let picClass = classes[Math.floor(Math.random() * classes.length)];
-    // let final =  "landing-background " + this.heroChange();
+    let final =
+      "landing-background " +
+      this.classes[Math.floor(Math.random() * this.classes.length)];
     return (
       <div>
-        <div id="landing-hero" className={this.heroChange()}>
+        <div id="landing-hero" className={final}>
+          {this.heroChange()}
           <div className="landing-header">
             <ul className="landing-header-ul">
               <li />
