@@ -48,6 +48,7 @@ class Landing extends React.Component {
         bounds: "",
         name: ""
       });
+      this.heroChange();
     }
   }
 
@@ -102,6 +103,7 @@ class Landing extends React.Component {
     }
   }
 
+
   heroChange() {
     setInterval(() => {
       $("#landing-hero").removeClass();
@@ -119,7 +121,6 @@ class Landing extends React.Component {
     return (
       <div>
         <div id="landing-hero" className={final}>
-          {this.heroChange()}
           <div className="landing-header">
             <ul className="landing-header-ul">
               <li />
