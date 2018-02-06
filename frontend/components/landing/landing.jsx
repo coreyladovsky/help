@@ -23,6 +23,7 @@ class Landing extends React.Component {
       "landing-background8",
       "landing-background9"
     ];
+    this.heroOff;
   }
 
   componentWillReceiveProps(nextprops) {
@@ -50,6 +51,10 @@ class Landing extends React.Component {
       });
       this.heroChange();
     }
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.heroOff);
   }
 
   searchSubmit() {
@@ -105,7 +110,8 @@ class Landing extends React.Component {
 
 
   heroChange() {
-    setInterval(() => {
+    console.log("fired");
+    this.heroOff = setInterval(() => {
       $("#landing-hero").removeClass();
       let picClass = this.classes[
         Math.floor(Math.random() * this.classes.length)
