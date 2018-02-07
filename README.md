@@ -1,12 +1,12 @@
 # HELP
 
-Hey there and welcome! Thanks for checking out Help. Help is a yelp like application that allows users to rate and review restaurants. Navigating the site is literally as easy as clicking a button. You're able to Sign up, log in (or demo login) and get straight to looking for delicious places to eat. From the business index page you can see the rating of each restaurant as well as it's price ranges. Besides the restaurants basic composition, all qualities are derived from user scored averages from the reviews they write. A user can add add, edit, and delete reviews, as well as upload photos for a business. 
+Hey there and welcome! Thanks for checking out Help. Help is a yelp like application that allows users to rate and review restaurants. Navigating the site is literally as easy as clicking a button. You're able to Sign up, log in (or demo login) and get straight to looking for delicious places to eat. From the business index page you can see the rating of each restaurant as well as it's price ranges. You are able to filter restaurants based off name, category, price, delivery, noise level, and location. Everything besides the restaurants core composition, are qualities derived from user scored averages from the reviews they write. A user can add, edit, and delete reviews (the stars work identical to yelps), as well as upload photos for a business. If you click on a business you can learn all about it. You can see past reviews, find it on the map, and look at their photos. From the photos page you can click on a picture to get a closer look. Feel free to click through and see all the photos associated with a business.  
 
 Check out the site! [Help: it's where the food's at!](http://www.corey-ladovsky-help.club/#/)
 
 ### Technologies
 
-This app is a fullstack application that has been designed using Rails in the backend and React Redux in the front end.
+This app is a fullstack application that has been designed using Ruby on Rails in the backend and React Redux in the front end.
 In addition to using Postgress to hold my core database, I used Amazon Web Service as a second database in order to house pictures from the web. I am attaching these pictures with the paperclip gem. In order to do that I also had to install figaro so that I could make a gitignored yml file to hide my AWS keys.
 Using Ruby on Rails I was able to build models with proper validations, and controllers to handle my ajax requests. I am rendering JSON and using jbuilder files to pass information around my application.  
 In the frontend I am using React in order to keep my App a single page application and Redux in order to store slices of state. This allows me to have persisting users as well as to aid my application dynamically. My application was designed using SCSS.
@@ -21,5 +21,5 @@ I am proud of the details that I paid attention to. I enjoyed manipulating the h
 Please feel free to reach out to me with any questions or request. Have a wonderful day! Enjoy Help!
 
 
-Things I plan to implement in the near future: I'd like to add working search/ filters. I want clicks on the cuisine type to automatically send a search request to similar cuisines. I'd love to focus on being able to filter by 'open now'.
-I'd also like to make my app more adaptive to different screen sizes.
+Things I plan to implement in the near future: I'd love to add an 'open now' filter.
+I'd also like to make my app responsive to different screen sizes.
