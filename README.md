@@ -1,6 +1,6 @@
 # HELP
 
-Hey there and welcome! Thanks for checking out Help. Help is a yelp like application that allows users to rate and review restaurants. Navigating the site is literally as easy as clicking a button. You're able to Sign up, log in (or demo login) and get straight to looking for delicious places to eat. From the index page you can see the rating of each restaurant as well as it's price ranges. Besides the restaurants basic composition, all qualities are derived from user scored averages.
+Hey there and welcome! Thanks for checking out Help. Help is a yelp like application that allows users to rate and review restaurants. Navigating the site is literally as easy as clicking a button. You're able to Sign up, log in (or demo login) and get straight to looking for delicious places to eat. From the business index page you can see the rating of each restaurant as well as it's price ranges. Besides the restaurants basic composition, all qualities are derived from user scored averages from the reviews they write. A user can add add, edit, and delete reviews, as well as upload photos for a business. 
 
 Check out the site! [Help: it's where the food's at!](http://www.corey-ladovsky-help.club/#/)
 
