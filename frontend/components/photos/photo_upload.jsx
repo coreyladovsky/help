@@ -90,6 +90,7 @@ class PhotoUpload extends React.Component {
   }
 
   handleSubmit(e) {
+    e.preventDefault();
     let formData = new FormData();
     formData.append("photo[image]", this.state.imageFile);
     formData.append("photo[user_id]", this.props.currentUser.id);
