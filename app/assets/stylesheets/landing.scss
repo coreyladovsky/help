@@ -30,6 +30,10 @@
   background-image: image_url("neonbrand-231219.jpg");
 }
 
+#landing-images {
+  visibility: hidden;
+}
+
 .landing-background {
   background-size:cover;
   background-position: 50% 50%;

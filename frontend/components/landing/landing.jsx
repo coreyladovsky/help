@@ -14,7 +14,7 @@ class Landing extends React.Component {
     this.heroChange = this.heroChange.bind(this);
     this.classes = [
       "landing-background1",
-      "landing-background1",
+      "landing-background2",
       "landing-background3",
       "landing-background4",
       "landing-background5",
@@ -110,7 +110,6 @@ class Landing extends React.Component {
 
 
   heroChange() {
-    console.log("fired");
     this.heroOff = setInterval(() => {
       $("#landing-hero").removeClass();
       let picClass = this.classes[
@@ -202,6 +201,20 @@ class Landing extends React.Component {
             </ul>
           </div>
         </div>
+
+        <div id="landing-images">
+          <div className={"landing-background1"}></div>
+          <div className={"landing-background2"}></div>
+          <div className={"landing-background3"}></div>
+          <div className={"landing-background4"}></div>
+          <div className={"landing-background5"}></div>
+          <div className={"landing-background6"}></div>
+          <div className={"landing-background7"}></div>
+          <div className={"landing-background8"}></div>
+          <div className={"landing-background9"}></div>
+        </div>
+
+
       </div>
     );
   }
