@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import dateFormat from "dateformat";
+import zipcodes from 'zipcodes';
 
 class ReviewIndexItem extends React.Component {
   constructor(props) {
@@ -57,6 +58,7 @@ class ReviewIndexItem extends React.Component {
       return null;
     } else {
       const date = dateFormat(this.props.review.created_at, "mm/dd/yyyy");
+      const city = zipcodes.lookup(this.props.user.zip_code);
       return (
         <div>
           <ul className="review-container-comment">
